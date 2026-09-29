@@ -1,7 +1,7 @@
 # Exploring `@flwrlabs/agent`
 
 Hub page: https://flower.ai/apps/flwrlabs/agent (title "Flower AgentApp")
-Local copy: [`agent/`](../agent/). It is unmodified; keep it that way so it can be diffed against upstream. The package is nested, so the code lives in `agent/agent/`.
+Local copy: [`docs/agent/`](agent/). It is unmodified; keep it that way so it can be diffed against upstream. The package is nested, so the code lives in `docs/agent/agent/`.
 
 ---
 
@@ -90,7 +90,7 @@ The live docs (`how-to-guides/run-on-supergrid.html`, `tutorials/write-your-firs
 
 ```shell
 uvx --from flwr==1.39.0 flwr new @flwrlabs/agent   # we used fetch-zip instead
-cd agent
+cd docs/agent                      # our copy; a fresh `flwr new` creates ./agent
 uv sync
 uv run flwr build
 uv run flwr login supergrid        # interactive
@@ -124,7 +124,7 @@ To debug a run: `uvx --from flwr==1.39.0 flwr log <run-id> supergrid --show`. To
 
 ## Next steps
 
-- [ ] `uv sync` and `flwr login supergrid`, then run one baseline `flwr chat` → `/load ./agent` to confirm the template works as-is.
+- [ ] `uv sync` and `flwr login supergrid`, then run one baseline `flwr chat` → `/load ./docs/agent` to confirm the template works as-is.
 - [ ] Confirm that `flwr run` fails for AgentApps on SuperGrid (`AGENTAPP_USER_PROMPT_REQUIRED`) before anyone relies on it.
 - [ ] Prototype the single-FAB master/worker branch (steps 1–4 above) from a copy of this template, not in `agent/`.
 - [ ] Ask mentors: (a) do the hackathon SuperNodes accept arbitrary run FABs (cold install), or only warm pools preloaded with one `fab_hash`? (b) how is a master run started on the SuperLink of a federation that has SuperNodes? Is it `flwr chat` with `/federation`?

@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robot Parts Suppliers</title>
+<meta name="description" content="Eight online retailers that sell robotics parts to the public, with real items, prices and SKUs captured from their product pages.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #f4f2ec;
+  --bg-raised: #fbfaf6;
+  --bg-sunken: #ebe8df;
+  --ink: #1d1f1c;
+  --ink-2: #4a4d46;
+  --ink-3: #6e7168;
+  --rule: #d9d5ca;
+  --rule-strong: #bdb8aa;
+  --accent: #0b6e63;
+  --accent-ink: #ffffff;
+  --accent-soft: #d6ebe6;
+  --warn-bg: #fbf0d4;
+  --warn-ink: #5c4400;
+  --warn-rule: #e6cf8f;
+  --focus: #0b6e63;
+  --shadow: 0 1px 0 rgba(29, 31, 28, .04), 0 1px 3px rgba(29, 31, 28, .06);
+  --radius: 10px;
+  --radius-sm: 6px;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --cat-motors-bg: #fde4d3; --cat-motors-fg: #7a2e05;
+  --cat-servos-bg: #e6e0fb; --cat-servos-fg: #3f2a8c;
+  --cat-motor-drivers-bg: #d7e8fb; --cat-motor-drivers-fg: #0f4476;
+  --cat-microcontrollers-sbc-bg: #d4efe0; --cat-microcontrollers-sbc-fg: #145235;
+  --cat-sensors-bg: #fbe0ea; --cat-sensors-fg: #7c1d45;
+  --cat-chassis-kits-bg: #f3ebc9; --cat-chassis-kits-fg: #5b4a06;
+  --cat-wheels-mechanical-bg: #e3e5e8; --cat-wheels-mechanical-fg: #33393f;
+  --cat-power-batteries-bg: #d3eff2; --cat-power-batteries-fg: #0d5058;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141614;
+    --bg-raised: #1c1f1c;
+    --bg-sunken: #101210;
+    --ink: #ecebe5;
+    --ink-2: #bfbdb4;
+    --ink-3: #94928a;
+    --rule: #2e322e;
+    --rule-strong: #454a44;
+    --accent: #5fd0c0;
+    --accent-ink: #0c1a18;
+    --accent-soft: #173833;
+    --warn-bg: #2d2610;
+    --warn-ink: #f1d98f;
+    --warn-rule: #5a4a1a;
+    --focus: #5fd0c0;
+    --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 1px 3px rgba(0, 0, 0, .35);
+
+    --cat-motors-bg: #3a2416; --cat-motors-fg: #f8bf98;
+    --cat-servos-bg: #2b2547; --cat-servos-fg: #c9bdf8;
+    --cat-motor-drivers-bg: #172d45; --cat-motor-drivers-fg: #a7cdf5;
+    --cat-microcontrollers-sbc-bg: #163326; --cat-microcontrollers-sbc-fg: #9fdcbc;
+    --cat-sensors-bg: #3b1d2a; --cat-sensors-fg: #f4b0cb;
+    --cat-chassis-kits-bg: #34301a; --cat-chassis-kits-fg: #e7d68c;
+    --cat-wheels-mechanical-bg: #272b30; --cat-wheels-mechanical-fg: #c9ced4;
+    --cat-power-batteries-bg: #143439; --cat-power-batteries-fg: #97dbe3;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; left: 16px; top: -48px; background: var(--accent); color: var(--accent-ink); padding: 8px 12px; border-radius: var(--radius-sm); z-index: 20; text-decoration: none; font-weight: 600; }
+.skip:focus { top: 12px; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+/* Masthead */
+.masthead { padding: 40px 0 24px; border-bottom: 1px solid var(--rule); }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; }
+.masthead h1 { font-size: clamp(28px, 4.2vw, 44px); line-height: 1.08; letter-spacing: -.02em; margin: 0 0 12px; font-weight: 700; }
+.lede { max-width: 68ch; margin: 0; color: var(--ink-2); font-size: 16px; }
+.masthead-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 40px; align-items: end; }
+.stats { display: flex; gap: 0; margin: 0; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--bg-raised); overflow: hidden; }
+.stats div { padding: 10px 18px; border-left: 1px solid var(--rule); min-width: 96px; }
+.stats div:first-child { border-left: 0; }
+.stats dt { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.stats dd { margin: 2px 0 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.notice { margin: 20px 0 0; padding: 10px 14px; border: 1px solid var(--warn-rule); background: var(--warn-bg); color: var(--warn-ink); border-radius: var(--radius-sm); font-size: 14px; display: flex; gap: 10px; align-items: flex-start; }
+.notice svg { flex: none; margin-top: 2px; }
+.notice p { margin: 0; }
+
+/* Toolbar */
+.toolbar { position: sticky; top: 0; z-index: 10; background: var(--bg); background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: saturate(1.2) blur(8px); -webkit-backdrop-filter: saturate(1.2) blur(8px); border-bottom: 1px solid var(--rule); }
+.toolbar-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 12px; padding: 14px 0 12px; }
+.search { position: relative; }
+.search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--ink-3); pointer-events: none; }
+.search input { width: 100%; height: 40px; padding: 0 70px 0 38px; font: inherit; color: var(--ink); background: var(--bg-raised); border: 1px solid var(--rule-strong); border-radius: var(--radius-sm); }
+.search input::placeholder { color: var(--ink-3); }
+.search input:focus-visible { outline-offset: 0; border-color: var(--focus); }
+.search kbd { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); border: 1px solid var(--rule-strong); border-bottom-width: 2px; border-radius: 4px; padding: 1px 6px; background: var(--bg); }
+.sort { display: flex; align-items: center; gap: 8px; }
+.sort label { font-size: 13px; color: var(--ink-2); white-space: nowrap; }
+select { height: 40px; font: inherit; color: var(--ink); background: var(--bg-raised); border: 1px solid var(--rule-strong); border-radius: var(--radius-sm); padding: 0 32px 0 10px; appearance: none; -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-3) 50%), linear-gradient(135deg, var(--ink-3) 50%, transparent 50%);
+  background-position: calc(100% - 16px) 17px, calc(100% - 11px) 17px; background-size: 5px 5px; background-repeat: no-repeat; }
+.chips { grid-column: 1 / -1; display: flex; gap: 6px; flex-wrap: wrap; margin: 0; padding: 0; border: 0; min-width: 0; min-inline-size: 0; }
+.chips legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.chip-btn { font: inherit; font-size: 13px; line-height: 1; padding: 7px 10px; border-radius: 999px; border: 1px solid var(--rule-strong); background: var(--bg-raised); color: var(--ink-2); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.chip-btn:hover { border-color: var(--ink-3); color: var(--ink); }
+.chip-btn .n { font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); }
+.chip-btn .dot { width: 8px; height: 8px; border-radius: 50%; }
+.chip-btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip-btn[aria-pressed="true"] .n { color: inherit; opacity: .7; }
+
+/* Layout */
+.layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 32px; padding: 24px 0 64px; }
+.stores-nav { position: sticky; top: 132px; align-self: start; max-height: calc(100vh - 150px); overflow: auto; }
+.nav-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 8px; }
+.store-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.store-btn { width: 100%; text-align: left; font: inherit; color: var(--ink); background: transparent; border: 1px solid transparent; border-radius: var(--radius-sm); padding: 8px 10px; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 8px; align-items: center; }
+.store-btn:hover { background: var(--bg-sunken); }
+.store-btn[aria-pressed="true"] { background: var(--bg-raised); border-color: var(--rule-strong); box-shadow: var(--shadow); }
+.store-btn[aria-pressed="true"] .store-btn-name { color: var(--accent); }
+.store-btn-name { font-weight: 600; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.store-btn-meta { grid-column: 1 / 2; font-size: 12px; color: var(--ink-3); }
+.store-btn-count { grid-row: 1 / 3; grid-column: 2; font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.store-btn[data-empty="true"] { opacity: .5; }
+.store-select-wrap { display: none; }
+
+.results-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 0 0 14px; }
+.results-head h2 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+.count { font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+/* Store profile */
+.store-card { background: var(--bg-raised); border: 1px solid var(--rule); border-radius: var(--radius); box-shadow: var(--shadow); margin: 0 0 14px; overflow: hidden; }
+.store-card-head { padding: 16px 18px 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; align-items: start; border-bottom: 1px solid var(--rule); }
+.store-card h3 { margin: 0; font-size: 18px; letter-spacing: -.01em; }
+.store-card h3 a { color: inherit; text-decoration: none; }
+.store-card h3 a:hover { text-decoration: underline; }
+.store-specialty { grid-column: 1 / -1; margin: 0; color: var(--ink-2); font-size: 14px; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.badge { font-family: var(--font-mono); font-size: 11px; letter-spacing: .02em; padding: 3px 7px; border-radius: 4px; border: 1px solid var(--rule-strong); color: var(--ink-2); background: var(--bg); white-space: nowrap; }
+.badge.yes { border-color: var(--accent); border-color: color-mix(in srgb, var(--accent) 50%, transparent); color: var(--accent); background: var(--accent-soft); }
+.store-notes { grid-column: 1 / -1; margin: 2px 0 0; font-size: 12.5px; color: var(--ink-3); }
+.store-link { font-size: 13px; white-space: nowrap; }
+
+/* Items */
+.items { list-style: none; margin: 0; padding: 0; }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) 190px 150px 96px 34px; gap: 4px 16px; align-items: center; padding: 12px 18px; border-top: 1px solid var(--rule); }
+.items .item:first-child { border-top: 0; }
+.flat .item { background: var(--bg-raised); border: 1px solid var(--rule); border-radius: var(--radius-sm); margin-bottom: 6px; }
+.item-main { min-width: 0; }
+.item-name { font-weight: 600; font-size: 14.5px; line-height: 1.35; margin: 0; }
+.item-name a { color: var(--ink); text-decoration: none; }
+.item-name a:hover { color: var(--accent); text-decoration: underline; }
+.item-spec { margin: 3px 0 0; font-size: 13px; color: var(--ink-2); }
+.item-store { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3); margin: 0 0 2px; }
+.cat { justify-self: start; font-size: 12px; font-weight: 500; line-height: 1.2; padding: 4px 8px; border-radius: 999px; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.sku { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); overflow-wrap: anywhere; }
+.sku .lbl, .price .lbl { display: none; }
+.price { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 14.5px; }
+.null { color: var(--ink-3); font-weight: 400; }
+.go { justify-self: end; display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: var(--radius-sm); border: 1px solid var(--rule-strong); color: var(--ink-2); background: var(--bg); }
+.go:hover { color: var(--accent); border-color: var(--accent); }
+.col-head { display: grid; grid-template-columns: minmax(0, 1fr) 190px 150px 96px 34px; gap: 16px; padding: 8px 18px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); border-bottom: 1px solid var(--rule); background: var(--bg-sunken); }
+.col-head span:nth-child(4) { text-align: right; }
+.empty { padding: 48px 20px; text-align: center; color: var(--ink-2); border: 1px dashed var(--rule-strong); border-radius: var(--radius); }
+.empty button { font: inherit; margin-top: 10px; padding: 8px 14px; border-radius: var(--radius-sm); border: 1px solid var(--rule-strong); background: var(--bg-raised); color: var(--ink); cursor: pointer; }
+
+footer { border-top: 1px solid var(--rule); padding: 20px 0 40px; color: var(--ink-3); font-size: 13px; }
+footer p { margin: 0 0 6px; max-width: 90ch; }
+footer code { font-family: var(--font-mono); font-size: 12px; }
+
+@media (max-width: 1040px) {
+  .item, .col-head { grid-template-columns: minmax(0, 1fr) 170px 96px 34px; }
+  .item .sku, .col-head .h-sku { display: none; }
+}
+@media (max-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-top: 16px; }
+  .stores-nav { display: none; }
+  .store-select-wrap { display: flex; align-items: center; gap: 8px; }
+  .store-select-wrap select { flex: 1; min-width: 0; }
+  .masthead-grid { grid-template-columns: minmax(0, 1fr); }
+  .stats { width: 100%; }
+  .stats div { flex: 1; min-width: 0; padding: 8px 12px; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .masthead { padding: 28px 0 18px; }
+  .toolbar-inner { grid-template-columns: minmax(0, 1fr); }
+  .sort { flex-wrap: wrap; }
+  .store-select-wrap { flex: 1 1 100%; }
+  .sort > select { flex: 1; min-width: 0; }
+  .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; margin: 0 -16px; padding-left: 16px; padding-right: 16px; scrollbar-width: thin; }
+  .chip-btn { flex: none; }
+  .col-head { display: none; }
+  .item { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 12px; padding: 12px 14px; }
+  .item-main { grid-column: 1 / -1; }
+  .item .cat { grid-column: 1; }
+  .item .price { grid-column: 2; grid-row: 2; }
+  .item .sku { display: block; grid-column: 1; }
+  .item .sku .lbl { display: inline; color: var(--ink-3); }
+  .item .go { grid-column: 2; grid-row: 3; }
+  .store-card-head { grid-template-columns: minmax(0, 1fr); padding: 14px; }
+  .badges { justify-content: flex-start; }
+  .stats dd { font-size: 18px; }
+  .stats dt { font-size: 10px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chip-btn, .store-btn, .go { transition: background-color .12s, border-color .12s, color .12s; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#results">Skip to items</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-grid">
+      <div>
+        <p class="eyebrow">Supplier catalogue &middot; research dataset</p>
+        <h1>Robot Parts Suppliers</h1>
+        <p class="lede" id="lede">Retailers that sell robotics parts directly to the public, each with real items captured from its own product pages. Pick a store to see its catalogue, or search and filter across all of them.</p>
+      </div>
+      <dl class="stats" aria-label="Dataset summary">
+        <div><dt>Stores</dt><dd id="stat-stores">&ndash;</dd></div>
+        <div><dt>Items</dt><dd id="stat-items">&ndash;</dd></div>
+        <div><dt>Captured</dt><dd id="stat-date">&ndash;</dd></div>
+      </dl>
+    </div>
+    <div class="notice" role="note">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm7.25-3.25h1.5v1.5h-1.5v-1.5Zm0 3h1.5v4.5h-1.5v-4.5Z"/></svg>
+      <p id="price-note">Prices were captured on 2026-09-29 and may have changed. They are single-unit prices exactly as shown on each product page, with no currency conversion, tax or shipping. A dash means the page did not show that field.</p>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <div class="toolbar-inner">
+      <div class="search">
+        <label for="q" class="sr-only">Search items by name, spec, SKU or store</label>
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M7 1.5a5.5 5.5 0 0 1 4.38 8.82l3.4 3.4-1.06 1.06-3.4-3.4A5.5 5.5 0 1 1 7 1.5Zm0 1.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg>
+        <input id="q" type="search" placeholder="Search name, spec, SKU or store" autocomplete="off" spellcheck="false">
+        <kbd aria-hidden="true">/</kbd>
+      </div>
+      <div class="sort">
+        <div class="store-select-wrap">
+          <label for="store-select" class="sr-only">Store</label>
+          <select id="store-select"></select>
+        </div>
+        <label for="sort">Sort</label>
+        <select id="sort">
+          <option value="store">By store</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </div>
+      <fieldset class="chips" id="chips">
+        <legend>Filter by category</legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="layout">
+    <nav class="stores-nav" aria-labelledby="stores-title">
+      <p class="nav-title" id="stores-title">Stores</p>
+      <ul class="store-list" id="store-list"></ul>
+    </nav>
+    <main id="results" tabindex="-1">
+      <div class="results-head">
+        <h2 id="results-title">All stores</h2>
+        <p class="count" id="count" aria-live="polite"></p>
+      </div>
+      <div id="results-body"></div>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p id="scope-note"></p>
+    <p>Data lives in <code>stores.json</code> (source of truth) and <code>data/</code>; this page embeds a copy. Regenerate with <code>python3 build.py</code>. Store names are shown for reference only; no store branding or logos are used.</p>
+  </div>
+</footer>
+
+<script id="store-data" type="application/json">{"captured_at":"2026-09-29","currency_note":"Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.","scope_note":"8 retailers that sell robotics parts directly to the public online (hobby, maker, education, components), 8-12 items each, spread across 8 normalised categories. General marketplaces (Amazon, eBay, AliExpress) excluded. Skipped: RobotShop and DigiKey (HTTP 403 to automated fetching), Mouser (bot-check page instead of content); Pimoroni and The Pi Hut were reachable but dropped to keep the scope at 8 stores. Every item comes from a product page fetched on the capture date; fields not visible on the page are null.","categories":[{"id":"motors","label":"Motors"},{"id":"servos","label":"Servos \u0026 smart actuators"},{"id":"motor-drivers","label":"Motor drivers \u0026 controllers"},{"id":"microcontrollers-sbc","label":"Microcontrollers \u0026 SBCs"},{"id":"sensors","label":"Sensors"},{"id":"chassis-kits","label":"Chassis \u0026 robot kits"},{"id":"wheels-mechanical","label":"Wheels \u0026 mechanical"},{"id":"power-batteries","label":"Power \u0026 batteries"}],"stores":[{"id":"adafruit","name":"Adafruit Industries","url":"https://www.adafruit.com","country":"US","specialty":"Open-source maker electronics: Feather/STEMMA boards, sensors, robotics kits and learning guides","ships_international":null,"fetch_status":"ok","notes":"HQ country from general knowledge; no address or shipping policy on the fetched pages.","items":[{"id":"adafruit-3777","name":"DC Gearbox Motor - \"TT Motor\" - 200RPM - 3 to 6VDC","category":"motors","price":2.95,"currency":"USD","sku":"3777","url":"https://www.adafruit.com/product/3777","spec":"3–6 V TT gearmotor, 1:48 gearbox, 200 RPM at 6 V, 0.8 kg·cm stall at 6 V"},{"id":"adafruit-169","name":"Micro servo [TowerPro SG92R]","category":"servos","price":5.95,"currency":"USD","sku":"169","url":"https://www.adafruit.com/product/169","spec":"4.8 V nominal (3–6 V), 2.5 kg·cm, 0.1 s/60°, 9 g"},{"id":"adafruit-2927","name":"DC Motor + Stepper FeatherWing Add-on For All Feather Boards","category":"motor-drivers","price":19.95,"currency":"USD","sku":"2927","url":"https://www.adafruit.com/product/2927","spec":"4 DC or 2 stepper motors, 1.2 A per bridge, motor supply 4.5–13.5 V, 12-bit speed control"},{"id":"adafruit-1438","name":"Adafruit Motor/Stepper/Servo Shield for Arduino v3 Kit","category":"motor-drivers","price":19.95,"currency":"USD","sku":"1438","url":"https://www.adafruit.com/product/1438","spec":"Arduino shield: 4 DC or 2 stepper motors, 1.2 A/channel (3 A peak ~20 ms), I2C 0x60–0x80"},{"id":"adafruit-4864","name":"Raspberry Pi Pico RP2040","category":"microcontrollers-sbc","price":4.0,"currency":"USD","sku":"4864","url":"https://www.adafruit.com/product/4864","spec":"RP2040 dual Arm Cortex-M0+ @ 133 MHz, 264 kB SRAM, 51.3 × 21 mm"},{"id":"adafruit-5129","name":"Maker Pi RP2040 - Motor and Robot Controller","category":"microcontrollers-sbc","price":14.95,"currency":"USD","sku":"5129","url":"https://www.adafruit.com/product/5129","spec":"RP2040 robot controller: dual-channel DC motor driver, 4 servo ports, 7 Grove connectors"},{"id":"adafruit-3317","name":"Adafruit VL53L0X Time of Flight Distance Sensor - ~30 to 1000mm","category":"sensors","price":14.95,"currency":"USD","sku":"3317","url":"https://www.adafruit.com/product/3317","spec":"VL53L0X laser time-of-flight, ~30–1000 mm range, STEMMA QT breakout"},{"id":"adafruit-4007","name":"Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible","category":"sensors","price":3.95,"currency":"USD","sku":"4007","url":"https://www.adafruit.com/product/4007","spec":"HC-SR04-compatible ultrasonic, 3–5.5 V, 2–450 cm, 40 kHz"},{"id":"adafruit-4754","name":"Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080)","category":"sensors","price":29.5,"currency":"USD","sku":"4754","url":"https://www.adafruit.com/product/4754","spec":"BNO085 9-DoF IMU with on-chip sensor fusion, STEMMA QT / Qwiic"},{"id":"adafruit-2939","name":"Mini Robot Rover Chassis Kit - 2WD with DC Motors","category":"chassis-kits","price":24.95,"currency":"USD","sku":"2939","url":"https://www.adafruit.com/product/2939","spec":"2WD metal rover chassis with DC motors, 156 × 103 × 73.5 mm assembled"},{"id":"adafruit-3766","name":"Orange and Clear TT Motor Wheel for TT DC Gearbox Motor","category":"wheels-mechanical","price":1.5,"currency":"USD","sku":"3766","url":"https://www.adafruit.com/product/3766","spec":"Wheel for TT gearbox motors, 63 × 29 mm, 38 g"},{"id":"adafruit-328","name":"Lithium Ion Polymer Battery - 3.7v 2500mAh","category":"power-batteries","price":14.95,"currency":"USD","sku":"328","url":"https://www.adafruit.com/product/328","spec":"LiPo 3.7 V nominal, 2500 mAh (~10 Wh), 50 × 60 × 7.3 mm, 50 g"}]},{"id":"sparkfun","name":"SparkFun Electronics","url":"https://www.sparkfun.com","country":"US","specialty":"Qwiic-ecosystem breakouts, Arduino-compatible dev boards, robotics and GNSS parts","ships_international":null,"fetch_status":"ok","notes":"Site footer: 6333 Dry Creek Parkway, Niwot, CO 80503. International shipping not stated on the fetched pages.","items":[{"id":"sparkfun-rob-13302","name":"Hobby Gearmotor - 140 RPM (Pair)","category":"motors","price":7.5,"currency":"USD","sku":"ROB-13302","url":"https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html","spec":"Pair of DAGU hobby gearmotors, 4.5 V, 48:1, 140 RPM unloaded, 190 mA no-load"},{"id":"sparkfun-rob-09238","name":"Stepper Motor - 32 oz.in (200 steps/rev, 1200mm Wire)","category":"motors","price":26.95,"currency":"USD","sku":"ROB-09238","url":"https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html","spec":"NEMA 17 bipolar stepper, 200 steps/rev, 32 oz·in holding, 0.33 A, 5 mm shaft"},{"id":"sparkfun-rob-09065","name":"Servo - Generic (Sub-Micro Size)","category":"servos","price":12.95,"currency":"USD","sku":"ROB-09065","url":"https://www.sparkfun.com/servo-generic-sub-micro-size.html","spec":"Sub-micro servo, 4.8–6 V, 20.8 oz·in and 0.10 s/60° at 6 V, ~160° travel"},{"id":"sparkfun-rob-14450","name":"SparkFun Motor Driver - Dual TB6612FNG (with Headers)","category":"motor-drivers","price":14.5,"currency":"USD","sku":"ROB-14450","url":"https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html","spec":"TB6612FNG dual DC motor driver, up to 1.2 A per motor, headers pre-soldered"},{"id":"sparkfun-rob-15451","name":"SparkFun Qwiic Motor Driver","category":"motor-drivers","price":23.78,"currency":"USD","sku":"ROB-15451","url":"https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html","spec":"2-channel I2C/Qwiic motor driver, 1.2 A per channel (1.5 A peak), 127 drive levels"},{"id":"sparkfun-dev-15123","name":"SparkFun RedBoard Qwiic","category":"microcontrollers-sbc","price":21.95,"currency":"USD","sku":"DEV-15123","url":"https://www.sparkfun.com/sparkfun-redboard-qwiic.html","spec":"ATmega328 Uno-compatible board, 7–15 V in, 20 I/O (6 PWM, 6 analog), Qwiic connector"},{"id":"sparkfun-sen-15335","name":"SparkFun 9DoF IMU Breakout - ICM-20948 (Qwiic)","category":"sensors","price":21.95,"currency":"USD","sku":"SEN-15335","url":"https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html","spec":"ICM-20948 9-axis IMU with Digital Motion Processor, Qwiic/I2C"},{"id":"sparkfun-sen-14722","name":"SparkFun Distance Sensor Breakout - 4 Meter, VL53L1X (Qwiic)","category":"sensors","price":29.95,"currency":"USD","sku":"SEN-14722","url":"https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html","spec":"VL53L1X laser ToF distance sensor, up to 4 m, mm precision, I2C/Qwiic"},{"id":"sparkfun-sen-15569","name":"Ultrasonic Distance Sensor - 5V (HC-SR04)","category":"sensors","price":5.25,"currency":"USD","sku":"SEN-15569","url":"https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html","spec":"HC-SR04 ultrasonic, 5 V, 2 cm–4 m, accuracy up to 3 mm"},{"id":"sparkfun-rob-13301","name":"Shadow Chassis","category":"chassis-kits","price":14.95,"currency":"USD","sku":"ROB-13301","url":"https://www.sparkfun.com/shadow-chassis.html","spec":"Modular ABS robot chassis (RobotZone), Actobotics hub patterns, snap-on controller mounts"},{"id":"sparkfun-rob-13259","name":"Wheel - 65mm (Rubber Tire, Pair)","category":"wheels-mechanical","price":4.5,"currency":"USD","sku":"ROB-13259","url":"https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html","spec":"65 mm wheels with rubber tires, pair; fit DAGU right-angle gearmotors"},{"id":"sparkfun-prt-13855","name":"Lithium Ion Battery - 2Ah","category":"power-batteries","price":19.41,"currency":"USD","sku":"PRT-13855","url":"https://www.sparkfun.com/lithium-ion-battery-2ah.html","spec":"Li-ion 3.7 V, 2000 mAh, slim pack"}]},{"id":"pololu","name":"Pololu Robotics \u0026 Electronics","url":"https://www.pololu.com","country":"US","specialty":"Gearmotors, motor drivers, voltage regulators, sensors and robot chassis","ships_international":null,"fetch_status":"ok","notes":"Product pages state 'Free shipping in USA over $100'; international shipping not stated on the fetched pages. HQ country from general knowledge.","items":[{"id":"pololu-3036","name":"5:1 Micro Metal Gearmotor HPCB 12V","category":"motors","price":26.45,"currency":"USD","sku":"3036","url":"https://www.pololu.com/product/3036","spec":"Micro metal gearmotor, 12 V HPCB, ~5:1, 6800 RPM no-load, 0.75 A stall, 3 mm D-shaft"},{"id":"pololu-2818","name":"FEETECH FS90 Micro Servo","category":"servos","price":8.4,"currency":"USD","sku":"2818","url":"https://www.pololu.com/product/2818","spec":"Analog micro servo; at 6 V: 0.10 s/60°, 1.5 kg·cm, 9.0 g; 3.3 V or 5 V signal"},{"id":"pololu-2130","name":"DRV8833 Dual Motor Driver Carrier","category":"motor-drivers","price":10.95,"currency":"USD","sku":"2130","url":"https://www.pololu.com/product/2130","spec":"DRV8833 dual H-bridge, 2.7–10.8 V, 1.2 A/channel continuous (2 A peak)"},{"id":"pololu-2133","name":"DRV8825 Stepper Motor Driver Carrier, High Current","category":"motor-drivers","price":15.95,"currency":"USD","sku":"2133","url":"https://www.pololu.com/product/2133","spec":"DRV8825 bipolar stepper driver, 8.2–45 V, ~1.5 A/phase (2.2 A with cooling), to 1/32 step"},{"id":"pololu-3101","name":"A-Star 32U4 Micro","category":"microcontrollers-sbc","price":19.95,"currency":"USD","sku":"3101","url":"https://www.pololu.com/product/3101","spec":"ATmega32U4, 18 I/O (6 PWM, 8 analog), Micro-USB, 1″ × 0.6″, Arduino bootloader"},{"id":"pololu-3544","name":"Romi 32U4 Control Board","category":"microcontrollers-sbc","price":74.95,"currency":"USD","sku":"3544","url":"https://www.pololu.com/product/3544","spec":"ATmega32U4 robot controller with dual motor drivers, inertial sensors, encoder inputs, Pi interface"},{"id":"pololu-3415","name":"VL53L1X Time-of-Flight Distance Sensor Carrier with Voltage Regulator, 400cm Max","category":"sensors","price":22.95,"currency":"USD","sku":"3415","url":"https://www.pololu.com/product/3415","spec":"VL53L1X laser ToF ranging up to 4 m, carrier with voltage regulator"},{"id":"pololu-4148","name":"QTR-MD-08RC Reflectance Sensor Array: 8-Channel, 8mm Pitch, RC Output","category":"sensors","price":9.9,"currency":"USD","sku":"4148","url":"https://www.pololu.com/product/4148","spec":"8-channel IR reflectance (line) sensor array, 8 mm pitch, RC output, 2.9–5.5 V"},{"id":"pololu-3500","name":"Romi Chassis Kit - Black","category":"chassis-kits","price":39.95,"currency":"USD","sku":"3500","url":"https://www.pololu.com/product/3500","spec":"Romi chassis kit: 2 motors, 2 wheels, ball caster, battery contacts"},{"id":"pololu-3690","name":"Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80×10mm, Black, 2-Pack","category":"wheels-mechanical","price":11.95,"currency":"USD","sku":"3690","url":"https://www.pololu.com/product/3690","spec":"80 × 10 mm wheels, silicone tires, collets for 3/4 mm D and round shafts, 2-pack"},{"id":"pololu-954","name":"Pololu Ball Caster with 3/4″ Plastic Ball","category":"wheels-mechanical","price":5.49,"currency":"USD","sku":"954","url":"https://www.pololu.com/product/954","spec":"Ball caster with 3/4″ plastic ball, 0.9″–1.2″ height via spacers"},{"id":"pololu-2831","name":"Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5","category":"power-batteries","price":12.95,"currency":"USD","sku":"2831","url":"https://www.pololu.com/product/2831","spec":"Step-down regulator, 5 V out, 1 A, 5.1–36 V in"}]},{"id":"servocity","name":"ServoCity","url":"https://www.servocity.com","country":"US","specialty":"goBILDA metal build system: planetary gearmotors, servos, structure, wheels and robot chassis","ships_international":null,"fetch_status":"ok","notes":"Site footer: '© 2026 Base 10 Assets, LLC'. HQ country from general knowledge; shipping policy not on the fetched pages.","items":[{"id":"servocity-5203-2402-0019","name":"5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)","category":"motors","price":54.99,"currency":"USD","sku":"5203-2402-0019","url":"https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/","spec":"12 VDC planetary gearmotor, 19.2:1, 312 RPM, 24.3 kg·cm (338 oz-in) stall, 8 mm REX shaft, encoder"},{"id":"servocity-638114","name":"Premium N20 Gear Motor (210:1 Ratio, 130 RPM)","category":"motors","price":12.99,"currency":"USD","sku":"638114","url":"https://www.servocity.com/130-rpm-micro-gear-motor/","spec":"N20 micro gearmotor, 210:1 ratio, 130 RPM"},{"id":"servocity-2002-0180-0002","name":"Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)","category":"servos","price":17.99,"currency":"USD","sku":"2002-0180-0002","url":"https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/","spec":"Standard-size servo, steel gears, 180°, 75 oz-in (5.40 kg·cm) stall at 6 V"},{"id":"servocity-2003-0180-0001","name":"Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)","category":"servos","price":9.99,"currency":"USD","sku":"2003-0180-0001","url":"https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/","spec":"Budget servo, nylon gears, 180°, 0.15 s/60°, 53 oz-in"},{"id":"servocity-3105-0101-0020","name":"1x20A Motor Controller (9-30V Input)","category":"motor-drivers","price":39.99,"currency":"USD","sku":"3105-0101-0020","url":"https://www.servocity.com/1x20a-motor-controller/","spec":"Single brushed DC ESC, 9–30 V in, 20 A continuous (30 A burst), R/C input, 6 V BEC"},{"id":"servocity-imc404","name":"Roboclaw 2x7A Motor Controller","category":"motor-drivers","price":79.99,"currency":"USD","sku":"IMC404","url":"https://www.servocity.com/roboclaw-2x7a-motor-controller/","spec":"Dual brushed DC, 7.5 A continuous (15 A peak) per channel, USB/RC/serial/analog, dual encoder inputs"},{"id":"servocity-3114-0001-0001","name":"Pololu A-Star 32U4 Prime SV","category":"microcontrollers-sbc","price":39.99,"currency":"USD","sku":"3114-0001-0001","url":"https://www.servocity.com/pololu-a-star-32u4-prime-sv/","spec":"ATmega32U4 in Arduino form factor, 5–36 V input (no microSD)"},{"id":"servocity-3124-0001-0001","name":"Laser Distance Sensor (1m Range, 3.3-5V, Digital or Analog Output)","category":"sensors","price":29.99,"currency":"USD","sku":"3124-0001-0001","url":"https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/","spec":"Laser time-of-flight distance sensor, up to 1 m, 3.3–5 V, digital or analog output"},{"id":"servocity-3209-0001-0007","name":"Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels)","category":"chassis-kits","price":699.99,"currency":"USD","sku":"3209-0001-0007","url":"https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/","spec":"Mecanum drive chassis kit, 312 RPM planetary motors, 104 mm GripForce mecanum wheels"},{"id":"servocity-3624-0014-0096","name":"96mm Omni Wheel (14mm Bore, 50A Durometer)","category":"wheels-mechanical","price":21.99,"currency":"USD","sku":"3624-0014-0096","url":"https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/","spec":"96 mm omni wheel, 14 mm bore, 50A-durometer rollers"},{"id":"servocity-3213-3606-0002","name":"96mm Mecanum Wheel Set (70A Durometer Bearing Supported Rollers)","category":"wheels-mechanical","price":169.99,"currency":"USD","sku":"3213-3606-0002","url":"https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/","spec":"96 mm goBILDA mecanum wheel set, 70A bearing-supported rollers"},{"id":"servocity-3100-0012-0020","name":"12V NiMH Nested Battery (3000mAh, MH-FC XT30 Connector)","category":"power-batteries","price":64.99,"currency":"USD","sku":"3100-0012-0020","url":"https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/","spec":"12 V NiMH, 3000 mAh, nested form factor, XT30 (MH-FC) connector"}]},{"id":"seeed","name":"Seeed Studio","url":"https://www.seeedstudio.com","country":"CN","specialty":"Grove plug-in modules, XIAO boards, edge-AI hardware and LeRobot arm kits","ships_international":true,"fetch_status":"ok","notes":"Product-page warehouse table: 'CN warehouse ships to most countries in the world. US warehouse ships to USA only. DE warehouse ships to European Union only.' HQ country from general knowledge.","items":[{"id":"seeed-108990003","name":"Small Size and High Torque Stepper Motor - 24BYJ48","category":"motors","price":4.9,"currency":"USD","sku":"108990003","url":"https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html","spec":"24BYJ48 stepper, 5 V DC, 2-phase, 1/32 gear ratio, 5.625°/32 step angle"},{"id":"seeed-316010005","name":"Grove - Servo","category":"servos","price":6.99,"currency":"USD","sku":"316010005","url":"https://www.seeedstudio.com/Grove-Servo.html","spec":"Hobby servo with Grove connector, 4.8–6.0 V (5 V typical)"},{"id":"seeed-108090003","name":"Feetech ST3215-C047 12V 30Kg Servo","category":"servos","price":23.99,"currency":"USD","sku":"108090003","url":"https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html","spec":"12 V serial bus servo, 1:345 metal gearbox, 12-bit magnetic encoder, 30 kg·cm stall"},{"id":"seeed-108020103","name":"Grove - I2C Motor Driver (TB6612FNG)","category":"motor-drivers","price":10.98,"currency":"USD","sku":"108020103","url":"https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html","spec":"TB6612FNG: 2 DC motors or 1 stepper up to 12 V / 1.2 A, Grove I2C"},{"id":"seeed-113991114","name":"Seeed Studio XIAO ESP32-S3","category":"microcontrollers-sbc","price":7.49,"currency":"USD","sku":"113991114","url":"https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html","spec":"240 MHz dual-core Xtensa LX7, Wi-Fi + BLE 5.0, thumb-sized"},{"id":"seeed-102110919","name":"Raspberry Pi 5 8GB","category":"microcontrollers-sbc","price":175.0,"currency":"USD","sku":"102110919","url":"https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html","spec":"2.4 GHz 64-bit quad-core Arm, 800 MHz VideoCore VII GPU, 8 GB RAM"},{"id":"seeed-101020010","name":"Grove - Ultrasonic Distance Sensor","category":"sensors","price":4.99,"currency":"USD","sku":"101020010","url":"https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html","spec":"Ultrasonic ranging 3–350 cm, trigger and echo on a single GPIO, Grove"},{"id":"seeed-101020585","name":"Grove - IMU 9DOF (ICM20600+AK09918)","category":"sensors","price":11.25,"currency":"USD","sku":"101020585","url":"https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html","spec":"9-DoF IMU: ICM20600 gyro/accelerometer + AK09918 compass, Grove"},{"id":"seeed-101020532","name":"Grove - Time of Flight Distance Sensor(VL53L0X) - (ToF) laser-ranging module,Long Range Precision ranging","category":"sensors","price":7.99,"currency":"USD","sku":"101020532","url":"https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html","spec":"VL53L0X laser time-of-flight distance sensor, Grove"},{"id":"seeed-110090325","name":"Robot Car Kit-6WD Off-Road Chassis Kit","category":"chassis-kits","price":99.9,"currency":"USD","sku":"110090325","url":"https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html","spec":"6WD off-road chassis, 2 mm aluminium, 6 DC motors with 1:34 metal gearboxes"},{"id":"seeed-114993667","name":"SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm","category":"chassis-kits","price":277.99,"currency":"USD","sku":"114993667","url":"https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html","spec":"LeRobot SO-101 6-DoF arm motor kit: servos, adapter board, cables (no 3D-printed parts)"},{"id":"seeed-106990290","name":"Lipo Rider Plus (Charger/Booster) - 5V/2.4A USB Type C","category":"power-batteries","price":4.99,"currency":"USD","sku":"106990290","url":"https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html","spec":"LiPo charger/booster, 3 A charging, 5 V / 2.4 A output, USB-C"}]},{"id":"dfrobot","name":"DFRobot","url":"https://www.dfrobot.com","country":"CN","specialty":"Gravity sensor modules, geared motors, robot platforms and STEM kits","ships_international":null,"fetch_status":"ok","notes":"Site banner: 'Free Shipping over $150, Some Exceptions Apply'; destinations not stated on the fetched pages. HQ country from general knowledge.","items":[{"id":"dfrobot-fit0186","name":"12V Metal DC Geared Motor with Encoder (43.8:1, 251RPM, 18Kg.cm)","category":"motors","price":16.5,"currency":"USD","sku":"FIT0186","url":"https://www.dfrobot.com/product-634.html","spec":"12 V metal gearmotor, 43.8:1, 251 RPM, 18 kg·cm, 700 counts/rev encoder"},{"id":"dfrobot-fit0450","name":"TT Motor with Encoder (6V 160RPM 120:1)","category":"motors","price":7.4,"currency":"USD","sku":"FIT0450","url":"https://www.dfrobot.com/product-1457.html","spec":"6 V TT gearmotor, 120:1, 160 RPM, with encoder"},{"id":"dfrobot-ser0020","name":"DSS-P05 Standard Servo (5.1kg)","category":"servos","price":5.8,"currency":"USD","sku":"SER0020","url":"https://www.dfrobot.com/product-236.html","spec":"Standard servo, 180°, 4.8–6 V, 38 g"},{"id":"dfrobot-ser0006","name":"9g 180° Micro Servo for Arduino (1.3kg)","category":"servos","price":3.5,"currency":"USD","sku":"SER0006","url":"https://www.dfrobot.com/product-255.html","spec":"9 g micro servo, 180° ±5°, 4.8–6 V"},{"id":"dfrobot-dri0044","name":"Fermion: TB6612FNG 2x1.2A DC Motor Driver (Breakout)","category":"motor-drivers","price":4.5,"currency":"USD","sku":"DRI0044","url":"https://www.dfrobot.com/product-1704.html","spec":"TB6612FNG dual DC motor driver breakout, 2 × 1.2 A"},{"id":"dfrobot-dri0002","name":"MDV 2x2A DC Motor Controller (L298N)","category":"motor-drivers","price":12.9,"currency":"USD","sku":"DRI0002","url":"https://www.dfrobot.com/product-66.html","spec":"L298N dual DC motor controller, 4.8–46 V, 2 A per channel"},{"id":"dfrobot-dfr0654","name":"FireBeetle 2 ESP32-E IoT Microcontroller (32M / 512KB, Supports Wi-Fi \u0026 Bluetooth)","category":"microcontrollers-sbc","price":8.9,"currency":"USD","sku":"DFR0654","url":"https://www.dfrobot.com/product-2195.html","spec":"ESP32-E IoT board, Wi-Fi + Bluetooth, Arduino-compatible"},{"id":"dfrobot-sen0340","name":"TF-Luna ToF Single-Point Ranging Solid State LiDAR Sensor (8m, UART / I2C)","category":"sensors","price":24.9,"currency":"USD","sku":"SEN0340","url":"https://www.dfrobot.com/product-1995.html","spec":"TF-Luna single-point ToF lidar, 0.2–8 m, 1 cm resolution, UART/I2C"},{"id":"dfrobot-sen0374","name":"Fermion: BNO055 Intelligent 9-axis Sensor (Breakout)","category":"sensors","price":17.9,"currency":"USD","sku":"SEN0374","url":"https://www.dfrobot.com/product-2142.html","spec":"BNO055 9-axis (accel, gyro, magnetometer + MCU), I2C"},{"id":"dfrobot-rob0112","name":"Devastator Tank Mobile Robot Platform","category":"chassis-kits","price":69.9,"currency":"USD","sku":"ROB0112","url":"https://www.dfrobot.com/product-1219.html","spec":"Tracked tank platform, high-strength aluminium alloy, Arduino/Raspberry Pi compatible"},{"id":"dfrobot-fit0654-1","name":"Mecanum Wheel Kit (80mm - 4 Wheels)","category":"wheels-mechanical","price":19.6,"currency":"USD","sku":"FIT0654-1","url":"https://www.dfrobot.com/product-2042.html","spec":"4 × 80 mm mecanum wheels, 9 rollers each, up to 10 kg load"},{"id":"dfrobot-dfr0969","name":"2-Way 18650 Battery Holder","category":"power-batteries","price":9.9,"currency":"USD","sku":"DFR0969","url":"https://www.dfrobot.com/product-2578.html","spec":"Holder/charger for 2 × 18650 cells, micro-USB and USB-C in, USB out, 3 V/5 V, protected"}]},{"id":"robotis","name":"ROBOTIS America","url":"https://robotis.us","country":"US","specialty":"ROBOTIS DYNAMIXEL smart actuators, OpenCR/OpenRB controllers and TurtleBot3 ROS platforms","ships_international":true,"fetch_status":"ok","notes":"US storefront of ROBOTIS, run by ROBOTIS America. Footer: 4222 Green River Rd, Corona, CA 92880, USA. Banner: 'Shipping across North, Central, and South America Only'.","items":[{"id":"robotis-902-0135-000","name":"DYNAMIXEL XL430-W250-T","category":"servos","price":27.5,"currency":"USD","sku":"902-0135-000","url":"https://robotis.us/products/dynamixel-xl430-w250-t","spec":"DYNAMIXEL smart servo, 11.1 V, TTL, 57 RPM no-load, ~0.28 N·m est. rated torque, 4096-step resolution"},{"id":"robotis-902-0163-000","name":"DYNAMIXEL XL330-M288-T","category":"servos","price":27.49,"currency":"USD","sku":"902-0163-000","url":"https://robotis.us/products/dynamixel-xl330-m288-t","spec":"DYNAMIXEL smart servo, 5 V, TTL/SBUS/iBUS/RC PWM, 103 RPM no-load, ~0.10 N·m est. rated torque"},{"id":"robotis-902-0132-000","name":"U2D2","category":"motor-drivers","price":36.92,"currency":"USD","sku":"902-0132-000","url":"https://robotis.us/products/u2d2","spec":"USB-C to TTL/RS-485 converter for controlling DYNAMIXEL actuators from a PC"},{"id":"robotis-903-0257-000","name":"OpenCR1.0","category":"microcontrollers-sbc","price":247.14,"currency":"USD","sku":"903-0257-000","url":"https://robotis.us/products/opencr1-0","spec":"STM32F746 Cortex-M7 216 MHz robot controller, MPU9250 IMU, RS-485 \u0026 TTL DYNAMIXEL ports"},{"id":"robotis-902-0183-000","name":"OpenRB-150","category":"microcontrollers-sbc","price":28.64,"currency":"USD","sku":"902-0183-000","url":"https://robotis.us/products/openrb-150","spec":"Arduino-compatible DYNAMIXEL controller board (batteries and cables not included)"},{"id":"robotis-902-0043-000","name":"Distance Measuring Sensor DMS-80","category":"sensors","price":20.47,"currency":"USD","sku":"902-0043-000","url":"https://robotis.us/products/distance-measuring-sensor-dms-80","spec":"Distance sensor, 10–80 cm, 4.5–5.5 V, 4.4 g"},{"id":"robotis-902-0042-000","name":"Gyro Sensor GS-12","category":"sensors","price":47.84,"currency":"USD","sku":"902-0042-000","url":"https://robotis.us/products/gyro-sensor-gs-12","spec":"Gyro sensor, ±300°/s, 4.5–5.5 V, 23 × 23 × 10 mm"},{"id":"robotis-901-0118-301","name":"TurtleBot 3 Burger RPi4 4GB [US]","category":"chassis-kits","price":783.5,"currency":"USD","sku":"901-0118-301","url":"https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us","spec":"TurtleBot3 Burger ROS robot kit with Raspberry Pi 4 (4 GB) and LDS lidar"},{"id":"robotis-903-0260-000","name":"TB3 Wheel Tire Set-ISW-01 (2ea)","category":"wheels-mechanical","price":10.81,"currency":"USD","sku":"903-0260-000","url":"https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea","spec":"Engineering-plastic wheels with high-grip rubber tires, bolt to DYNAMIXEL, 2 pcs"},{"id":"robotis-903-0262-000","name":"TB3 Ball Caster-A01 (1ea)","category":"wheels-mechanical","price":4.03,"currency":"USD","sku":"903-0262-000","url":"https://robotis.us/products/tb3-ball-caster-a01-1ea","spec":"Ball caster (frame + steel ball) for 6 mm plates / TB3 Waffle Plate"},{"id":"robotis-903-0210-000","name":"LIPO Battery 11.1V 1800mAh LB-012","category":"power-batteries","price":68.54,"currency":"USD","sku":"903-0210-000","url":"https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012","spec":"LiPo 11.1 V, 1800 mAh, 5C, built-in PCM protection, 106 g"},{"id":"robotis-903-0126-000","name":"SMPS 12V 5A PS-10 [US-110V]","category":"power-batteries","price":24.61,"currency":"USD","sku":"903-0126-000","url":"https://robotis.us/products/smps-12v-5a-ps-10-us-110v","spec":"12 V 5 A power supply, 100–260 V AC input"}]},{"id":"waveshare","name":"Waveshare Electronics","url":"https://www.waveshare.com","country":"CN","specialty":"Raspberry Pi / ESP32 HATs and boards, serial-bus servos, lidar and ROS mobile robots","ships_international":true,"fetch_status":"ok","notes":"Site footer lists 'Worldwide Shipping'. HQ country from general knowledge.","items":[{"id":"waveshare-23489","name":"DDSM115 Direct Drive Servo Motor, Low Speed \u0026 High Torque, Low Noise, All-In-One Design, Hub Motor","category":"motors","price":64.99,"currency":"USD","sku":"23489","url":"https://www.waveshare.com/ddsm115.htm","spec":"Direct-drive hub servo motor, 115 RPM rated, 0.96 N·m rated / 2.0 N·m locked-rotor, 4096-count encoder, RS485, IP54"},{"id":"waveshare-24440","name":"2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle","category":"servos","price":8.99,"currency":"USD","sku":"24440","url":"https://www.waveshare.com/sc09-servo.htm","spec":"Serial bus servo, 2.3 kg·cm at 6 V, 300° rotation, 4–6 V, 0.1 s/60°"},{"id":"waveshare-21568","name":"SC15 17kg Large Torque Programmable Serial Bus Servo","category":"servos","price":17.99,"currency":"USD","sku":"21568","url":"https://www.waveshare.com/sc15-servo.htm","spec":"Serial bus servo, 15 kg·cm at 6 V, metal gears, 4.8–8.4 V, 210° servo / 360° motor mode"},{"id":"waveshare-15364","name":"Motor Driver HAT for Raspberry Pi, I2C Interface","category":"motor-drivers","price":13.99,"currency":"USD","sku":"15364","url":"https://www.waveshare.com/motor-driver-hat.htm","spec":"Raspberry Pi HAT, TB6612FNG + PCA9685, I2C, 6–12 V motor supply"},{"id":"waveshare-15669","name":"Stepper Motor HAT for Raspberry Pi, Drives Two Stepper Motors","category":"motor-drivers","price":18.99,"currency":"USD","sku":"15669","url":"https://www.waveshare.com/stepper-motor-hat.htm","spec":"Raspberry Pi HAT, dual DRV8825, 8.2–28 V, 2.5 A, up to 1/32 microstepping"},{"id":"waveshare-23730","name":"General Driver board for Robots, Based on ESP32, multi-functional, supports WIFI, Bluetooth and ESP-NOW communications, ESP32-WROOM-32UE, ESP32 Dev Board","category":"microcontrollers-sbc","price":27.99,"currency":"USD","sku":"23730","url":"https://www.waveshare.com/general-driver-for-robots.htm","spec":"ESP32-WROOM-32UE robot driver board, Wi-Fi/Bluetooth/ESP-NOW, works with Raspberry Pi and Jetson Nano"},{"id":"waveshare-25978","name":"D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus","category":"sensors","price":95.99,"currency":"USD","sku":"25978","url":"https://www.waveshare.com/d500-lidar-kit.htm","spec":"360° DTOF lidar, 0.03–12 m, 5000 Hz ranging, 6–13 Hz scan, UART 230400"},{"id":"waveshare-18301","name":"TOF Laser Range Sensor, UART / CAN Bus, Cascading Support, Ranging up to 5m, with Software","category":"sensors","price":17.99,"currency":"USD","sku":"18301","url":"https://www.waveshare.com/tof-laser-range-sensor.htm","spec":"Time-of-flight laser range sensor, up to 5 m, UART/CAN, cascadable"},{"id":"waveshare-wave-rover","name":"WAVE ROVER Flexible And Expandable 4WD Mobile Robot Chassis, Full Metal Body, Multiple Hosts Support, With Onboard ESP32 Module","category":"chassis-kits","price":89.99,"currency":"USD","sku":null,"url":"https://www.waveshare.com/wave-rover.htm","spec":"Full-metal 4WD chassis with onboard ESP32, 4 × 1.5 W motors, 3 × 18650 (not included), 194 × 168 × 100 mm"},{"id":"waveshare-ups-hat","name":"Uninterruptible Power Supply UPS HAT For Raspberry Pi, Stable 5V Power Output","category":"power-batteries","price":19.99,"currency":"USD","sku":null,"url":"https://www.waveshare.com/ups-hat.htm","spec":"5 V UPS HAT for Raspberry Pi, 18650 cells (not included), 8.4 V 2 A charger, I2C monitoring"},{"id":"waveshare-dc-buck-adapter-7-2v","name":"Serial Bus Servo DC Buck Adapter, Mini Module, Design for Serial Bus Servos, Easy to Use, 7.2V / 6V Buck Regulator","category":"power-batteries","price":3.49,"currency":"USD","sku":null,"url":"https://www.waveshare.com/dc-buck-adapter-7.2v.htm","spec":"Buck adapter for serial bus servos, 9–36 V in, 7.2 V or 6 V out"}]}]}</script>
+<script id="app">
+(function () {
+  "use strict";
+
+  var DATA = JSON.parse(document.getElementById("store-data").textContent);
+  var stores = DATA.stores || [];
+  var categories = DATA.categories || [];
+  var catLabel = {};
+  categories.forEach(function (c) { catLabel[c.id] = c.label; });
+
+  var allItems = [];
+  stores.forEach(function (s, si) {
+    s.items.forEach(function (it, ii) {
+      allItems.push({
+        item: it,
+        store: s,
+        order: si * 1000 + ii,
+        haystack: [it.name, it.spec, it.sku, s.name, catLabel[it.category], it.category].join(" ").toLowerCase()
+      });
+    });
+  });
+
+  var state = { store: "all", cat: "all", q: "", sort: "store" };
+
+  var el = {
+    q: document.getElementById("q"),
+    sort: document.getElementById("sort"),
+    chips: document.getElementById("chips"),
+    storeList: document.getElementById("store-list"),
+    storeSelect: document.getElementById("store-select"),
+    title: document.getElementById("results-title"),
+    count: document.getElementById("count"),
+    body: document.getElementById("results-body")
+  };
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  var fmtCache = {};
+  function fmtPrice(price, currency) {
+    if (price == null) return '<span class="null" title="Price not shown on the page">&mdash;</span>';
+    if (!currency) return esc(price.toFixed(2));
+    try {
+      if (!fmtCache[currency]) fmtCache[currency] = new Intl.NumberFormat("en-US", { style: "currency", currency: currency });
+      return esc(fmtCache[currency].format(price));
+    } catch (e) {
+      return esc(price.toFixed(2) + " " + currency);
+    }
+  }
+
+  function countryName(code) {
+    var names = { US: "United States", CN: "China", GB: "United Kingdom", KR: "South Korea", CA: "Canada" };
+    return names[code] || code || "Unknown";
+  }
+
+  function plural(n, word) { return n + " " + word + (n === 1 ? "" : "s"); }
+
+  function matches(entry, ignoreCat, ignoreStore) {
+    if (!ignoreStore && state.store !== "all" && entry.store.id !== state.store) return false;
+    if (!ignoreCat && state.cat !== "all" && entry.item.category !== state.cat) return false;
+    if (state.q) {
+      var terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+      for (var i = 0; i < terms.length; i++) if (entry.haystack.indexOf(terms[i]) === -1) return false;
+    }
+    return true;
+  }
+
+  function sortEntries(list) {
+    var s = state.sort;
+    return list.slice().sort(function (a, b) {
+      if (s === "price-asc" || s === "price-desc") {
+        var pa = a.item.price, pb = b.item.price;
+        if (pa == null && pb == null) return a.order - b.order;
+        if (pa == null) return 1;
+        if (pb == null) return -1;
+        return s === "price-asc" ? pa - pb || a.order - b.order : pb - pa || a.order - b.order;
+      }
+      if (s === "name") return a.item.name.localeCompare(b.item.name, "en", { sensitivity: "base" });
+      return a.order - b.order;
+    });
+  }
+
+  /* ---------- static controls ---------- */
+
+  function buildChips() {
+    var html = '<legend>Filter by category</legend>';
+    html += '<button type="button" class="chip-btn" data-cat="all">All categories <span class="n" data-count="all"></span></button>';
+    categories.forEach(function (c) {
+      html += '<button type="button" class="chip-btn" data-cat="' + esc(c.id) + '">' +
+        '<span class="dot" style="background:var(--cat-' + esc(c.id) + '-fg)" aria-hidden="true"></span>' +
+        esc(c.label) + ' <span class="n" data-count="' + esc(c.id) + '"></span></button>';
+    });
+    el.chips.innerHTML = html;
+    el.chips.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-cat]");
+      if (!b) return;
+      state.cat = state.cat === b.dataset.cat && b.dataset.cat !== "all" ? "all" : b.dataset.cat;
+      update();
+    });
+  }
+
+  function buildStoreNav() {
+    var html = '<li><button type="button" class="store-btn" data-store="all">' +
+      '<span class="store-btn-name">All stores</span><span class="store-btn-meta">' + esc(plural(stores.length, "retailer")) + '</span>' +
+      '<span class="store-btn-count" data-scount="all"></span></button></li>';
+    var opts = '<option value="all">All stores</option>';
+    stores.forEach(function (s) {
+      html += '<li><button type="button" class="store-btn" data-store="' + esc(s.id) + '">' +
+        '<span class="store-btn-name">' + esc(s.name) + '</span>' +
+        '<span class="store-btn-meta">' + esc(countryName(s.country)) + (s.ships_international ? " &middot; ships abroad" : "") + '</span>' +
+        '<span class="store-btn-count" data-scount="' + esc(s.id) + '"></span></button></li>';
+      opts += '<option value="' + esc(s.id) + '">' + esc(s.name) + '</option>';
+    });
+    el.storeList.innerHTML = html;
+    el.storeSelect.innerHTML = opts;
+    el.storeList.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-store]");
+      if (!b) return;
+      state.store = b.dataset.store;
+      update();
+      if (window.matchMedia("(max-width: 860px)").matches) return;
+      document.getElementById("results").focus({ preventScroll: true });
+    });
+    el.storeSelect.addEventListener("change", function () { state.store = el.storeSelect.value; update(); });
+  }
+
+  /* ---------- rendering ---------- */
+
+  function storeCard(s, bodyHtml, shownCount) {
+    var ships = s.ships_international === true
+      ? '<span class="badge yes">Ships internationally</span>'
+      : s.ships_international === false ? '<span class="badge">Domestic only</span>'
+      : '<span class="badge" title="The fetched pages did not state an international shipping policy">Intl. shipping: not stated</span>';
+    var total = s.items.length;
+    var countTxt = shownCount === total ? plural(total, "item") : shownCount + " of " + plural(total, "item");
+    return '<section class="store-card" aria-labelledby="h-' + esc(s.id) + '">' +
+      '<div class="store-card-head">' +
+        '<h3 id="h-' + esc(s.id) + '"><a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.name) +
+          '<span class="sr-only"> (opens in new tab)</span></a></h3>' +
+        '<div class="badges"><span class="badge" title="' + esc(countryName(s.country)) + '">' + esc(s.country || "??") + '</span>' + ships +
+          '<span class="badge">' + esc(countTxt) + '</span></div>' +
+        '<p class="store-specialty">' + esc(s.specialty) + ' &middot; <a class="store-link" href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' +
+          esc(s.url.replace(/^https?:\/\//, "")) + '<span class="sr-only"> (opens in new tab)</span></a></p>' +
+        (s.notes ? '<p class="store-notes">' + esc(s.notes) + '</p>' : "") +
+        (s.fetch_status && s.fetch_status !== "ok" ? '<p class="store-notes">Fetch status: ' + esc(s.fetch_status) + '</p>' : "") +
+      '</div>' + bodyHtml + '</section>';
+  }
+
+  function colHead() {
+    return '<div class="col-head" aria-hidden="true"><span>Item</span><span>Category</span><span class="h-sku">SKU / part no.</span><span>Price</span><span></span></div>';
+  }
+
+  function itemRow(entry, showStore) {
+    var it = entry.item, s = entry.store;
+    var label = catLabel[it.category] || it.category;
+    return '<li class="item">' +
+      '<div class="item-main">' +
+        (showStore ? '<p class="item-store">' + esc(s.name) + '</p>' : "") +
+        '<p class="item-name"><a href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer">' + esc(it.name) +
+          '<span class="sr-only"> (opens product page in new tab)</span></a></p>' +
+        (it.spec ? '<p class="item-spec">' + esc(it.spec) + '</p>' : "") +
+      '</div>' +
+      '<span class="cat" style="background:var(--cat-' + esc(it.category) + '-bg);color:var(--cat-' + esc(it.category) + '-fg)">' + esc(label) + '</span>' +
+      '<span class="sku"><span class="lbl">SKU </span>' + (it.sku ? esc(it.sku) : '<span class="null" title="No SKU shown on the page">&mdash;</span>') + '</span>' +
+      '<span class="price"><span class="sr-only">Price </span>' + fmtPrice(it.price, it.currency) + '</span>' +
+      '<a class="go" href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer" aria-label="Open product page for ' + esc(it.name) + ' (new tab)">' +
+        '<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M9 2h5v5h-1.5V4.56L7.53 9.53 6.47 8.47l4.97-4.97H9V2ZM3.5 4H7v1.5H3.5v7h7V9H12v3.5A1.5 1.5 0 0 1 10.5 14h-7A1.5 1.5 0 0 1 2 12.5v-7A1.5 1.5 0 0 1 3.5 4Z"/></svg>' +
+      '</a>' +
+    '</li>';
+  }
+
+  function render() {
+    var visible = sortEntries(allItems.filter(function (e) { return matches(e); }));
+    var html = "";
+
+    if (!visible.length) {
+      html = '<div class="empty"><p>No items match these filters.</p><button type="button" id="reset">Clear search and filters</button></div>';
+    } else if (state.sort === "store") {
+      var byStore = {};
+      visible.forEach(function (e) { (byStore[e.store.id] = byStore[e.store.id] || []).push(e); });
+      stores.forEach(function (s) {
+        var list = byStore[s.id];
+        if (!list) return;
+        html += storeCard(s, colHead() + '<ul class="items">' + list.map(function (e) { return itemRow(e, false); }).join("") + '</ul>', list.length);
+      });
+    } else {
+      if (state.store !== "all") {
+        var s = stores.filter(function (x) { return x.id === state.store; })[0];
+        html += storeCard(s, colHead() + '<ul class="items">' + visible.map(function (e) { return itemRow(e, false); }).join("") + '</ul>', visible.length);
+      } else {
+        html += '<ul class="items flat">' + visible.map(function (e) { return itemRow(e, true); }).join("") + '</ul>';
+      }
+    }
+    el.body.innerHTML = html;
+    var reset = document.getElementById("reset");
+    if (reset) reset.addEventListener("click", function () {
+      state.q = ""; state.cat = "all"; el.q.value = ""; update(); el.q.focus();
+    });
+
+    var scopeTotal = allItems.filter(function (e) { return state.store === "all" || e.store.id === state.store; }).length;
+    el.count.textContent = "Showing " + visible.length + " of " + plural(scopeTotal, "item");
+    var storeName = state.store === "all" ? "All stores" : (stores.filter(function (x) { return x.id === state.store; })[0] || {}).name;
+    el.title.textContent = storeName + (state.cat !== "all" ? " · " + (catLabel[state.cat] || state.cat) : "");
+  }
+
+  function syncControls() {
+    Array.prototype.forEach.call(el.chips.querySelectorAll("button[data-cat]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.cat === state.cat));
+    });
+    Array.prototype.forEach.call(el.storeList.querySelectorAll("button[data-store]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.store === state.store));
+    });
+    el.storeSelect.value = state.store;
+    el.sort.value = state.sort;
+    if (el.q.value !== state.q) el.q.value = state.q;
+
+    // category counts respect store + search; store counts respect category + search
+    var catCounts = { all: 0 };
+    allItems.forEach(function (e) {
+      if (!matches(e, true, false)) return;
+      catCounts.all++;
+      catCounts[e.item.category] = (catCounts[e.item.category] || 0) + 1;
+    });
+    Array.prototype.forEach.call(el.chips.querySelectorAll("[data-count]"), function (n) {
+      n.textContent = catCounts[n.dataset.count] || 0;
+    });
+    var storeCounts = { all: 0 };
+    allItems.forEach(function (e) {
+      if (!matches(e, false, true)) return;
+      storeCounts.all++;
+      storeCounts[e.store.id] = (storeCounts[e.store.id] || 0) + 1;
+    });
+    Array.prototype.forEach.call(el.storeList.querySelectorAll("[data-scount]"), function (n) {
+      var c = storeCounts[n.dataset.scount] || 0;
+      n.textContent = c;
+      n.parentNode.setAttribute("data-empty", String(c === 0));
+    });
+  }
+
+  /* ---------- state <-> URL hash ---------- */
+
+  function readHash() {
+    var p = new URLSearchParams(location.hash.replace(/^#/, ""));
+    var store = p.get("store"), cat = p.get("cat"), sort = p.get("sort");
+    state.store = stores.some(function (s) { return s.id === store; }) ? store : "all";
+    state.cat = catLabel[cat] ? cat : "all";
+    state.sort = ["store", "price-asc", "price-desc", "name"].indexOf(sort) >= 0 ? sort : "store";
+    state.q = p.get("q") || "";
+  }
+
+  function writeHash() {
+    var p = new URLSearchParams();
+    if (state.store !== "all") p.set("store", state.store);
+    if (state.cat !== "all") p.set("cat", state.cat);
+    if (state.sort !== "store") p.set("sort", state.sort);
+    if (state.q) p.set("q", state.q);
+    var h = p.toString();
+    var target = h ? "#" + h : location.pathname + location.search;
+    if (("#" + h) !== location.hash && !(h === "" && location.hash === "")) {
+      try { history.replaceState(null, "", target); } catch (e) { /* file:// in some browsers */ }
+    }
+  }
+
+  function update() {
+    syncControls();
+    render();
+    writeHash();
+  }
+
+  /* ---------- init ---------- */
+
+  var itemCount = allItems.length;
+  document.getElementById("stat-stores").textContent = stores.length;
+  document.getElementById("stat-items").textContent = itemCount;
+  document.getElementById("stat-date").textContent = DATA.captured_at || "–";
+  document.getElementById("price-note").textContent =
+    "Prices were captured on " + (DATA.captured_at || "the capture date") + " and may have changed. " +
+    "They are single-unit prices exactly as shown on each product page, with no currency conversion, tax or shipping. " +
+    "A dash means the page did not show that field.";
+  document.getElementById("lede").textContent =
+    plural(stores.length, "retailer") + " that sell robotics parts directly to the public, with " + itemCount +
+    " real items captured from their own product pages. Pick a store to see its catalogue, or search and filter across all of them.";
+  if (DATA.scope_note) document.getElementById("scope-note").textContent = DATA.scope_note;
+
+  buildChips();
+  buildStoreNav();
+  readHash();
+
+  var qTimer;
+  el.q.addEventListener("input", function () {
+    clearTimeout(qTimer);
+    qTimer = setTimeout(function () { state.q = el.q.value.trim(); update(); }, 120);
+  });
+  el.q.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && el.q.value) { e.preventDefault(); el.q.value = ""; state.q = ""; update(); }
+  });
+  el.sort.addEventListener("change", function () { state.sort = el.sort.value; update(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && document.activeElement !== el.q && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
+      e.preventDefault();
+      el.q.focus();
+    }
+  });
+  window.addEventListener("hashchange", function () { readHash(); syncControls(); render(); });
+
+  update();
+})();
+</script>
+</body>
+</html>

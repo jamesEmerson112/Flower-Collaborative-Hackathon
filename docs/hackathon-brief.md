@@ -78,9 +78,14 @@ Related links found since (not from the brief):
 - Collab agent recipe on Flower Hub: https://flower.ai/apps/flwrlabs/hackathon-collab-agent-recipe (notes: [collab-agent-recipe.md](collab-agent-recipe.md))
 - Collaborative AgentApp (Grid tools enabled) on Flower Hub: https://flower.ai/apps/flwrlabs/collaborative-agent (notes: [collaborative-agent.md](collaborative-agent.md))
 - Minimal AgentApp on Flower Hub: https://flower.ai/apps/flwrlabs/agent (notes: [flwrlabs-agent.md](flwrlabs-agent.md))
+- **Robot-parts supplier dataset** (8 stores, 95 items, captured 2026-09-29; candidate supplier catalogues): [robot-parts-stores/](robot-parts-stores/README.md) · open `robot-parts-stores/index.html` locally
+- **What a SuperNode can be** (28 Hub apps studied: roles, hardware, data platforms, privacy): [supernode-scope/](supernode-scope/README.md)
+- **Flower Concept Map** (App vs Agent vs SuperNode vs Federation, interactive): https://claude.ai/artifact/Eyr5RcuZdx2yj6MQ57BtyC
+- **SuperGrid setup** (federation, invites, SuperNodes, running the master): [supergrid-setup.md](supergrid-setup.md)
 - **AgentApp API reference** (team dev reference, read from flwr 1.39.0): [agentapp-api-reference.md](agentapp-api-reference.md) · artifact: https://claude.ai/artifact/VBUJjr3bLg9HD4BCupWUtp
 - **AgentApp Trace Explorer** (animated walkthrough of the three apps): https://claude.ai/artifact/JdSfEoJszLETaSR14tuP8Y
-- Both artifacts are private until shared from their page's Share menu.
+- **Head Office & Stores** (3D explainer for non-technical audiences): https://claude.ai/artifact/ECUTCW4bZEcUaYPMwCXRLa
+- All artifacts are private until shared from their page's Share menu.
 - Collaborative agent tutorial (linked from the recipe README; **404 as of 2026-09-29**): https://flower.ai/docs/agent/tutorials/build-a-collaborative-agent.html
 - AgentApp runtime explainer (live): https://flower.ai/docs/agent/explanations/agentapp-runtime.html
 

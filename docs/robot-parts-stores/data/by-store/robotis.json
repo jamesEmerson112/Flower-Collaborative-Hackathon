@@ -1,0 +1,166 @@
+{
+  "captured_at": "2026-09-29",
+  "currency_note": "Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.",
+  "categories": [
+    {
+      "id": "servos",
+      "label": "Servos & smart actuators"
+    },
+    {
+      "id": "motor-drivers",
+      "label": "Motor drivers & controllers"
+    },
+    {
+      "id": "microcontrollers-sbc",
+      "label": "Microcontrollers & SBCs"
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors"
+    },
+    {
+      "id": "chassis-kits",
+      "label": "Chassis & robot kits"
+    },
+    {
+      "id": "wheels-mechanical",
+      "label": "Wheels & mechanical"
+    },
+    {
+      "id": "power-batteries",
+      "label": "Power & batteries"
+    }
+  ],
+  "store": {
+    "id": "robotis",
+    "name": "ROBOTIS America",
+    "url": "https://robotis.us",
+    "country": "US",
+    "specialty": "ROBOTIS DYNAMIXEL smart actuators, OpenCR/OpenRB controllers and TurtleBot3 ROS platforms",
+    "ships_international": true,
+    "fetch_status": "ok",
+    "notes": "US storefront of ROBOTIS, run by ROBOTIS America. Footer: 4222 Green River Rd, Corona, CA 92880, USA. Banner: 'Shipping across North, Central, and South America Only'."
+  },
+  "items": [
+    {
+      "id": "robotis-902-0135-000",
+      "name": "DYNAMIXEL XL430-W250-T",
+      "category": "servos",
+      "price": 27.5,
+      "currency": "USD",
+      "sku": "902-0135-000",
+      "url": "https://robotis.us/products/dynamixel-xl430-w250-t",
+      "spec": "DYNAMIXEL smart servo, 11.1 V, TTL, 57 RPM no-load, ~0.28 N·m est. rated torque, 4096-step resolution"
+    },
+    {
+      "id": "robotis-902-0163-000",
+      "name": "DYNAMIXEL XL330-M288-T",
+      "category": "servos",
+      "price": 27.49,
+      "currency": "USD",
+      "sku": "902-0163-000",
+      "url": "https://robotis.us/products/dynamixel-xl330-m288-t",
+      "spec": "DYNAMIXEL smart servo, 5 V, TTL/SBUS/iBUS/RC PWM, 103 RPM no-load, ~0.10 N·m est. rated torque"
+    },
+    {
+      "id": "robotis-902-0132-000",
+      "name": "U2D2",
+      "category": "motor-drivers",
+      "price": 36.92,
+      "currency": "USD",
+      "sku": "902-0132-000",
+      "url": "https://robotis.us/products/u2d2",
+      "spec": "USB-C to TTL/RS-485 converter for controlling DYNAMIXEL actuators from a PC"
+    },
+    {
+      "id": "robotis-903-0257-000",
+      "name": "OpenCR1.0",
+      "category": "microcontrollers-sbc",
+      "price": 247.14,
+      "currency": "USD",
+      "sku": "903-0257-000",
+      "url": "https://robotis.us/products/opencr1-0",
+      "spec": "STM32F746 Cortex-M7 216 MHz robot controller, MPU9250 IMU, RS-485 & TTL DYNAMIXEL ports"
+    },
+    {
+      "id": "robotis-902-0183-000",
+      "name": "OpenRB-150",
+      "category": "microcontrollers-sbc",
+      "price": 28.64,
+      "currency": "USD",
+      "sku": "902-0183-000",
+      "url": "https://robotis.us/products/openrb-150",
+      "spec": "Arduino-compatible DYNAMIXEL controller board (batteries and cables not included)"
+    },
+    {
+      "id": "robotis-902-0043-000",
+      "name": "Distance Measuring Sensor DMS-80",
+      "category": "sensors",
+      "price": 20.47,
+      "currency": "USD",
+      "sku": "902-0043-000",
+      "url": "https://robotis.us/products/distance-measuring-sensor-dms-80",
+      "spec": "Distance sensor, 10–80 cm, 4.5–5.5 V, 4.4 g"
+    },
+    {
+      "id": "robotis-902-0042-000",
+      "name": "Gyro Sensor GS-12",
+      "category": "sensors",
+      "price": 47.84,
+      "currency": "USD",
+      "sku": "902-0042-000",
+      "url": "https://robotis.us/products/gyro-sensor-gs-12",
+      "spec": "Gyro sensor, ±300°/s, 4.5–5.5 V, 23 × 23 × 10 mm"
+    },
+    {
+      "id": "robotis-901-0118-301",
+      "name": "TurtleBot 3 Burger RPi4 4GB [US]",
+      "category": "chassis-kits",
+      "price": 783.5,
+      "currency": "USD",
+      "sku": "901-0118-301",
+      "url": "https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us",
+      "spec": "TurtleBot3 Burger ROS robot kit with Raspberry Pi 4 (4 GB) and LDS lidar"
+    },
+    {
+      "id": "robotis-903-0260-000",
+      "name": "TB3 Wheel Tire Set-ISW-01 (2ea)",
+      "category": "wheels-mechanical",
+      "price": 10.81,
+      "currency": "USD",
+      "sku": "903-0260-000",
+      "url": "https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea",
+      "spec": "Engineering-plastic wheels with high-grip rubber tires, bolt to DYNAMIXEL, 2 pcs"
+    },
+    {
+      "id": "robotis-903-0262-000",
+      "name": "TB3 Ball Caster-A01 (1ea)",
+      "category": "wheels-mechanical",
+      "price": 4.03,
+      "currency": "USD",
+      "sku": "903-0262-000",
+      "url": "https://robotis.us/products/tb3-ball-caster-a01-1ea",
+      "spec": "Ball caster (frame + steel ball) for 6 mm plates / TB3 Waffle Plate"
+    },
+    {
+      "id": "robotis-903-0210-000",
+      "name": "LIPO Battery 11.1V 1800mAh LB-012",
+      "category": "power-batteries",
+      "price": 68.54,
+      "currency": "USD",
+      "sku": "903-0210-000",
+      "url": "https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012",
+      "spec": "LiPo 11.1 V, 1800 mAh, 5C, built-in PCM protection, 106 g"
+    },
+    {
+      "id": "robotis-903-0126-000",
+      "name": "SMPS 12V 5A PS-10 [US-110V]",
+      "category": "power-batteries",
+      "price": 24.61,
+      "currency": "USD",
+      "sku": "903-0126-000",
+      "url": "https://robotis.us/products/smps-12v-5a-ps-10-us-110v",
+      "spec": "12 V 5 A power supply, 100–260 V AC input"
+    }
+  ]
+}

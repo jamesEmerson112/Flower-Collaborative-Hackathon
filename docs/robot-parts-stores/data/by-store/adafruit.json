@@ -1,0 +1,170 @@
+{
+  "captured_at": "2026-09-29",
+  "currency_note": "Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.",
+  "categories": [
+    {
+      "id": "motors",
+      "label": "Motors"
+    },
+    {
+      "id": "servos",
+      "label": "Servos & smart actuators"
+    },
+    {
+      "id": "motor-drivers",
+      "label": "Motor drivers & controllers"
+    },
+    {
+      "id": "microcontrollers-sbc",
+      "label": "Microcontrollers & SBCs"
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors"
+    },
+    {
+      "id": "chassis-kits",
+      "label": "Chassis & robot kits"
+    },
+    {
+      "id": "wheels-mechanical",
+      "label": "Wheels & mechanical"
+    },
+    {
+      "id": "power-batteries",
+      "label": "Power & batteries"
+    }
+  ],
+  "store": {
+    "id": "adafruit",
+    "name": "Adafruit Industries",
+    "url": "https://www.adafruit.com",
+    "country": "US",
+    "specialty": "Open-source maker electronics: Feather/STEMMA boards, sensors, robotics kits and learning guides",
+    "ships_international": null,
+    "fetch_status": "ok",
+    "notes": "HQ country from general knowledge; no address or shipping policy on the fetched pages."
+  },
+  "items": [
+    {
+      "id": "adafruit-3777",
+      "name": "DC Gearbox Motor - \"TT Motor\" - 200RPM - 3 to 6VDC",
+      "category": "motors",
+      "price": 2.95,
+      "currency": "USD",
+      "sku": "3777",
+      "url": "https://www.adafruit.com/product/3777",
+      "spec": "3–6 V TT gearmotor, 1:48 gearbox, 200 RPM at 6 V, 0.8 kg·cm stall at 6 V"
+    },
+    {
+      "id": "adafruit-169",
+      "name": "Micro servo [TowerPro SG92R]",
+      "category": "servos",
+      "price": 5.95,
+      "currency": "USD",
+      "sku": "169",
+      "url": "https://www.adafruit.com/product/169",
+      "spec": "4.8 V nominal (3–6 V), 2.5 kg·cm, 0.1 s/60°, 9 g"
+    },
+    {
+      "id": "adafruit-2927",
+      "name": "DC Motor + Stepper FeatherWing Add-on For All Feather Boards",
+      "category": "motor-drivers",
+      "price": 19.95,
+      "currency": "USD",
+      "sku": "2927",
+      "url": "https://www.adafruit.com/product/2927",
+      "spec": "4 DC or 2 stepper motors, 1.2 A per bridge, motor supply 4.5–13.5 V, 12-bit speed control"
+    },
+    {
+      "id": "adafruit-1438",
+      "name": "Adafruit Motor/Stepper/Servo Shield for Arduino v3 Kit",
+      "category": "motor-drivers",
+      "price": 19.95,
+      "currency": "USD",
+      "sku": "1438",
+      "url": "https://www.adafruit.com/product/1438",
+      "spec": "Arduino shield: 4 DC or 2 stepper motors, 1.2 A/channel (3 A peak ~20 ms), I2C 0x60–0x80"
+    },
+    {
+      "id": "adafruit-4864",
+      "name": "Raspberry Pi Pico RP2040",
+      "category": "microcontrollers-sbc",
+      "price": 4.0,
+      "currency": "USD",
+      "sku": "4864",
+      "url": "https://www.adafruit.com/product/4864",
+      "spec": "RP2040 dual Arm Cortex-M0+ @ 133 MHz, 264 kB SRAM, 51.3 × 21 mm"
+    },
+    {
+      "id": "adafruit-5129",
+      "name": "Maker Pi RP2040 - Motor and Robot Controller",
+      "category": "microcontrollers-sbc",
+      "price": 14.95,
+      "currency": "USD",
+      "sku": "5129",
+      "url": "https://www.adafruit.com/product/5129",
+      "spec": "RP2040 robot controller: dual-channel DC motor driver, 4 servo ports, 7 Grove connectors"
+    },
+    {
+      "id": "adafruit-3317",
+      "name": "Adafruit VL53L0X Time of Flight Distance Sensor - ~30 to 1000mm",
+      "category": "sensors",
+      "price": 14.95,
+      "currency": "USD",
+      "sku": "3317",
+      "url": "https://www.adafruit.com/product/3317",
+      "spec": "VL53L0X laser time-of-flight, ~30–1000 mm range, STEMMA QT breakout"
+    },
+    {
+      "id": "adafruit-4007",
+      "name": "Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible",
+      "category": "sensors",
+      "price": 3.95,
+      "currency": "USD",
+      "sku": "4007",
+      "url": "https://www.adafruit.com/product/4007",
+      "spec": "HC-SR04-compatible ultrasonic, 3–5.5 V, 2–450 cm, 40 kHz"
+    },
+    {
+      "id": "adafruit-4754",
+      "name": "Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080)",
+      "category": "sensors",
+      "price": 29.5,
+      "currency": "USD",
+      "sku": "4754",
+      "url": "https://www.adafruit.com/product/4754",
+      "spec": "BNO085 9-DoF IMU with on-chip sensor fusion, STEMMA QT / Qwiic"
+    },
+    {
+      "id": "adafruit-2939",
+      "name": "Mini Robot Rover Chassis Kit - 2WD with DC Motors",
+      "category": "chassis-kits",
+      "price": 24.95,
+      "currency": "USD",
+      "sku": "2939",
+      "url": "https://www.adafruit.com/product/2939",
+      "spec": "2WD metal rover chassis with DC motors, 156 × 103 × 73.5 mm assembled"
+    },
+    {
+      "id": "adafruit-3766",
+      "name": "Orange and Clear TT Motor Wheel for TT DC Gearbox Motor",
+      "category": "wheels-mechanical",
+      "price": 1.5,
+      "currency": "USD",
+      "sku": "3766",
+      "url": "https://www.adafruit.com/product/3766",
+      "spec": "Wheel for TT gearbox motors, 63 × 29 mm, 38 g"
+    },
+    {
+      "id": "adafruit-328",
+      "name": "Lithium Ion Polymer Battery - 3.7v 2500mAh",
+      "category": "power-batteries",
+      "price": 14.95,
+      "currency": "USD",
+      "sku": "328",
+      "url": "https://www.adafruit.com/product/328",
+      "spec": "LiPo 3.7 V nominal, 2500 mAh (~10 Wh), 50 × 60 × 7.3 mm, 50 g"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "captured_at": "2026-09-29",
+  "currency_note": "Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.",
+  "categories": [
+    {
+      "id": "motors",
+      "label": "Motors"
+    },
+    {
+      "id": "servos",
+      "label": "Servos & smart actuators"
+    },
+    {
+      "id": "motor-drivers",
+      "label": "Motor drivers & controllers"
+    },
+    {
+      "id": "microcontrollers-sbc",
+      "label": "Microcontrollers & SBCs"
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors"
+    },
+    {
+      "id": "chassis-kits",
+      "label": "Chassis & robot kits"
+    },
+    {
+      "id": "wheels-mechanical",
+      "label": "Wheels & mechanical"
+    },
+    {
+      "id": "power-batteries",
+      "label": "Power & batteries"
+    }
+  ],
+  "store": {
+    "id": "dfrobot",
+    "name": "DFRobot",
+    "url": "https://www.dfrobot.com",
+    "country": "CN",
+    "specialty": "Gravity sensor modules, geared motors, robot platforms and STEM kits",
+    "ships_international": null,
+    "fetch_status": "ok",
+    "notes": "Site banner: 'Free Shipping over $150, Some Exceptions Apply'; destinations not stated on the fetched pages. HQ country from general knowledge."
+  },
+  "items": [
+    {
+      "id": "dfrobot-fit0186",
+      "name": "12V Metal DC Geared Motor with Encoder (43.8:1, 251RPM, 18Kg.cm)",
+      "category": "motors",
+      "price": 16.5,
+      "currency": "USD",
+      "sku": "FIT0186",
+      "url": "https://www.dfrobot.com/product-634.html",
+      "spec": "12 V metal gearmotor, 43.8:1, 251 RPM, 18 kg·cm, 700 counts/rev encoder"
+    },
+    {
+      "id": "dfrobot-fit0450",
+      "name": "TT Motor with Encoder (6V 160RPM 120:1)",
+      "category": "motors",
+      "price": 7.4,
+      "currency": "USD",
+      "sku": "FIT0450",
+      "url": "https://www.dfrobot.com/product-1457.html",
+      "spec": "6 V TT gearmotor, 120:1, 160 RPM, with encoder"
+    },
+    {
+      "id": "dfrobot-ser0020",
+      "name": "DSS-P05 Standard Servo (5.1kg)",
+      "category": "servos",
+      "price": 5.8,
+      "currency": "USD",
+      "sku": "SER0020",
+      "url": "https://www.dfrobot.com/product-236.html",
+      "spec": "Standard servo, 180°, 4.8–6 V, 38 g"
+    },
+    {
+      "id": "dfrobot-ser0006",
+      "name": "9g 180° Micro Servo for Arduino (1.3kg)",
+      "category": "servos",
+      "price": 3.5,
+      "currency": "USD",
+      "sku": "SER0006",
+      "url": "https://www.dfrobot.com/product-255.html",
+      "spec": "9 g micro servo, 180° ±5°, 4.8–6 V"
+    },
+    {
+      "id": "dfrobot-dri0044",
+      "name": "Fermion: TB6612FNG 2x1.2A DC Motor Driver (Breakout)",
+      "category": "motor-drivers",
+      "price": 4.5,
+      "currency": "USD",
+      "sku": "DRI0044",
+      "url": "https://www.dfrobot.com/product-1704.html",
+      "spec": "TB6612FNG dual DC motor driver breakout, 2 × 1.2 A"
+    },
+    {
+      "id": "dfrobot-dri0002",
+      "name": "MDV 2x2A DC Motor Controller (L298N)",
+      "category": "motor-drivers",
+      "price": 12.9,
+      "currency": "USD",
+      "sku": "DRI0002",
+      "url": "https://www.dfrobot.com/product-66.html",
+      "spec": "L298N dual DC motor controller, 4.8–46 V, 2 A per channel"
+    },
+    {
+      "id": "dfrobot-dfr0654",
+      "name": "FireBeetle 2 ESP32-E IoT Microcontroller (32M / 512KB, Supports Wi-Fi & Bluetooth)",
+      "category": "microcontrollers-sbc",
+      "price": 8.9,
+      "currency": "USD",
+      "sku": "DFR0654",
+      "url": "https://www.dfrobot.com/product-2195.html",
+      "spec": "ESP32-E IoT board, Wi-Fi + Bluetooth, Arduino-compatible"
+    },
+    {
+      "id": "dfrobot-sen0340",
+      "name": "TF-Luna ToF Single-Point Ranging Solid State LiDAR Sensor (8m, UART / I2C)",
+      "category": "sensors",
+      "price": 24.9,
+      "currency": "USD",
+      "sku": "SEN0340",
+      "url": "https://www.dfrobot.com/product-1995.html",
+      "spec": "TF-Luna single-point ToF lidar, 0.2–8 m, 1 cm resolution, UART/I2C"
+    },
+    {
+      "id": "dfrobot-sen0374",
+      "name": "Fermion: BNO055 Intelligent 9-axis Sensor (Breakout)",
+      "category": "sensors",
+      "price": 17.9,
+      "currency": "USD",
+      "sku": "SEN0374",
+      "url": "https://www.dfrobot.com/product-2142.html",
+      "spec": "BNO055 9-axis (accel, gyro, magnetometer + MCU), I2C"
+    },
+    {
+      "id": "dfrobot-rob0112",
+      "name": "Devastator Tank Mobile Robot Platform",
+      "category": "chassis-kits",
+      "price": 69.9,
+      "currency": "USD",
+      "sku": "ROB0112",
+      "url": "https://www.dfrobot.com/product-1219.html",
+      "spec": "Tracked tank platform, high-strength aluminium alloy, Arduino/Raspberry Pi compatible"
+    },
+    {
+      "id": "dfrobot-fit0654-1",
+      "name": "Mecanum Wheel Kit (80mm - 4 Wheels)",
+      "category": "wheels-mechanical",
+      "price": 19.6,
+      "currency": "USD",
+      "sku": "FIT0654-1",
+      "url": "https://www.dfrobot.com/product-2042.html",
+      "spec": "4 × 80 mm mecanum wheels, 9 rollers each, up to 10 kg load"
+    },
+    {
+      "id": "dfrobot-dfr0969",
+      "name": "2-Way 18650 Battery Holder",
+      "category": "power-batteries",
+      "price": 9.9,
+      "currency": "USD",
+      "sku": "DFR0969",
+      "url": "https://www.dfrobot.com/product-2578.html",
+      "spec": "Holder/charger for 2 × 18650 cells, micro-USB and USB-C in, USB out, 3 V/5 V, protected"
+    }
+  ]
+}

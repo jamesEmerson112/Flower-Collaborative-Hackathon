@@ -1,0 +1,156 @@
+{
+  "captured_at": "2026-09-29",
+  "currency_note": "Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.",
+  "categories": [
+    {
+      "id": "motors",
+      "label": "Motors"
+    },
+    {
+      "id": "servos",
+      "label": "Servos & smart actuators"
+    },
+    {
+      "id": "motor-drivers",
+      "label": "Motor drivers & controllers"
+    },
+    {
+      "id": "microcontrollers-sbc",
+      "label": "Microcontrollers & SBCs"
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors"
+    },
+    {
+      "id": "chassis-kits",
+      "label": "Chassis & robot kits"
+    },
+    {
+      "id": "power-batteries",
+      "label": "Power & batteries"
+    }
+  ],
+  "store": {
+    "id": "waveshare",
+    "name": "Waveshare Electronics",
+    "url": "https://www.waveshare.com",
+    "country": "CN",
+    "specialty": "Raspberry Pi / ESP32 HATs and boards, serial-bus servos, lidar and ROS mobile robots",
+    "ships_international": true,
+    "fetch_status": "ok",
+    "notes": "Site footer lists 'Worldwide Shipping'. HQ country from general knowledge."
+  },
+  "items": [
+    {
+      "id": "waveshare-23489",
+      "name": "DDSM115 Direct Drive Servo Motor, Low Speed & High Torque, Low Noise, All-In-One Design, Hub Motor",
+      "category": "motors",
+      "price": 64.99,
+      "currency": "USD",
+      "sku": "23489",
+      "url": "https://www.waveshare.com/ddsm115.htm",
+      "spec": "Direct-drive hub servo motor, 115 RPM rated, 0.96 N·m rated / 2.0 N·m locked-rotor, 4096-count encoder, RS485, IP54"
+    },
+    {
+      "id": "waveshare-24440",
+      "name": "2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle",
+      "category": "servos",
+      "price": 8.99,
+      "currency": "USD",
+      "sku": "24440",
+      "url": "https://www.waveshare.com/sc09-servo.htm",
+      "spec": "Serial bus servo, 2.3 kg·cm at 6 V, 300° rotation, 4–6 V, 0.1 s/60°"
+    },
+    {
+      "id": "waveshare-21568",
+      "name": "SC15 17kg Large Torque Programmable Serial Bus Servo",
+      "category": "servos",
+      "price": 17.99,
+      "currency": "USD",
+      "sku": "21568",
+      "url": "https://www.waveshare.com/sc15-servo.htm",
+      "spec": "Serial bus servo, 15 kg·cm at 6 V, metal gears, 4.8–8.4 V, 210° servo / 360° motor mode"
+    },
+    {
+      "id": "waveshare-15364",
+      "name": "Motor Driver HAT for Raspberry Pi, I2C Interface",
+      "category": "motor-drivers",
+      "price": 13.99,
+      "currency": "USD",
+      "sku": "15364",
+      "url": "https://www.waveshare.com/motor-driver-hat.htm",
+      "spec": "Raspberry Pi HAT, TB6612FNG + PCA9685, I2C, 6–12 V motor supply"
+    },
+    {
+      "id": "waveshare-15669",
+      "name": "Stepper Motor HAT for Raspberry Pi, Drives Two Stepper Motors",
+      "category": "motor-drivers",
+      "price": 18.99,
+      "currency": "USD",
+      "sku": "15669",
+      "url": "https://www.waveshare.com/stepper-motor-hat.htm",
+      "spec": "Raspberry Pi HAT, dual DRV8825, 8.2–28 V, 2.5 A, up to 1/32 microstepping"
+    },
+    {
+      "id": "waveshare-23730",
+      "name": "General Driver board for Robots, Based on ESP32, multi-functional, supports WIFI, Bluetooth and ESP-NOW communications, ESP32-WROOM-32UE, ESP32 Dev Board",
+      "category": "microcontrollers-sbc",
+      "price": 27.99,
+      "currency": "USD",
+      "sku": "23730",
+      "url": "https://www.waveshare.com/general-driver-for-robots.htm",
+      "spec": "ESP32-WROOM-32UE robot driver board, Wi-Fi/Bluetooth/ESP-NOW, works with Raspberry Pi and Jetson Nano"
+    },
+    {
+      "id": "waveshare-25978",
+      "name": "D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus",
+      "category": "sensors",
+      "price": 95.99,
+      "currency": "USD",
+      "sku": "25978",
+      "url": "https://www.waveshare.com/d500-lidar-kit.htm",
+      "spec": "360° DTOF lidar, 0.03–12 m, 5000 Hz ranging, 6–13 Hz scan, UART 230400"
+    },
+    {
+      "id": "waveshare-18301",
+      "name": "TOF Laser Range Sensor, UART / CAN Bus, Cascading Support, Ranging up to 5m, with Software",
+      "category": "sensors",
+      "price": 17.99,
+      "currency": "USD",
+      "sku": "18301",
+      "url": "https://www.waveshare.com/tof-laser-range-sensor.htm",
+      "spec": "Time-of-flight laser range sensor, up to 5 m, UART/CAN, cascadable"
+    },
+    {
+      "id": "waveshare-wave-rover",
+      "name": "WAVE ROVER Flexible And Expandable 4WD Mobile Robot Chassis, Full Metal Body, Multiple Hosts Support, With Onboard ESP32 Module",
+      "category": "chassis-kits",
+      "price": 89.99,
+      "currency": "USD",
+      "sku": null,
+      "url": "https://www.waveshare.com/wave-rover.htm",
+      "spec": "Full-metal 4WD chassis with onboard ESP32, 4 × 1.5 W motors, 3 × 18650 (not included), 194 × 168 × 100 mm"
+    },
+    {
+      "id": "waveshare-ups-hat",
+      "name": "Uninterruptible Power Supply UPS HAT For Raspberry Pi, Stable 5V Power Output",
+      "category": "power-batteries",
+      "price": 19.99,
+      "currency": "USD",
+      "sku": null,
+      "url": "https://www.waveshare.com/ups-hat.htm",
+      "spec": "5 V UPS HAT for Raspberry Pi, 18650 cells (not included), 8.4 V 2 A charger, I2C monitoring"
+    },
+    {
+      "id": "waveshare-dc-buck-adapter-7-2v",
+      "name": "Serial Bus Servo DC Buck Adapter, Mini Module, Design for Serial Bus Servos, Easy to Use, 7.2V / 6V Buck Regulator",
+      "category": "power-batteries",
+      "price": 3.49,
+      "currency": "USD",
+      "sku": null,
+      "url": "https://www.waveshare.com/dc-buck-adapter-7.2v.htm",
+      "spec": "Buck adapter for serial bus servos, 9–36 V in, 7.2 V or 6 V out"
+    }
+  ]
+}

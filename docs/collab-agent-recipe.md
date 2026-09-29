@@ -1,7 +1,7 @@
 # Exploring `@flwrlabs/hackathon-collab-agent-recipe`
 
 Hub page: https://flower.ai/apps/flwrlabs/hackathon-collab-agent-recipe
-Local copy: [`hackathon-collab-agent-recipe/`](../hackathon-collab-agent-recipe/). It is unmodified; keep it that way so it can be diffed against upstream.
+Local copy: [`docs/hackathon-collab-agent-recipe/`](hackathon-collab-agent-recipe/). It is unmodified; keep it that way so it can be diffed against upstream.
 
 ---
 
@@ -82,7 +82,7 @@ How a SuperNode agent gets its input (`flwr/supercore/task_process/agent/run_age
 Requirements: Python 3.11+, `uv`, and a SuperGrid account with Flower Agent access.
 
 ```shell
-cd hackathon-collab-agent-recipe   # the README says `cd collaborative-agent`; that name is stale
+cd docs/hackathon-collab-agent-recipe   # the README says `cd collaborative-agent`; that name is stale
 uv sync
 uv run flwr build
 uv run flwr login supergrid        # interactive; uses your Flower account

@@ -1,0 +1,2391 @@
+{
+  "captured_at": "2026-09-29",
+  "currency_note": "Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.",
+  "scope_note": "8 retailers that sell robotics parts directly to the public online (hobby, maker, education, components), 8-12 items each, spread across 8 normalised categories. General marketplaces (Amazon, eBay, AliExpress) excluded. Skipped: RobotShop and DigiKey (HTTP 403 to automated fetching), Mouser (bot-check page instead of content); Pimoroni and The Pi Hut were reachable but dropped to keep the scope at 8 stores. Every item comes from a product page fetched on the capture date; fields not visible on the page are null.",
+  "categories": [
+    {
+      "id": "motors",
+      "label": "Motors"
+    },
+    {
+      "id": "servos",
+      "label": "Servos & smart actuators"
+    },
+    {
+      "id": "motor-drivers",
+      "label": "Motor drivers & controllers"
+    },
+    {
+      "id": "microcontrollers-sbc",
+      "label": "Microcontrollers & SBCs"
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors"
+    },
+    {
+      "id": "chassis-kits",
+      "label": "Chassis & robot kits"
+    },
+    {
+      "id": "wheels-mechanical",
+      "label": "Wheels & mechanical"
+    },
+    {
+      "id": "power-batteries",
+      "label": "Power & batteries"
+    }
+  ],
+  "stores": [
+    {
+      "id": "adafruit",
+      "name": "Adafruit Industries",
+      "url": "https://www.adafruit.com",
+      "country": "US",
+      "specialty": "Open-source maker electronics: Feather/STEMMA boards, sensors, robotics kits and learning guides",
+      "ships_international": null,
+      "fetch_status": "ok",
+      "notes": "HQ country from general knowledge; no address or shipping policy on the fetched pages.",
+      "items": [
+        {
+          "id": "adafruit-3777",
+          "name": "DC Gearbox Motor - \"TT Motor\" - 200RPM - 3 to 6VDC",
+          "category": "motors",
+          "price": 2.95,
+          "currency": "USD",
+          "sku": "3777",
+          "url": "https://www.adafruit.com/product/3777",
+          "spec": "3–6 V TT gearmotor, 1:48 gearbox, 200 RPM at 6 V, 0.8 kg·cm stall at 6 V"
+        },
+        {
+          "id": "adafruit-169",
+          "name": "Micro servo [TowerPro SG92R]",
+          "category": "servos",
+          "price": 5.95,
+          "currency": "USD",
+          "sku": "169",
+          "url": "https://www.adafruit.com/product/169",
+          "spec": "4.8 V nominal (3–6 V), 2.5 kg·cm, 0.1 s/60°, 9 g"
+        },
+        {
+          "id": "adafruit-2927",
+          "name": "DC Motor + Stepper FeatherWing Add-on For All Feather Boards",
+          "category": "motor-drivers",
+          "price": 19.95,
+          "currency": "USD",
+          "sku": "2927",
+          "url": "https://www.adafruit.com/product/2927",
+          "spec": "4 DC or 2 stepper motors, 1.2 A per bridge, motor supply 4.5–13.5 V, 12-bit speed control"
+        },
+        {
+          "id": "adafruit-1438",
+          "name": "Adafruit Motor/Stepper/Servo Shield for Arduino v3 Kit",
+          "category": "motor-drivers",
+          "price": 19.95,
+          "currency": "USD",
+          "sku": "1438",
+          "url": "https://www.adafruit.com/product/1438",
+          "spec": "Arduino shield: 4 DC or 2 stepper motors, 1.2 A/channel (3 A peak ~20 ms), I2C 0x60–0x80"
+        },
+        {
+          "id": "adafruit-4864",
+          "name": "Raspberry Pi Pico RP2040",
+          "category": "microcontrollers-sbc",
+          "price": 4.0,
+          "currency": "USD",
+          "sku": "4864",
+          "url": "https://www.adafruit.com/product/4864",
+          "spec": "RP2040 dual Arm Cortex-M0+ @ 133 MHz, 264 kB SRAM, 51.3 × 21 mm"
+        },
+        {
+          "id": "adafruit-5129",
+          "name": "Maker Pi RP2040 - Motor and Robot Controller",
+          "category": "microcontrollers-sbc",
+          "price": 14.95,
+          "currency": "USD",
+          "sku": "5129",
+          "url": "https://www.adafruit.com/product/5129",
+          "spec": "RP2040 robot controller: dual-channel DC motor driver, 4 servo ports, 7 Grove connectors"
+        },
+        {
+          "id": "adafruit-3317",
+          "name": "Adafruit VL53L0X Time of Flight Distance Sensor - ~30 to 1000mm",
+          "category": "sensors",
+          "price": 14.95,
+          "currency": "USD",
+          "sku": "3317",
+          "url": "https://www.adafruit.com/product/3317",
+          "spec": "VL53L0X laser time-of-flight, ~30–1000 mm range, STEMMA QT breakout"
+        },
+        {
+          "id": "adafruit-4007",
+          "name": "Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible",
+          "category": "sensors",
+          "price": 3.95,
+          "currency": "USD",
+          "sku": "4007",
+          "url": "https://www.adafruit.com/product/4007",
+          "spec": "HC-SR04-compatible ultrasonic, 3–5.5 V, 2–450 cm, 40 kHz"
+        },
+        {
+          "id": "adafruit-4754",
+          "name": "Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080)",
+          "category": "sensors",
+          "price": 29.5,
+          "currency": "USD",
+          "sku": "4754",
+          "url": "https://www.adafruit.com/product/4754",
+          "spec": "BNO085 9-DoF IMU with on-chip sensor fusion, STEMMA QT / Qwiic"
+        },
+        {
+          "id": "adafruit-2939",
+          "name": "Mini Robot Rover Chassis Kit - 2WD with DC Motors",
+          "category": "chassis-kits",
+          "price": 24.95,
+          "currency": "USD",
+          "sku": "2939",
+          "url": "https://www.adafruit.com/product/2939",
+          "spec": "2WD metal rover chassis with DC motors, 156 × 103 × 73.5 mm assembled"
+        },
+        {
+          "id": "adafruit-3766",
+          "name": "Orange and Clear TT Motor Wheel for TT DC Gearbox Motor",
+          "category": "wheels-mechanical",
+          "price": 1.5,
+          "currency": "USD",
+          "sku": "3766",
+          "url": "https://www.adafruit.com/product/3766",
+          "spec": "Wheel for TT gearbox motors, 63 × 29 mm, 38 g"
+        },
+        {
+          "id": "adafruit-328",
+          "name": "Lithium Ion Polymer Battery - 3.7v 2500mAh",
+          "category": "power-batteries",
+          "price": 14.95,
+          "currency": "USD",
+          "sku": "328",
+          "url": "https://www.adafruit.com/product/328",
+          "spec": "LiPo 3.7 V nominal, 2500 mAh (~10 Wh), 50 × 60 × 7.3 mm, 50 g"
+        }
+      ]
+    },
+    {
+      "id": "sparkfun",
+      "name": "SparkFun Electronics",
+      "url": "https://www.sparkfun.com",
+      "country": "US",
+      "specialty": "Qwiic-ecosystem breakouts, Arduino-compatible dev boards, robotics and GNSS parts",
+      "ships_international": null,
+      "fetch_status": "ok",
+      "notes": "Site footer: 6333 Dry Creek Parkway, Niwot, CO 80503. International shipping not stated on the fetched pages.",
+      "items": [
+        {
+          "id": "sparkfun-rob-13302",
+          "name": "Hobby Gearmotor - 140 RPM (Pair)",
+          "category": "motors",
+          "price": 7.5,
+          "currency": "USD",
+          "sku": "ROB-13302",
+          "url": "https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html",
+          "spec": "Pair of DAGU hobby gearmotors, 4.5 V, 48:1, 140 RPM unloaded, 190 mA no-load"
+        },
+        {
+          "id": "sparkfun-rob-09238",
+          "name": "Stepper Motor - 32 oz.in (200 steps/rev, 1200mm Wire)",
+          "category": "motors",
+          "price": 26.95,
+          "currency": "USD",
+          "sku": "ROB-09238",
+          "url": "https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html",
+          "spec": "NEMA 17 bipolar stepper, 200 steps/rev, 32 oz·in holding, 0.33 A, 5 mm shaft"
+        },
+        {
+          "id": "sparkfun-rob-09065",
+          "name": "Servo - Generic (Sub-Micro Size)",
+          "category": "servos",
+          "price": 12.95,
+          "currency": "USD",
+          "sku": "ROB-09065",
+          "url": "https://www.sparkfun.com/servo-generic-sub-micro-size.html",
+          "spec": "Sub-micro servo, 4.8–6 V, 20.8 oz·in and 0.10 s/60° at 6 V, ~160° travel"
+        },
+        {
+          "id": "sparkfun-rob-14450",
+          "name": "SparkFun Motor Driver - Dual TB6612FNG (with Headers)",
+          "category": "motor-drivers",
+          "price": 14.5,
+          "currency": "USD",
+          "sku": "ROB-14450",
+          "url": "https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html",
+          "spec": "TB6612FNG dual DC motor driver, up to 1.2 A per motor, headers pre-soldered"
+        },
+        {
+          "id": "sparkfun-rob-15451",
+          "name": "SparkFun Qwiic Motor Driver",
+          "category": "motor-drivers",
+          "price": 23.78,
+          "currency": "USD",
+          "sku": "ROB-15451",
+          "url": "https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html",
+          "spec": "2-channel I2C/Qwiic motor driver, 1.2 A per channel (1.5 A peak), 127 drive levels"
+        },
+        {
+          "id": "sparkfun-dev-15123",
+          "name": "SparkFun RedBoard Qwiic",
+          "category": "microcontrollers-sbc",
+          "price": 21.95,
+          "currency": "USD",
+          "sku": "DEV-15123",
+          "url": "https://www.sparkfun.com/sparkfun-redboard-qwiic.html",
+          "spec": "ATmega328 Uno-compatible board, 7–15 V in, 20 I/O (6 PWM, 6 analog), Qwiic connector"
+        },
+        {
+          "id": "sparkfun-sen-15335",
+          "name": "SparkFun 9DoF IMU Breakout - ICM-20948 (Qwiic)",
+          "category": "sensors",
+          "price": 21.95,
+          "currency": "USD",
+          "sku": "SEN-15335",
+          "url": "https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html",
+          "spec": "ICM-20948 9-axis IMU with Digital Motion Processor, Qwiic/I2C"
+        },
+        {
+          "id": "sparkfun-sen-14722",
+          "name": "SparkFun Distance Sensor Breakout - 4 Meter, VL53L1X (Qwiic)",
+          "category": "sensors",
+          "price": 29.95,
+          "currency": "USD",
+          "sku": "SEN-14722",
+          "url": "https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html",
+          "spec": "VL53L1X laser ToF distance sensor, up to 4 m, mm precision, I2C/Qwiic"
+        },
+        {
+          "id": "sparkfun-sen-15569",
+          "name": "Ultrasonic Distance Sensor - 5V (HC-SR04)",
+          "category": "sensors",
+          "price": 5.25,
+          "currency": "USD",
+          "sku": "SEN-15569",
+          "url": "https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html",
+          "spec": "HC-SR04 ultrasonic, 5 V, 2 cm–4 m, accuracy up to 3 mm"
+        },
+        {
+          "id": "sparkfun-rob-13301",
+          "name": "Shadow Chassis",
+          "category": "chassis-kits",
+          "price": 14.95,
+          "currency": "USD",
+          "sku": "ROB-13301",
+          "url": "https://www.sparkfun.com/shadow-chassis.html",
+          "spec": "Modular ABS robot chassis (RobotZone), Actobotics hub patterns, snap-on controller mounts"
+        },
+        {
+          "id": "sparkfun-rob-13259",
+          "name": "Wheel - 65mm (Rubber Tire, Pair)",
+          "category": "wheels-mechanical",
+          "price": 4.5,
+          "currency": "USD",
+          "sku": "ROB-13259",
+          "url": "https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html",
+          "spec": "65 mm wheels with rubber tires, pair; fit DAGU right-angle gearmotors"
+        },
+        {
+          "id": "sparkfun-prt-13855",
+          "name": "Lithium Ion Battery - 2Ah",
+          "category": "power-batteries",
+          "price": 19.41,
+          "currency": "USD",
+          "sku": "PRT-13855",
+          "url": "https://www.sparkfun.com/lithium-ion-battery-2ah.html",
+          "spec": "Li-ion 3.7 V, 2000 mAh, slim pack"
+        }
+      ]
+    },
+    {
+      "id": "pololu",
+      "name": "Pololu Robotics & Electronics",
+      "url": "https://www.pololu.com",
+      "country": "US",
+      "specialty": "Gearmotors, motor drivers, voltage regulators, sensors and robot chassis",
+      "ships_international": null,
+      "fetch_status": "ok",
+      "notes": "Product pages state 'Free shipping in USA over $100'; international shipping not stated on the fetched pages. HQ country from general knowledge.",
+      "items": [
+        {
+          "id": "pololu-3036",
+          "name": "5:1 Micro Metal Gearmotor HPCB 12V",
+          "category": "motors",
+          "price": 26.45,
+          "currency": "USD",
+          "sku": "3036",
+          "url": "https://www.pololu.com/product/3036",
+          "spec": "Micro metal gearmotor, 12 V HPCB, ~5:1, 6800 RPM no-load, 0.75 A stall, 3 mm D-shaft"
+        },
+        {
+          "id": "pololu-2818",
+          "name": "FEETECH FS90 Micro Servo",
+          "category": "servos",
+          "price": 8.4,
+          "currency": "USD",
+          "sku": "2818",
+          "url": "https://www.pololu.com/product/2818",
+          "spec": "Analog micro servo; at 6 V: 0.10 s/60°, 1.5 kg·cm, 9.0 g; 3.3 V or 5 V signal"
+        },
+        {
+          "id": "pololu-2130",
+          "name": "DRV8833 Dual Motor Driver Carrier",
+          "category": "motor-drivers",
+          "price": 10.95,
+          "currency": "USD",
+          "sku": "2130",
+          "url": "https://www.pololu.com/product/2130",
+          "spec": "DRV8833 dual H-bridge, 2.7–10.8 V, 1.2 A/channel continuous (2 A peak)"
+        },
+        {
+          "id": "pololu-2133",
+          "name": "DRV8825 Stepper Motor Driver Carrier, High Current",
+          "category": "motor-drivers",
+          "price": 15.95,
+          "currency": "USD",
+          "sku": "2133",
+          "url": "https://www.pololu.com/product/2133",
+          "spec": "DRV8825 bipolar stepper driver, 8.2–45 V, ~1.5 A/phase (2.2 A with cooling), to 1/32 step"
+        },
+        {
+          "id": "pololu-3101",
+          "name": "A-Star 32U4 Micro",
+          "category": "microcontrollers-sbc",
+          "price": 19.95,
+          "currency": "USD",
+          "sku": "3101",
+          "url": "https://www.pololu.com/product/3101",
+          "spec": "ATmega32U4, 18 I/O (6 PWM, 8 analog), Micro-USB, 1″ × 0.6″, Arduino bootloader"
+        },
+        {
+          "id": "pololu-3544",
+          "name": "Romi 32U4 Control Board",
+          "category": "microcontrollers-sbc",
+          "price": 74.95,
+          "currency": "USD",
+          "sku": "3544",
+          "url": "https://www.pololu.com/product/3544",
+          "spec": "ATmega32U4 robot controller with dual motor drivers, inertial sensors, encoder inputs, Pi interface"
+        },
+        {
+          "id": "pololu-3415",
+          "name": "VL53L1X Time-of-Flight Distance Sensor Carrier with Voltage Regulator, 400cm Max",
+          "category": "sensors",
+          "price": 22.95,
+          "currency": "USD",
+          "sku": "3415",
+          "url": "https://www.pololu.com/product/3415",
+          "spec": "VL53L1X laser ToF ranging up to 4 m, carrier with voltage regulator"
+        },
+        {
+          "id": "pololu-4148",
+          "name": "QTR-MD-08RC Reflectance Sensor Array: 8-Channel, 8mm Pitch, RC Output",
+          "category": "sensors",
+          "price": 9.9,
+          "currency": "USD",
+          "sku": "4148",
+          "url": "https://www.pololu.com/product/4148",
+          "spec": "8-channel IR reflectance (line) sensor array, 8 mm pitch, RC output, 2.9–5.5 V"
+        },
+        {
+          "id": "pololu-3500",
+          "name": "Romi Chassis Kit - Black",
+          "category": "chassis-kits",
+          "price": 39.95,
+          "currency": "USD",
+          "sku": "3500",
+          "url": "https://www.pololu.com/product/3500",
+          "spec": "Romi chassis kit: 2 motors, 2 wheels, ball caster, battery contacts"
+        },
+        {
+          "id": "pololu-3690",
+          "name": "Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80×10mm, Black, 2-Pack",
+          "category": "wheels-mechanical",
+          "price": 11.95,
+          "currency": "USD",
+          "sku": "3690",
+          "url": "https://www.pololu.com/product/3690",
+          "spec": "80 × 10 mm wheels, silicone tires, collets for 3/4 mm D and round shafts, 2-pack"
+        },
+        {
+          "id": "pololu-954",
+          "name": "Pololu Ball Caster with 3/4″ Plastic Ball",
+          "category": "wheels-mechanical",
+          "price": 5.49,
+          "currency": "USD",
+          "sku": "954",
+          "url": "https://www.pololu.com/product/954",
+          "spec": "Ball caster with 3/4″ plastic ball, 0.9″–1.2″ height via spacers"
+        },
+        {
+          "id": "pololu-2831",
+          "name": "Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5",
+          "category": "power-batteries",
+          "price": 12.95,
+          "currency": "USD",
+          "sku": "2831",
+          "url": "https://www.pololu.com/product/2831",
+          "spec": "Step-down regulator, 5 V out, 1 A, 5.1–36 V in"
+        }
+      ]
+    },
+    {
+      "id": "servocity",
+      "name": "ServoCity",
+      "url": "https://www.servocity.com",
+      "country": "US",
+      "specialty": "goBILDA metal build system: planetary gearmotors, servos, structure, wheels and robot chassis",
+      "ships_international": null,
+      "fetch_status": "ok",
+      "notes": "Site footer: '© 2026 Base 10 Assets, LLC'. HQ country from general knowledge; shipping policy not on the fetched pages.",
+      "items": [
+        {
+          "id": "servocity-5203-2402-0019",
+          "name": "5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)",
+          "category": "motors",
+          "price": 54.99,
+          "currency": "USD",
+          "sku": "5203-2402-0019",
+          "url": "https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/",
+          "spec": "12 VDC planetary gearmotor, 19.2:1, 312 RPM, 24.3 kg·cm (338 oz-in) stall, 8 mm REX shaft, encoder"
+        },
+        {
+          "id": "servocity-638114",
+          "name": "Premium N20 Gear Motor (210:1 Ratio, 130 RPM)",
+          "category": "motors",
+          "price": 12.99,
+          "currency": "USD",
+          "sku": "638114",
+          "url": "https://www.servocity.com/130-rpm-micro-gear-motor/",
+          "spec": "N20 micro gearmotor, 210:1 ratio, 130 RPM"
+        },
+        {
+          "id": "servocity-2002-0180-0002",
+          "name": "Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)",
+          "category": "servos",
+          "price": 17.99,
+          "currency": "USD",
+          "sku": "2002-0180-0002",
+          "url": "https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/",
+          "spec": "Standard-size servo, steel gears, 180°, 75 oz-in (5.40 kg·cm) stall at 6 V"
+        },
+        {
+          "id": "servocity-2003-0180-0001",
+          "name": "Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)",
+          "category": "servos",
+          "price": 9.99,
+          "currency": "USD",
+          "sku": "2003-0180-0001",
+          "url": "https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/",
+          "spec": "Budget servo, nylon gears, 180°, 0.15 s/60°, 53 oz-in"
+        },
+        {
+          "id": "servocity-3105-0101-0020",
+          "name": "1x20A Motor Controller (9-30V Input)",
+          "category": "motor-drivers",
+          "price": 39.99,
+          "currency": "USD",
+          "sku": "3105-0101-0020",
+          "url": "https://www.servocity.com/1x20a-motor-controller/",
+          "spec": "Single brushed DC ESC, 9–30 V in, 20 A continuous (30 A burst), R/C input, 6 V BEC"
+        },
+        {
+          "id": "servocity-imc404",
+          "name": "Roboclaw 2x7A Motor Controller",
+          "category": "motor-drivers",
+          "price": 79.99,
+          "currency": "USD",
+          "sku": "IMC404",
+          "url": "https://www.servocity.com/roboclaw-2x7a-motor-controller/",
+          "spec": "Dual brushed DC, 7.5 A continuous (15 A peak) per channel, USB/RC/serial/analog, dual encoder inputs"
+        },
+        {
+          "id": "servocity-3114-0001-0001",
+          "name": "Pololu A-Star 32U4 Prime SV",
+          "category": "microcontrollers-sbc",
+          "price": 39.99,
+          "currency": "USD",
+          "sku": "3114-0001-0001",
+          "url": "https://www.servocity.com/pololu-a-star-32u4-prime-sv/",
+          "spec": "ATmega32U4 in Arduino form factor, 5–36 V input (no microSD)"
+        },
+        {
+          "id": "servocity-3124-0001-0001",
+          "name": "Laser Distance Sensor (1m Range, 3.3-5V, Digital or Analog Output)",
+          "category": "sensors",
+          "price": 29.99,
+          "currency": "USD",
+          "sku": "3124-0001-0001",
+          "url": "https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/",
+          "spec": "Laser time-of-flight distance sensor, up to 1 m, 3.3–5 V, digital or analog output"
+        },
+        {
+          "id": "servocity-3209-0001-0007",
+          "name": "Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels)",
+          "category": "chassis-kits",
+          "price": 699.99,
+          "currency": "USD",
+          "sku": "3209-0001-0007",
+          "url": "https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/",
+          "spec": "Mecanum drive chassis kit, 312 RPM planetary motors, 104 mm GripForce mecanum wheels"
+        },
+        {
+          "id": "servocity-3624-0014-0096",
+          "name": "96mm Omni Wheel (14mm Bore, 50A Durometer)",
+          "category": "wheels-mechanical",
+          "price": 21.99,
+          "currency": "USD",
+          "sku": "3624-0014-0096",
+          "url": "https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/",
+          "spec": "96 mm omni wheel, 14 mm bore, 50A-durometer rollers"
+        },
+        {
+          "id": "servocity-3213-3606-0002",
+          "name": "96mm Mecanum Wheel Set (70A Durometer Bearing Supported Rollers)",
+          "category": "wheels-mechanical",
+          "price": 169.99,
+          "currency": "USD",
+          "sku": "3213-3606-0002",
+          "url": "https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/",
+          "spec": "96 mm goBILDA mecanum wheel set, 70A bearing-supported rollers"
+        },
+        {
+          "id": "servocity-3100-0012-0020",
+          "name": "12V NiMH Nested Battery (3000mAh, MH-FC XT30 Connector)",
+          "category": "power-batteries",
+          "price": 64.99,
+          "currency": "USD",
+          "sku": "3100-0012-0020",
+          "url": "https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/",
+          "spec": "12 V NiMH, 3000 mAh, nested form factor, XT30 (MH-FC) connector"
+        }
+      ]
+    },
+    {
+      "id": "seeed",
+      "name": "Seeed Studio",
+      "url": "https://www.seeedstudio.com",
+      "country": "CN",
+      "specialty": "Grove plug-in modules, XIAO boards, edge-AI hardware and LeRobot arm kits",
+      "ships_international": true,
+      "fetch_status": "ok",
+      "notes": "Product-page warehouse table: 'CN warehouse ships to most countries in the world. US warehouse ships to USA only. DE warehouse ships to European Union only.' HQ country from general knowledge.",
+      "items": [
+        {
+          "id": "seeed-108990003",
+          "name": "Small Size and High Torque Stepper Motor - 24BYJ48",
+          "category": "motors",
+          "price": 4.9,
+          "currency": "USD",
+          "sku": "108990003",
+          "url": "https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html",
+          "spec": "24BYJ48 stepper, 5 V DC, 2-phase, 1/32 gear ratio, 5.625°/32 step angle"
+        },
+        {
+          "id": "seeed-316010005",
+          "name": "Grove - Servo",
+          "category": "servos",
+          "price": 6.99,
+          "currency": "USD",
+          "sku": "316010005",
+          "url": "https://www.seeedstudio.com/Grove-Servo.html",
+          "spec": "Hobby servo with Grove connector, 4.8–6.0 V (5 V typical)"
+        },
+        {
+          "id": "seeed-108090003",
+          "name": "Feetech ST3215-C047 12V 30Kg Servo",
+          "category": "servos",
+          "price": 23.99,
+          "currency": "USD",
+          "sku": "108090003",
+          "url": "https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html",
+          "spec": "12 V serial bus servo, 1:345 metal gearbox, 12-bit magnetic encoder, 30 kg·cm stall"
+        },
+        {
+          "id": "seeed-108020103",
+          "name": "Grove - I2C Motor Driver (TB6612FNG)",
+          "category": "motor-drivers",
+          "price": 10.98,
+          "currency": "USD",
+          "sku": "108020103",
+          "url": "https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html",
+          "spec": "TB6612FNG: 2 DC motors or 1 stepper up to 12 V / 1.2 A, Grove I2C"
+        },
+        {
+          "id": "seeed-113991114",
+          "name": "Seeed Studio XIAO ESP32-S3",
+          "category": "microcontrollers-sbc",
+          "price": 7.49,
+          "currency": "USD",
+          "sku": "113991114",
+          "url": "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html",
+          "spec": "240 MHz dual-core Xtensa LX7, Wi-Fi + BLE 5.0, thumb-sized"
+        },
+        {
+          "id": "seeed-102110919",
+          "name": "Raspberry Pi 5 8GB",
+          "category": "microcontrollers-sbc",
+          "price": 175.0,
+          "currency": "USD",
+          "sku": "102110919",
+          "url": "https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html",
+          "spec": "2.4 GHz 64-bit quad-core Arm, 800 MHz VideoCore VII GPU, 8 GB RAM"
+        },
+        {
+          "id": "seeed-101020010",
+          "name": "Grove - Ultrasonic Distance Sensor",
+          "category": "sensors",
+          "price": 4.99,
+          "currency": "USD",
+          "sku": "101020010",
+          "url": "https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html",
+          "spec": "Ultrasonic ranging 3–350 cm, trigger and echo on a single GPIO, Grove"
+        },
+        {
+          "id": "seeed-101020585",
+          "name": "Grove - IMU 9DOF (ICM20600+AK09918)",
+          "category": "sensors",
+          "price": 11.25,
+          "currency": "USD",
+          "sku": "101020585",
+          "url": "https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html",
+          "spec": "9-DoF IMU: ICM20600 gyro/accelerometer + AK09918 compass, Grove"
+        },
+        {
+          "id": "seeed-101020532",
+          "name": "Grove - Time of Flight Distance Sensor(VL53L0X) - (ToF) laser-ranging module,Long Range Precision ranging",
+          "category": "sensors",
+          "price": 7.99,
+          "currency": "USD",
+          "sku": "101020532",
+          "url": "https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html",
+          "spec": "VL53L0X laser time-of-flight distance sensor, Grove"
+        },
+        {
+          "id": "seeed-110090325",
+          "name": "Robot Car Kit-6WD Off-Road Chassis Kit",
+          "category": "chassis-kits",
+          "price": 99.9,
+          "currency": "USD",
+          "sku": "110090325",
+          "url": "https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html",
+          "spec": "6WD off-road chassis, 2 mm aluminium, 6 DC motors with 1:34 metal gearboxes"
+        },
+        {
+          "id": "seeed-114993667",
+          "name": "SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm",
+          "category": "chassis-kits",
+          "price": 277.99,
+          "currency": "USD",
+          "sku": "114993667",
+          "url": "https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html",
+          "spec": "LeRobot SO-101 6-DoF arm motor kit: servos, adapter board, cables (no 3D-printed parts)"
+        },
+        {
+          "id": "seeed-106990290",
+          "name": "Lipo Rider Plus (Charger/Booster) - 5V/2.4A USB Type C",
+          "category": "power-batteries",
+          "price": 4.99,
+          "currency": "USD",
+          "sku": "106990290",
+          "url": "https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html",
+          "spec": "LiPo charger/booster, 3 A charging, 5 V / 2.4 A output, USB-C"
+        }
+      ]
+    },
+    {
+      "id": "dfrobot",
+      "name": "DFRobot",
+      "url": "https://www.dfrobot.com",
+      "country": "CN",
+      "specialty": "Gravity sensor modules, geared motors, robot platforms and STEM kits",
+      "ships_international": null,
+      "fetch_status": "ok",
+      "notes": "Site banner: 'Free Shipping over $150, Some Exceptions Apply'; destinations not stated on the fetched pages. HQ country from general knowledge.",
+      "items": [
+        {
+          "id": "dfrobot-fit0186",
+          "name": "12V Metal DC Geared Motor with Encoder (43.8:1, 251RPM, 18Kg.cm)",
+          "category": "motors",
+          "price": 16.5,
+          "currency": "USD",
+          "sku": "FIT0186",
+          "url": "https://www.dfrobot.com/product-634.html",
+          "spec": "12 V metal gearmotor, 43.8:1, 251 RPM, 18 kg·cm, 700 counts/rev encoder"
+        },
+        {
+          "id": "dfrobot-fit0450",
+          "name": "TT Motor with Encoder (6V 160RPM 120:1)",
+          "category": "motors",
+          "price": 7.4,
+          "currency": "USD",
+          "sku": "FIT0450",
+          "url": "https://www.dfrobot.com/product-1457.html",
+          "spec": "6 V TT gearmotor, 120:1, 160 RPM, with encoder"
+        },
+        {
+          "id": "dfrobot-ser0020",
+          "name": "DSS-P05 Standard Servo (5.1kg)",
+          "category": "servos",
+          "price": 5.8,
+          "currency": "USD",
+          "sku": "SER0020",
+          "url": "https://www.dfrobot.com/product-236.html",
+          "spec": "Standard servo, 180°, 4.8–6 V, 38 g"
+        },
+        {
+          "id": "dfrobot-ser0006",
+          "name": "9g 180° Micro Servo for Arduino (1.3kg)",
+          "category": "servos",
+          "price": 3.5,
+          "currency": "USD",
+          "sku": "SER0006",
+          "url": "https://www.dfrobot.com/product-255.html",
+          "spec": "9 g micro servo, 180° ±5°, 4.8–6 V"
+        },
+        {
+          "id": "dfrobot-dri0044",
+          "name": "Fermion: TB6612FNG 2x1.2A DC Motor Driver (Breakout)",
+          "category": "motor-drivers",
+          "price": 4.5,
+          "currency": "USD",
+          "sku": "DRI0044",
+          "url": "https://www.dfrobot.com/product-1704.html",
+          "spec": "TB6612FNG dual DC motor driver breakout, 2 × 1.2 A"
+        },
+        {
+          "id": "dfrobot-dri0002",
+          "name": "MDV 2x2A DC Motor Controller (L298N)",
+          "category": "motor-drivers",
+          "price": 12.9,
+          "currency": "USD",
+          "sku": "DRI0002",
+          "url": "https://www.dfrobot.com/product-66.html",
+          "spec": "L298N dual DC motor controller, 4.8–46 V, 2 A per channel"
+        },
+        {
+          "id": "dfrobot-dfr0654",
+          "name": "FireBeetle 2 ESP32-E IoT Microcontroller (32M / 512KB, Supports Wi-Fi & Bluetooth)",
+          "category": "microcontrollers-sbc",
+          "price": 8.9,
+          "currency": "USD",
+          "sku": "DFR0654",
+          "url": "https://www.dfrobot.com/product-2195.html",
+          "spec": "ESP32-E IoT board, Wi-Fi + Bluetooth, Arduino-compatible"
+        },
+        {
+          "id": "dfrobot-sen0340",
+          "name": "TF-Luna ToF Single-Point Ranging Solid State LiDAR Sensor (8m, UART / I2C)",
+          "category": "sensors",
+          "price": 24.9,
+          "currency": "USD",
+          "sku": "SEN0340",
+          "url": "https://www.dfrobot.com/product-1995.html",
+          "spec": "TF-Luna single-point ToF lidar, 0.2–8 m, 1 cm resolution, UART/I2C"
+        },
+        {
+          "id": "dfrobot-sen0374",
+          "name": "Fermion: BNO055 Intelligent 9-axis Sensor (Breakout)",
+          "category": "sensors",
+          "price": 17.9,
+          "currency": "USD",
+          "sku": "SEN0374",
+          "url": "https://www.dfrobot.com/product-2142.html",
+          "spec": "BNO055 9-axis (accel, gyro, magnetometer + MCU), I2C"
+        },
+        {
+          "id": "dfrobot-rob0112",
+          "name": "Devastator Tank Mobile Robot Platform",
+          "category": "chassis-kits",
+          "price": 69.9,
+          "currency": "USD",
+          "sku": "ROB0112",
+          "url": "https://www.dfrobot.com/product-1219.html",
+          "spec": "Tracked tank platform, high-strength aluminium alloy, Arduino/Raspberry Pi compatible"
+        },
+        {
+          "id": "dfrobot-fit0654-1",
+          "name": "Mecanum Wheel Kit (80mm - 4 Wheels)",
+          "category": "wheels-mechanical",
+          "price": 19.6,
+          "currency": "USD",
+          "sku": "FIT0654-1",
+          "url": "https://www.dfrobot.com/product-2042.html",
+          "spec": "4 × 80 mm mecanum wheels, 9 rollers each, up to 10 kg load"
+        },
+        {
+          "id": "dfrobot-dfr0969",
+          "name": "2-Way 18650 Battery Holder",
+          "category": "power-batteries",
+          "price": 9.9,
+          "currency": "USD",
+          "sku": "DFR0969",
+          "url": "https://www.dfrobot.com/product-2578.html",
+          "spec": "Holder/charger for 2 × 18650 cells, micro-USB and USB-C in, USB out, 3 V/5 V, protected"
+        }
+      ]
+    },
+    {
+      "id": "robotis",
+      "name": "ROBOTIS America",
+      "url": "https://robotis.us",
+      "country": "US",
+      "specialty": "ROBOTIS DYNAMIXEL smart actuators, OpenCR/OpenRB controllers and TurtleBot3 ROS platforms",
+      "ships_international": true,
+      "fetch_status": "ok",
+      "notes": "US storefront of ROBOTIS, run by ROBOTIS America. Footer: 4222 Green River Rd, Corona, CA 92880, USA. Banner: 'Shipping across North, Central, and South America Only'.",
+      "items": [
+        {
+          "id": "robotis-902-0135-000",
+          "name": "DYNAMIXEL XL430-W250-T",
+          "category": "servos",
+          "price": 27.5,
+          "currency": "USD",
+          "sku": "902-0135-000",
+          "url": "https://robotis.us/products/dynamixel-xl430-w250-t",
+          "spec": "DYNAMIXEL smart servo, 11.1 V, TTL, 57 RPM no-load, ~0.28 N·m est. rated torque, 4096-step resolution"
+        },
+        {
+          "id": "robotis-902-0163-000",
+          "name": "DYNAMIXEL XL330-M288-T",
+          "category": "servos",
+          "price": 27.49,
+          "currency": "USD",
+          "sku": "902-0163-000",
+          "url": "https://robotis.us/products/dynamixel-xl330-m288-t",
+          "spec": "DYNAMIXEL smart servo, 5 V, TTL/SBUS/iBUS/RC PWM, 103 RPM no-load, ~0.10 N·m est. rated torque"
+        },
+        {
+          "id": "robotis-902-0132-000",
+          "name": "U2D2",
+          "category": "motor-drivers",
+          "price": 36.92,
+          "currency": "USD",
+          "sku": "902-0132-000",
+          "url": "https://robotis.us/products/u2d2",
+          "spec": "USB-C to TTL/RS-485 converter for controlling DYNAMIXEL actuators from a PC"
+        },
+        {
+          "id": "robotis-903-0257-000",
+          "name": "OpenCR1.0",
+          "category": "microcontrollers-sbc",
+          "price": 247.14,
+          "currency": "USD",
+          "sku": "903-0257-000",
+          "url": "https://robotis.us/products/opencr1-0",
+          "spec": "STM32F746 Cortex-M7 216 MHz robot controller, MPU9250 IMU, RS-485 & TTL DYNAMIXEL ports"
+        },
+        {
+          "id": "robotis-902-0183-000",
+          "name": "OpenRB-150",
+          "category": "microcontrollers-sbc",
+          "price": 28.64,
+          "currency": "USD",
+          "sku": "902-0183-000",
+          "url": "https://robotis.us/products/openrb-150",
+          "spec": "Arduino-compatible DYNAMIXEL controller board (batteries and cables not included)"
+        },
+        {
+          "id": "robotis-902-0043-000",
+          "name": "Distance Measuring Sensor DMS-80",
+          "category": "sensors",
+          "price": 20.47,
+          "currency": "USD",
+          "sku": "902-0043-000",
+          "url": "https://robotis.us/products/distance-measuring-sensor-dms-80",
+          "spec": "Distance sensor, 10–80 cm, 4.5–5.5 V, 4.4 g"
+        },
+        {
+          "id": "robotis-902-0042-000",
+          "name": "Gyro Sensor GS-12",
+          "category": "sensors",
+          "price": 47.84,
+          "currency": "USD",
+          "sku": "902-0042-000",
+          "url": "https://robotis.us/products/gyro-sensor-gs-12",
+          "spec": "Gyro sensor, ±300°/s, 4.5–5.5 V, 23 × 23 × 10 mm"
+        },
+        {
+          "id": "robotis-901-0118-301",
+          "name": "TurtleBot 3 Burger RPi4 4GB [US]",
+          "category": "chassis-kits",
+          "price": 783.5,
+          "currency": "USD",
+          "sku": "901-0118-301",
+          "url": "https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us",
+          "spec": "TurtleBot3 Burger ROS robot kit with Raspberry Pi 4 (4 GB) and LDS lidar"
+        },
+        {
+          "id": "robotis-903-0260-000",
+          "name": "TB3 Wheel Tire Set-ISW-01 (2ea)",
+          "category": "wheels-mechanical",
+          "price": 10.81,
+          "currency": "USD",
+          "sku": "903-0260-000",
+          "url": "https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea",
+          "spec": "Engineering-plastic wheels with high-grip rubber tires, bolt to DYNAMIXEL, 2 pcs"
+        },
+        {
+          "id": "robotis-903-0262-000",
+          "name": "TB3 Ball Caster-A01 (1ea)",
+          "category": "wheels-mechanical",
+          "price": 4.03,
+          "currency": "USD",
+          "sku": "903-0262-000",
+          "url": "https://robotis.us/products/tb3-ball-caster-a01-1ea",
+          "spec": "Ball caster (frame + steel ball) for 6 mm plates / TB3 Waffle Plate"
+        },
+        {
+          "id": "robotis-903-0210-000",
+          "name": "LIPO Battery 11.1V 1800mAh LB-012",
+          "category": "power-batteries",
+          "price": 68.54,
+          "currency": "USD",
+          "sku": "903-0210-000",
+          "url": "https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012",
+          "spec": "LiPo 11.1 V, 1800 mAh, 5C, built-in PCM protection, 106 g"
+        },
+        {
+          "id": "robotis-903-0126-000",
+          "name": "SMPS 12V 5A PS-10 [US-110V]",
+          "category": "power-batteries",
+          "price": 24.61,
+          "currency": "USD",
+          "sku": "903-0126-000",
+          "url": "https://robotis.us/products/smps-12v-5a-ps-10-us-110v",
+          "spec": "12 V 5 A power supply, 100–260 V AC input"
+        }
+      ]
+    },
+    {
+      "id": "waveshare",
+      "name": "Waveshare Electronics",
+      "url": "https://www.waveshare.com",
+      "country": "CN",
+      "specialty": "Raspberry Pi / ESP32 HATs and boards, serial-bus servos, lidar and ROS mobile robots",
+      "ships_international": true,
+      "fetch_status": "ok",
+      "notes": "Site footer lists 'Worldwide Shipping'. HQ country from general knowledge.",
+      "items": [
+        {
+          "id": "waveshare-23489",
+          "name": "DDSM115 Direct Drive Servo Motor, Low Speed & High Torque, Low Noise, All-In-One Design, Hub Motor",
+          "category": "motors",
+          "price": 64.99,
+          "currency": "USD",
+          "sku": "23489",
+          "url": "https://www.waveshare.com/ddsm115.htm",
+          "spec": "Direct-drive hub servo motor, 115 RPM rated, 0.96 N·m rated / 2.0 N·m locked-rotor, 4096-count encoder, RS485, IP54"
+        },
+        {
+          "id": "waveshare-24440",
+          "name": "2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle",
+          "category": "servos",
+          "price": 8.99,
+          "currency": "USD",
+          "sku": "24440",
+          "url": "https://www.waveshare.com/sc09-servo.htm",
+          "spec": "Serial bus servo, 2.3 kg·cm at 6 V, 300° rotation, 4–6 V, 0.1 s/60°"
+        },
+        {
+          "id": "waveshare-21568",
+          "name": "SC15 17kg Large Torque Programmable Serial Bus Servo",
+          "category": "servos",
+          "price": 17.99,
+          "currency": "USD",
+          "sku": "21568",
+          "url": "https://www.waveshare.com/sc15-servo.htm",
+          "spec": "Serial bus servo, 15 kg·cm at 6 V, metal gears, 4.8–8.4 V, 210° servo / 360° motor mode"
+        },
+        {
+          "id": "waveshare-15364",
+          "name": "Motor Driver HAT for Raspberry Pi, I2C Interface",
+          "category": "motor-drivers",
+          "price": 13.99,
+          "currency": "USD",
+          "sku": "15364",
+          "url": "https://www.waveshare.com/motor-driver-hat.htm",
+          "spec": "Raspberry Pi HAT, TB6612FNG + PCA9685, I2C, 6–12 V motor supply"
+        },
+        {
+          "id": "waveshare-15669",
+          "name": "Stepper Motor HAT for Raspberry Pi, Drives Two Stepper Motors",
+          "category": "motor-drivers",
+          "price": 18.99,
+          "currency": "USD",
+          "sku": "15669",
+          "url": "https://www.waveshare.com/stepper-motor-hat.htm",
+          "spec": "Raspberry Pi HAT, dual DRV8825, 8.2–28 V, 2.5 A, up to 1/32 microstepping"
+        },
+        {
+          "id": "waveshare-23730",
+          "name": "General Driver board for Robots, Based on ESP32, multi-functional, supports WIFI, Bluetooth and ESP-NOW communications, ESP32-WROOM-32UE, ESP32 Dev Board",
+          "category": "microcontrollers-sbc",
+          "price": 27.99,
+          "currency": "USD",
+          "sku": "23730",
+          "url": "https://www.waveshare.com/general-driver-for-robots.htm",
+          "spec": "ESP32-WROOM-32UE robot driver board, Wi-Fi/Bluetooth/ESP-NOW, works with Raspberry Pi and Jetson Nano"
+        },
+        {
+          "id": "waveshare-25978",
+          "name": "D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus",
+          "category": "sensors",
+          "price": 95.99,
+          "currency": "USD",
+          "sku": "25978",
+          "url": "https://www.waveshare.com/d500-lidar-kit.htm",
+          "spec": "360° DTOF lidar, 0.03–12 m, 5000 Hz ranging, 6–13 Hz scan, UART 230400"
+        },
+        {
+          "id": "waveshare-18301",
+          "name": "TOF Laser Range Sensor, UART / CAN Bus, Cascading Support, Ranging up to 5m, with Software",
+          "category": "sensors",
+          "price": 17.99,
+          "currency": "USD",
+          "sku": "18301",
+          "url": "https://www.waveshare.com/tof-laser-range-sensor.htm",
+          "spec": "Time-of-flight laser range sensor, up to 5 m, UART/CAN, cascadable"
+        },
+        {
+          "id": "waveshare-wave-rover",
+          "name": "WAVE ROVER Flexible And Expandable 4WD Mobile Robot Chassis, Full Metal Body, Multiple Hosts Support, With Onboard ESP32 Module",
+          "category": "chassis-kits",
+          "price": 89.99,
+          "currency": "USD",
+          "sku": null,
+          "url": "https://www.waveshare.com/wave-rover.htm",
+          "spec": "Full-metal 4WD chassis with onboard ESP32, 4 × 1.5 W motors, 3 × 18650 (not included), 194 × 168 × 100 mm"
+        },
+        {
+          "id": "waveshare-ups-hat",
+          "name": "Uninterruptible Power Supply UPS HAT For Raspberry Pi, Stable 5V Power Output",
+          "category": "power-batteries",
+          "price": 19.99,
+          "currency": "USD",
+          "sku": null,
+          "url": "https://www.waveshare.com/ups-hat.htm",
+          "spec": "5 V UPS HAT for Raspberry Pi, 18650 cells (not included), 8.4 V 2 A charger, I2C monitoring"
+        },
+        {
+          "id": "waveshare-dc-buck-adapter-7-2v",
+          "name": "Serial Bus Servo DC Buck Adapter, Mini Module, Design for Serial Bus Servos, Easy to Use, 7.2V / 6V Buck Regulator",
+          "category": "power-batteries",
+          "price": 3.49,
+          "currency": "USD",
+          "sku": null,
+          "url": "https://www.waveshare.com/dc-buck-adapter-7.2v.htm",
+          "spec": "Buck adapter for serial bus servos, 9–36 V in, 7.2 V or 6 V out"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.adafruit.com/product/1438",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:22-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/169",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:21-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/2927",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:21-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/2939",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:22-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/328",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:23-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/3317",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:23-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/3766",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:22-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/3777",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:37:34-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/4007",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:22-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/4754",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:23-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/4864",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:22-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/product/5129",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:21-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.adafruit.com/category/34",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:00-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.adafruit.com/product/155",
+      "store_id": "adafruit",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:39:21-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:54-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/lithium-ion-battery-2ah.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:57-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/servo-generic-sub-micro-size.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:54-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/shadow-chassis.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:56-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:45:08-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:45:08-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:55-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:55-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/sparkfun-redboard-qwiic.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:55-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:45:10-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:52-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:57-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.sparkfun.com/",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:41:17-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/robotics.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:41:31-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/robotics/hardware.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:42:15-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/robotics/motor-drivers.html",
+      "store_id": "sparkfun",
+      "http_status": 404,
+      "fetched_at": "2026-09-29T12:41:54-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/robotics/motors-and-drivers.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:42:13-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/robotics/motors.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:41:34-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/robotics/parts.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:42:17-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/robotics/robotics-kits.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:07-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/robotics/servos.html",
+      "store_id": "sparkfun",
+      "http_status": 404,
+      "fetched_at": "2026-09-29T12:41:44-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.sparkfun.com/sparkfun-experiential-robotics-platform-xrp-controller-beta.html",
+      "store_id": "sparkfun",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:44:58-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/product/2130",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:52-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/2133",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:49-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/2818",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/2831",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:51-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/3036",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:49-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/3101",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/3415",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/3500",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/3544",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:52-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/3690",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:52-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/4148",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/product/954",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:51-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.pololu.com/categories",
+      "store_id": "pololu",
+      "http_status": 404,
+      "fetched_at": "2026-09-29T12:40:10-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/202/romi-chassis-and-accessories",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:24-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/203/romi-chassis-kits",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:41-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/205/servos",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:22-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/22/motors-and-gearboxes",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:20-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/23/rc-servos",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:40-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/234/wheels",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:25-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/51/pololu-metal-dc-gearmotors",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:38:59-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/60/micro-metal-gearmotors",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:39-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/64/development-boards-programmable-controllers",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:26-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/7/sensors",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:23-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/category/9/motion-control-modules",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:23-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/product/1117",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:37:34-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.pololu.com/product/3424",
+      "store_id": "pololu",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:40:49-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:04-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/130-rpm-micro-gear-motor/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:03-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/1x20a-motor-controller/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:03-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:02-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:04-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:03-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:02-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:03-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/pololu-a-star-32u4-prime-sv/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:03-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:02-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/roboclaw-2x7a-motor-controller/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:02-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:03-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.servocity.com/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:45:38-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/batteries/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:26-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/mecanum-wheels/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:49-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/microcontrollers/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:27-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/motor-controllers/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:45:52-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/motors/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:45:52-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/omni-wheels/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:49-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/robot-chassis-kits/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:24-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/search.php?search_query=dual+mode+servo",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:39-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/search.php?search_query=grip+wheel",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:40-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/see-also-servos/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:27-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/sensors/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:23-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/servos-accessories/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:45:50-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/servos/?filter_brand=gobilda",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:48-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.servocity.com/wheels-tires/",
+      "store_id": "servocity",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:46:25-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:13-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:49:34-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Grove-Servo.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:13-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:49:33-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:13-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:15-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:13-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:49:12-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:39-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:39-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:13-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:13-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.seeedstudio.com/",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:47:59-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.seeedstudio.com/4WD-Smart-Robot-Car-4-wheel-2-Layer-Chassis-Kit-p-4109.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:39-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Grove-6-Axis-Accelerometer-Gyroscope.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:49:34-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Grove-IMU-9DOF-v2-0.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:15-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Grove-TF-Mini-LiDAR.html",
+      "store_id": "seeed",
+      "http_status": 404,
+      "fetched_at": "2026-09-29T12:48:39-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.seeedstudio.com/Mecanum-wheel-chassis-with-suspension-p-4134.html",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:38-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.seeedstudio.com/catalogsearch/result?q=servo",
+      "store_id": "seeed",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:48:16-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-1219.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-1457.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-1704.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-1995.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-2042.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-2142.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-2195.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-236.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-255.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-2578.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-634.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-66.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.dfrobot.com/",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:49:53-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/category-105.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:20-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/category-108.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:49:59-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/category-110.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:00-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/category-271.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:21-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/category-311.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:03-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/category-51.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:21-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/category-55.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:01-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/category-65.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:02-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-2476.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:51-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/product-896.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:50-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/search-battery.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:42-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.dfrobot.com/search-wheel.html",
+      "store_id": "dfrobot",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:50:43-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://robotis.us/products/distance-measuring-sensor-dms-80",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:40-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/dynamixel-xl330-m288-t",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:40-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/dynamixel-xl430-w250-t",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:40-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/gyro-sensor-gs-12",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:41-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:41-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/opencr1-0",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:40-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/openrb-150",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:41-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/smps-12v-5a-ps-10-us-110v",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:41-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/tb3-ball-caster-a01-1ea",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:41-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:41-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:41-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/products/u2d2",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:40-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://robotis.us/",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:18-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://robotis.us/collections/batteries-chargers",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:31-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://robotis.us/collections/controllers-2",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:30-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://robotis.us/collections/frames",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:32-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://robotis.us/collections/sensors",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:30-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://robotis.us/collections/turtlebot-3",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:32-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://robotis.us/collections/xl",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:29-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://robotis.us/products/xm335-t323-t",
+      "store_id": "robotis",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:51:41-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/d500-lidar-kit.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:37-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/dc-buck-adapter-7.2v.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:43-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/ddsm115.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:35-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/general-driver-for-robots.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:36-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/motor-driver-hat.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:56-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/sc09-servo.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:54:01-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/sc15-servo.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:54:02-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/stepper-motor-hat.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:39-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/tof-laser-range-sensor.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:42-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/ups-hat.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:56-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/wave-rover.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:36-07:00",
+      "role": "item"
+    },
+    {
+      "url": "https://www.waveshare.com/",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:20-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/10-dof-imu-sensor-d.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:56-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/alphabot2-pi-acce-pack.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:47-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/bus-servo-driver-hat-a.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:57-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/esp32-s3-zero.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:41-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/pan-tilt-hat.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:44-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/pico-motor-driver.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:38-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/product/ai/expansions/power-supply.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:33-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/product/raspberry-pi/hats/motors-relays.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:32-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/product/raspberry-pi/robots/mobile-robots.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:29-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/product/raspberry-pi/robots/robot-arm-control.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:31-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/roarm-m2-s.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:53:45-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/rp2040-zero.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:56-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/st3215-servo.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:52:56-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://www.waveshare.com/ups-hat-b.htm",
+      "store_id": "waveshare",
+      "http_status": 200,
+      "fetched_at": "2026-09-29T12:54:02-07:00",
+      "role": "listing / discovery"
+    },
+    {
+      "url": "https://shop.pimoroni.com/",
+      "store_id": "pimoroni",
+      "http_status": 200,
+      "fetched_at": "2026-09-29",
+      "role": "probe (dropped for scope)"
+    },
+    {
+      "url": "https://shop.pimoroni.com/en-us",
+      "store_id": "pimoroni",
+      "http_status": 200,
+      "fetched_at": "2026-09-29",
+      "role": "probe (dropped for scope)"
+    },
+    {
+      "url": "https://shop.pimoroni.com/products/inventor-2040-w",
+      "store_id": "pimoroni",
+      "http_status": 200,
+      "fetched_at": "2026-09-29",
+      "role": "probe (dropped for scope)"
+    },
+    {
+      "url": "https://thepihut.com/",
+      "store_id": "thepihut",
+      "http_status": 200,
+      "fetched_at": "2026-09-29",
+      "role": "probe (dropped for scope)"
+    },
+    {
+      "url": "https://www.digikey.com/",
+      "store_id": "digikey",
+      "http_status": 403,
+      "fetched_at": "2026-09-29",
+      "role": "probe (skipped store)"
+    },
+    {
+      "url": "https://www.mouser.com/",
+      "store_id": "mouser",
+      "http_status": 200,
+      "fetched_at": "2026-09-29",
+      "role": "probe (skipped store: bot-check page, 18 KB)"
+    },
+    {
+      "url": "https://www.robotshop.com/",
+      "store_id": "robotshop",
+      "http_status": 403,
+      "fetched_at": "2026-09-29",
+      "role": "probe (skipped store)"
+    }
+  ]
+}

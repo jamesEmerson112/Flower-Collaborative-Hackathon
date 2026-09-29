@@ -6,7 +6,7 @@ Read directly from the `flwr` **1.39.0** wheel source and the three example apps
 **Provenance tags:** [src] = read in 1.39.0 source or example-app source (module cited). [docs] = https://flower.ai/docs/agent/ (fetched 2026-09-29). [inference] = our reading, not verified.
 **Role tags:** [SuperLink] = orchestrator task (`context.node_id == 1`). [SuperNode] = worker task. [both] = same behaviour on both.
 
-> **Version caveat.** The example apps pin `flwr-version-target = "1.38.0"` (`agent/`, `collaborative-agent/`) or `"1.35.0"` (`hackathon-collab-agent-recipe/`). Everything below is from **1.39.0**, which is also what the docs pin (`uvx --from flwr==1.39.0`). After `uv sync`, check `uv run flwr --version` before relying on a schema. One confirmed drift: `Context.locked()`, used by the recipe, does not exist in 1.39.0 (see [Context](#13-context)).
+> **Version caveat.** The example apps pin `flwr-version-target = "1.38.0"` (`docs/agent/`, `docs/collaborative-agent/`) or `"1.35.0"` (`docs/hackathon-collab-agent-recipe/`). Example-app file paths cited below are relative to `docs/`. Everything below is from **1.39.0**, which is also what the docs pin (`uvx --from flwr==1.39.0`). After `uv sync`, check `uv run flwr --version` before relying on a schema. One confirmed drift: `Context.locked()`, used by the recipe, does not exist in 1.39.0 (see [Context](#13-context)).
 
 ---
 

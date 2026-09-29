@@ -1,0 +1,166 @@
+{
+  "captured_at": "2026-09-29",
+  "currency_note": "Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.",
+  "categories": [
+    {
+      "id": "motors",
+      "label": "Motors"
+    },
+    {
+      "id": "servos",
+      "label": "Servos & smart actuators"
+    },
+    {
+      "id": "motor-drivers",
+      "label": "Motor drivers & controllers"
+    },
+    {
+      "id": "microcontrollers-sbc",
+      "label": "Microcontrollers & SBCs"
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors"
+    },
+    {
+      "id": "chassis-kits",
+      "label": "Chassis & robot kits"
+    },
+    {
+      "id": "power-batteries",
+      "label": "Power & batteries"
+    }
+  ],
+  "store": {
+    "id": "seeed",
+    "name": "Seeed Studio",
+    "url": "https://www.seeedstudio.com",
+    "country": "CN",
+    "specialty": "Grove plug-in modules, XIAO boards, edge-AI hardware and LeRobot arm kits",
+    "ships_international": true,
+    "fetch_status": "ok",
+    "notes": "Product-page warehouse table: 'CN warehouse ships to most countries in the world. US warehouse ships to USA only. DE warehouse ships to European Union only.' HQ country from general knowledge."
+  },
+  "items": [
+    {
+      "id": "seeed-108990003",
+      "name": "Small Size and High Torque Stepper Motor - 24BYJ48",
+      "category": "motors",
+      "price": 4.9,
+      "currency": "USD",
+      "sku": "108990003",
+      "url": "https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html",
+      "spec": "24BYJ48 stepper, 5 V DC, 2-phase, 1/32 gear ratio, 5.625°/32 step angle"
+    },
+    {
+      "id": "seeed-316010005",
+      "name": "Grove - Servo",
+      "category": "servos",
+      "price": 6.99,
+      "currency": "USD",
+      "sku": "316010005",
+      "url": "https://www.seeedstudio.com/Grove-Servo.html",
+      "spec": "Hobby servo with Grove connector, 4.8–6.0 V (5 V typical)"
+    },
+    {
+      "id": "seeed-108090003",
+      "name": "Feetech ST3215-C047 12V 30Kg Servo",
+      "category": "servos",
+      "price": 23.99,
+      "currency": "USD",
+      "sku": "108090003",
+      "url": "https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html",
+      "spec": "12 V serial bus servo, 1:345 metal gearbox, 12-bit magnetic encoder, 30 kg·cm stall"
+    },
+    {
+      "id": "seeed-108020103",
+      "name": "Grove - I2C Motor Driver (TB6612FNG)",
+      "category": "motor-drivers",
+      "price": 10.98,
+      "currency": "USD",
+      "sku": "108020103",
+      "url": "https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html",
+      "spec": "TB6612FNG: 2 DC motors or 1 stepper up to 12 V / 1.2 A, Grove I2C"
+    },
+    {
+      "id": "seeed-113991114",
+      "name": "Seeed Studio XIAO ESP32-S3",
+      "category": "microcontrollers-sbc",
+      "price": 7.49,
+      "currency": "USD",
+      "sku": "113991114",
+      "url": "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html",
+      "spec": "240 MHz dual-core Xtensa LX7, Wi-Fi + BLE 5.0, thumb-sized"
+    },
+    {
+      "id": "seeed-102110919",
+      "name": "Raspberry Pi 5 8GB",
+      "category": "microcontrollers-sbc",
+      "price": 175.0,
+      "currency": "USD",
+      "sku": "102110919",
+      "url": "https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html",
+      "spec": "2.4 GHz 64-bit quad-core Arm, 800 MHz VideoCore VII GPU, 8 GB RAM"
+    },
+    {
+      "id": "seeed-101020010",
+      "name": "Grove - Ultrasonic Distance Sensor",
+      "category": "sensors",
+      "price": 4.99,
+      "currency": "USD",
+      "sku": "101020010",
+      "url": "https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html",
+      "spec": "Ultrasonic ranging 3–350 cm, trigger and echo on a single GPIO, Grove"
+    },
+    {
+      "id": "seeed-101020585",
+      "name": "Grove - IMU 9DOF (ICM20600+AK09918)",
+      "category": "sensors",
+      "price": 11.25,
+      "currency": "USD",
+      "sku": "101020585",
+      "url": "https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html",
+      "spec": "9-DoF IMU: ICM20600 gyro/accelerometer + AK09918 compass, Grove"
+    },
+    {
+      "id": "seeed-101020532",
+      "name": "Grove - Time of Flight Distance Sensor(VL53L0X) - (ToF) laser-ranging module,Long Range Precision ranging",
+      "category": "sensors",
+      "price": 7.99,
+      "currency": "USD",
+      "sku": "101020532",
+      "url": "https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html",
+      "spec": "VL53L0X laser time-of-flight distance sensor, Grove"
+    },
+    {
+      "id": "seeed-110090325",
+      "name": "Robot Car Kit-6WD Off-Road Chassis Kit",
+      "category": "chassis-kits",
+      "price": 99.9,
+      "currency": "USD",
+      "sku": "110090325",
+      "url": "https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html",
+      "spec": "6WD off-road chassis, 2 mm aluminium, 6 DC motors with 1:34 metal gearboxes"
+    },
+    {
+      "id": "seeed-114993667",
+      "name": "SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm",
+      "category": "chassis-kits",
+      "price": 277.99,
+      "currency": "USD",
+      "sku": "114993667",
+      "url": "https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html",
+      "spec": "LeRobot SO-101 6-DoF arm motor kit: servos, adapter board, cables (no 3D-printed parts)"
+    },
+    {
+      "id": "seeed-106990290",
+      "name": "Lipo Rider Plus (Charger/Booster) - 5V/2.4A USB Type C",
+      "category": "power-batteries",
+      "price": 4.99,
+      "currency": "USD",
+      "sku": "106990290",
+      "url": "https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html",
+      "spec": "LiPo charger/booster, 3 A charging, 5 V / 2.4 A output, USB-C"
+    }
+  ]
+}

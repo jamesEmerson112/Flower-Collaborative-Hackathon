@@ -1,0 +1,187 @@
+url,store_id,http_status,fetched_at,role
+https://www.adafruit.com/product/1438,adafruit,200,2026-09-29T12:39:22-07:00,item
+https://www.adafruit.com/product/169,adafruit,200,2026-09-29T12:39:21-07:00,item
+https://www.adafruit.com/product/2927,adafruit,200,2026-09-29T12:39:21-07:00,item
+https://www.adafruit.com/product/2939,adafruit,200,2026-09-29T12:39:22-07:00,item
+https://www.adafruit.com/product/328,adafruit,200,2026-09-29T12:39:23-07:00,item
+https://www.adafruit.com/product/3317,adafruit,200,2026-09-29T12:39:23-07:00,item
+https://www.adafruit.com/product/3766,adafruit,200,2026-09-29T12:39:22-07:00,item
+https://www.adafruit.com/product/3777,adafruit,200,2026-09-29T12:37:34-07:00,item
+https://www.adafruit.com/product/4007,adafruit,200,2026-09-29T12:39:22-07:00,item
+https://www.adafruit.com/product/4754,adafruit,200,2026-09-29T12:39:23-07:00,item
+https://www.adafruit.com/product/4864,adafruit,200,2026-09-29T12:39:22-07:00,item
+https://www.adafruit.com/product/5129,adafruit,200,2026-09-29T12:39:21-07:00,item
+https://www.adafruit.com/category/34,adafruit,200,2026-09-29T12:39:00-07:00,listing / discovery
+https://www.adafruit.com/product/155,adafruit,200,2026-09-29T12:39:21-07:00,listing / discovery
+https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html,sparkfun,200,2026-09-29T12:44:54-07:00,item
+https://www.sparkfun.com/lithium-ion-battery-2ah.html,sparkfun,200,2026-09-29T12:44:57-07:00,item
+https://www.sparkfun.com/servo-generic-sub-micro-size.html,sparkfun,200,2026-09-29T12:44:54-07:00,item
+https://www.sparkfun.com/shadow-chassis.html,sparkfun,200,2026-09-29T12:44:56-07:00,item
+https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html,sparkfun,200,2026-09-29T12:45:08-07:00,item
+https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html,sparkfun,200,2026-09-29T12:45:08-07:00,item
+https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html,sparkfun,200,2026-09-29T12:44:55-07:00,item
+https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html,sparkfun,200,2026-09-29T12:44:55-07:00,item
+https://www.sparkfun.com/sparkfun-redboard-qwiic.html,sparkfun,200,2026-09-29T12:44:55-07:00,item
+https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html,sparkfun,200,2026-09-29T12:45:10-07:00,item
+https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html,sparkfun,200,2026-09-29T12:44:52-07:00,item
+https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html,sparkfun,200,2026-09-29T12:44:57-07:00,item
+https://www.sparkfun.com/,sparkfun,200,2026-09-29T12:41:17-07:00,listing / discovery
+https://www.sparkfun.com/robotics.html,sparkfun,200,2026-09-29T12:41:31-07:00,listing / discovery
+https://www.sparkfun.com/robotics/hardware.html,sparkfun,200,2026-09-29T12:42:15-07:00,listing / discovery
+https://www.sparkfun.com/robotics/motor-drivers.html,sparkfun,404,2026-09-29T12:41:54-07:00,listing / discovery
+https://www.sparkfun.com/robotics/motors-and-drivers.html,sparkfun,200,2026-09-29T12:42:13-07:00,listing / discovery
+https://www.sparkfun.com/robotics/motors.html,sparkfun,200,2026-09-29T12:41:34-07:00,listing / discovery
+https://www.sparkfun.com/robotics/parts.html,sparkfun,200,2026-09-29T12:42:17-07:00,listing / discovery
+https://www.sparkfun.com/robotics/robotics-kits.html,sparkfun,200,2026-09-29T12:44:07-07:00,listing / discovery
+https://www.sparkfun.com/robotics/servos.html,sparkfun,404,2026-09-29T12:41:44-07:00,listing / discovery
+https://www.sparkfun.com/sparkfun-experiential-robotics-platform-xrp-controller-beta.html,sparkfun,200,2026-09-29T12:44:58-07:00,listing / discovery
+https://www.pololu.com/product/2130,pololu,200,2026-09-29T12:40:52-07:00,item
+https://www.pololu.com/product/2133,pololu,200,2026-09-29T12:40:49-07:00,item
+https://www.pololu.com/product/2818,pololu,200,2026-09-29T12:40:50-07:00,item
+https://www.pololu.com/product/2831,pololu,200,2026-09-29T12:40:51-07:00,item
+https://www.pololu.com/product/3036,pololu,200,2026-09-29T12:40:49-07:00,item
+https://www.pololu.com/product/3101,pololu,200,2026-09-29T12:40:50-07:00,item
+https://www.pololu.com/product/3415,pololu,200,2026-09-29T12:40:50-07:00,item
+https://www.pololu.com/product/3500,pololu,200,2026-09-29T12:40:50-07:00,item
+https://www.pololu.com/product/3544,pololu,200,2026-09-29T12:40:52-07:00,item
+https://www.pololu.com/product/3690,pololu,200,2026-09-29T12:40:52-07:00,item
+https://www.pololu.com/product/4148,pololu,200,2026-09-29T12:40:50-07:00,item
+https://www.pololu.com/product/954,pololu,200,2026-09-29T12:40:51-07:00,item
+https://www.pololu.com/categories,pololu,404,2026-09-29T12:40:10-07:00,listing / discovery
+https://www.pololu.com/category/202/romi-chassis-and-accessories,pololu,200,2026-09-29T12:40:24-07:00,listing / discovery
+https://www.pololu.com/category/203/romi-chassis-kits,pololu,200,2026-09-29T12:40:41-07:00,listing / discovery
+https://www.pololu.com/category/205/servos,pololu,200,2026-09-29T12:40:22-07:00,listing / discovery
+https://www.pololu.com/category/22/motors-and-gearboxes,pololu,200,2026-09-29T12:40:20-07:00,listing / discovery
+https://www.pololu.com/category/23/rc-servos,pololu,200,2026-09-29T12:40:40-07:00,listing / discovery
+https://www.pololu.com/category/234/wheels,pololu,200,2026-09-29T12:40:25-07:00,listing / discovery
+https://www.pololu.com/category/51/pololu-metal-dc-gearmotors,pololu,200,2026-09-29T12:38:59-07:00,listing / discovery
+https://www.pololu.com/category/60/micro-metal-gearmotors,pololu,200,2026-09-29T12:40:39-07:00,listing / discovery
+https://www.pololu.com/category/64/development-boards-programmable-controllers,pololu,200,2026-09-29T12:40:26-07:00,listing / discovery
+https://www.pololu.com/category/7/sensors,pololu,200,2026-09-29T12:40:23-07:00,listing / discovery
+https://www.pololu.com/category/9/motion-control-modules,pololu,200,2026-09-29T12:40:23-07:00,listing / discovery
+https://www.pololu.com/product/1117,pololu,200,2026-09-29T12:37:34-07:00,listing / discovery
+https://www.pololu.com/product/3424,pololu,200,2026-09-29T12:40:49-07:00,listing / discovery
+https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/,servocity,200,2026-09-29T12:47:04-07:00,item
+https://www.servocity.com/130-rpm-micro-gear-motor/,servocity,200,2026-09-29T12:47:03-07:00,item
+https://www.servocity.com/1x20a-motor-controller/,servocity,200,2026-09-29T12:47:03-07:00,item
+https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/,servocity,200,2026-09-29T12:47:02-07:00,item
+https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/,servocity,200,2026-09-29T12:47:04-07:00,item
+https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/,servocity,200,2026-09-29T12:47:03-07:00,item
+https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/,servocity,200,2026-09-29T12:47:02-07:00,item
+https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/,servocity,200,2026-09-29T12:47:03-07:00,item
+https://www.servocity.com/pololu-a-star-32u4-prime-sv/,servocity,200,2026-09-29T12:47:03-07:00,item
+https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/,servocity,200,2026-09-29T12:47:02-07:00,item
+https://www.servocity.com/roboclaw-2x7a-motor-controller/,servocity,200,2026-09-29T12:47:02-07:00,item
+https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/,servocity,200,2026-09-29T12:47:03-07:00,item
+https://www.servocity.com/,servocity,200,2026-09-29T12:45:38-07:00,listing / discovery
+https://www.servocity.com/batteries/,servocity,200,2026-09-29T12:46:26-07:00,listing / discovery
+https://www.servocity.com/mecanum-wheels/,servocity,200,2026-09-29T12:46:49-07:00,listing / discovery
+https://www.servocity.com/microcontrollers/,servocity,200,2026-09-29T12:46:27-07:00,listing / discovery
+https://www.servocity.com/motor-controllers/,servocity,200,2026-09-29T12:45:52-07:00,listing / discovery
+https://www.servocity.com/motors/,servocity,200,2026-09-29T12:45:52-07:00,listing / discovery
+https://www.servocity.com/omni-wheels/,servocity,200,2026-09-29T12:46:49-07:00,listing / discovery
+https://www.servocity.com/robot-chassis-kits/,servocity,200,2026-09-29T12:46:24-07:00,listing / discovery
+https://www.servocity.com/search.php?search_query=dual+mode+servo,servocity,200,2026-09-29T12:46:39-07:00,listing / discovery
+https://www.servocity.com/search.php?search_query=grip+wheel,servocity,200,2026-09-29T12:46:40-07:00,listing / discovery
+https://www.servocity.com/see-also-servos/,servocity,200,2026-09-29T12:46:27-07:00,listing / discovery
+https://www.servocity.com/sensors/,servocity,200,2026-09-29T12:46:23-07:00,listing / discovery
+https://www.servocity.com/servos-accessories/,servocity,200,2026-09-29T12:45:50-07:00,listing / discovery
+https://www.servocity.com/servos/?filter_brand=gobilda,servocity,200,2026-09-29T12:46:48-07:00,listing / discovery
+https://www.servocity.com/wheels-tires/,servocity,200,2026-09-29T12:46:25-07:00,listing / discovery
+https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html,seeed,200,2026-09-29T12:48:13-07:00,item
+https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html,seeed,200,2026-09-29T12:49:34-07:00,item
+https://www.seeedstudio.com/Grove-Servo.html,seeed,200,2026-09-29T12:48:13-07:00,item
+https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html,seeed,200,2026-09-29T12:49:33-07:00,item
+https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html,seeed,200,2026-09-29T12:48:13-07:00,item
+https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html,seeed,200,2026-09-29T12:48:15-07:00,item
+https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html,seeed,200,2026-09-29T12:48:13-07:00,item
+https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html,seeed,200,2026-09-29T12:49:12-07:00,item
+https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html,seeed,200,2026-09-29T12:48:39-07:00,item
+https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html,seeed,200,2026-09-29T12:48:39-07:00,item
+https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html,seeed,200,2026-09-29T12:48:13-07:00,item
+https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html,seeed,200,2026-09-29T12:48:13-07:00,item
+https://www.seeedstudio.com/,seeed,200,2026-09-29T12:47:59-07:00,listing / discovery
+https://www.seeedstudio.com/4WD-Smart-Robot-Car-4-wheel-2-Layer-Chassis-Kit-p-4109.html,seeed,200,2026-09-29T12:48:39-07:00,listing / discovery
+https://www.seeedstudio.com/Grove-6-Axis-Accelerometer-Gyroscope.html,seeed,200,2026-09-29T12:49:34-07:00,listing / discovery
+https://www.seeedstudio.com/Grove-IMU-9DOF-v2-0.html,seeed,200,2026-09-29T12:48:15-07:00,listing / discovery
+https://www.seeedstudio.com/Grove-TF-Mini-LiDAR.html,seeed,404,2026-09-29T12:48:39-07:00,listing / discovery
+https://www.seeedstudio.com/Mecanum-wheel-chassis-with-suspension-p-4134.html,seeed,200,2026-09-29T12:48:38-07:00,listing / discovery
+https://www.seeedstudio.com/catalogsearch/result?q=servo,seeed,200,2026-09-29T12:48:16-07:00,listing / discovery
+https://www.dfrobot.com/product-1219.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-1457.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-1704.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-1995.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-2042.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-2142.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-2195.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-236.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-255.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-2578.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-634.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/product-66.html,dfrobot,200,2026-09-29T12:50:50-07:00,item
+https://www.dfrobot.com/,dfrobot,200,2026-09-29T12:49:53-07:00,listing / discovery
+https://www.dfrobot.com/category-105.html,dfrobot,200,2026-09-29T12:50:20-07:00,listing / discovery
+https://www.dfrobot.com/category-108.html,dfrobot,200,2026-09-29T12:49:59-07:00,listing / discovery
+https://www.dfrobot.com/category-110.html,dfrobot,200,2026-09-29T12:50:00-07:00,listing / discovery
+https://www.dfrobot.com/category-271.html,dfrobot,200,2026-09-29T12:50:21-07:00,listing / discovery
+https://www.dfrobot.com/category-311.html,dfrobot,200,2026-09-29T12:50:03-07:00,listing / discovery
+https://www.dfrobot.com/category-51.html,dfrobot,200,2026-09-29T12:50:21-07:00,listing / discovery
+https://www.dfrobot.com/category-55.html,dfrobot,200,2026-09-29T12:50:01-07:00,listing / discovery
+https://www.dfrobot.com/category-65.html,dfrobot,200,2026-09-29T12:50:02-07:00,listing / discovery
+https://www.dfrobot.com/product-2476.html,dfrobot,200,2026-09-29T12:50:51-07:00,listing / discovery
+https://www.dfrobot.com/product-896.html,dfrobot,200,2026-09-29T12:50:50-07:00,listing / discovery
+https://www.dfrobot.com/search-battery.html,dfrobot,200,2026-09-29T12:50:42-07:00,listing / discovery
+https://www.dfrobot.com/search-wheel.html,dfrobot,200,2026-09-29T12:50:43-07:00,listing / discovery
+https://robotis.us/products/distance-measuring-sensor-dms-80,robotis,200,2026-09-29T12:51:40-07:00,item
+https://robotis.us/products/dynamixel-xl330-m288-t,robotis,200,2026-09-29T12:51:40-07:00,item
+https://robotis.us/products/dynamixel-xl430-w250-t,robotis,200,2026-09-29T12:51:40-07:00,item
+https://robotis.us/products/gyro-sensor-gs-12,robotis,200,2026-09-29T12:51:41-07:00,item
+https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012,robotis,200,2026-09-29T12:51:41-07:00,item
+https://robotis.us/products/opencr1-0,robotis,200,2026-09-29T12:51:40-07:00,item
+https://robotis.us/products/openrb-150,robotis,200,2026-09-29T12:51:41-07:00,item
+https://robotis.us/products/smps-12v-5a-ps-10-us-110v,robotis,200,2026-09-29T12:51:41-07:00,item
+https://robotis.us/products/tb3-ball-caster-a01-1ea,robotis,200,2026-09-29T12:51:41-07:00,item
+https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea,robotis,200,2026-09-29T12:51:41-07:00,item
+https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us,robotis,200,2026-09-29T12:51:41-07:00,item
+https://robotis.us/products/u2d2,robotis,200,2026-09-29T12:51:40-07:00,item
+https://robotis.us/,robotis,200,2026-09-29T12:51:18-07:00,listing / discovery
+https://robotis.us/collections/batteries-chargers,robotis,200,2026-09-29T12:51:31-07:00,listing / discovery
+https://robotis.us/collections/controllers-2,robotis,200,2026-09-29T12:51:30-07:00,listing / discovery
+https://robotis.us/collections/frames,robotis,200,2026-09-29T12:51:32-07:00,listing / discovery
+https://robotis.us/collections/sensors,robotis,200,2026-09-29T12:51:30-07:00,listing / discovery
+https://robotis.us/collections/turtlebot-3,robotis,200,2026-09-29T12:51:32-07:00,listing / discovery
+https://robotis.us/collections/xl,robotis,200,2026-09-29T12:51:29-07:00,listing / discovery
+https://robotis.us/products/xm335-t323-t,robotis,200,2026-09-29T12:51:41-07:00,listing / discovery
+https://www.waveshare.com/d500-lidar-kit.htm,waveshare,200,2026-09-29T12:53:37-07:00,item
+https://www.waveshare.com/dc-buck-adapter-7.2v.htm,waveshare,200,2026-09-29T12:53:43-07:00,item
+https://www.waveshare.com/ddsm115.htm,waveshare,200,2026-09-29T12:53:35-07:00,item
+https://www.waveshare.com/general-driver-for-robots.htm,waveshare,200,2026-09-29T12:53:36-07:00,item
+https://www.waveshare.com/motor-driver-hat.htm,waveshare,200,2026-09-29T12:52:56-07:00,item
+https://www.waveshare.com/sc09-servo.htm,waveshare,200,2026-09-29T12:54:01-07:00,item
+https://www.waveshare.com/sc15-servo.htm,waveshare,200,2026-09-29T12:54:02-07:00,item
+https://www.waveshare.com/stepper-motor-hat.htm,waveshare,200,2026-09-29T12:53:39-07:00,item
+https://www.waveshare.com/tof-laser-range-sensor.htm,waveshare,200,2026-09-29T12:53:42-07:00,item
+https://www.waveshare.com/ups-hat.htm,waveshare,200,2026-09-29T12:52:56-07:00,item
+https://www.waveshare.com/wave-rover.htm,waveshare,200,2026-09-29T12:53:36-07:00,item
+https://www.waveshare.com/,waveshare,200,2026-09-29T12:52:20-07:00,listing / discovery
+https://www.waveshare.com/10-dof-imu-sensor-d.htm,waveshare,200,2026-09-29T12:52:56-07:00,listing / discovery
+https://www.waveshare.com/alphabot2-pi-acce-pack.htm,waveshare,200,2026-09-29T12:53:47-07:00,listing / discovery
+https://www.waveshare.com/bus-servo-driver-hat-a.htm,waveshare,200,2026-09-29T12:52:57-07:00,listing / discovery
+https://www.waveshare.com/esp32-s3-zero.htm,waveshare,200,2026-09-29T12:53:41-07:00,listing / discovery
+https://www.waveshare.com/pan-tilt-hat.htm,waveshare,200,2026-09-29T12:53:44-07:00,listing / discovery
+https://www.waveshare.com/pico-motor-driver.htm,waveshare,200,2026-09-29T12:53:38-07:00,listing / discovery
+https://www.waveshare.com/product/ai/expansions/power-supply.htm,waveshare,200,2026-09-29T12:52:33-07:00,listing / discovery
+https://www.waveshare.com/product/raspberry-pi/hats/motors-relays.htm,waveshare,200,2026-09-29T12:52:32-07:00,listing / discovery
+https://www.waveshare.com/product/raspberry-pi/robots/mobile-robots.htm,waveshare,200,2026-09-29T12:52:29-07:00,listing / discovery
+https://www.waveshare.com/product/raspberry-pi/robots/robot-arm-control.htm,waveshare,200,2026-09-29T12:52:31-07:00,listing / discovery
+https://www.waveshare.com/roarm-m2-s.htm,waveshare,200,2026-09-29T12:53:45-07:00,listing / discovery
+https://www.waveshare.com/rp2040-zero.htm,waveshare,200,2026-09-29T12:52:56-07:00,listing / discovery
+https://www.waveshare.com/st3215-servo.htm,waveshare,200,2026-09-29T12:52:56-07:00,listing / discovery
+https://www.waveshare.com/ups-hat-b.htm,waveshare,200,2026-09-29T12:54:02-07:00,listing / discovery
+https://shop.pimoroni.com/,pimoroni,200,2026-09-29,probe (dropped for scope)
+https://shop.pimoroni.com/en-us,pimoroni,200,2026-09-29,probe (dropped for scope)
+https://shop.pimoroni.com/products/inventor-2040-w,pimoroni,200,2026-09-29,probe (dropped for scope)
+https://thepihut.com/,thepihut,200,2026-09-29,probe (dropped for scope)
+https://www.digikey.com/,digikey,403,2026-09-29,probe (skipped store)
+https://www.mouser.com/,mouser,200,2026-09-29,"probe (skipped store: bot-check page, 18 KB)"
+https://www.robotshop.com/,robotshop,403,2026-09-29,probe (skipped store)

@@ -1,0 +1,6 @@
+# Never commit SuperNode private keys or local secrets.
+*.pem
+*.key
+supernode-*
+!supernode-*.pub
+.env

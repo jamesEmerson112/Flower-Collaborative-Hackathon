@@ -1,0 +1,170 @@
+{
+  "captured_at": "2026-09-29",
+  "currency_note": "Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.",
+  "categories": [
+    {
+      "id": "motors",
+      "label": "Motors"
+    },
+    {
+      "id": "servos",
+      "label": "Servos & smart actuators"
+    },
+    {
+      "id": "motor-drivers",
+      "label": "Motor drivers & controllers"
+    },
+    {
+      "id": "microcontrollers-sbc",
+      "label": "Microcontrollers & SBCs"
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors"
+    },
+    {
+      "id": "chassis-kits",
+      "label": "Chassis & robot kits"
+    },
+    {
+      "id": "wheels-mechanical",
+      "label": "Wheels & mechanical"
+    },
+    {
+      "id": "power-batteries",
+      "label": "Power & batteries"
+    }
+  ],
+  "store": {
+    "id": "sparkfun",
+    "name": "SparkFun Electronics",
+    "url": "https://www.sparkfun.com",
+    "country": "US",
+    "specialty": "Qwiic-ecosystem breakouts, Arduino-compatible dev boards, robotics and GNSS parts",
+    "ships_international": null,
+    "fetch_status": "ok",
+    "notes": "Site footer: 6333 Dry Creek Parkway, Niwot, CO 80503. International shipping not stated on the fetched pages."
+  },
+  "items": [
+    {
+      "id": "sparkfun-rob-13302",
+      "name": "Hobby Gearmotor - 140 RPM (Pair)",
+      "category": "motors",
+      "price": 7.5,
+      "currency": "USD",
+      "sku": "ROB-13302",
+      "url": "https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html",
+      "spec": "Pair of DAGU hobby gearmotors, 4.5 V, 48:1, 140 RPM unloaded, 190 mA no-load"
+    },
+    {
+      "id": "sparkfun-rob-09238",
+      "name": "Stepper Motor - 32 oz.in (200 steps/rev, 1200mm Wire)",
+      "category": "motors",
+      "price": 26.95,
+      "currency": "USD",
+      "sku": "ROB-09238",
+      "url": "https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html",
+      "spec": "NEMA 17 bipolar stepper, 200 steps/rev, 32 oz·in holding, 0.33 A, 5 mm shaft"
+    },
+    {
+      "id": "sparkfun-rob-09065",
+      "name": "Servo - Generic (Sub-Micro Size)",
+      "category": "servos",
+      "price": 12.95,
+      "currency": "USD",
+      "sku": "ROB-09065",
+      "url": "https://www.sparkfun.com/servo-generic-sub-micro-size.html",
+      "spec": "Sub-micro servo, 4.8–6 V, 20.8 oz·in and 0.10 s/60° at 6 V, ~160° travel"
+    },
+    {
+      "id": "sparkfun-rob-14450",
+      "name": "SparkFun Motor Driver - Dual TB6612FNG (with Headers)",
+      "category": "motor-drivers",
+      "price": 14.5,
+      "currency": "USD",
+      "sku": "ROB-14450",
+      "url": "https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html",
+      "spec": "TB6612FNG dual DC motor driver, up to 1.2 A per motor, headers pre-soldered"
+    },
+    {
+      "id": "sparkfun-rob-15451",
+      "name": "SparkFun Qwiic Motor Driver",
+      "category": "motor-drivers",
+      "price": 23.78,
+      "currency": "USD",
+      "sku": "ROB-15451",
+      "url": "https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html",
+      "spec": "2-channel I2C/Qwiic motor driver, 1.2 A per channel (1.5 A peak), 127 drive levels"
+    },
+    {
+      "id": "sparkfun-dev-15123",
+      "name": "SparkFun RedBoard Qwiic",
+      "category": "microcontrollers-sbc",
+      "price": 21.95,
+      "currency": "USD",
+      "sku": "DEV-15123",
+      "url": "https://www.sparkfun.com/sparkfun-redboard-qwiic.html",
+      "spec": "ATmega328 Uno-compatible board, 7–15 V in, 20 I/O (6 PWM, 6 analog), Qwiic connector"
+    },
+    {
+      "id": "sparkfun-sen-15335",
+      "name": "SparkFun 9DoF IMU Breakout - ICM-20948 (Qwiic)",
+      "category": "sensors",
+      "price": 21.95,
+      "currency": "USD",
+      "sku": "SEN-15335",
+      "url": "https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html",
+      "spec": "ICM-20948 9-axis IMU with Digital Motion Processor, Qwiic/I2C"
+    },
+    {
+      "id": "sparkfun-sen-14722",
+      "name": "SparkFun Distance Sensor Breakout - 4 Meter, VL53L1X (Qwiic)",
+      "category": "sensors",
+      "price": 29.95,
+      "currency": "USD",
+      "sku": "SEN-14722",
+      "url": "https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html",
+      "spec": "VL53L1X laser ToF distance sensor, up to 4 m, mm precision, I2C/Qwiic"
+    },
+    {
+      "id": "sparkfun-sen-15569",
+      "name": "Ultrasonic Distance Sensor - 5V (HC-SR04)",
+      "category": "sensors",
+      "price": 5.25,
+      "currency": "USD",
+      "sku": "SEN-15569",
+      "url": "https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html",
+      "spec": "HC-SR04 ultrasonic, 5 V, 2 cm–4 m, accuracy up to 3 mm"
+    },
+    {
+      "id": "sparkfun-rob-13301",
+      "name": "Shadow Chassis",
+      "category": "chassis-kits",
+      "price": 14.95,
+      "currency": "USD",
+      "sku": "ROB-13301",
+      "url": "https://www.sparkfun.com/shadow-chassis.html",
+      "spec": "Modular ABS robot chassis (RobotZone), Actobotics hub patterns, snap-on controller mounts"
+    },
+    {
+      "id": "sparkfun-rob-13259",
+      "name": "Wheel - 65mm (Rubber Tire, Pair)",
+      "category": "wheels-mechanical",
+      "price": 4.5,
+      "currency": "USD",
+      "sku": "ROB-13259",
+      "url": "https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html",
+      "spec": "65 mm wheels with rubber tires, pair; fit DAGU right-angle gearmotors"
+    },
+    {
+      "id": "sparkfun-prt-13855",
+      "name": "Lithium Ion Battery - 2Ah",
+      "category": "power-batteries",
+      "price": 19.41,
+      "currency": "USD",
+      "sku": "PRT-13855",
+      "url": "https://www.sparkfun.com/lithium-ion-battery-2ah.html",
+      "spec": "Li-ion 3.7 V, 2000 mAh, slim pack"
+    }
+  ]
+}

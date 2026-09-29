@@ -1,7 +1,7 @@
 # Exploring `@flwrlabs/collaborative-agent`
 
 Hub page: https://flower.ai/apps/flwrlabs/collaborative-agent
-Local copy: [`collaborative-agent/`](../collaborative-agent/). It is unmodified (`diff -r` against the extracted zip is clean). Keep it that way so it can be diffed against upstream.
+Local copy: [`docs/collaborative-agent/`](collaborative-agent/). It is unmodified (`diff -r` against the extracted zip is clean). Keep it that way so it can be diffed against upstream.
 
 Legend: **[src]** = read in the app or `flwr` 1.39.0 source. **[docs]** = Flower docs / Hub page. **[inference]** = our reading, not verified.
 
@@ -105,7 +105,7 @@ The app README has **no run instructions**. The Hub page only shows `flwr new @f
 **Use `flwr chat`, not `flwr run`.** In 1.39.0, `flwr run` (`flwr/cli/run/run.py`) builds a `StartRunRequest` without `user_prompt`. The SuperLink rejects AgentApp runs that have no prompt with `AGENTAPP_USER_PROMPT_REQUIRED` (`flwr/superlink/servicer/control/control_handlers.py`) **[src]**. Only `flwr chat` sets `user_prompt` (`flwr/cli/chat/chat_app.py`, `start_chat_run`). The "Run an AgentApp on SuperGrid" guide also uses `flwr chat` + `/load` **[docs]**. We assume SuperGrid runs this same check **[inference]**.
 
 ```shell
-cd collaborative-agent
+cd docs/collaborative-agent
 uv sync
 uv run flwr build                       # sanity check
 uv run flwr login supergrid             # interactive

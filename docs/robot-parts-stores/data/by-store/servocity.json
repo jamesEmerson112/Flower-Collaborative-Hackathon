@@ -1,0 +1,170 @@
+{
+  "captured_at": "2026-09-29",
+  "currency_note": "Prices are single-unit list prices exactly as shown on each product page on 2026-09-29, in that page's currency (USD for US/CN/KR storefronts, GBP for UK storefronts). No currency conversion is applied. Quantity discounts, VAT/tax, shipping and stock levels are not captured. Prices change; re-check the product page before buying.",
+  "categories": [
+    {
+      "id": "motors",
+      "label": "Motors"
+    },
+    {
+      "id": "servos",
+      "label": "Servos & smart actuators"
+    },
+    {
+      "id": "motor-drivers",
+      "label": "Motor drivers & controllers"
+    },
+    {
+      "id": "microcontrollers-sbc",
+      "label": "Microcontrollers & SBCs"
+    },
+    {
+      "id": "sensors",
+      "label": "Sensors"
+    },
+    {
+      "id": "chassis-kits",
+      "label": "Chassis & robot kits"
+    },
+    {
+      "id": "wheels-mechanical",
+      "label": "Wheels & mechanical"
+    },
+    {
+      "id": "power-batteries",
+      "label": "Power & batteries"
+    }
+  ],
+  "store": {
+    "id": "servocity",
+    "name": "ServoCity",
+    "url": "https://www.servocity.com",
+    "country": "US",
+    "specialty": "goBILDA metal build system: planetary gearmotors, servos, structure, wheels and robot chassis",
+    "ships_international": null,
+    "fetch_status": "ok",
+    "notes": "Site footer: '© 2026 Base 10 Assets, LLC'. HQ country from general knowledge; shipping policy not on the fetched pages."
+  },
+  "items": [
+    {
+      "id": "servocity-5203-2402-0019",
+      "name": "5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)",
+      "category": "motors",
+      "price": 54.99,
+      "currency": "USD",
+      "sku": "5203-2402-0019",
+      "url": "https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/",
+      "spec": "12 VDC planetary gearmotor, 19.2:1, 312 RPM, 24.3 kg·cm (338 oz-in) stall, 8 mm REX shaft, encoder"
+    },
+    {
+      "id": "servocity-638114",
+      "name": "Premium N20 Gear Motor (210:1 Ratio, 130 RPM)",
+      "category": "motors",
+      "price": 12.99,
+      "currency": "USD",
+      "sku": "638114",
+      "url": "https://www.servocity.com/130-rpm-micro-gear-motor/",
+      "spec": "N20 micro gearmotor, 210:1 ratio, 130 RPM"
+    },
+    {
+      "id": "servocity-2002-0180-0002",
+      "name": "Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)",
+      "category": "servos",
+      "price": 17.99,
+      "currency": "USD",
+      "sku": "2002-0180-0002",
+      "url": "https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/",
+      "spec": "Standard-size servo, steel gears, 180°, 75 oz-in (5.40 kg·cm) stall at 6 V"
+    },
+    {
+      "id": "servocity-2003-0180-0001",
+      "name": "Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)",
+      "category": "servos",
+      "price": 9.99,
+      "currency": "USD",
+      "sku": "2003-0180-0001",
+      "url": "https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/",
+      "spec": "Budget servo, nylon gears, 180°, 0.15 s/60°, 53 oz-in"
+    },
+    {
+      "id": "servocity-3105-0101-0020",
+      "name": "1x20A Motor Controller (9-30V Input)",
+      "category": "motor-drivers",
+      "price": 39.99,
+      "currency": "USD",
+      "sku": "3105-0101-0020",
+      "url": "https://www.servocity.com/1x20a-motor-controller/",
+      "spec": "Single brushed DC ESC, 9–30 V in, 20 A continuous (30 A burst), R/C input, 6 V BEC"
+    },
+    {
+      "id": "servocity-imc404",
+      "name": "Roboclaw 2x7A Motor Controller",
+      "category": "motor-drivers",
+      "price": 79.99,
+      "currency": "USD",
+      "sku": "IMC404",
+      "url": "https://www.servocity.com/roboclaw-2x7a-motor-controller/",
+      "spec": "Dual brushed DC, 7.5 A continuous (15 A peak) per channel, USB/RC/serial/analog, dual encoder inputs"
+    },
+    {
+      "id": "servocity-3114-0001-0001",
+      "name": "Pololu A-Star 32U4 Prime SV",
+      "category": "microcontrollers-sbc",
+      "price": 39.99,
+      "currency": "USD",
+      "sku": "3114-0001-0001",
+      "url": "https://www.servocity.com/pololu-a-star-32u4-prime-sv/",
+      "spec": "ATmega32U4 in Arduino form factor, 5–36 V input (no microSD)"
+    },
+    {
+      "id": "servocity-3124-0001-0001",
+      "name": "Laser Distance Sensor (1m Range, 3.3-5V, Digital or Analog Output)",
+      "category": "sensors",
+      "price": 29.99,
+      "currency": "USD",
+      "sku": "3124-0001-0001",
+      "url": "https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/",
+      "spec": "Laser time-of-flight distance sensor, up to 1 m, 3.3–5 V, digital or analog output"
+    },
+    {
+      "id": "servocity-3209-0001-0007",
+      "name": "Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels)",
+      "category": "chassis-kits",
+      "price": 699.99,
+      "currency": "USD",
+      "sku": "3209-0001-0007",
+      "url": "https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/",
+      "spec": "Mecanum drive chassis kit, 312 RPM planetary motors, 104 mm GripForce mecanum wheels"
+    },
+    {
+      "id": "servocity-3624-0014-0096",
+      "name": "96mm Omni Wheel (14mm Bore, 50A Durometer)",
+      "category": "wheels-mechanical",
+      "price": 21.99,
+      "currency": "USD",
+      "sku": "3624-0014-0096",
+      "url": "https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/",
+      "spec": "96 mm omni wheel, 14 mm bore, 50A-durometer rollers"
+    },
+    {
+      "id": "servocity-3213-3606-0002",
+      "name": "96mm Mecanum Wheel Set (70A Durometer Bearing Supported Rollers)",
+      "category": "wheels-mechanical",
+      "price": 169.99,
+      "currency": "USD",
+      "sku": "3213-3606-0002",
+      "url": "https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/",
+      "spec": "96 mm goBILDA mecanum wheel set, 70A bearing-supported rollers"
+    },
+    {
+      "id": "servocity-3100-0012-0020",
+      "name": "12V NiMH Nested Battery (3000mAh, MH-FC XT30 Connector)",
+      "category": "power-batteries",
+      "price": 64.99,
+      "currency": "USD",
+      "sku": "3100-0012-0020",
+      "url": "https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/",
+      "spec": "12 V NiMH, 3000 mAh, nested form factor, XT30 (MH-FC) connector"
+    }
+  ]
+}

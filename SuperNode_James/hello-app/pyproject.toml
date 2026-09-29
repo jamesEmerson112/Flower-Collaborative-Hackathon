@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hello-nodes"
+version = "0.1.0"
+description = "The master greets every SuperNode; each node answers from its own local profile"
+requires-python = ">=3.11,<4.0"
+dependencies = ["flwr>=1.39.0,<2.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["hello_app"]
+
+[tool.flwr.app]
+publisher = "james"   # set to your Flower account username
+fab-format-version = 1
+flwr-version-target = "1.39.0"
+fab-include = ["hello_app/**/*.py"]
+
+[tool.flwr.app.components]
+agentapp = "hello_app.agent_app:app"
