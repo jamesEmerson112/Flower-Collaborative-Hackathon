@@ -1,0 +1,686 @@
+<title>Robot Build Relay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a request bar, then the three steps in process order (plan + network side by side,
+   combined answer full width), then the per-store detail and a "who saw what" ledger. */
+:root {
+  --bg: #edf0ee; --surface: #fafbfa; --ink: #1b2226; --muted: #5a676d; --line: #d2d9d6; --code-bg: #f0f3f1;
+  --hub: #3446a8; --on-hub: #ffffff; --store: #16736f; --store-soft: #d6ebe8; --on-store: #ffffff;
+  --packet: #d99a06; --ok: #2e7d4f; --warn: #9c5d06; --bad: #b3372f;
+  --display: "Chakra Petch", "Arial Narrow", system-ui, sans-serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11171a; --surface: #182025; --ink: #e2e8e6; --muted: #93a1a6; --line: #28333a; --code-bg: #141b1f;
+    --hub: #8e9bff; --on-hub: #0e1320; --store: #4fb8b1; --store-soft: #173633; --on-store: #06201e;
+    --packet: #f4b41a; --ok: #6cc58f; --warn: #e2b04a; --bad: #f07b72; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11171a; --surface: #182025; --ink: #e2e8e6; --muted: #93a1a6; --line: #28333a; --code-bg: #141b1f;
+  --hub: #8e9bff; --on-hub: #0e1320; --store: #4fb8b1; --store-soft: #173633; --on-store: #06201e;
+  --packet: #f4b41a; --ok: #6cc58f; --warn: #e2b04a; --bad: #f07b72; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 40px; display: grid; gap: 18px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; letter-spacing: 0.01em; }
+h1 { font-size: clamp(28px, 4vw, 38px); line-height: 1.1; }
+h2 { font-size: 18px; }
+h3 { font-size: 15px; }
+p { margin: 0; }
+a { color: inherit; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 2px; }
+a:hover { text-decoration-color: currentColor; }
+code, pre, .mono { font-family: var(--mono); font-size: 12.5px; }
+.eyebrow { font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); }
+.lede { color: var(--muted); max-width: 68ch; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--hub); outline-offset: 2px; }
+
+/* request bar */
+.ask { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; }
+.ask-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.ask input { flex: 1 1 320px; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+.btn { border: 1px solid var(--hub); background: var(--hub); color: var(--on-hub); border-radius: 8px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
+.btn:disabled { opacity: 0.55; cursor: default; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.chip-btn { border: 1px solid var(--line); background: var(--bg); border-radius: 99px; padding: 4px 11px; font-size: 13px; cursor: pointer; }
+.chip-btn:hover { border-color: var(--hub); }
+
+/* steps */
+.stage { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 18px; }
+@media (max-width: 860px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.step-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.step-num { font: 600 13px var(--mono); color: var(--hub); }
+.where { font-size: 12.5px; color: var(--muted); }
+.state { margin-left: auto; font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 8px;
+         border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+.state.running { color: var(--packet); border-color: var(--packet); }
+.state.done { color: var(--ok); border-color: var(--ok); }
+pre.plan { margin: 0; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+           overflow-x: auto; white-space: pre; min-height: 180px; line-height: 1.5; }
+.plan .k { color: var(--hub); } .plan .s { color: var(--store); } .plan .n { color: var(--packet); }
+.note { font-size: 13px; color: var(--muted); }
+
+/* network */
+.net-box { overflow-x: auto; }
+svg.net { display: block; width: 100%; min-width: 440px; height: auto; }
+.net .edge { stroke: var(--line); stroke-width: 1.5; }
+.net .hub rect { fill: var(--hub); }
+.net .hub text { fill: var(--on-hub); font: 600 13px var(--display); }
+.net .hub .sub { font: 500 10px var(--mono); }
+.net .node circle { fill: var(--surface); stroke: var(--store); stroke-width: 2; transition: fill 0.25s; }
+.net .node .count { fill: var(--store); font: 600 11px var(--mono); }
+.net .node .label { fill: var(--ink); font: 500 12px var(--body); }
+.net .node.online circle { fill: var(--store-soft); }
+.net .node.working circle { stroke: var(--packet); animation: pulse 0.8s ease-in-out infinite alternate; }
+.net .node.done circle { fill: var(--store); }
+.net .node.done .count { fill: var(--on-store); }
+.net .packet { fill: var(--packet); }
+.net .packet.back { fill: var(--store); stroke: var(--surface); stroke-width: 1.5; }
+@keyframes pulse { from { stroke-width: 2; } to { stroke-width: 5; } }
+.trace { display: flex; flex-wrap: wrap; gap: 6px 14px; font: 12px var(--mono); color: var(--muted); }
+.trace span.on { color: var(--ink); }
+
+/* answer */
+.answer-text { font-size: 16px; max-width: 75ch; min-height: 3em; }
+.answer-text b { font-weight: 600; }
+.options { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 14px; }
+.option { border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 8px; min-width: 0; background: var(--bg); }
+.opt-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.opt-kind { font: 600 14px var(--display); }
+.opt-total { margin-left: auto; font: 600 22px var(--display); font-variant-numeric: tabular-nums; }
+.opt-sub { font-size: 13px; color: var(--muted); }
+.meter { height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.meter span { display: block; width: 0; height: 100%; background: var(--ok); border-radius: 99px; transition: width 0.6s; }
+.meter.over span { background: var(--bad); }
+.tbl-box { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+td { padding: 6px 4px; border-top: 1px solid var(--line); vertical-align: top; }
+td.part { color: var(--muted); white-space: nowrap; padding-right: 10px; }
+td.price { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+td .from { display: block; font-size: 12px; color: var(--muted); }
+tr.covered td, tr.missing td { color: var(--muted); font-style: italic; }
+tr.missing td.part { color: var(--bad); font-style: normal; }
+
+/* stores */
+.section-head { display: grid; gap: 4px; }
+.stores { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px; }
+.store { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.store header { display: flex; align-items: baseline; gap: 8px; }
+.store .state { font-size: 10px; }
+.store .meta { font-size: 12.5px; color: var(--muted); }
+.store details { font-size: 12.5px; }
+.store summary { cursor: pointer; color: var(--muted); }
+.store ol { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 2px; }
+.store ol code { font-size: 11.5px; overflow-wrap: anywhere; }
+.offers { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.offers li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; font-size: 13px; }
+.offers .p { grid-column: 1 / -1; font: 500 10.5px var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.offers .price { font-variant-numeric: tabular-nums; }
+.offers .tag { grid-column: 1 / -1; font-size: 12px; color: var(--store); }
+.none { font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+/* ledger */
+.ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; }
+.ledger > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 4px; align-content: start; }
+.ledger .big { font: 600 26px var(--display); font-variant-numeric: tabular-nums; }
+.ledger .who { font-size: 13px; font-weight: 600; }
+.ledger p:not(.big):not(.who) { font-size: 13px; color: var(--muted); }
+.calls-note { background: var(--surface); border: 1px dashed var(--hub); border-radius: 10px; padding: 12px 14px; display: grid; gap: 6px; }
+.calls-note .row { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 12.5px var(--mono); }
+footer { font-size: 12.5px; color: var(--muted); display: grid; gap: 6px; max-width: 90ch; }
+
+@media (prefers-reduced-motion: reduce) {
+  .net .node.working circle { animation: none; stroke-width: 4; }
+  .meter span { transition: none; }
+}
+</style>
+
+<main class="wrap">
+  <header style="display:grid;gap:6px">
+    <span class="eyebrow">Flower SuperGrid · simulated in this page</span>
+    <h1>Robot Build Relay</h1>
+    <p class="lede">Ask for a robot in plain words. The head office plans a parts list, eight real parts stores each check
+      their own private catalogue, and the head office combines their offers. Catalogues never leave the stores.</p>
+  </header>
+
+  <form class="ask" id="ask">
+    <label class="eyebrow" for="request">Your request</label>
+    <div class="ask-row">
+      <input id="request" autocomplete="off" value="Build a small 2-wheel robot that avoids obstacles, under $80">
+      <button class="btn" id="run" type="submit">Ask the stores</button>
+    </div>
+    <div class="chips" id="presets"><span class="eyebrow">Try</span></div>
+  </form>
+
+  <div class="stage">
+    <section class="step" id="step1">
+      <div class="step-head"><span class="step-num">1</span><h2>Head office plans the list</h2><span class="state">waiting</span></div>
+      <p class="where">master.py on Flower's SuperLink, one model call turns your words into parts</p>
+      <pre class="plan" id="plan"></pre>
+      <p class="note" id="plan-note"></p>
+    </section>
+
+    <section class="step" id="step2">
+      <div class="step-head"><span class="step-num">2</span><h2>Stores check their catalogues</h2><span class="state">waiting</span></div>
+      <p class="where">worker.py on each SuperNode, its own model call plus a local search_catalog tool</p>
+      <div class="net-box"><svg class="net" id="net" viewBox="0 0 560 330" role="img" aria-label="The head office in the middle sends the parts list to eight store nodes and collects their offers"></svg></div>
+      <div class="trace" id="trace">
+        <span data-t="get">get_nodes → 8 online</span>
+        <span data-t="push">push_messages → 8 tasks</span>
+        <span data-t="pull">pull_messages → 8 replies</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="step" id="step3">
+    <div class="step-head"><span class="step-num">3</span><h2>Head office combines the offers</h2><span class="state">waiting</span></div>
+    <p class="where">master.py again, a second model call compares every offer and explains the builds</p>
+    <p class="answer-text" id="answer"></p>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section class="section-head">
+    <h2>Inside each store</h2>
+    <p class="lede">Each card is one SuperNode. Its model asked the local search tool for each part, then picked offers.
+      Only the offers were sent back.</p>
+  </section>
+  <div class="stores" id="stores"></div>
+
+  <section class="section-head">
+    <h2>Who saw what</h2>
+  </section>
+  <div class="ledger" id="ledger"></div>
+  <div class="calls-note" id="calls"></div>
+
+  <footer>
+    <p><b>Simulation.</b> Everything runs in this page. The model steps are rule-based stand-ins for GPT or Endeavor calls,
+      and the network is animated, not live. In the real app, steps 1 and 3 are model calls in <code>master.py</code>, step 2 is
+      <code>worker.py</code> with a <code>search_catalog</code> tool on each SuperNode, and the messages travel with
+      <code>get_nodes</code>, <code>push_messages</code> and <code>pull_messages</code>.</p>
+    <p id="provenance"></p>
+  </footer>
+</main>
+
+<script>
+const DATA = {"captured_at":"2026-09-29","stores":[{"id":"adafruit","name":"Adafruit","items":[{"name":"DC Gearbox Motor - \"TT Motor\" - 200RPM - 3 to 6VDC","category":"motors","price":2.95,"sku":"3777","spec":"3–6 V TT gearmotor, 1:48 gearbox, 200 RPM at 6 V, 0.8 kg·cm stall at 6 V","url":"https://www.adafruit.com/product/3777"},{"name":"Micro servo [TowerPro SG92R]","category":"servos","price":5.95,"sku":"169","spec":"4.8 V nominal (3–6 V), 2.5 kg·cm, 0.1 s/60°, 9 g","url":"https://www.adafruit.com/product/169"},{"name":"DC Motor + Stepper FeatherWing Add-on For All Feather Boards","category":"motor-drivers","price":19.95,"sku":"2927","spec":"4 DC or 2 stepper motors, 1.2 A per bridge, motor supply 4.5–13.5 V, 12-bit speed control","url":"https://www.adafruit.com/product/2927"},{"name":"Adafruit Motor/Stepper/Servo Shield for Arduino v3 Kit","category":"motor-drivers","price":19.95,"sku":"1438","spec":"Arduino shield: 4 DC or 2 stepper motors, 1.2 A/channel (3 A peak ~20 ms), I2C 0x60–0x80","url":"https://www.adafruit.com/product/1438"},{"name":"Raspberry Pi Pico RP2040","category":"microcontrollers-sbc","price":4.0,"sku":"4864","spec":"RP2040 dual Arm Cortex-M0+ @ 133 MHz, 264 kB SRAM, 51.3 × 21 mm","url":"https://www.adafruit.com/product/4864"},{"name":"Maker Pi RP2040 - Motor and Robot Controller","category":"microcontrollers-sbc","price":14.95,"sku":"5129","spec":"RP2040 robot controller: dual-channel DC motor driver, 4 servo ports, 7 Grove connectors","url":"https://www.adafruit.com/product/5129"},{"name":"Adafruit VL53L0X Time of Flight Distance Sensor - ~30 to 1000mm","category":"sensors","price":14.95,"sku":"3317","spec":"VL53L0X laser time-of-flight, ~30–1000 mm range, STEMMA QT breakout","url":"https://www.adafruit.com/product/3317"},{"name":"Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible","category":"sensors","price":3.95,"sku":"4007","spec":"HC-SR04-compatible ultrasonic, 3–5.5 V, 2–450 cm, 40 kHz","url":"https://www.adafruit.com/product/4007"},{"name":"Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080)","category":"sensors","price":29.5,"sku":"4754","spec":"BNO085 9-DoF IMU with on-chip sensor fusion, STEMMA QT / Qwiic","url":"https://www.adafruit.com/product/4754"},{"name":"Mini Robot Rover Chassis Kit - 2WD with DC Motors","category":"chassis-kits","price":24.95,"sku":"2939","spec":"2WD metal rover chassis with DC motors, 156 × 103 × 73.5 mm assembled","url":"https://www.adafruit.com/product/2939"},{"name":"Orange and Clear TT Motor Wheel for TT DC Gearbox Motor","category":"wheels-mechanical","price":1.5,"sku":"3766","spec":"Wheel for TT gearbox motors, 63 × 29 mm, 38 g","url":"https://www.adafruit.com/product/3766"},{"name":"Lithium Ion Polymer Battery - 3.7v 2500mAh","category":"power-batteries","price":14.95,"sku":"328","spec":"LiPo 3.7 V nominal, 2500 mAh (~10 Wh), 50 × 60 × 7.3 mm, 50 g","url":"https://www.adafruit.com/product/328"}]},{"id":"sparkfun","name":"SparkFun","items":[{"name":"Hobby Gearmotor - 140 RPM (Pair)","category":"motors","price":7.5,"sku":"ROB-13302","spec":"Pair of DAGU hobby gearmotors, 4.5 V, 48:1, 140 RPM unloaded, 190 mA no-load","url":"https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html"},{"name":"Stepper Motor - 32 oz.in (200 steps/rev, 1200mm Wire)","category":"motors","price":26.95,"sku":"ROB-09238","spec":"NEMA 17 bipolar stepper, 200 steps/rev, 32 oz·in holding, 0.33 A, 5 mm shaft","url":"https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html"},{"name":"Servo - Generic (Sub-Micro Size)","category":"servos","price":12.95,"sku":"ROB-09065","spec":"Sub-micro servo, 4.8–6 V, 20.8 oz·in and 0.10 s/60° at 6 V, ~160° travel","url":"https://www.sparkfun.com/servo-generic-sub-micro-size.html"},{"name":"SparkFun Motor Driver - Dual TB6612FNG (with Headers)","category":"motor-drivers","price":14.5,"sku":"ROB-14450","spec":"TB6612FNG dual DC motor driver, up to 1.2 A per motor, headers pre-soldered","url":"https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html"},{"name":"SparkFun Qwiic Motor Driver","category":"motor-drivers","price":23.78,"sku":"ROB-15451","spec":"2-channel I2C/Qwiic motor driver, 1.2 A per channel (1.5 A peak), 127 drive levels","url":"https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html"},{"name":"SparkFun RedBoard Qwiic","category":"microcontrollers-sbc","price":21.95,"sku":"DEV-15123","spec":"ATmega328 Uno-compatible board, 7–15 V in, 20 I/O (6 PWM, 6 analog), Qwiic connector","url":"https://www.sparkfun.com/sparkfun-redboard-qwiic.html"},{"name":"SparkFun 9DoF IMU Breakout - ICM-20948 (Qwiic)","category":"sensors","price":21.95,"sku":"SEN-15335","spec":"ICM-20948 9-axis IMU with Digital Motion Processor, Qwiic/I2C","url":"https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html"},{"name":"SparkFun Distance Sensor Breakout - 4 Meter, VL53L1X (Qwiic)","category":"sensors","price":29.95,"sku":"SEN-14722","spec":"VL53L1X laser ToF distance sensor, up to 4 m, mm precision, I2C/Qwiic","url":"https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html"},{"name":"Ultrasonic Distance Sensor - 5V (HC-SR04)","category":"sensors","price":5.25,"sku":"SEN-15569","spec":"HC-SR04 ultrasonic, 5 V, 2 cm–4 m, accuracy up to 3 mm","url":"https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html"},{"name":"Shadow Chassis","category":"chassis-kits","price":14.95,"sku":"ROB-13301","spec":"Modular ABS robot chassis (RobotZone), Actobotics hub patterns, snap-on controller mounts","url":"https://www.sparkfun.com/shadow-chassis.html"},{"name":"Wheel - 65mm (Rubber Tire, Pair)","category":"wheels-mechanical","price":4.5,"sku":"ROB-13259","spec":"65 mm wheels with rubber tires, pair; fit DAGU right-angle gearmotors","url":"https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html"},{"name":"Lithium Ion Battery - 2Ah","category":"power-batteries","price":19.41,"sku":"PRT-13855","spec":"Li-ion 3.7 V, 2000 mAh, slim pack","url":"https://www.sparkfun.com/lithium-ion-battery-2ah.html"}]},{"id":"pololu","name":"Pololu","items":[{"name":"5:1 Micro Metal Gearmotor HPCB 12V","category":"motors","price":26.45,"sku":"3036","spec":"Micro metal gearmotor, 12 V HPCB, ~5:1, 6800 RPM no-load, 0.75 A stall, 3 mm D-shaft","url":"https://www.pololu.com/product/3036"},{"name":"FEETECH FS90 Micro Servo","category":"servos","price":8.4,"sku":"2818","spec":"Analog micro servo; at 6 V: 0.10 s/60°, 1.5 kg·cm, 9.0 g; 3.3 V or 5 V signal","url":"https://www.pololu.com/product/2818"},{"name":"DRV8833 Dual Motor Driver Carrier","category":"motor-drivers","price":10.95,"sku":"2130","spec":"DRV8833 dual H-bridge, 2.7–10.8 V, 1.2 A/channel continuous (2 A peak)","url":"https://www.pololu.com/product/2130"},{"name":"DRV8825 Stepper Motor Driver Carrier, High Current","category":"motor-drivers","price":15.95,"sku":"2133","spec":"DRV8825 bipolar stepper driver, 8.2–45 V, ~1.5 A/phase (2.2 A with cooling), to 1/32 step","url":"https://www.pololu.com/product/2133"},{"name":"A-Star 32U4 Micro","category":"microcontrollers-sbc","price":19.95,"sku":"3101","spec":"ATmega32U4, 18 I/O (6 PWM, 8 analog), Micro-USB, 1″ × 0.6″, Arduino bootloader","url":"https://www.pololu.com/product/3101"},{"name":"Romi 32U4 Control Board","category":"microcontrollers-sbc","price":74.95,"sku":"3544","spec":"ATmega32U4 robot controller with dual motor drivers, inertial sensors, encoder inputs, Pi interface","url":"https://www.pololu.com/product/3544"},{"name":"VL53L1X Time-of-Flight Distance Sensor Carrier with Voltage Regulator, 400cm Max","category":"sensors","price":22.95,"sku":"3415","spec":"VL53L1X laser ToF ranging up to 4 m, carrier with voltage regulator","url":"https://www.pololu.com/product/3415"},{"name":"QTR-MD-08RC Reflectance Sensor Array: 8-Channel, 8mm Pitch, RC Output","category":"sensors","price":9.9,"sku":"4148","spec":"8-channel IR reflectance (line) sensor array, 8 mm pitch, RC output, 2.9–5.5 V","url":"https://www.pololu.com/product/4148"},{"name":"Romi Chassis Kit - Black","category":"chassis-kits","price":39.95,"sku":"3500","spec":"Romi chassis kit: 2 motors, 2 wheels, ball caster, battery contacts","url":"https://www.pololu.com/product/3500"},{"name":"Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80×10mm, Black, 2-Pack","category":"wheels-mechanical","price":11.95,"sku":"3690","spec":"80 × 10 mm wheels, silicone tires, collets for 3/4 mm D and round shafts, 2-pack","url":"https://www.pololu.com/product/3690"},{"name":"Pololu Ball Caster with 3/4″ Plastic Ball","category":"wheels-mechanical","price":5.49,"sku":"954","spec":"Ball caster with 3/4″ plastic ball, 0.9″–1.2″ height via spacers","url":"https://www.pololu.com/product/954"},{"name":"Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5","category":"power-batteries","price":12.95,"sku":"2831","spec":"Step-down regulator, 5 V out, 1 A, 5.1–36 V in","url":"https://www.pololu.com/product/2831"}]},{"id":"servocity","name":"ServoCity","items":[{"name":"5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)","category":"motors","price":54.99,"sku":"5203-2402-0019","spec":"12 VDC planetary gearmotor, 19.2:1, 312 RPM, 24.3 kg·cm (338 oz-in) stall, 8 mm REX shaft, encoder","url":"https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/"},{"name":"Premium N20 Gear Motor (210:1 Ratio, 130 RPM)","category":"motors","price":12.99,"sku":"638114","spec":"N20 micro gearmotor, 210:1 ratio, 130 RPM","url":"https://www.servocity.com/130-rpm-micro-gear-motor/"},{"name":"Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)","category":"servos","price":17.99,"sku":"2002-0180-0002","spec":"Standard-size servo, steel gears, 180°, 75 oz-in (5.40 kg·cm) stall at 6 V","url":"https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/"},{"name":"Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)","category":"servos","price":9.99,"sku":"2003-0180-0001","spec":"Budget servo, nylon gears, 180°, 0.15 s/60°, 53 oz-in","url":"https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/"},{"name":"1x20A Motor Controller (9-30V Input)","category":"motor-drivers","price":39.99,"sku":"3105-0101-0020","spec":"Single brushed DC ESC, 9–30 V in, 20 A continuous (30 A burst), R/C input, 6 V BEC","url":"https://www.servocity.com/1x20a-motor-controller/"},{"name":"Roboclaw 2x7A Motor Controller","category":"motor-drivers","price":79.99,"sku":"IMC404","spec":"Dual brushed DC, 7.5 A continuous (15 A peak) per channel, USB/RC/serial/analog, dual encoder inputs","url":"https://www.servocity.com/roboclaw-2x7a-motor-controller/"},{"name":"Pololu A-Star 32U4 Prime SV","category":"microcontrollers-sbc","price":39.99,"sku":"3114-0001-0001","spec":"ATmega32U4 in Arduino form factor, 5–36 V input (no microSD)","url":"https://www.servocity.com/pololu-a-star-32u4-prime-sv/"},{"name":"Laser Distance Sensor (1m Range, 3.3-5V, Digital or Analog Output)","category":"sensors","price":29.99,"sku":"3124-0001-0001","spec":"Laser time-of-flight distance sensor, up to 1 m, 3.3–5 V, digital or analog output","url":"https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/"},{"name":"Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels)","category":"chassis-kits","price":699.99,"sku":"3209-0001-0007","spec":"Mecanum drive chassis kit, 312 RPM planetary motors, 104 mm GripForce mecanum wheels","url":"https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/"},{"name":"96mm Omni Wheel (14mm Bore, 50A Durometer)","category":"wheels-mechanical","price":21.99,"sku":"3624-0014-0096","spec":"96 mm omni wheel, 14 mm bore, 50A-durometer rollers","url":"https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/"},{"name":"96mm Mecanum Wheel Set (70A Durometer Bearing Supported Rollers)","category":"wheels-mechanical","price":169.99,"sku":"3213-3606-0002","spec":"96 mm goBILDA mecanum wheel set, 70A bearing-supported rollers","url":"https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/"},{"name":"12V NiMH Nested Battery (3000mAh, MH-FC XT30 Connector)","category":"power-batteries","price":64.99,"sku":"3100-0012-0020","spec":"12 V NiMH, 3000 mAh, nested form factor, XT30 (MH-FC) connector","url":"https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/"}]},{"id":"seeed","name":"Seeed Studio","items":[{"name":"Small Size and High Torque Stepper Motor - 24BYJ48","category":"motors","price":4.9,"sku":"108990003","spec":"24BYJ48 stepper, 5 V DC, 2-phase, 1/32 gear ratio, 5.625°/32 step angle","url":"https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html"},{"name":"Grove - Servo","category":"servos","price":6.99,"sku":"316010005","spec":"Hobby servo with Grove connector, 4.8–6.0 V (5 V typical)","url":"https://www.seeedstudio.com/Grove-Servo.html"},{"name":"Feetech ST3215-C047 12V 30Kg Servo","category":"servos","price":23.99,"sku":"108090003","spec":"12 V serial bus servo, 1:345 metal gearbox, 12-bit magnetic encoder, 30 kg·cm stall","url":"https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html"},{"name":"Grove - I2C Motor Driver (TB6612FNG)","category":"motor-drivers","price":10.98,"sku":"108020103","spec":"TB6612FNG: 2 DC motors or 1 stepper up to 12 V / 1.2 A, Grove I2C","url":"https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html"},{"name":"Seeed Studio XIAO ESP32-S3","category":"microcontrollers-sbc","price":7.49,"sku":"113991114","spec":"240 MHz dual-core Xtensa LX7, Wi-Fi + BLE 5.0, thumb-sized","url":"https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html"},{"name":"Raspberry Pi 5 8GB","category":"microcontrollers-sbc","price":175.0,"sku":"102110919","spec":"2.4 GHz 64-bit quad-core Arm, 800 MHz VideoCore VII GPU, 8 GB RAM","url":"https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html"},{"name":"Grove - Ultrasonic Distance Sensor","category":"sensors","price":4.99,"sku":"101020010","spec":"Ultrasonic ranging 3–350 cm, trigger and echo on a single GPIO, Grove","url":"https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html"},{"name":"Grove - IMU 9DOF (ICM20600+AK09918)","category":"sensors","price":11.25,"sku":"101020585","spec":"9-DoF IMU: ICM20600 gyro/accelerometer + AK09918 compass, Grove","url":"https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html"},{"name":"Grove - Time of Flight Distance Sensor(VL53L0X) - (ToF) laser-ranging module,Long Range Precision ranging","category":"sensors","price":7.99,"sku":"101020532","spec":"VL53L0X laser time-of-flight distance sensor, Grove","url":"https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html"},{"name":"Robot Car Kit-6WD Off-Road Chassis Kit","category":"chassis-kits","price":99.9,"sku":"110090325","spec":"6WD off-road chassis, 2 mm aluminium, 6 DC motors with 1:34 metal gearboxes","url":"https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html"},{"name":"SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm","category":"chassis-kits","price":277.99,"sku":"114993667","spec":"LeRobot SO-101 6-DoF arm motor kit: servos, adapter board, cables (no 3D-printed parts)","url":"https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html"},{"name":"Lipo Rider Plus (Charger/Booster) - 5V/2.4A USB Type C","category":"power-batteries","price":4.99,"sku":"106990290","spec":"LiPo charger/booster, 3 A charging, 5 V / 2.4 A output, USB-C","url":"https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html"}]},{"id":"dfrobot","name":"DFRobot","items":[{"name":"12V Metal DC Geared Motor with Encoder (43.8:1, 251RPM, 18Kg.cm)","category":"motors","price":16.5,"sku":"FIT0186","spec":"12 V metal gearmotor, 43.8:1, 251 RPM, 18 kg·cm, 700 counts/rev encoder","url":"https://www.dfrobot.com/product-634.html"},{"name":"TT Motor with Encoder (6V 160RPM 120:1)","category":"motors","price":7.4,"sku":"FIT0450","spec":"6 V TT gearmotor, 120:1, 160 RPM, with encoder","url":"https://www.dfrobot.com/product-1457.html"},{"name":"DSS-P05 Standard Servo (5.1kg)","category":"servos","price":5.8,"sku":"SER0020","spec":"Standard servo, 180°, 4.8–6 V, 38 g","url":"https://www.dfrobot.com/product-236.html"},{"name":"9g 180° Micro Servo for Arduino (1.3kg)","category":"servos","price":3.5,"sku":"SER0006","spec":"9 g micro servo, 180° ±5°, 4.8–6 V","url":"https://www.dfrobot.com/product-255.html"},{"name":"Fermion: TB6612FNG 2x1.2A DC Motor Driver (Breakout)","category":"motor-drivers","price":4.5,"sku":"DRI0044","spec":"TB6612FNG dual DC motor driver breakout, 2 × 1.2 A","url":"https://www.dfrobot.com/product-1704.html"},{"name":"MDV 2x2A DC Motor Controller (L298N)","category":"motor-drivers","price":12.9,"sku":"DRI0002","spec":"L298N dual DC motor controller, 4.8–46 V, 2 A per channel","url":"https://www.dfrobot.com/product-66.html"},{"name":"FireBeetle 2 ESP32-E IoT Microcontroller (32M / 512KB, Supports Wi-Fi & Bluetooth)","category":"microcontrollers-sbc","price":8.9,"sku":"DFR0654","spec":"ESP32-E IoT board, Wi-Fi + Bluetooth, Arduino-compatible","url":"https://www.dfrobot.com/product-2195.html"},{"name":"TF-Luna ToF Single-Point Ranging Solid State LiDAR Sensor (8m, UART / I2C)","category":"sensors","price":24.9,"sku":"SEN0340","spec":"TF-Luna single-point ToF lidar, 0.2–8 m, 1 cm resolution, UART/I2C","url":"https://www.dfrobot.com/product-1995.html"},{"name":"Fermion: BNO055 Intelligent 9-axis Sensor (Breakout)","category":"sensors","price":17.9,"sku":"SEN0374","spec":"BNO055 9-axis (accel, gyro, magnetometer + MCU), I2C","url":"https://www.dfrobot.com/product-2142.html"},{"name":"Devastator Tank Mobile Robot Platform","category":"chassis-kits","price":69.9,"sku":"ROB0112","spec":"Tracked tank platform, high-strength aluminium alloy, Arduino/Raspberry Pi compatible","url":"https://www.dfrobot.com/product-1219.html"},{"name":"Mecanum Wheel Kit (80mm - 4 Wheels)","category":"wheels-mechanical","price":19.6,"sku":"FIT0654-1","spec":"4 × 80 mm mecanum wheels, 9 rollers each, up to 10 kg load","url":"https://www.dfrobot.com/product-2042.html"},{"name":"2-Way 18650 Battery Holder","category":"power-batteries","price":9.9,"sku":"DFR0969","spec":"Holder/charger for 2 × 18650 cells, micro-USB and USB-C in, USB out, 3 V/5 V, protected","url":"https://www.dfrobot.com/product-2578.html"}]},{"id":"robotis","name":"ROBOTIS","items":[{"name":"DYNAMIXEL XL430-W250-T","category":"servos","price":27.5,"sku":"902-0135-000","spec":"DYNAMIXEL smart servo, 11.1 V, TTL, 57 RPM no-load, ~0.28 N·m est. rated torque, 4096-step resolution","url":"https://robotis.us/products/dynamixel-xl430-w250-t"},{"name":"DYNAMIXEL XL330-M288-T","category":"servos","price":27.49,"sku":"902-0163-000","spec":"DYNAMIXEL smart servo, 5 V, TTL/SBUS/iBUS/RC PWM, 103 RPM no-load, ~0.10 N·m est. rated torque","url":"https://robotis.us/products/dynamixel-xl330-m288-t"},{"name":"U2D2","category":"motor-drivers","price":36.92,"sku":"902-0132-000","spec":"USB-C to TTL/RS-485 converter for controlling DYNAMIXEL actuators from a PC","url":"https://robotis.us/products/u2d2"},{"name":"OpenCR1.0","category":"microcontrollers-sbc","price":247.14,"sku":"903-0257-000","spec":"STM32F746 Cortex-M7 216 MHz robot controller, MPU9250 IMU, RS-485 & TTL DYNAMIXEL ports","url":"https://robotis.us/products/opencr1-0"},{"name":"OpenRB-150","category":"microcontrollers-sbc","price":28.64,"sku":"902-0183-000","spec":"Arduino-compatible DYNAMIXEL controller board (batteries and cables not included)","url":"https://robotis.us/products/openrb-150"},{"name":"Distance Measuring Sensor DMS-80","category":"sensors","price":20.47,"sku":"902-0043-000","spec":"Distance sensor, 10–80 cm, 4.5–5.5 V, 4.4 g","url":"https://robotis.us/products/distance-measuring-sensor-dms-80"},{"name":"Gyro Sensor GS-12","category":"sensors","price":47.84,"sku":"902-0042-000","spec":"Gyro sensor, ±300°/s, 4.5–5.5 V, 23 × 23 × 10 mm","url":"https://robotis.us/products/gyro-sensor-gs-12"},{"name":"TurtleBot 3 Burger RPi4 4GB [US]","category":"chassis-kits","price":783.5,"sku":"901-0118-301","spec":"TurtleBot3 Burger ROS robot kit with Raspberry Pi 4 (4 GB) and LDS lidar","url":"https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us"},{"name":"TB3 Wheel Tire Set-ISW-01 (2ea)","category":"wheels-mechanical","price":10.81,"sku":"903-0260-000","spec":"Engineering-plastic wheels with high-grip rubber tires, bolt to DYNAMIXEL, 2 pcs","url":"https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea"},{"name":"TB3 Ball Caster-A01 (1ea)","category":"wheels-mechanical","price":4.03,"sku":"903-0262-000","spec":"Ball caster (frame + steel ball) for 6 mm plates / TB3 Waffle Plate","url":"https://robotis.us/products/tb3-ball-caster-a01-1ea"},{"name":"LIPO Battery 11.1V 1800mAh LB-012","category":"power-batteries","price":68.54,"sku":"903-0210-000","spec":"LiPo 11.1 V, 1800 mAh, 5C, built-in PCM protection, 106 g","url":"https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012"},{"name":"SMPS 12V 5A PS-10 [US-110V]","category":"power-batteries","price":24.61,"sku":"903-0126-000","spec":"12 V 5 A power supply, 100–260 V AC input","url":"https://robotis.us/products/smps-12v-5a-ps-10-us-110v"}]},{"id":"waveshare","name":"Waveshare","items":[{"name":"DDSM115 Direct Drive Servo Motor, Low Speed & High Torque, Low Noise, All-In-One Design, Hub Motor","category":"motors","price":64.99,"sku":"23489","spec":"Direct-drive hub servo motor, 115 RPM rated, 0.96 N·m rated / 2.0 N·m locked-rotor, 4096-count encoder, RS485, IP54","url":"https://www.waveshare.com/ddsm115.htm"},{"name":"2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle","category":"servos","price":8.99,"sku":"24440","spec":"Serial bus servo, 2.3 kg·cm at 6 V, 300° rotation, 4–6 V, 0.1 s/60°","url":"https://www.waveshare.com/sc09-servo.htm"},{"name":"SC15 17kg Large Torque Programmable Serial Bus Servo","category":"servos","price":17.99,"sku":"21568","spec":"Serial bus servo, 15 kg·cm at 6 V, metal gears, 4.8–8.4 V, 210° servo / 360° motor mode","url":"https://www.waveshare.com/sc15-servo.htm"},{"name":"Motor Driver HAT for Raspberry Pi, I2C Interface","category":"motor-drivers","price":13.99,"sku":"15364","spec":"Raspberry Pi HAT, TB6612FNG + PCA9685, I2C, 6–12 V motor supply","url":"https://www.waveshare.com/motor-driver-hat.htm"},{"name":"Stepper Motor HAT for Raspberry Pi, Drives Two Stepper Motors","category":"motor-drivers","price":18.99,"sku":"15669","spec":"Raspberry Pi HAT, dual DRV8825, 8.2–28 V, 2.5 A, up to 1/32 microstepping","url":"https://www.waveshare.com/stepper-motor-hat.htm"},{"name":"General Driver board for Robots, Based on ESP32, multi-functional, supports WIFI, Bluetooth and ESP-NOW communications, ESP32-WROOM-32UE, ESP32 Dev Board","category":"microcontrollers-sbc","price":27.99,"sku":"23730","spec":"ESP32-WROOM-32UE robot driver board, Wi-Fi/Bluetooth/ESP-NOW, works with Raspberry Pi and Jetson Nano","url":"https://www.waveshare.com/general-driver-for-robots.htm"},{"name":"D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus","category":"sensors","price":95.99,"sku":"25978","spec":"360° DTOF lidar, 0.03–12 m, 5000 Hz ranging, 6–13 Hz scan, UART 230400","url":"https://www.waveshare.com/d500-lidar-kit.htm"},{"name":"TOF Laser Range Sensor, UART / CAN Bus, Cascading Support, Ranging up to 5m, with Software","category":"sensors","price":17.99,"sku":"18301","spec":"Time-of-flight laser range sensor, up to 5 m, UART/CAN, cascadable","url":"https://www.waveshare.com/tof-laser-range-sensor.htm"},{"name":"WAVE ROVER Flexible And Expandable 4WD Mobile Robot Chassis, Full Metal Body, Multiple Hosts Support, With Onboard ESP32 Module","category":"chassis-kits","price":89.99,"sku":null,"spec":"Full-metal 4WD chassis with onboard ESP32, 4 × 1.5 W motors, 3 × 18650 (not included), 194 × 168 × 100 mm","url":"https://www.waveshare.com/wave-rover.htm"},{"name":"Uninterruptible Power Supply UPS HAT For Raspberry Pi, Stable 5V Power Output","category":"power-batteries","price":19.99,"sku":null,"spec":"5 V UPS HAT for Raspberry Pi, 18650 cells (not included), 8.4 V 2 A charger, I2C monitoring","url":"https://www.waveshare.com/ups-hat.htm"},{"name":"Serial Bus Servo DC Buck Adapter, Mini Module, Design for Serial Bus Servos, Easy to Use, 7.2V / 6V Buck Regulator","category":"power-batteries","price":3.49,"sku":null,"spec":"Buck adapter for serial bus servos, 9–36 V in, 7.2 V or 6 V out","url":"https://www.waveshare.com/dc-buck-adapter-7.2v.htm"}]}]};
+const $ = (sel, root = document) => root.querySelector(sel);
+const money = (n) => "$" + n.toFixed(2);
+const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const STORES = DATA.stores;
+
+// ---------------------------------------------------------------- what each part means
+// category = catalogue category; include/exclude = words in the item name or spec.
+const NEEDS = {
+  chassis2wd: { label: "2-wheel chassis", category: "chassis-kits", need: "small 2-wheel drive base",
+                include: ["2wd", "2 motors", "2 wheels"] },
+  chassisTank: { label: "Rugged chassis", category: "chassis-kits", need: "tracked or off-road base",
+                 include: ["tracked", "tank", "6wd", "off-road"] },
+  motors: { label: "DC gear motors", category: "motors", qty: 2, need: "2 small DC gear motors",
+            note: "skip if the chassis includes motors", include: ["gearmotor", "gear motor"],
+            exclude: ["stepper", "12 v", "planetary", "direct-drive"] },
+  driver: { label: "Motor driver", category: "motor-drivers", need: "drives 2 DC motors",
+            note: "skip if the controller has one built in",
+            include: ["dual", "2-channel", "4 dc", "tb6612", "drv8833", "l298n"],
+            exclude: ["drv8825", "stepper driver", "dynamixel", "single", "esc"] },
+  controller: { label: "Controller", category: "microcontrollers-sbc", need: "small controller for a hobby robot",
+                exclude: ["raspberry pi 5", "opencr", "dynamixel"] },
+  controllerServo: { label: "Controller", category: "microcontrollers-sbc", need: "controller with servo outputs",
+                     include: ["servo"] },
+  distance: { label: "Distance sensor", category: "sensors", need: "detect obstacles ahead",
+              include: ["distance", "ultrasonic", "time-of-flight", "tof", "lidar", "ranging"], exclude: ["360°"] },
+  line: { label: "Line sensor", category: "sensors", need: "follow a line on the floor", include: ["reflectance", "line"] },
+  imu: { label: "IMU", category: "sensors", need: "measure tilt and heading", note: "skip if the controller has one",
+         include: ["imu", "9-dof", "9-axis", "9dof", "gyro"] },
+  battery: { label: "Battery", category: "power-batteries", need: "rechargeable pack",
+             include: ["lipo", "li-ion", "lithium", "nimh"], exclude: ["charger", "holder", "regulator", "supply", "ups", "buck"] },
+  servoArm: { label: "Arm servos", category: "servos", qty: 4, need: "servos with at least 2 kg·cm torque", minKg: 2 },
+  servoSmall: { label: "Servo", category: "servos", qty: 1, need: "small hobby servo" },
+};
+
+const PRESETS = [
+  "Build a small 2-wheel robot that avoids obstacles, under $80",
+  "A line-following car with an IMU and a battery, under $120",
+  "A desk robot arm with 4 servos, under $100",
+];
+
+const lowerFirst = (s) => s.replace(/^[A-Z](?=[a-z])/, (c) => c.toLowerCase());
+const budgetText = (n) => (Number.isInteger(n) ? "$" + n : money(n));
+const listJoin = (a) => (a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]);
+const textOf = (item) => (item.name + " " + item.spec).toLowerCase();
+const unitsOf = (item) => (/\(pair\)/i.test(item.name) ? 2 : 1);
+
+function torqueKg(item) {
+  const t = textOf(item);
+  let m;
+  if ((m = t.match(/(\d+(?:\.\d+)?)\s*kg·cm/))) return +m[1];
+  if ((m = t.match(/(\d+(?:\.\d+)?)\s*oz[·\-\s]?in/))) return +m[1] / 13.887;
+  if ((m = t.match(/(\d+(?:\.\d+)?)\s*n·m/))) return +m[1] * 10.197;
+  if ((m = t.match(/(\d+(?:\.\d+)?)\s*kg\b/))) return +m[1];
+  return null;
+}
+
+function flagsOf(item) {
+  const t = textOf(item);
+  const ctrl = item.category === "microcontrollers-sbc";
+  return {
+    motors: item.category === "chassis-kits" && /motor/.test(t),
+    driver: ctrl && /motor driver/.test(t),
+    imu: ctrl && /(imu|inertial)/.test(t),
+  };
+}
+
+// ---------------------------------------------------------------- 1: planner (stand-in for a model call)
+function makePlan(text) {
+  const t = text.toLowerCase();
+  const budgetMatch = t.match(/\$\s?(\d+(?:\.\d+)?)/) || t.match(/under\s+(\d+(?:\.\d+)?)/);
+  const budget = budgetMatch ? +budgetMatch[1] : null;
+  const isArm = /\barm\b|gripper/.test(t);
+  let mobile = !isArm && /wheel|car|rover|drive|tank|track|line|obstacle|follow|robot/.test(t);
+  const keys = [];
+  let assumed = "";
+  if (!isArm && !mobile && !/servo/.test(t)) { mobile = true; assumed = "No robot type recognised, so the plan assumes a small wheeled robot."; }
+  if (mobile) keys.push(/tank|track|off-road|6wd/.test(t) ? "chassisTank" : "chassis2wd", "motors", "driver");
+  keys.push(isArm ? "controllerServo" : "controller");
+  if (/obstacle|distance|avoid|range|lidar/.test(t)) keys.push("distance");
+  if (/\bline\b|line-follow/.test(t)) keys.push("line");
+  if (/imu|balanc|orientation|tilt|gyro/.test(t)) keys.push("imu");
+  if (/batter|power/.test(t)) keys.push("battery");
+  let servoQty = null;
+  if (isArm || /servo/.test(t)) {
+    const q = t.match(/(\d+)\s*servos?/);
+    servoQty = q ? Math.min(+q[1], 12) : isArm ? 4 : 1;
+    keys.push(isArm ? "servoArm" : "servoSmall");
+  }
+  const parts = keys.map((key) => ({ key, ...NEEDS[key], qty: key.startsWith("servo") ? servoQty : NEEDS[key].qty || 1 }));
+  return { text, budget, parts, assumed };
+}
+
+function planLines(plan) {
+  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const k = (s) => `<span class="k">"${s}"</span>`;
+  const s = (v) => `<span class="s">"${esc(v)}"</span>`;
+  const n = (v) => `<span class="n">${v}</span>`;
+  const lines = ["{", `  ${k("budget_usd")}: ${plan.budget == null ? n("null") : n(plan.budget)},`, `  ${k("parts")}: [`];
+  plan.parts.forEach((p, i) => {
+    const extra = p.note ? `, ${k("note")}: ${s(p.note)}` : "";
+    lines.push(`    {${k("part")}: ${s(p.label)}, ${k("qty")}: ${n(p.qty)}, ${k("category")}: ${s(p.category)}, ${k("need")}: ${s(p.need)}${extra}}${i < plan.parts.length - 1 ? "," : ""}`);
+  });
+  lines.push("  ]", "}");
+  return lines;
+}
+
+// ---------------------------------------------------------------- 2: one store's worker (model + search_catalog tool)
+function searchCatalog(store, part) {
+  return store.items.filter((item) => {
+    if (item.category !== part.category) return false;
+    const t = textOf(item);
+    if (part.include && !part.include.some((w) => t.includes(w))) return false;
+    if (part.exclude && part.exclude.some((w) => t.includes(w))) return false;
+    if (part.minKg) { const kg = torqueKg(item); if (kg == null || kg < part.minKg) return false; }
+    return true;
+  });
+}
+
+function offerFor(store, part, item) {
+  const packs = Math.ceil(part.qty / unitsOf(item));
+  const flags = flagsOf(item);
+  const tags = [];
+  if (flags.motors) tags.push("motors included");
+  if (flags.driver) tags.push("motor driver built in");
+  if (flags.imu) tags.push("IMU built in");
+  if (part.minKg) tags.push(torqueKg(item).toFixed(1) + " kg·cm");
+  if (unitsOf(item) > 1) tags.push("pair");
+  return { part: part.key, label: part.label, store: store.id, storeName: store.name, item, packs, cost: packs * item.price, flags, tags };
+}
+
+function runWorker(store, plan) {
+  const has = (key) => plan.parts.some((p) => p.key === key);
+  const calls = [], offers = [], missing = [];
+  let rows = 0;
+  for (const part of plan.parts) {
+    const found = searchCatalog(store, part);
+    calls.push({ part, rows: found.length });
+    rows += found.length;
+    if (!found.length) { missing.push(lowerFirst(part.label)); continue; }
+    const byCost = found.map((item) => offerFor(store, part, item)).sort((a, b) => a.cost - b.cost);
+    const picks = [byCost[0]];
+    // Bundle-aware extras: an item that makes another part unnecessary is worth offering too.
+    const extra = (flag) => byCost.find((o) => o.flags[flag] && !picks.includes(o));
+    if (part.key.startsWith("chassis") && has("motors")) { const o = extra("motors"); if (o && !picks[0].flags.motors) picks.push(o); }
+    if (part.key.startsWith("controller")) {
+      if (has("driver")) { const o = extra("driver"); if (o) picks.push(o); }
+      if (has("imu")) { const o = extra("imu"); if (o) picks.push(o); }
+    }
+    offers.push(...picks);
+  }
+  return { store, calls, offers, missing, rows };
+}
+
+// ---------------------------------------------------------------- 3: combine (stand-in for the second model call)
+function combine(plan, replies) {
+  const offers = replies.flatMap((r) => r.offers);
+  const keys = plan.parts.map((p) => p.key);
+  const chassisKey = keys.find((k) => k.startsWith("chassis"));
+  const ctrlKey = keys.find((k) => k.startsWith("controller"));
+
+  function build(storeId) {
+    const pool = offers.filter((o) => !storeId || o.store === storeId);
+    const of = (key) => pool.filter((o) => o.part === key).sort((a, b) => a.cost - b.cost);
+    const chassisOpts = chassisKey ? of(chassisKey) : [];
+    const ctrlOpts = ctrlKey ? of(ctrlKey) : [];
+    let best = null;
+    for (const ch of chassisOpts.length ? chassisOpts : [null]) {
+      for (const ct of ctrlOpts.length ? ctrlOpts : [null]) {
+        const rows = [], missing = [];
+        for (const part of plan.parts) {
+          if (part.key === chassisKey) { ch ? rows.push({ part, offer: ch }) : missing.push(part); continue; }
+          if (part.key === ctrlKey) { ct ? rows.push({ part, offer: ct }) : missing.push(part); continue; }
+          const by = part.key === "motors" && ch?.flags.motors ? ch
+                   : part.key === "driver" && ct?.flags.driver ? ct
+                   : part.key === "imu" && ct?.flags.imu ? ct : null;
+          if (by) { rows.push({ part, coveredBy: by }); continue; }
+          const cheapest = of(part.key)[0];
+          cheapest ? rows.push({ part, offer: cheapest }) : missing.push(part);
+        }
+        for (const part of missing) rows.push({ part, missing: true });
+        const total = rows.reduce((sum, r) => sum + (r.offer ? r.offer.cost : 0), 0);
+        const stores = [...new Set(rows.filter((r) => r.offer).map((r) => r.offer.storeName))];
+        const cand = { rows, missing, total, stores };
+        if (!best || missing.length < best.missing.length || (missing.length === best.missing.length && total < best.total)) best = cand;
+      }
+    }
+    return best;
+  }
+
+  const lowest = build(null);
+  const perStore = STORES.map((s) => ({ store: s, build: build(s.id) }));
+  perStore.sort((a, b) => a.build.missing.length - b.build.missing.length || a.build.total - b.build.total);
+  const single = perStore[0];
+  return { lowest, single, offerCount: offers.length };
+}
+
+function narrative(plan, result) {
+  const { lowest, single } = result;
+  const out = [];
+  const coveredNote = (b) => b.rows.filter((r) => r.coveredBy)
+    .map((r) => `the ${r.coveredBy.item.name.split(" - ")[0]} includes the ${lowerFirst(r.part.label)}`);
+  if (lowest.missing.length) {
+    out.push(`<b>No store in the network stocks:</b> ${lowest.missing.map((p) => lowerFirst(p.label)).join(", ")}.`);
+  }
+  out.push(`<b>Lowest total: ${money(lowest.total)}</b>, from ${listJoin(lowest.stores)}.`);
+  const sameAsLowest = lowest.stores.length === 1;
+  if (single.build.missing.length === 0) {
+    if (sameAsLowest) out.push(`That build already ships from one store.`);
+    else {
+      const notes = coveredNote(single.build);
+      out.push(`<b>One shipment: ${money(single.build.total)}</b>, everything from ${single.store.name}${notes.length ? ", because " + notes.join(" and ") : ""}.`);
+    }
+  } else {
+    out.push(`No single store stocks everything. Closest is ${single.store.name} at ${money(single.build.total)}, missing the ${single.build.missing.map((p) => lowerFirst(p.label)).join(" and ")}.`);
+  }
+  if (plan.budget != null) {
+    const B = budgetText(plan.budget);
+    const builds = [["lowest-total build", lowest.total]];
+    if (single.build.missing.length === 0 && !sameAsLowest) builds.push(["one-shipment build", single.build.total]);
+    const over = builds.filter((b) => b[1] > plan.budget);
+    if (!over.length) out.push(builds.length > 1 ? `Both builds fit your ${B} budget.` : `The lowest-total build fits your ${B} budget.`);
+    else out.push(`Over your ${B} budget: the ${over.map((b) => b[0]).join(" and the ")}.`);
+  }
+  if (lowest.stores.length > 1) out.push(`Shipping isn't in the store data, and ${lowest.stores.length} stores usually means ${lowest.stores.length} shipping fees.`);
+  return out.join(" ");
+}
+
+// ---------------------------------------------------------------- rendering
+function el(tag, attrs = {}, ...kids) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") node.className = v; else if (k === "html") node.innerHTML = v; else node.setAttribute(k, v);
+  }
+  node.append(...kids.filter((k) => k != null));
+  return node;
+}
+const itemLink = (item) => el("a", { href: item.url, target: "_blank", rel: "noopener" }, item.name);
+
+function setState(stepId, state) {
+  const chip = $(`#${stepId} .state`);
+  chip.textContent = state;
+  chip.className = "state " + (state === "waiting" ? "" : state);
+}
+
+// network diagram
+const SVGNS = "http://www.w3.org/2000/svg";
+const HUB = { x: 280, y: 165 };
+const nodePos = STORES.map((s, i) => {
+  const a = -Math.PI / 2 + (i * 2 * Math.PI) / STORES.length;
+  return { x: HUB.x + 220 * Math.cos(a), y: HUB.y + 120 * Math.sin(a) };
+});
+function svg(tag, attrs, text) {
+  const n = document.createElementNS(SVGNS, tag);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (text != null) n.textContent = text;
+  return n;
+}
+function drawNet() {
+  const net = $("#net");
+  net.replaceChildren();
+  STORES.forEach((s, i) => net.append(svg("line", { class: "edge", x1: HUB.x, y1: HUB.y, x2: nodePos[i].x, y2: nodePos[i].y })));
+  const hub = svg("g", { class: "hub" });
+  hub.append(svg("rect", { x: HUB.x - 66, y: HUB.y - 25, width: 132, height: 50, rx: 10 }),
+             svg("text", { x: HUB.x, y: HUB.y - 3, "text-anchor": "middle" }, "Head office"),
+             svg("text", { x: HUB.x, y: HUB.y + 13, "text-anchor": "middle", class: "sub" }, "SuperLink · master.py"));
+  net.append(hub);
+  STORES.forEach((s, i) => {
+    const p = nodePos[i];
+    const g = svg("g", { class: "node", id: "node-" + s.id });
+    const below = p.y >= HUB.y;
+    g.append(svg("circle", { cx: p.x, cy: p.y, r: 17 }),
+             svg("text", { x: p.x, y: p.y + 4, "text-anchor": "middle", class: "count" }, s.items.length),
+             svg("text", { x: p.x, y: below ? p.y + 33 : p.y - 25, "text-anchor": "middle", class: "label" }, s.name));
+    net.append(g);
+  });
+}
+function setNode(id, state) { $("#node-" + id).setAttribute("class", "node " + (state || "")); }
+
+function flyPacket(i, back) {
+  if (REDUCE || !animating) return Promise.resolve();
+  const net = $("#net");
+  const dot = svg("circle", { r: 5, class: "packet" + (back ? " back" : "") });
+  net.append(dot);
+  const [a, b] = back ? [nodePos[i], HUB] : [HUB, nodePos[i]];
+  const dur = 650, t0 = performance.now();
+  return new Promise((resolve) => {
+    function frame(now) {
+      const t = Math.min(1, (now - t0) / dur), e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      dot.setAttribute("cx", a.x + (b.x - a.x) * e);
+      dot.setAttribute("cy", a.y + (b.y - a.y) * e);
+      if (t < 1) requestAnimationFrame(frame); else { dot.remove(); resolve(); }
+    }
+    requestAnimationFrame(frame);
+  });
+}
+
+function renderStoreCard(reply, state) {
+  return (store) => {
+    const card = el("article", { class: "store", id: "store-" + store.id });
+    const head = el("header", {}, el("h3", {}, store.name), el("span", { class: "state " + (state === "done" ? "done" : state === "working" ? "running" : "") },
+      state === "done" ? "replied" : state === "working" ? "working" : "waiting"));
+    card.append(head, el("p", { class: "meta" }, `${store.items.length} catalogue rows, all stay on this node`));
+    if (reply && state === "done") {
+      const ol = el("ol");
+      reply.calls.forEach((c) => ol.append(el("li", {},
+        el("code", {}, `search_catalog("${c.part.category}", "${c.part.need}")`), ` → ${c.rows} row${c.rows === 1 ? "" : "s"}`)));
+      card.append(el("details", {}, el("summary", {}, `Model called search_catalog ${reply.calls.length}× and saw ${reply.rows} rows`), ol));
+      if (reply.offers.length) {
+        const ul = el("ul", { class: "offers" });
+        reply.offers.forEach((o) => ul.append(el("li", {},
+          el("span", { class: "p" }, o.label + (o.packs > 1 ? ` · ${o.packs}×` : "")),
+          itemLink(o.item), el("span", { class: "price" }, money(o.cost)),
+          o.tags.length ? el("span", { class: "tag" }, o.tags.join(" · ")) : null)));
+        card.append(ul);
+      }
+      if (reply.missing.length) card.append(el("p", { class: "none" }, "Not stocked: " + reply.missing.join(", ")));
+    }
+    return card;
+  };
+}
+function renderStores(replies, states) {
+  $("#stores").replaceChildren(...STORES.map((store) => {
+    const reply = replies && replies.find((r) => r.store.id === store.id);
+    return renderStoreCard(reply, states[store.id])(store);
+  }));
+}
+
+function renderOption(kind, build, budget, sub) {
+  const box = el("div", { class: "option" });
+  box.append(el("div", { class: "opt-head" }, el("span", { class: "opt-kind" }, kind), el("span", { class: "opt-total" }, money(build.total))),
+             el("p", { class: "opt-sub" }, sub));
+  if (budget != null) {
+    const pct = Math.min(100, (build.total / budget) * 100);
+    const meter = el("div", { class: "meter" + (build.total > budget ? " over" : ""), title: `${money(build.total)} of ${money(budget)} budget` }, el("span"));
+    box.append(meter);
+    requestAnimationFrame(() => (meter.firstChild.style.width = pct + "%"));
+  }
+  const tb = el("tbody");
+  for (const r of build.rows) {
+    if (r.offer) {
+      tb.append(el("tr", {}, el("td", { class: "part" }, r.part.label + (r.offer.packs > 1 ? ` ×${r.offer.packs}` : "")),
+        el("td", {}, itemLink(r.offer.item), el("span", { class: "from" }, r.offer.storeName + (r.offer.tags.length ? " · " + r.offer.tags.join(" · ") : ""))),
+        el("td", { class: "price" }, money(r.offer.cost))));
+    } else if (r.coveredBy) {
+      tb.append(el("tr", { class: "covered" }, el("td", { class: "part" }, r.part.label),
+        el("td", {}, "Included with " + r.coveredBy.item.name.split(" - ")[0]), el("td", { class: "price" }, "–")));
+    } else {
+      tb.append(el("tr", { class: "missing" }, el("td", { class: "part" }, r.part.label),
+        el("td", {}, "Not stocked here"), el("td", { class: "price" }, "–")));
+    }
+  }
+  box.append(el("div", { class: "tbl-box" }, el("table", {}, tb)));
+  return box;
+}
+
+function renderOptions(plan, result) {
+  const { lowest, single } = result;
+  const boxes = [renderOption("Lowest total", lowest, plan.budget,
+    `${lowest.stores.length} store${lowest.stores.length === 1 ? "" : "s"}: ${lowest.stores.join(", ")}`)];
+  if (!(lowest.stores.length === 1 && single.build.missing.length === 0)) {
+    boxes.push(renderOption(single.build.missing.length ? "Closest single store" : "One shipment", single.build, plan.budget,
+      single.build.missing.length ? `${single.store.name}, missing ${single.build.missing.length} part${single.build.missing.length === 1 ? "" : "s"}` : `Everything from ${single.store.name}`));
+  }
+  $("#options").replaceChildren(...boxes);
+}
+
+function renderLedger(plan, replies, result) {
+  const total = STORES.reduce((n, s) => n + s.items.length, 0);
+  const seen = replies.map((r) => r.rows);
+  $("#ledger").replaceChildren(
+    el("div", {}, el("p", { class: "who" }, "Head office model"), el("p", { class: "big" }, result.offerCount),
+      el("p", {}, `offers, plus your request. It never saw a catalogue row, cost price or stock list.`)),
+    el("div", {}, el("p", { class: "who" }, "Each store's model"), el("p", { class: "big" }, `${Math.min(...seen)}–${Math.max(...seen)}`),
+      el("p", {}, `rows each: only what its own search_catalog returned, on its own node, with its own model key.`)),
+    el("div", {}, el("p", { class: "who" }, "Stayed on the stores"), el("p", { class: "big" }, total),
+      el("p", {}, `catalogue rows across 8 nodes. Only the ${result.offerCount} offers left them.`)));
+  const storeCalls = STORES.length * 2;
+  $("#calls").replaceChildren(
+    el("h3", {}, `${storeCalls + 2} separate model calls for one request, not one shared model`),
+    el("div", { class: "row" }, el("span", {}, "Head office: 2 (plan, combine)"), el("span", {}, `Stores: 2 each × 8 = ${storeCalls} (search, then decide)`)),
+    el("p", { class: "note" }, "Each call is its own short task on the machine that makes it, billed to that machine's model key. Calls share nothing: every call starts from the text it is sent. The model only asks for search_catalog; the worker's own code runs it against the local catalogue."));
+}
+
+// ---------------------------------------------------------------- the run
+let runId = 0, animating = false;
+const sleep = (ms) => (REDUCE || !animating ? Promise.resolve() : new Promise((r) => setTimeout(r, ms)));
+
+async function run(text, animate) {
+  const my = ++runId;
+  const alive = () => my === runId;
+  animating = animate && !REDUCE;
+  $("#run").disabled = animating;
+  const plan = makePlan(text);
+  const states = Object.fromEntries(STORES.map((s) => [s.id, ""]));
+
+  // reset
+  ["step1", "step2", "step3"].forEach((id) => setState(id, "waiting"));
+  $("#plan").innerHTML = ""; $("#plan-note").textContent = ""; $("#answer").innerHTML = ""; $("#options").replaceChildren();
+  $("#trace").querySelectorAll("span").forEach((s) => s.classList.remove("on"));
+  $('#trace [data-t="pull"]').textContent = "pull_messages → 8 replies";
+  drawNet(); renderStores(null, states);
+
+  // 1: plan
+  setState("step1", "running");
+  const lines = planLines(plan);
+  for (let i = 0; i < lines.length; i++) {
+    if (!alive()) return;
+    $("#plan").innerHTML = lines.slice(0, i + 1).join("\n");
+    await sleep(110);
+  }
+  $("#plan-note").textContent = plan.assumed || `${plan.parts.length} parts. Notes let a store's offer cover another part.`;
+  setState("step1", "done");
+
+  // 2: fan-out
+  setState("step2", "running");
+  $('#trace [data-t="get"]').classList.add("on");
+  STORES.forEach((s) => setNode(s.id, "online"));
+  await sleep(350);
+  if (!alive()) return;
+  $('#trace [data-t="push"]').classList.add("on");
+  await Promise.all(STORES.map((s, i) => flyPacket(i, false)));
+  if (!alive()) return;
+  STORES.forEach((s) => { setNode(s.id, "working"); states[s.id] = "working"; });
+  renderStores(null, states);
+  const replies = STORES.map((s) => runWorker(s, plan));
+  const order = STORES.map((s, i) => i).sort(() => (animating ? Math.random() - 0.5 : 0));
+  const backs = [];
+  for (const i of order) {
+    await sleep(180 + (animating ? Math.random() * 220 : 0));
+    if (!alive()) return;
+    const s = STORES[i];
+    states[s.id] = "done";
+    setNode(s.id, "done");
+    renderStores(replies, states);
+    backs.push(flyPacket(i, true));
+  }
+  await Promise.all(backs);
+  if (!alive()) return;
+  const offers = replies.reduce((n, r) => n + r.offers.length, 0);
+  $('#trace [data-t="pull"]').textContent = `pull_messages → 8 replies, ${offers} offers`;
+  $('#trace [data-t="pull"]').classList.add("on");
+  setState("step2", "done");
+
+  // 3: combine
+  setState("step3", "running");
+  const result = combine(plan, replies);
+  const words = narrative(plan, result).split(" ");
+  if (animating) {
+    for (let i = 0; i < words.length; i += 3) {
+      if (!alive()) return;
+      $("#answer").innerHTML = words.slice(0, i + 3).join(" ");
+      await sleep(45);
+    }
+  }
+  $("#answer").innerHTML = words.join(" ");
+  renderOptions(plan, result);
+  renderLedger(plan, replies, result);
+  setState("step3", "done");
+  $("#run").disabled = false;
+  animating = false;
+}
+
+// ---------------------------------------------------------------- controls
+PRESETS.forEach((p) => {
+  const b = el("button", { class: "chip-btn", type: "button" }, p);
+  b.addEventListener("click", () => { $("#request").value = p; run(p, true); });
+  $("#presets").append(b);
+});
+$("#ask").addEventListener("submit", (e) => { e.preventDefault(); const v = $("#request").value.trim(); if (v) run(v, true); });
+$("#provenance").textContent = `Store data: ${STORES.length} real stores, ${STORES.reduce((n, s) => n + s.items.length, 0)} items from their own product pages, captured ${DATA.captured_at}. Single-unit USD prices; shipping, tax and stock levels are not included.`;
+
+run(PRESETS[0], false); // complete at rest; "Ask the stores" replays it with animation
+</script>

@@ -1,0 +1,216 @@
+[
+  {
+    "product_id": "robotis-902-0135-000",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "legs",
+      "head"
+    ],
+    "part_type": "smart_servo",
+    "assembly_level": "component",
+    "function_summary": "TTL smart actuator with position and continuous-rotation control plus motion feedback.",
+    "classification_reason": "Suggested as an arm joint; its other operating modes also suit wheel drives or pan-tilt heads. One actuator is not an assembled limb.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One servo with preinstalled horn, TTL cable, bolts and spacers; body links and controller are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/dynamixel-xl430-w250-t"
+    ],
+    "evidence_note": "Product lists arm, wheel and pan-tilt use cases and a one-servo package; use current XL430(new) CAD revision. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-902-0163-000",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "legs",
+      "head"
+    ],
+    "part_type": "smart_servo",
+    "assembly_level": "component",
+    "function_summary": "Compact 5 V smart servo with position, velocity and current control.",
+    "classification_reason": "Suggested as a small arm joint; may also actuate a light drive or sensor mount. It supplies no complete limb structure.",
+    "classification_confidence": "medium",
+    "assembly_notes": "Package lists one XL330-M288-T, one TTL cable and horn/frame bolts; controller and linkage are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/dynamixel-xl330-m288-t"
+    ],
+    "evidence_note": "Vendor identifies compact robotic arms and mobile robots and lists position/velocity/current modes. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-902-0132-000",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "interface_adapter",
+    "assembly_level": "module",
+    "function_summary": "USB interface that lets a computer communicate with TTL and RS-485 DYNAMIXEL actuators.",
+    "classification_reason": "Communication electronics support joints; the adapter does not itself produce movement or provide a body segment.",
+    "classification_confidence": "high",
+    "assembly_notes": "External actuator power is required. Page announces USB-C but its package table still says Micro USB; verify supplied cable/revision.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/u2d2"
+    ],
+    "evidence_note": "Page explicitly describes a USB communication converter and states it does not power DYNAMIXEL. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-903-0257-000",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "robot_controller",
+    "assembly_level": "module",
+    "function_summary": "Cortex-M7 robot control board with DYNAMIXEL interfaces and onboard inertial sensing.",
+    "classification_reason": "Internal control electronics belong to support even when physically mounted in a torso.",
+    "classification_confidence": "high",
+    "assembly_notes": "Package contains one OpenCR1.0 and one Micro-B USB cable; host SBC, actuators and operating power source are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/opencr1-0"
+    ],
+    "evidence_note": "Overview identifies the TurtleBot3 controller and lists RS-485, TTL, UART, CAN and inertial sensors. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-902-0183-000",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "robot_controller",
+    "assembly_level": "module",
+    "function_summary": "Arduino-compatible controller for DYNAMIXEL actuators.",
+    "classification_reason": "Controls other robot parts; it is not a structural body or completed limb.",
+    "classification_confidence": "high",
+    "assembly_notes": "One OpenRB-150 board; batteries and cables explicitly excluded.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/openrb-150"
+    ],
+    "evidence_note": "Package contents name an Arduino-compatible DYNAMIXEL controller and exclude batteries and cables. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-902-0043-000",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "Measures nearby wall or object distance over a 10–80 cm range.",
+    "classification_reason": "Perception component for a conceptual head; no head housing or articulation is included.",
+    "classification_confidence": "high",
+    "assembly_notes": "One DMS-80 plus one 150 mm sensor cable; requires a compatible controller.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/distance-measuring-sensor-dms-80"
+    ],
+    "evidence_note": "Vendor describes wall/object distance detection and lists a 10–80 cm detection range. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-902-0042-000",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "imu",
+    "assembly_level": "module",
+    "function_summary": "Gyroscope measures angular velocity for robot tilt estimation and balance control.",
+    "classification_reason": "Proprioceptive sensing supports balance rather than serving as an outward-looking head. Taxonomy imu includes this gyro-only sensor.",
+    "classification_confidence": "high",
+    "assembly_notes": "One GS-12 with two 160 mm cables; this is a gyroscope, not a full accelerometer/gyro/magnetometer IMU.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/gyro-sensor-gs-12"
+    ],
+    "evidence_note": "Page states angular-velocity measurement, inclination estimation and balancing applications. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-901-0118-301",
+    "primary_role": "whole_robot",
+    "secondary_roles": [
+      "legs",
+      "torso",
+      "head"
+    ],
+    "part_type": "robot_kit",
+    "assembly_level": "kit",
+    "function_summary": "TurtleBot3 Burger mobile ROS robot kit with Raspberry Pi 4 4 GB and LDS ranging sensor.",
+    "classification_reason": "A robot kit spans a wheeled base, supporting frame and perception; do not sell or count it as a single leg.",
+    "classification_confidence": "high",
+    "assembly_notes": "Assembly kit variant is RPi4 4GB US. Vendor notes revised LDS sensor, matching USB2LDS adapter and required cables; older USB2LDS is incompatible with that sensor revision.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us"
+    ],
+    "evidence_note": "Exact product identifies TurtleBot3 Burger RPi4 4GB; overview explicitly discusses included LDS, USB2LDS and cables. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-903-0260-000",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "wheel",
+    "assembly_level": "component",
+    "function_summary": "Pair of rubber-tired drive wheels that bolt to compatible DYNAMIXEL actuators.",
+    "classification_reason": "Ground-contact locomotion parts represent legs/wheels; motors and supporting base are separate.",
+    "classification_confidence": "high",
+    "assembly_notes": "Sold as a set of two wheels and two tires with twenty M2x4K screws; no DYNAMIXEL actuator included.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea"
+    ],
+    "evidence_note": "Package lists two sprocket wheels, two TR-66 tires and screws; vendor explains attachment to DYNAMIXEL. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-903-0262-000",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "caster",
+    "assembly_level": "component",
+    "function_summary": "Passive ball caster supports a wheeled robot base while rolling freely.",
+    "classification_reason": "Ground support belongs to locomotion; this passive caster cannot propel the robot.",
+    "classification_confidence": "high",
+    "assembly_notes": "One frame-and-steel-ball caster with five screws and five rivets; intended for 6 mm plates/TB3 Waffle Plate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/tb3-ball-caster-a01-1ea"
+    ],
+    "evidence_note": "Package lists one caster assembly; compatibility section names 6 mm plates and the TB3 Waffle Plate. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-903-0210-000",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "battery",
+    "assembly_level": "component",
+    "function_summary": "Rechargeable 11.1 V 1800 mAh lithium-polymer battery with protection circuitry.",
+    "classification_reason": "Stores operating energy for robot systems and has no independent anatomical function.",
+    "classification_confidence": "high",
+    "assembly_notes": "One LB-012 battery; LBC-010 charger sold separately. Vendor lists TurtleBot3/OpenCR/OP compatibility and excludes other CM-series controllers.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012"
+    ],
+    "evidence_note": "Page provides voltage/capacity, package quantity, charger exclusion and connector compatibility limitations. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "robotis-903-0126-000",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "power_adapter",
+    "assembly_level": "module",
+    "function_summary": "AC mains adapter supplying 12 V DC at up to 5 A to compatible robot electronics or a charger.",
+    "classification_reason": "External power support; it is neither a battery nor a structural body part.",
+    "classification_confidence": "high",
+    "assembly_notes": "One PS-10 supply and AC cord. Battery charging requires a separate charger between supply and battery.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://robotis.us/products/smps-12v-5a-ps-10-us-110v"
+    ],
+    "evidence_note": "Package includes supply and cord; wiring examples show battery charging through a separate battery charger. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  }
+]

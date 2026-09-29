@@ -1,0 +1,686 @@
+<title>Robot Build Relay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a request bar, then the three steps in process order (plan + network side by side,
+   combined answer full width), then the per-store detail and a "who saw what" ledger. */
+:root {
+  --bg: #edf0ee; --surface: #fafbfa; --ink: #1b2226; --muted: #5a676d; --line: #d2d9d6; --code-bg: #f0f3f1;
+  --hub: #3446a8; --on-hub: #ffffff; --store: #16736f; --store-soft: #d6ebe8; --on-store: #ffffff;
+  --packet: #d99a06; --ok: #2e7d4f; --warn: #9c5d06; --bad: #b3372f;
+  --display: "Chakra Petch", "Arial Narrow", system-ui, sans-serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11171a; --surface: #182025; --ink: #e2e8e6; --muted: #93a1a6; --line: #28333a; --code-bg: #141b1f;
+    --hub: #8e9bff; --on-hub: #0e1320; --store: #4fb8b1; --store-soft: #173633; --on-store: #06201e;
+    --packet: #f4b41a; --ok: #6cc58f; --warn: #e2b04a; --bad: #f07b72; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11171a; --surface: #182025; --ink: #e2e8e6; --muted: #93a1a6; --line: #28333a; --code-bg: #141b1f;
+  --hub: #8e9bff; --on-hub: #0e1320; --store: #4fb8b1; --store-soft: #173633; --on-store: #06201e;
+  --packet: #f4b41a; --ok: #6cc58f; --warn: #e2b04a; --bad: #f07b72; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 40px; display: grid; gap: 18px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; letter-spacing: 0.01em; }
+h1 { font-size: clamp(28px, 4vw, 38px); line-height: 1.1; }
+h2 { font-size: 18px; }
+h3 { font-size: 15px; }
+p { margin: 0; }
+a { color: inherit; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 2px; }
+a:hover { text-decoration-color: currentColor; }
+code, pre, .mono { font-family: var(--mono); font-size: 12.5px; }
+.eyebrow { font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); }
+.lede { color: var(--muted); max-width: 68ch; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--hub); outline-offset: 2px; }
+
+/* request bar */
+.ask { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; }
+.ask-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.ask input { flex: 1 1 320px; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+.btn { border: 1px solid var(--hub); background: var(--hub); color: var(--on-hub); border-radius: 8px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
+.btn:disabled { opacity: 0.55; cursor: default; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.chip-btn { border: 1px solid var(--line); background: var(--bg); border-radius: 99px; padding: 4px 11px; font-size: 13px; cursor: pointer; }
+.chip-btn:hover { border-color: var(--hub); }
+
+/* steps */
+.stage { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 18px; }
+@media (max-width: 860px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.step-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.step-num { font: 600 13px var(--mono); color: var(--hub); }
+.where { font-size: 12.5px; color: var(--muted); }
+.state { margin-left: auto; font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 8px;
+         border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+.state.running { color: var(--packet); border-color: var(--packet); }
+.state.done { color: var(--ok); border-color: var(--ok); }
+pre.plan { margin: 0; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+           overflow-x: auto; white-space: pre; min-height: 180px; line-height: 1.5; }
+.plan .k { color: var(--hub); } .plan .s { color: var(--store); } .plan .n { color: var(--packet); }
+.note { font-size: 13px; color: var(--muted); }
+
+/* network */
+.net-box { overflow-x: auto; }
+svg.net { display: block; width: 100%; min-width: 440px; height: auto; }
+.net .edge { stroke: var(--line); stroke-width: 1.5; }
+.net .hub rect { fill: var(--hub); }
+.net .hub text { fill: var(--on-hub); font: 600 13px var(--display); }
+.net .hub .sub { font: 500 10px var(--mono); }
+.net .node circle { fill: var(--surface); stroke: var(--store); stroke-width: 2; transition: fill 0.25s; }
+.net .node .count { fill: var(--store); font: 600 11px var(--mono); }
+.net .node .label { fill: var(--ink); font: 500 12px var(--body); }
+.net .node.online circle { fill: var(--store-soft); }
+.net .node.working circle { stroke: var(--packet); animation: pulse 0.8s ease-in-out infinite alternate; }
+.net .node.done circle { fill: var(--store); }
+.net .node.done .count { fill: var(--on-store); }
+.net .packet { fill: var(--packet); }
+.net .packet.back { fill: var(--store); stroke: var(--surface); stroke-width: 1.5; }
+@keyframes pulse { from { stroke-width: 2; } to { stroke-width: 5; } }
+.trace { display: flex; flex-wrap: wrap; gap: 6px 14px; font: 12px var(--mono); color: var(--muted); }
+.trace span.on { color: var(--ink); }
+
+/* answer */
+.answer-text { font-size: 16px; max-width: 75ch; min-height: 3em; }
+.answer-text b { font-weight: 600; }
+.options { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 14px; }
+.option { border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 8px; min-width: 0; background: var(--bg); }
+.opt-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.opt-kind { font: 600 14px var(--display); }
+.opt-total { margin-left: auto; font: 600 22px var(--display); font-variant-numeric: tabular-nums; }
+.opt-sub { font-size: 13px; color: var(--muted); }
+.meter { height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.meter span { display: block; width: 0; height: 100%; background: var(--ok); border-radius: 99px; transition: width 0.6s; }
+.meter.over span { background: var(--bad); }
+.tbl-box { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+td { padding: 6px 4px; border-top: 1px solid var(--line); vertical-align: top; }
+td.part { color: var(--muted); white-space: nowrap; padding-right: 10px; }
+td.price { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+td .from { display: block; font-size: 12px; color: var(--muted); }
+tr.covered td, tr.missing td { color: var(--muted); font-style: italic; }
+tr.missing td.part { color: var(--bad); font-style: normal; }
+
+/* stores */
+.section-head { display: grid; gap: 4px; }
+.stores { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px; }
+.store { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.store header { display: flex; align-items: baseline; gap: 8px; }
+.store .state { font-size: 10px; }
+.store .meta { font-size: 12.5px; color: var(--muted); }
+.store details { font-size: 12.5px; }
+.store summary { cursor: pointer; color: var(--muted); }
+.store ol { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 2px; }
+.store ol code { font-size: 11.5px; overflow-wrap: anywhere; }
+.offers { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.offers li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; font-size: 13px; }
+.offers .p { grid-column: 1 / -1; font: 500 10.5px var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.offers .price { font-variant-numeric: tabular-nums; }
+.offers .tag { grid-column: 1 / -1; font-size: 12px; color: var(--store); }
+.none { font-size: 12.5px; color: var(--muted); font-style: italic; }
+
+/* ledger */
+.ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; }
+.ledger > div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; display: grid; gap: 4px; align-content: start; }
+.ledger .big { font: 600 26px var(--display); font-variant-numeric: tabular-nums; }
+.ledger .who { font-size: 13px; font-weight: 600; }
+.ledger p:not(.big):not(.who) { font-size: 13px; color: var(--muted); }
+.calls-note { background: var(--surface); border: 1px dashed var(--hub); border-radius: 10px; padding: 12px 14px; display: grid; gap: 6px; }
+.calls-note .row { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 12.5px var(--mono); }
+footer { font-size: 12.5px; color: var(--muted); display: grid; gap: 6px; max-width: 90ch; }
+
+@media (prefers-reduced-motion: reduce) {
+  .net .node.working circle { animation: none; stroke-width: 4; }
+  .meter span { transition: none; }
+}
+</style>
+
+<main class="wrap">
+  <header style="display:grid;gap:6px">
+    <span class="eyebrow">Flower SuperGrid · simulated in this page</span>
+    <h1>Robot Build Relay</h1>
+    <p class="lede">Ask for a robot in plain words. The head office plans a parts list, eight real parts stores each check
+      their own private catalogue, and the head office combines their offers. Catalogues never leave the stores.</p>
+  </header>
+
+  <form class="ask" id="ask">
+    <label class="eyebrow" for="request">Your request</label>
+    <div class="ask-row">
+      <input id="request" autocomplete="off" value="Build a small 2-wheel robot that avoids obstacles, under $80">
+      <button class="btn" id="run" type="submit">Ask the stores</button>
+    </div>
+    <div class="chips" id="presets"><span class="eyebrow">Try</span></div>
+  </form>
+
+  <div class="stage">
+    <section class="step" id="step1">
+      <div class="step-head"><span class="step-num">1</span><h2>Head office plans the list</h2><span class="state">waiting</span></div>
+      <p class="where">master.py on Flower's SuperLink, one model call turns your words into parts</p>
+      <pre class="plan" id="plan"></pre>
+      <p class="note" id="plan-note"></p>
+    </section>
+
+    <section class="step" id="step2">
+      <div class="step-head"><span class="step-num">2</span><h2>Stores check their catalogues</h2><span class="state">waiting</span></div>
+      <p class="where">worker.py on each SuperNode, its own model call plus a local search_catalog tool</p>
+      <div class="net-box"><svg class="net" id="net" viewBox="0 0 560 330" role="img" aria-label="The head office in the middle sends the parts list to eight store nodes and collects their offers"></svg></div>
+      <div class="trace" id="trace">
+        <span data-t="get">get_nodes → 8 online</span>
+        <span data-t="push">push_messages → 8 tasks</span>
+        <span data-t="pull">pull_messages → 8 replies</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="step" id="step3">
+    <div class="step-head"><span class="step-num">3</span><h2>Head office combines the offers</h2><span class="state">waiting</span></div>
+    <p class="where">master.py again, a second model call compares every offer and explains the builds</p>
+    <p class="answer-text" id="answer"></p>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section class="section-head">
+    <h2>Inside each store</h2>
+    <p class="lede">Each card is one SuperNode. Its model asked the local search tool for each part, then picked offers.
+      Only the offers were sent back.</p>
+  </section>
+  <div class="stores" id="stores"></div>
+
+  <section class="section-head">
+    <h2>Who saw what</h2>
+  </section>
+  <div class="ledger" id="ledger"></div>
+  <div class="calls-note" id="calls"></div>
+
+  <footer>
+    <p><b>Simulation.</b> Everything runs in this page. The model steps are rule-based stand-ins for GPT or Endeavor calls,
+      and the network is animated, not live. In the real app, steps 1 and 3 are model calls in <code>master.py</code>, step 2 is
+      <code>worker.py</code> with a <code>search_catalog</code> tool on each SuperNode, and the messages travel with
+      <code>get_nodes</code>, <code>push_messages</code> and <code>pull_messages</code>.</p>
+    <p id="provenance"></p>
+  </footer>
+</main>
+
+<script>
+const DATA = __DATA__;
+const $ = (sel, root = document) => root.querySelector(sel);
+const money = (n) => "$" + n.toFixed(2);
+const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const STORES = DATA.stores;
+
+// ---------------------------------------------------------------- what each part means
+// category = catalogue category; include/exclude = words in the item name or spec.
+const NEEDS = {
+  chassis2wd: { label: "2-wheel chassis", category: "chassis-kits", need: "small 2-wheel drive base",
+                include: ["2wd", "2 motors", "2 wheels"] },
+  chassisTank: { label: "Rugged chassis", category: "chassis-kits", need: "tracked or off-road base",
+                 include: ["tracked", "tank", "6wd", "off-road"] },
+  motors: { label: "DC gear motors", category: "motors", qty: 2, need: "2 small DC gear motors",
+            note: "skip if the chassis includes motors", include: ["gearmotor", "gear motor"],
+            exclude: ["stepper", "12 v", "planetary", "direct-drive"] },
+  driver: { label: "Motor driver", category: "motor-drivers", need: "drives 2 DC motors",
+            note: "skip if the controller has one built in",
+            include: ["dual", "2-channel", "4 dc", "tb6612", "drv8833", "l298n"],
+            exclude: ["drv8825", "stepper driver", "dynamixel", "single", "esc"] },
+  controller: { label: "Controller", category: "microcontrollers-sbc", need: "small controller for a hobby robot",
+                exclude: ["raspberry pi 5", "opencr", "dynamixel"] },
+  controllerServo: { label: "Controller", category: "microcontrollers-sbc", need: "controller with servo outputs",
+                     include: ["servo"] },
+  distance: { label: "Distance sensor", category: "sensors", need: "detect obstacles ahead",
+              include: ["distance", "ultrasonic", "time-of-flight", "tof", "lidar", "ranging"], exclude: ["360°"] },
+  line: { label: "Line sensor", category: "sensors", need: "follow a line on the floor", include: ["reflectance", "line"] },
+  imu: { label: "IMU", category: "sensors", need: "measure tilt and heading", note: "skip if the controller has one",
+         include: ["imu", "9-dof", "9-axis", "9dof", "gyro"] },
+  battery: { label: "Battery", category: "power-batteries", need: "rechargeable pack",
+             include: ["lipo", "li-ion", "lithium", "nimh"], exclude: ["charger", "holder", "regulator", "supply", "ups", "buck"] },
+  servoArm: { label: "Arm servos", category: "servos", qty: 4, need: "servos with at least 2 kg·cm torque", minKg: 2 },
+  servoSmall: { label: "Servo", category: "servos", qty: 1, need: "small hobby servo" },
+};
+
+const PRESETS = [
+  "Build a small 2-wheel robot that avoids obstacles, under $80",
+  "A line-following car with an IMU and a battery, under $120",
+  "A desk robot arm with 4 servos, under $100",
+];
+
+const lowerFirst = (s) => s.replace(/^[A-Z](?=[a-z])/, (c) => c.toLowerCase());
+const budgetText = (n) => (Number.isInteger(n) ? "$" + n : money(n));
+const listJoin = (a) => (a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]);
+const textOf = (item) => (item.name + " " + item.spec).toLowerCase();
+const unitsOf = (item) => (/\(pair\)/i.test(item.name) ? 2 : 1);
+
+function torqueKg(item) {
+  const t = textOf(item);
+  let m;
+  if ((m = t.match(/(\d+(?:\.\d+)?)\s*kg·cm/))) return +m[1];
+  if ((m = t.match(/(\d+(?:\.\d+)?)\s*oz[·\-\s]?in/))) return +m[1] / 13.887;
+  if ((m = t.match(/(\d+(?:\.\d+)?)\s*n·m/))) return +m[1] * 10.197;
+  if ((m = t.match(/(\d+(?:\.\d+)?)\s*kg\b/))) return +m[1];
+  return null;
+}
+
+function flagsOf(item) {
+  const t = textOf(item);
+  const ctrl = item.category === "microcontrollers-sbc";
+  return {
+    motors: item.category === "chassis-kits" && /motor/.test(t),
+    driver: ctrl && /motor driver/.test(t),
+    imu: ctrl && /(imu|inertial)/.test(t),
+  };
+}
+
+// ---------------------------------------------------------------- 1: planner (stand-in for a model call)
+function makePlan(text) {
+  const t = text.toLowerCase();
+  const budgetMatch = t.match(/\$\s?(\d+(?:\.\d+)?)/) || t.match(/under\s+(\d+(?:\.\d+)?)/);
+  const budget = budgetMatch ? +budgetMatch[1] : null;
+  const isArm = /\barm\b|gripper/.test(t);
+  let mobile = !isArm && /wheel|car|rover|drive|tank|track|line|obstacle|follow|robot/.test(t);
+  const keys = [];
+  let assumed = "";
+  if (!isArm && !mobile && !/servo/.test(t)) { mobile = true; assumed = "No robot type recognised, so the plan assumes a small wheeled robot."; }
+  if (mobile) keys.push(/tank|track|off-road|6wd/.test(t) ? "chassisTank" : "chassis2wd", "motors", "driver");
+  keys.push(isArm ? "controllerServo" : "controller");
+  if (/obstacle|distance|avoid|range|lidar/.test(t)) keys.push("distance");
+  if (/\bline\b|line-follow/.test(t)) keys.push("line");
+  if (/imu|balanc|orientation|tilt|gyro/.test(t)) keys.push("imu");
+  if (/batter|power/.test(t)) keys.push("battery");
+  let servoQty = null;
+  if (isArm || /servo/.test(t)) {
+    const q = t.match(/(\d+)\s*servos?/);
+    servoQty = q ? Math.min(+q[1], 12) : isArm ? 4 : 1;
+    keys.push(isArm ? "servoArm" : "servoSmall");
+  }
+  const parts = keys.map((key) => ({ key, ...NEEDS[key], qty: key.startsWith("servo") ? servoQty : NEEDS[key].qty || 1 }));
+  return { text, budget, parts, assumed };
+}
+
+function planLines(plan) {
+  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  const k = (s) => `<span class="k">"${s}"</span>`;
+  const s = (v) => `<span class="s">"${esc(v)}"</span>`;
+  const n = (v) => `<span class="n">${v}</span>`;
+  const lines = ["{", `  ${k("budget_usd")}: ${plan.budget == null ? n("null") : n(plan.budget)},`, `  ${k("parts")}: [`];
+  plan.parts.forEach((p, i) => {
+    const extra = p.note ? `, ${k("note")}: ${s(p.note)}` : "";
+    lines.push(`    {${k("part")}: ${s(p.label)}, ${k("qty")}: ${n(p.qty)}, ${k("category")}: ${s(p.category)}, ${k("need")}: ${s(p.need)}${extra}}${i < plan.parts.length - 1 ? "," : ""}`);
+  });
+  lines.push("  ]", "}");
+  return lines;
+}
+
+// ---------------------------------------------------------------- 2: one store's worker (model + search_catalog tool)
+function searchCatalog(store, part) {
+  return store.items.filter((item) => {
+    if (item.category !== part.category) return false;
+    const t = textOf(item);
+    if (part.include && !part.include.some((w) => t.includes(w))) return false;
+    if (part.exclude && part.exclude.some((w) => t.includes(w))) return false;
+    if (part.minKg) { const kg = torqueKg(item); if (kg == null || kg < part.minKg) return false; }
+    return true;
+  });
+}
+
+function offerFor(store, part, item) {
+  const packs = Math.ceil(part.qty / unitsOf(item));
+  const flags = flagsOf(item);
+  const tags = [];
+  if (flags.motors) tags.push("motors included");
+  if (flags.driver) tags.push("motor driver built in");
+  if (flags.imu) tags.push("IMU built in");
+  if (part.minKg) tags.push(torqueKg(item).toFixed(1) + " kg·cm");
+  if (unitsOf(item) > 1) tags.push("pair");
+  return { part: part.key, label: part.label, store: store.id, storeName: store.name, item, packs, cost: packs * item.price, flags, tags };
+}
+
+function runWorker(store, plan) {
+  const has = (key) => plan.parts.some((p) => p.key === key);
+  const calls = [], offers = [], missing = [];
+  let rows = 0;
+  for (const part of plan.parts) {
+    const found = searchCatalog(store, part);
+    calls.push({ part, rows: found.length });
+    rows += found.length;
+    if (!found.length) { missing.push(lowerFirst(part.label)); continue; }
+    const byCost = found.map((item) => offerFor(store, part, item)).sort((a, b) => a.cost - b.cost);
+    const picks = [byCost[0]];
+    // Bundle-aware extras: an item that makes another part unnecessary is worth offering too.
+    const extra = (flag) => byCost.find((o) => o.flags[flag] && !picks.includes(o));
+    if (part.key.startsWith("chassis") && has("motors")) { const o = extra("motors"); if (o && !picks[0].flags.motors) picks.push(o); }
+    if (part.key.startsWith("controller")) {
+      if (has("driver")) { const o = extra("driver"); if (o) picks.push(o); }
+      if (has("imu")) { const o = extra("imu"); if (o) picks.push(o); }
+    }
+    offers.push(...picks);
+  }
+  return { store, calls, offers, missing, rows };
+}
+
+// ---------------------------------------------------------------- 3: combine (stand-in for the second model call)
+function combine(plan, replies) {
+  const offers = replies.flatMap((r) => r.offers);
+  const keys = plan.parts.map((p) => p.key);
+  const chassisKey = keys.find((k) => k.startsWith("chassis"));
+  const ctrlKey = keys.find((k) => k.startsWith("controller"));
+
+  function build(storeId) {
+    const pool = offers.filter((o) => !storeId || o.store === storeId);
+    const of = (key) => pool.filter((o) => o.part === key).sort((a, b) => a.cost - b.cost);
+    const chassisOpts = chassisKey ? of(chassisKey) : [];
+    const ctrlOpts = ctrlKey ? of(ctrlKey) : [];
+    let best = null;
+    for (const ch of chassisOpts.length ? chassisOpts : [null]) {
+      for (const ct of ctrlOpts.length ? ctrlOpts : [null]) {
+        const rows = [], missing = [];
+        for (const part of plan.parts) {
+          if (part.key === chassisKey) { ch ? rows.push({ part, offer: ch }) : missing.push(part); continue; }
+          if (part.key === ctrlKey) { ct ? rows.push({ part, offer: ct }) : missing.push(part); continue; }
+          const by = part.key === "motors" && ch?.flags.motors ? ch
+                   : part.key === "driver" && ct?.flags.driver ? ct
+                   : part.key === "imu" && ct?.flags.imu ? ct : null;
+          if (by) { rows.push({ part, coveredBy: by }); continue; }
+          const cheapest = of(part.key)[0];
+          cheapest ? rows.push({ part, offer: cheapest }) : missing.push(part);
+        }
+        for (const part of missing) rows.push({ part, missing: true });
+        const total = rows.reduce((sum, r) => sum + (r.offer ? r.offer.cost : 0), 0);
+        const stores = [...new Set(rows.filter((r) => r.offer).map((r) => r.offer.storeName))];
+        const cand = { rows, missing, total, stores };
+        if (!best || missing.length < best.missing.length || (missing.length === best.missing.length && total < best.total)) best = cand;
+      }
+    }
+    return best;
+  }
+
+  const lowest = build(null);
+  const perStore = STORES.map((s) => ({ store: s, build: build(s.id) }));
+  perStore.sort((a, b) => a.build.missing.length - b.build.missing.length || a.build.total - b.build.total);
+  const single = perStore[0];
+  return { lowest, single, offerCount: offers.length };
+}
+
+function narrative(plan, result) {
+  const { lowest, single } = result;
+  const out = [];
+  const coveredNote = (b) => b.rows.filter((r) => r.coveredBy)
+    .map((r) => `the ${r.coveredBy.item.name.split(" - ")[0]} includes the ${lowerFirst(r.part.label)}`);
+  if (lowest.missing.length) {
+    out.push(`<b>No store in the network stocks:</b> ${lowest.missing.map((p) => lowerFirst(p.label)).join(", ")}.`);
+  }
+  out.push(`<b>Lowest total: ${money(lowest.total)}</b>, from ${listJoin(lowest.stores)}.`);
+  const sameAsLowest = lowest.stores.length === 1;
+  if (single.build.missing.length === 0) {
+    if (sameAsLowest) out.push(`That build already ships from one store.`);
+    else {
+      const notes = coveredNote(single.build);
+      out.push(`<b>One shipment: ${money(single.build.total)}</b>, everything from ${single.store.name}${notes.length ? ", because " + notes.join(" and ") : ""}.`);
+    }
+  } else {
+    out.push(`No single store stocks everything. Closest is ${single.store.name} at ${money(single.build.total)}, missing the ${single.build.missing.map((p) => lowerFirst(p.label)).join(" and ")}.`);
+  }
+  if (plan.budget != null) {
+    const B = budgetText(plan.budget);
+    const builds = [["lowest-total build", lowest.total]];
+    if (single.build.missing.length === 0 && !sameAsLowest) builds.push(["one-shipment build", single.build.total]);
+    const over = builds.filter((b) => b[1] > plan.budget);
+    if (!over.length) out.push(builds.length > 1 ? `Both builds fit your ${B} budget.` : `The lowest-total build fits your ${B} budget.`);
+    else out.push(`Over your ${B} budget: the ${over.map((b) => b[0]).join(" and the ")}.`);
+  }
+  if (lowest.stores.length > 1) out.push(`Shipping isn't in the store data, and ${lowest.stores.length} stores usually means ${lowest.stores.length} shipping fees.`);
+  return out.join(" ");
+}
+
+// ---------------------------------------------------------------- rendering
+function el(tag, attrs = {}, ...kids) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") node.className = v; else if (k === "html") node.innerHTML = v; else node.setAttribute(k, v);
+  }
+  node.append(...kids.filter((k) => k != null));
+  return node;
+}
+const itemLink = (item) => el("a", { href: item.url, target: "_blank", rel: "noopener" }, item.name);
+
+function setState(stepId, state) {
+  const chip = $(`#${stepId} .state`);
+  chip.textContent = state;
+  chip.className = "state " + (state === "waiting" ? "" : state);
+}
+
+// network diagram
+const SVGNS = "http://www.w3.org/2000/svg";
+const HUB = { x: 280, y: 165 };
+const nodePos = STORES.map((s, i) => {
+  const a = -Math.PI / 2 + (i * 2 * Math.PI) / STORES.length;
+  return { x: HUB.x + 220 * Math.cos(a), y: HUB.y + 120 * Math.sin(a) };
+});
+function svg(tag, attrs, text) {
+  const n = document.createElementNS(SVGNS, tag);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (text != null) n.textContent = text;
+  return n;
+}
+function drawNet() {
+  const net = $("#net");
+  net.replaceChildren();
+  STORES.forEach((s, i) => net.append(svg("line", { class: "edge", x1: HUB.x, y1: HUB.y, x2: nodePos[i].x, y2: nodePos[i].y })));
+  const hub = svg("g", { class: "hub" });
+  hub.append(svg("rect", { x: HUB.x - 66, y: HUB.y - 25, width: 132, height: 50, rx: 10 }),
+             svg("text", { x: HUB.x, y: HUB.y - 3, "text-anchor": "middle" }, "Head office"),
+             svg("text", { x: HUB.x, y: HUB.y + 13, "text-anchor": "middle", class: "sub" }, "SuperLink · master.py"));
+  net.append(hub);
+  STORES.forEach((s, i) => {
+    const p = nodePos[i];
+    const g = svg("g", { class: "node", id: "node-" + s.id });
+    const below = p.y >= HUB.y;
+    g.append(svg("circle", { cx: p.x, cy: p.y, r: 17 }),
+             svg("text", { x: p.x, y: p.y + 4, "text-anchor": "middle", class: "count" }, s.items.length),
+             svg("text", { x: p.x, y: below ? p.y + 33 : p.y - 25, "text-anchor": "middle", class: "label" }, s.name));
+    net.append(g);
+  });
+}
+function setNode(id, state) { $("#node-" + id).setAttribute("class", "node " + (state || "")); }
+
+function flyPacket(i, back) {
+  if (REDUCE || !animating) return Promise.resolve();
+  const net = $("#net");
+  const dot = svg("circle", { r: 5, class: "packet" + (back ? " back" : "") });
+  net.append(dot);
+  const [a, b] = back ? [nodePos[i], HUB] : [HUB, nodePos[i]];
+  const dur = 650, t0 = performance.now();
+  return new Promise((resolve) => {
+    function frame(now) {
+      const t = Math.min(1, (now - t0) / dur), e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      dot.setAttribute("cx", a.x + (b.x - a.x) * e);
+      dot.setAttribute("cy", a.y + (b.y - a.y) * e);
+      if (t < 1) requestAnimationFrame(frame); else { dot.remove(); resolve(); }
+    }
+    requestAnimationFrame(frame);
+  });
+}
+
+function renderStoreCard(reply, state) {
+  return (store) => {
+    const card = el("article", { class: "store", id: "store-" + store.id });
+    const head = el("header", {}, el("h3", {}, store.name), el("span", { class: "state " + (state === "done" ? "done" : state === "working" ? "running" : "") },
+      state === "done" ? "replied" : state === "working" ? "working" : "waiting"));
+    card.append(head, el("p", { class: "meta" }, `${store.items.length} catalogue rows, all stay on this node`));
+    if (reply && state === "done") {
+      const ol = el("ol");
+      reply.calls.forEach((c) => ol.append(el("li", {},
+        el("code", {}, `search_catalog("${c.part.category}", "${c.part.need}")`), ` → ${c.rows} row${c.rows === 1 ? "" : "s"}`)));
+      card.append(el("details", {}, el("summary", {}, `Model called search_catalog ${reply.calls.length}× and saw ${reply.rows} rows`), ol));
+      if (reply.offers.length) {
+        const ul = el("ul", { class: "offers" });
+        reply.offers.forEach((o) => ul.append(el("li", {},
+          el("span", { class: "p" }, o.label + (o.packs > 1 ? ` · ${o.packs}×` : "")),
+          itemLink(o.item), el("span", { class: "price" }, money(o.cost)),
+          o.tags.length ? el("span", { class: "tag" }, o.tags.join(" · ")) : null)));
+        card.append(ul);
+      }
+      if (reply.missing.length) card.append(el("p", { class: "none" }, "Not stocked: " + reply.missing.join(", ")));
+    }
+    return card;
+  };
+}
+function renderStores(replies, states) {
+  $("#stores").replaceChildren(...STORES.map((store) => {
+    const reply = replies && replies.find((r) => r.store.id === store.id);
+    return renderStoreCard(reply, states[store.id])(store);
+  }));
+}
+
+function renderOption(kind, build, budget, sub) {
+  const box = el("div", { class: "option" });
+  box.append(el("div", { class: "opt-head" }, el("span", { class: "opt-kind" }, kind), el("span", { class: "opt-total" }, money(build.total))),
+             el("p", { class: "opt-sub" }, sub));
+  if (budget != null) {
+    const pct = Math.min(100, (build.total / budget) * 100);
+    const meter = el("div", { class: "meter" + (build.total > budget ? " over" : ""), title: `${money(build.total)} of ${money(budget)} budget` }, el("span"));
+    box.append(meter);
+    requestAnimationFrame(() => (meter.firstChild.style.width = pct + "%"));
+  }
+  const tb = el("tbody");
+  for (const r of build.rows) {
+    if (r.offer) {
+      tb.append(el("tr", {}, el("td", { class: "part" }, r.part.label + (r.offer.packs > 1 ? ` ×${r.offer.packs}` : "")),
+        el("td", {}, itemLink(r.offer.item), el("span", { class: "from" }, r.offer.storeName + (r.offer.tags.length ? " · " + r.offer.tags.join(" · ") : ""))),
+        el("td", { class: "price" }, money(r.offer.cost))));
+    } else if (r.coveredBy) {
+      tb.append(el("tr", { class: "covered" }, el("td", { class: "part" }, r.part.label),
+        el("td", {}, "Included with " + r.coveredBy.item.name.split(" - ")[0]), el("td", { class: "price" }, "–")));
+    } else {
+      tb.append(el("tr", { class: "missing" }, el("td", { class: "part" }, r.part.label),
+        el("td", {}, "Not stocked here"), el("td", { class: "price" }, "–")));
+    }
+  }
+  box.append(el("div", { class: "tbl-box" }, el("table", {}, tb)));
+  return box;
+}
+
+function renderOptions(plan, result) {
+  const { lowest, single } = result;
+  const boxes = [renderOption("Lowest total", lowest, plan.budget,
+    `${lowest.stores.length} store${lowest.stores.length === 1 ? "" : "s"}: ${lowest.stores.join(", ")}`)];
+  if (!(lowest.stores.length === 1 && single.build.missing.length === 0)) {
+    boxes.push(renderOption(single.build.missing.length ? "Closest single store" : "One shipment", single.build, plan.budget,
+      single.build.missing.length ? `${single.store.name}, missing ${single.build.missing.length} part${single.build.missing.length === 1 ? "" : "s"}` : `Everything from ${single.store.name}`));
+  }
+  $("#options").replaceChildren(...boxes);
+}
+
+function renderLedger(plan, replies, result) {
+  const total = STORES.reduce((n, s) => n + s.items.length, 0);
+  const seen = replies.map((r) => r.rows);
+  $("#ledger").replaceChildren(
+    el("div", {}, el("p", { class: "who" }, "Head office model"), el("p", { class: "big" }, result.offerCount),
+      el("p", {}, `offers, plus your request. It never saw a catalogue row, cost price or stock list.`)),
+    el("div", {}, el("p", { class: "who" }, "Each store's model"), el("p", { class: "big" }, `${Math.min(...seen)}–${Math.max(...seen)}`),
+      el("p", {}, `rows each: only what its own search_catalog returned, on its own node, with its own model key.`)),
+    el("div", {}, el("p", { class: "who" }, "Stayed on the stores"), el("p", { class: "big" }, total),
+      el("p", {}, `catalogue rows across 8 nodes. Only the ${result.offerCount} offers left them.`)));
+  const storeCalls = STORES.length * 2;
+  $("#calls").replaceChildren(
+    el("h3", {}, `${storeCalls + 2} separate model calls for one request, not one shared model`),
+    el("div", { class: "row" }, el("span", {}, "Head office: 2 (plan, combine)"), el("span", {}, `Stores: 2 each × 8 = ${storeCalls} (search, then decide)`)),
+    el("p", { class: "note" }, "Each call is its own short task on the machine that makes it, billed to that machine's model key. Calls share nothing: every call starts from the text it is sent. The model only asks for search_catalog; the worker's own code runs it against the local catalogue."));
+}
+
+// ---------------------------------------------------------------- the run
+let runId = 0, animating = false;
+const sleep = (ms) => (REDUCE || !animating ? Promise.resolve() : new Promise((r) => setTimeout(r, ms)));
+
+async function run(text, animate) {
+  const my = ++runId;
+  const alive = () => my === runId;
+  animating = animate && !REDUCE;
+  $("#run").disabled = animating;
+  const plan = makePlan(text);
+  const states = Object.fromEntries(STORES.map((s) => [s.id, ""]));
+
+  // reset
+  ["step1", "step2", "step3"].forEach((id) => setState(id, "waiting"));
+  $("#plan").innerHTML = ""; $("#plan-note").textContent = ""; $("#answer").innerHTML = ""; $("#options").replaceChildren();
+  $("#trace").querySelectorAll("span").forEach((s) => s.classList.remove("on"));
+  $('#trace [data-t="pull"]').textContent = "pull_messages → 8 replies";
+  drawNet(); renderStores(null, states);
+
+  // 1: plan
+  setState("step1", "running");
+  const lines = planLines(plan);
+  for (let i = 0; i < lines.length; i++) {
+    if (!alive()) return;
+    $("#plan").innerHTML = lines.slice(0, i + 1).join("\n");
+    await sleep(110);
+  }
+  $("#plan-note").textContent = plan.assumed || `${plan.parts.length} parts. Notes let a store's offer cover another part.`;
+  setState("step1", "done");
+
+  // 2: fan-out
+  setState("step2", "running");
+  $('#trace [data-t="get"]').classList.add("on");
+  STORES.forEach((s) => setNode(s.id, "online"));
+  await sleep(350);
+  if (!alive()) return;
+  $('#trace [data-t="push"]').classList.add("on");
+  await Promise.all(STORES.map((s, i) => flyPacket(i, false)));
+  if (!alive()) return;
+  STORES.forEach((s) => { setNode(s.id, "working"); states[s.id] = "working"; });
+  renderStores(null, states);
+  const replies = STORES.map((s) => runWorker(s, plan));
+  const order = STORES.map((s, i) => i).sort(() => (animating ? Math.random() - 0.5 : 0));
+  const backs = [];
+  for (const i of order) {
+    await sleep(180 + (animating ? Math.random() * 220 : 0));
+    if (!alive()) return;
+    const s = STORES[i];
+    states[s.id] = "done";
+    setNode(s.id, "done");
+    renderStores(replies, states);
+    backs.push(flyPacket(i, true));
+  }
+  await Promise.all(backs);
+  if (!alive()) return;
+  const offers = replies.reduce((n, r) => n + r.offers.length, 0);
+  $('#trace [data-t="pull"]').textContent = `pull_messages → 8 replies, ${offers} offers`;
+  $('#trace [data-t="pull"]').classList.add("on");
+  setState("step2", "done");
+
+  // 3: combine
+  setState("step3", "running");
+  const result = combine(plan, replies);
+  const words = narrative(plan, result).split(" ");
+  if (animating) {
+    for (let i = 0; i < words.length; i += 3) {
+      if (!alive()) return;
+      $("#answer").innerHTML = words.slice(0, i + 3).join(" ");
+      await sleep(45);
+    }
+  }
+  $("#answer").innerHTML = words.join(" ");
+  renderOptions(plan, result);
+  renderLedger(plan, replies, result);
+  setState("step3", "done");
+  $("#run").disabled = false;
+  animating = false;
+}
+
+// ---------------------------------------------------------------- controls
+PRESETS.forEach((p) => {
+  const b = el("button", { class: "chip-btn", type: "button" }, p);
+  b.addEventListener("click", () => { $("#request").value = p; run(p, true); });
+  $("#presets").append(b);
+});
+$("#ask").addEventListener("submit", (e) => { e.preventDefault(); const v = $("#request").value.trim(); if (v) run(v, true); });
+$("#provenance").textContent = `Store data: ${STORES.length} real stores, ${STORES.reduce((n, s) => n + s.items.length, 0)} items from their own product pages, captured ${DATA.captured_at}. Single-unit USD prices; shipping, tax and stock levels are not included.`;
+
+run(PRESETS[0], false); // complete at rest; "Ask the stores" replays it with animation
+</script>

@@ -6,6 +6,10 @@ Eight online retailers that sell robotics parts to the public, each with 11–12
 
 ## Files
 
+The [classified parts database](classified/README.md) adds researched robot body
+roles, component types, product images, evidence, and CAD links for all 95 items.
+It includes one identically formatted CSV per store and a combined catalog.
+
 | File | What it is |
 | --- | --- |
 | `stores.json` | **Source of truth.** `{captured_at, currency_note, scope_note, categories[], stores[{id, name, url, country, specialty, ships_international, fetch_status, notes, items[{id, name, category, price, currency, sku, url, spec}]}], sources[]}` |

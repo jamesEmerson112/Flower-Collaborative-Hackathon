@@ -1,0 +1,217 @@
+[
+  {
+    "product_id": "servocity-5203-2402-0019",
+    "primary_role": "legs",
+    "secondary_roles": [
+      "arms"
+    ],
+    "part_type": "dc_gearmotor",
+    "assembly_level": "component",
+    "function_summary": "Brushed planetary gearmotor with quadrature encoder for powered mechanisms.",
+    "classification_reason": "Drive torque makes it a locomotion actuator; optional arm use needs an engineered transmission and feedback control.",
+    "classification_confidence": "high",
+    "assembly_notes": "One gearmotor with encoder; wheel, motor driver, power and structure are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/"
+    ],
+    "evidence_note": "Specs identify brushed DC, planetary reduction, output shaft and magnetic quadrature encoder.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-638114",
+    "primary_role": "legs",
+    "secondary_roles": [
+      "arms"
+    ],
+    "part_type": "dc_gearmotor",
+    "assembly_level": "component",
+    "function_summary": "N20 brushed gearmotor with metal spur reduction.",
+    "classification_reason": "Suggested as a compact wheel-drive component; an arm joint is an alternative mechanism, not supplied.",
+    "classification_confidence": "high",
+    "assembly_notes": "One gearmotor; wheels, mounts, driver and controller are additional.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/130-rpm-micro-gear-motor/"
+    ],
+    "evidence_note": "Specs identify brushed DC operation, D-shaft, metal gearing and 210:1 ratio.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-2002-0180-0002",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "head",
+      "legs"
+    ],
+    "part_type": "positional_servo",
+    "assembly_level": "component",
+    "function_summary": "Standard positional servo with steel gears and H25T output spline.",
+    "classification_reason": "Angular positioning suits a joint or gripper drive; head or leg use is an alternative only after load and mounting checks.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One torque-ratio servo; arm links, gripper structure and control electronics are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/",
+      "https://www.gobilda.com/proton-servo-steel-gears-180-rotation-torque-ratio/"
+    ],
+    "evidence_note": "Manufacturer goBILDA product description and specs confirm torque variant, PWM travel and position feedback after initial ServoCity fetch failed.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-2003-0180-0001",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "head",
+      "legs"
+    ],
+    "part_type": "positional_servo",
+    "assembly_level": "component",
+    "function_summary": "Standard hobby servo providing controlled angular movement with nylon gears.",
+    "classification_reason": "Suggested joint actuator for an arm; can move a light head or leg mechanism but is not an assembled limb.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One servo; structural links, mount, power and signal source are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/"
+    ],
+    "evidence_note": "Product description lists nylon gearing, H25T spline and servo rotation.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-3105-0101-0020",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "Controls speed and direction of one brushed DC motor using a PWM input.",
+    "classification_reason": "Motor-control electronics support motion without supplying a mechanical limb.",
+    "classification_confidence": "high",
+    "assembly_notes": "Single-channel controller with included mounting hardware; motor, battery and signal source are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/1x20a-motor-controller/"
+    ],
+    "evidence_note": "Wiring instructions identify separate motor, battery and receiver connections and a built-in BEC.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-imc404",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "Dual brushed-motor controller supporting encoder feedback and multiple control interfaces.",
+    "classification_reason": "Electronics drive actuators; the board is not an arm or leg assembly.",
+    "classification_confidence": "high",
+    "assembly_notes": "Controller only; motors, encoders where needed, power and host control are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/roboclaw-2x7a-motor-controller/"
+    ],
+    "evidence_note": "Description confirms two brushed DC channels and closed-loop encoder control.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-3114-0001-0001",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "microcontroller",
+    "assembly_level": "module",
+    "function_summary": "ATmega32U4 programmable board in an Arduino-style form factor.",
+    "classification_reason": "Internal computation and GPIO belong to support; mounting in a torso does not make it a structural torso.",
+    "classification_confidence": "high",
+    "assembly_notes": "Board with female headers and no microSD support in this configuration; actuators and sensors separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/pololu-a-star-32u4-prime-sv/"
+    ],
+    "evidence_note": "Product description explicitly identifies the MCU, Arduino form factor and configuration without microSD.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-3124-0001-0001",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "Laser time-of-flight ranging module with analog distance or digital threshold output.",
+    "classification_reason": "Perception suggests a head sensor; it does not include a mechanical head.",
+    "classification_confidence": "high",
+    "assembly_notes": "Sensor, listed mounting hardware and adapter cable; host controller and head mount separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/"
+    ],
+    "evidence_note": "Description explains reflected-laser timing and analog/digital modes; included hardware and wiring are listed.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-3209-0001-0007",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "mobile_base",
+    "assembly_level": "kit",
+    "function_summary": "Mecanum locomotion chassis kit with four planetary gearmotors and four 104 mm wheels.",
+    "classification_reason": "A powered drive base supplies the movement role represented by legs in the builder.",
+    "classification_confidence": "high",
+    "assembly_notes": "Assembly required; BOM includes chassis structure, drivetrain, wheels, wiring and tools, not a battery or motor controller.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/"
+    ],
+    "evidence_note": "Product description and BOM list four motors, mecanum wheels and channel-frame parts.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-3624-0014-0096",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "wheel",
+    "assembly_level": "component",
+    "function_summary": "Omni wheel with lateral rollers for holonomic robot drivetrains.",
+    "classification_reason": "Ground-contact wheel is a locomotion component, not an articulated leg.",
+    "classification_confidence": "high",
+    "assembly_notes": "One 96 mm omni wheel; hub, drive motor, chassis and electronics are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/"
+    ],
+    "evidence_note": "Description explains lateral rolling and a 14 mm center hole with mounting patterns.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-3213-3606-0002",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "wheel",
+    "assembly_level": "kit",
+    "function_summary": "Set of 96 mm mecanum wheels for omnidirectional ground movement.",
+    "classification_reason": "Wheel set is part of locomotion; it does not include a complete powered base.",
+    "classification_confidence": "high",
+    "assembly_notes": "Wheel set; motors, chassis, hubs and controller must be supplied separately.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/"
+    ],
+    "evidence_note": "Product identifies a mecanum wheel set and describes coordinated operation of four wheels.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-3100-0012-0020",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "battery",
+    "assembly_level": "component",
+    "function_summary": "Rechargeable 12 V NiMH battery pack with XT30 connection.",
+    "classification_reason": "Energy storage supports every body role; it is not a structural torso.",
+    "classification_confidence": "high",
+    "assembly_notes": "Battery pack; charger and battery mount are listed separately.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/"
+    ],
+    "evidence_note": "Specs confirm NiMH chemistry and capacity; description explains placement inside channel structure.",
+    "researched_at": "2026-09-29"
+  }
+]

@@ -1,0 +1,215 @@
+[
+  {
+    "product_id": "dfrobot-fit0186",
+    "primary_role": "legs",
+    "secondary_roles": [
+      "arms"
+    ],
+    "part_type": "dc_gearmotor",
+    "assembly_level": "component",
+    "function_summary": "Metal DC gearmotor with quadrature encoder for mobile robots.",
+    "classification_reason": "Vendor explicitly describes mobile-robot drive use; other joint mechanisms require separate structure and control.",
+    "classification_confidence": "high",
+    "assembly_notes": "One gearmotor with encoder; wheel, mount, driver and power separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-634.html"
+    ],
+    "evidence_note": "Introduction identifies integrated encoder, gearbox and mobile-robot application; shipping list contains one motor.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-fit0450",
+    "primary_role": "legs",
+    "secondary_roles": [
+      "arms"
+    ],
+    "part_type": "dc_gearmotor",
+    "assembly_level": "component",
+    "function_summary": "TT geared DC motor with quadrature feedback for controlled robot motion.",
+    "classification_reason": "Vendor mobile-robot application supports locomotion; alternative joint use is only a component-level suggestion.",
+    "classification_confidence": "high",
+    "assembly_notes": "One motor plus motor/encoder cables; wheel, controller, motor driver and frame separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-1457.html"
+    ],
+    "evidence_note": "Description identifies a geared motor for mobile projects; shipping list specifies motor and two cables.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-ser0020",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "head",
+      "legs"
+    ],
+    "part_type": "positional_servo",
+    "assembly_level": "component",
+    "function_summary": "Standard hobby servo for controlled angular movement.",
+    "classification_reason": "Vendor cites head, arm and biped use, so primary arms with optional head/legs is supported at joint level.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One servo; links, bearings, mounts and command/power system are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-236.html"
+    ],
+    "evidence_note": "Introduction explicitly lists head, arm and biped applications; shipping list is one servo.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-ser0006",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "head"
+    ],
+    "part_type": "positional_servo",
+    "assembly_level": "component",
+    "function_summary": "Lightweight micro servo for small mechanisms and angular positioning.",
+    "classification_reason": "Small arm or pan-tilt head joints fit the vendor examples; it is not a full arm or load-bearing leg.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One micro servo; external structure, power and control needed.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-255.html"
+    ],
+    "evidence_note": "Description lists small robotic arms and pan-tilt mechanisms and limits use to light-duty rotation.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-dri0044",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "Dual-channel TB6612FNG breakout controls two small brushed DC motors.",
+    "classification_reason": "Driver electronics enable movement but are not the moving limb itself.",
+    "classification_confidence": "high",
+    "assembly_notes": "Driver board and two headers; motors, host and power separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-1704.html"
+    ],
+    "evidence_note": "Introduction identifies two motor channels and shipping list includes the breakout plus headers.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-dri0002",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "L298N dual H-bridge controller regulates direction and speed of two brushed motors.",
+    "classification_reason": "Control electronics serve locomotion or manipulation; neither physical assembly is supplied.",
+    "classification_confidence": "high",
+    "assembly_notes": "One motor controller; motors, host controller and supply separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-66.html"
+    ],
+    "evidence_note": "Description specifies two brushed motors with PWM speed and direction control.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-dfr0654",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "microcontroller",
+    "assembly_level": "module",
+    "function_summary": "ESP32-E programmable controller board with wireless communication and battery charging.",
+    "classification_reason": "Internal compute and communication functions belong to support, not structural torso.",
+    "classification_confidence": "high",
+    "assembly_notes": "Board and listed pin headers; battery, sensors and actuators separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-2195.html"
+    ],
+    "evidence_note": "Introduction identifies main-controller function and onboard charging; shipping list contains board and headers.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-sen0340",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "lidar",
+    "assembly_level": "module",
+    "function_summary": "Compact TF-Luna single-point time-of-flight lidar measures object range.",
+    "classification_reason": "Range perception suggests a head component; single-point sensing is not a full scanning head.",
+    "classification_confidence": "high",
+    "assembly_notes": "Sensor module; host, suitable wiring and physical mounting required.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-1995.html"
+    ],
+    "evidence_note": "Introduction identifies a single-point solid-state lidar using time of flight.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-sen0374",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "imu",
+    "assembly_level": "module",
+    "function_summary": "BNO055 orientation module fuses accelerometer, gyro and magnetic sensing.",
+    "classification_reason": "Body orientation feedback is internal support rather than outward perception.",
+    "classification_confidence": "high",
+    "assembly_notes": "One sensor board with headers; not a mechanical head or torso.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-2142.html"
+    ],
+    "evidence_note": "Introduction describes absolute orientation and fused quaternion/Euler outputs; shipping list lists sensor and headers.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-rob0112",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "mobile_base",
+    "assembly_level": "kit",
+    "function_summary": "Tracked mobile chassis with motors and suspension for ground travel.",
+    "classification_reason": "Tracks supply the robot locomotion role represented by legs, despite the included body frame.",
+    "classification_confidence": "high",
+    "assembly_notes": "Platform kit; ultrasonic sensor and control board are explicitly excluded.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-1219.html"
+    ],
+    "evidence_note": "Vendor describes a tracked mobile platform and explicitly excludes ultrasonic sensor and control board.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-fit0654-1",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "wheel",
+    "assembly_level": "kit",
+    "function_summary": "Four 80 mm mecanum wheels support omnidirectional mobile robots.",
+    "classification_reason": "Ground-contact wheels are locomotion parts, not a complete powered base.",
+    "classification_confidence": "high",
+    "assembly_notes": "Two left and two right wheels; motors, hubs, chassis, power and controller separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-2042.html"
+    ],
+    "evidence_note": "Shipping list specifies two left and two right wheels, with left/right installation markings.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "dfrobot-dfr0969",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "battery_holder",
+    "assembly_level": "module",
+    "function_summary": "Dual 18650 holder with charging and regulated power outputs.",
+    "classification_reason": "Stores cells and manages supply for robot electronics; it is not a battery cell or body segment.",
+    "classification_confidence": "high",
+    "assembly_notes": "Holder/charging module only; shipping list does not include 18650 cells.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.dfrobot.com/product-2578.html"
+    ],
+    "evidence_note": "Description identifies two-cell accommodation and charging outputs; shipping list contains one battery box.",
+    "researched_at": "2026-09-29"
+  }
+]

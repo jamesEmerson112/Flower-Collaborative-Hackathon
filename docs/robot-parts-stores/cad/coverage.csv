@@ -1,0 +1,96 @@
+store_id,product_id,name,status,asset_count,notes,product_url
+adafruit,adafruit-3777,"DC Gearbox Motor - ""TT Motor"" - 200RPM - 3 to 6VDC",downloaded_3d,3,,https://www.adafruit.com/product/3777
+adafruit,adafruit-169,Micro servo [TowerPro SG92R],not_found_in_checked_sources,0,,https://www.adafruit.com/product/169
+adafruit,adafruit-2927,DC Motor + Stepper FeatherWing Add-on For All Feather Boards,downloaded_3d,3,,https://www.adafruit.com/product/2927
+adafruit,adafruit-1438,Adafruit Motor/Stepper/Servo Shield for Arduino v3 Kit,related_model_only,2,Repository model is MotorShield V2; catalog currently names v3. Related revision only; verify dimensions before using.,https://www.adafruit.com/product/1438
+adafruit,adafruit-4864,Raspberry Pi Pico RP2040,downloaded_3d,1,,https://www.adafruit.com/product/4864
+adafruit,adafruit-5129,Maker Pi RP2040 - Motor and Robot Controller,downloaded_3d,1,,https://www.adafruit.com/product/5129
+adafruit,adafruit-3317,Adafruit VL53L0X Time of Flight Distance Sensor - ~30 to 1000mm,not_found_in_checked_sources,0,,https://www.adafruit.com/product/3317
+adafruit,adafruit-4007,Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible,not_found_in_checked_sources,0,,https://www.adafruit.com/product/4007
+adafruit,adafruit-4754,Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080),downloaded_3d,3,,https://www.adafruit.com/product/4754
+adafruit,adafruit-2939,Mini Robot Rover Chassis Kit - 2WD with DC Motors,not_found_in_checked_sources,0,,https://www.adafruit.com/product/2939
+adafruit,adafruit-3766,Orange and Clear TT Motor Wheel for TT DC Gearbox Motor,not_found_in_checked_sources,0,,https://www.adafruit.com/product/3766
+adafruit,adafruit-328,Lithium Ion Polymer Battery - 3.7v 2500mAh,downloaded_3d,2,,https://www.adafruit.com/product/328
+sparkfun,sparkfun-rob-13302,Hobby Gearmotor - 140 RPM (Pair),not_found_in_checked_sources,0,,https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html
+sparkfun,sparkfun-rob-09238,"Stepper Motor - 32 oz.in (200 steps/rev, 1200mm Wire)",downloaded_3d,5,,https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html
+sparkfun,sparkfun-rob-09065,Servo - Generic (Sub-Micro Size),downloaded_3d,5,,https://www.sparkfun.com/servo-generic-sub-micro-size.html
+sparkfun,sparkfun-rob-14450,SparkFun Motor Driver - Dual TB6612FNG (with Headers),not_found_in_checked_sources,0,,https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html
+sparkfun,sparkfun-rob-15451,SparkFun Qwiic Motor Driver,not_found_in_checked_sources,0,,https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html
+sparkfun,sparkfun-dev-15123,SparkFun RedBoard Qwiic,not_found_in_checked_sources,0,,https://www.sparkfun.com/sparkfun-redboard-qwiic.html
+sparkfun,sparkfun-sen-15335,SparkFun 9DoF IMU Breakout - ICM-20948 (Qwiic),not_found_in_checked_sources,0,,https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html
+sparkfun,sparkfun-sen-14722,"SparkFun Distance Sensor Breakout - 4 Meter, VL53L1X (Qwiic)",not_found_in_checked_sources,0,,https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html
+sparkfun,sparkfun-sen-15569,Ultrasonic Distance Sensor - 5V (HC-SR04),not_found_in_checked_sources,0,,https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html
+sparkfun,sparkfun-rob-13301,Shadow Chassis,not_found_in_checked_sources,0,,https://www.sparkfun.com/shadow-chassis.html
+sparkfun,sparkfun-rob-13259,"Wheel - 65mm (Rubber Tire, Pair)",not_found_in_checked_sources,0,,https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html
+sparkfun,sparkfun-prt-13855,Lithium Ion Battery - 2Ah,not_found_in_checked_sources,0,,https://www.sparkfun.com/lithium-ion-battery-2ah.html
+pololu,pololu-3036,5:1 Micro Metal Gearmotor HPCB 12V,downloaded_3d,2,Selected No Encoder/mmgm-cb.step from the manufacturer archive. Its README identifies cb as HPCB carbon brushes; this is the standard gearbox body used for ratios other than 1000:1. No encoder or extended rear shaft. Original member bytes retained and CRC32 verified.,https://www.pololu.com/product/3036
+pololu,pololu-2818,FEETECH FS90 Micro Servo,not_found_in_checked_sources,0,,https://www.pololu.com/product/2818
+pololu,pololu-2130,DRV8833 Dual Motor Driver Carrier,downloaded_3d,2,,https://www.pololu.com/product/2130
+pololu,pololu-2133,"DRV8825 Stepper Motor Driver Carrier, High Current",downloaded_3d,2,,https://www.pololu.com/product/2133
+pololu,pololu-3101,A-Star 32U4 Micro,downloaded_3d,2,,https://www.pololu.com/product/3101
+pololu,pololu-3544,Romi 32U4 Control Board,downloaded_3d,2,,https://www.pololu.com/product/3544
+pololu,pololu-3415,"VL53L1X Time-of-Flight Distance Sensor Carrier with Voltage Regulator, 400cm Max",downloaded_3d,2,Manufacturer shares this model across VL53L0X/VL53L1X/VL53L3CX/VL53L4CD carriers.,https://www.pololu.com/product/3415
+pololu,pololu-4148,"QTR-MD-08RC Reflectance Sensor Array: 8-Channel, 8mm Pitch, RC Output",downloaded_3d,2,"Selected qtr-md-08x.step from the manufacturer archive linked by this product; QTR medium-density, eight-channel shared geometry. Original member bytes retained and CRC32 verified. The x filename does not distinguish analog from RC output.",https://www.pololu.com/product/4148
+pololu,pololu-3500,Romi Chassis Kit - Black,downloaded_3d,2,Manufacturer says the assembly model includes an extra front ball caster sold separately from the kit.,https://www.pololu.com/product/3500
+pololu,pololu-3690,"Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80×10mm, Black, 2-Pack",not_found_in_checked_sources,0,,https://www.pololu.com/product/3690
+pololu,pololu-954,Pololu Ball Caster with 3/4″ Plastic Ball,downloaded_3d,1,,https://www.pololu.com/product/954
+pololu,pololu-2831,"Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5",downloaded_3d,2,Manufacturer model covers D24V10Fx family; verify selected output variant.,https://www.pololu.com/product/2831
+servocity,servocity-5203-2402-0019,"5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)",downloaded_3d,1,,https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/
+servocity,servocity-638114,"Premium N20 Gear Motor (210:1 Ratio, 130 RPM)",not_found_in_checked_sources,0,,https://www.servocity.com/130-rpm-micro-gear-motor/
+servocity,servocity-2002-0180-0002,"Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)",downloaded_3d,1,,https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/
+servocity,servocity-2003-0180-0001,"Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)",downloaded_3d,1,,https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/
+servocity,servocity-3105-0101-0020,1x20A Motor Controller (9-30V Input),downloaded_3d,1,,https://www.servocity.com/1x20a-motor-controller/
+servocity,servocity-imc404,Roboclaw 2x7A Motor Controller,not_found_in_checked_sources,0,,https://www.servocity.com/roboclaw-2x7a-motor-controller/
+servocity,servocity-3114-0001-0001,Pololu A-Star 32U4 Prime SV,downloaded_3d,1,,https://www.servocity.com/pololu-a-star-32u4-prime-sv/
+servocity,servocity-3124-0001-0001,"Laser Distance Sensor (1m Range, 3.3-5V, Digital or Analog Output)",downloaded_3d,1,,https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/
+servocity,servocity-3209-0001-0007,Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels),downloaded_3d,1,,https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/
+servocity,servocity-3624-0014-0096,"96mm Omni Wheel (14mm Bore, 50A Durometer)",downloaded_3d,1,,https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/
+servocity,servocity-3213-3606-0002,96mm Mecanum Wheel Set (70A Durometer Bearing Supported Rollers),downloaded_3d,1,,https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/
+servocity,servocity-3100-0012-0020,"12V NiMH Nested Battery (3000mAh, MH-FC XT30 Connector)",downloaded_3d,1,,https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/
+seeed,seeed-108990003,Small Size and High Torque Stepper Motor - 24BYJ48,not_found_in_checked_sources,0,,https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html
+seeed,seeed-316010005,Grove - Servo,not_found_in_checked_sources,0,,https://www.seeedstudio.com/Grove-Servo.html
+seeed,seeed-108090003,Feetech ST3215-C047 12V 30Kg Servo,not_found_in_checked_sources,0,,https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html
+seeed,seeed-108020103,Grove - I2C Motor Driver (TB6612FNG),not_found_in_checked_sources,0,,https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html
+seeed,seeed-113991114,Seeed Studio XIAO ESP32-S3,downloaded_3d,1,Official ZIP model is named XIAO-ESP32S3 v2; verify against board revision.,https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html
+seeed,seeed-102110919,Raspberry Pi 5 8GB,downloaded_3d,1,Official Raspberry Pi 5 board model without silkscreen; memory capacity variant is not specified.,https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html
+seeed,seeed-101020010,Grove - Ultrasonic Distance Sensor,not_found_in_checked_sources,0,,https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html
+seeed,seeed-101020585,Grove - IMU 9DOF (ICM20600+AK09918),not_found_in_checked_sources,0,,https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html
+seeed,seeed-101020532,"Grove - Time of Flight Distance Sensor(VL53L0X) - (ToF) laser-ranging module,Long Range Precision ranging",not_found_in_checked_sources,0,,https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html
+seeed,seeed-110090325,Robot Car Kit-6WD Off-Road Chassis Kit,not_found_in_checked_sources,0,,https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html
+seeed,seeed-114993667,SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm,downloaded_3d,33,SO-101 structural STEP/STL files and full assembly from the original designer. Printed parts are not included in this catalog servo kit. Assembly may use a different servo/electronics revision; verify against the Pro kit.,https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html
+seeed,seeed-106990290,Lipo Rider Plus (Charger/Booster) - 5V/2.4A USB Type C,not_found_in_checked_sources,0,,https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html
+dfrobot,dfrobot-fit0186,"12V Metal DC Geared Motor with Encoder (43.8:1, 251RPM, 18Kg.cm)",not_found_in_checked_sources,0,,https://www.dfrobot.com/product-634.html
+dfrobot,dfrobot-fit0450,TT Motor with Encoder (6V 160RPM 120:1),downloaded_3d,2,,https://www.dfrobot.com/product-1457.html
+dfrobot,dfrobot-ser0020,DSS-P05 Standard Servo (5.1kg),not_found_in_checked_sources,0,,https://www.dfrobot.com/product-236.html
+dfrobot,dfrobot-ser0006,9g 180° Micro Servo for Arduino (1.3kg),not_found_in_checked_sources,0,,https://www.dfrobot.com/product-255.html
+dfrobot,dfrobot-dri0044,Fermion: TB6612FNG 2x1.2A DC Motor Driver (Breakout),not_found_in_checked_sources,0,,https://www.dfrobot.com/product-1704.html
+dfrobot,dfrobot-dri0002,MDV 2x2A DC Motor Controller (L298N),downloaded_3d,1,,https://www.dfrobot.com/product-66.html
+dfrobot,dfrobot-dfr0654,"FireBeetle 2 ESP32-E IoT Microcontroller (32M / 512KB, Supports Wi-Fi & Bluetooth)",downloaded_3d,1,,https://www.dfrobot.com/product-2195.html
+dfrobot,dfrobot-sen0340,"TF-Luna ToF Single-Point Ranging Solid State LiDAR Sensor (8m, UART / I2C)",not_found_in_checked_sources,0,,https://www.dfrobot.com/product-1995.html
+dfrobot,dfrobot-sen0374,Fermion: BNO055 Intelligent 9-axis Sensor (Breakout),not_found_in_checked_sources,0,,https://www.dfrobot.com/product-2142.html
+dfrobot,dfrobot-rob0112,Devastator Tank Mobile Robot Platform,not_found_in_checked_sources,0,,https://www.dfrobot.com/product-1219.html
+dfrobot,dfrobot-fit0654-1,Mecanum Wheel Kit (80mm - 4 Wheels),not_found_in_checked_sources,0,,https://www.dfrobot.com/product-2042.html
+dfrobot,dfrobot-dfr0969,2-Way 18650 Battery Holder,not_found_in_checked_sources,0,,https://www.dfrobot.com/product-2578.html
+robotis,robotis-902-0135-000,DYNAMIXEL XL430-W250-T,downloaded_3d,1,,https://robotis.us/products/dynamixel-xl430-w250-t
+robotis,robotis-902-0163-000,DYNAMIXEL XL330-M288-T,downloaded_3d,1,,https://robotis.us/products/dynamixel-xl330-m288-t
+robotis,robotis-902-0132-000,U2D2,downloaded_3d,1,,https://robotis.us/products/u2d2
+robotis,robotis-903-0257-000,OpenCR1.0,downloaded_3d,3,OpenCR CAD is revision H from the official hardware repository; verify against the purchased board.,https://robotis.us/products/opencr1-0
+robotis,robotis-902-0183-000,OpenRB-150,downloaded_3d,1,,https://robotis.us/products/openrb-150
+robotis,robotis-902-0043-000,Distance Measuring Sensor DMS-80,not_found_in_checked_sources,0,,https://robotis.us/products/distance-measuring-sensor-dms-80
+robotis,robotis-902-0042-000,Gyro Sensor GS-12,not_found_in_checked_sources,0,,https://robotis.us/products/gyro-sensor-gs-12
+robotis,robotis-901-0118-301,TurtleBot 3 Burger RPi4 4GB [US],downloaded_3d,7,Official TurtleBot3 ROS visualization meshes and URDF. Simplified geometry; RPi4 kit revision and included sensor may differ. Not a complete manufacturing CAD assembly.,https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us
+robotis,robotis-903-0260-000,TB3 Wheel Tire Set-ISW-01 (2ea),downloaded_3d,1,,https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea
+robotis,robotis-903-0262-000,TB3 Ball Caster-A01 (1ea),downloaded_3d,1,,https://robotis.us/products/tb3-ball-caster-a01-1ea
+robotis,robotis-903-0210-000,LIPO Battery 11.1V 1800mAh LB-012,not_found_in_checked_sources,0,,https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012
+robotis,robotis-903-0126-000,SMPS 12V 5A PS-10 [US-110V],not_found_in_checked_sources,0,,https://robotis.us/products/smps-12v-5a-ps-10-us-110v
+waveshare,waveshare-23489,"DDSM115 Direct Drive Servo Motor, Low Speed & High Torque, Low Noise, All-In-One Design, Hub Motor",downloaded_3d,3,,https://www.waveshare.com/ddsm115.htm
+waveshare,waveshare-24440,"2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle",downloaded_3d,2,The wiki links two case-only-different ZIP filenames; stored under distinct names for macOS. The link labeled DXF Drawing actually contains STEP files; formats are derived from archive contents.,https://www.waveshare.com/sc09-servo.htm
+waveshare,waveshare-21568,SC15 17kg Large Torque Programmable Serial Bus Servo,downloaded_3d,1,,https://www.waveshare.com/sc15-servo.htm
+waveshare,waveshare-15364,"Motor Driver HAT for Raspberry Pi, I2C Interface",downloaded_3d,1,,https://www.waveshare.com/motor-driver-hat.htm
+waveshare,waveshare-15669,"Stepper Motor HAT for Raspberry Pi, Drives Two Stepper Motors",not_found_in_checked_sources,0,,https://www.waveshare.com/stepper-motor-hat.htm
+waveshare,waveshare-23730,"General Driver board for Robots, Based on ESP32, multi-functional, supports WIFI, Bluetooth and ESP-NOW communications, ESP32-WROOM-32UE, ESP32 Dev Board",downloaded_3d,2,,https://www.waveshare.com/general-driver-for-robots.htm
+waveshare,waveshare-25978,"D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus",related_model_only,2,D500 kit wiki links to files named LD19. Supplier-linked related model; exact D500 geometry is unverified.,https://www.waveshare.com/d500-lidar-kit.htm
+waveshare,waveshare-18301,"TOF Laser Range Sensor, UART / CAN Bus, Cascading Support, Ranging up to 5m, with Software",not_found_in_checked_sources,0,,https://www.waveshare.com/tof-laser-range-sensor.htm
+waveshare,waveshare-wave-rover,"WAVE ROVER Flexible And Expandable 4WD Mobile Robot Chassis, Full Metal Body, Multiple Hosts Support, With Onboard ESP32 Module",downloaded_3d,3,,https://www.waveshare.com/wave-rover.htm
+waveshare,waveshare-ups-hat,"Uninterruptible Power Supply UPS HAT For Raspberry Pi, Stable 5V Power Output",downloaded_3d,1,,https://www.waveshare.com/ups-hat.htm
+waveshare,waveshare-dc-buck-adapter-7-2v,"Serial Bus Servo DC Buck Adapter, Mini Module, Design for Serial Bus Servos, Easy to Use, 7.2V / 6V Buck Regulator",downloaded_3d,1,,https://www.waveshare.com/dc-buck-adapter-7.2v.htm

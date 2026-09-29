@@ -1,0 +1,3 @@
+# Downloaded vendor assets stay local; provenance is tracked in manifest.json.
+originals/
+extracted/

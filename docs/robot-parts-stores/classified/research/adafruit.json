@@ -1,0 +1,211 @@
+[
+  {
+    "product_id": "adafruit-3777",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "dc_gearmotor",
+    "assembly_level": "component",
+    "function_summary": "Small brushed DC motor with a plastic reduction gearbox for wheel-driven projects.",
+    "classification_reason": "Maps to locomotion as a drive actuator; it is a motor, not a complete leg or wheel.",
+    "classification_confidence": "high",
+    "assembly_notes": "One motor with wires; wheel, mounting, controller, motor driver and power are separate. No built-in encoder or position feedback.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor describes TT wheel applications, one motor per order and the need for an external high-current driver.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/3777"
+    ]
+  },
+  {
+    "product_id": "adafruit-169",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "head",
+      "legs"
+    ],
+    "part_type": "positional_servo",
+    "assembly_level": "component",
+    "function_summary": "Compact position-controlled hobby servo for small mechanisms.",
+    "classification_reason": "Suggested arm joint; alternatively a neck or miniature leg joint. Each use needs linkage and load checks; no complete limb is supplied.",
+    "classification_confidence": "medium",
+    "assembly_notes": "Includes servo horns and mounting hardware; supply a controller, power and mechanism.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor identifies TowerPro SG92R, approximate half-turn motion and included horns/hardware.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/169"
+    ]
+  },
+  {
+    "product_id": "adafruit-2927",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "Feather add-on board that controls brushed DC motors or stepper motors over I2C.",
+    "classification_reason": "Internal motor-control electronics; does not provide a body structure or actuator.",
+    "classification_confidence": "high",
+    "assembly_notes": "Feather controller, motors and external motor supply are separate; header soldering is required.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor specifies four DC motors or two steppers and explicitly excludes Feather and motors.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/2927"
+    ]
+  },
+  {
+    "product_id": "adafruit-1438",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "kit",
+    "function_summary": "Arduino shield providing DC/stepper motor outputs and hobby-servo connections.",
+    "classification_reason": "Supports motion electrically; the shield is not a limb or robot chassis.",
+    "classification_confidence": "high",
+    "assembly_notes": "Shield kit needs header soldering; Arduino, motors and power supply must be added.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Product page identifies the v3 shield kit and explicitly excludes Arduino and motors.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/1438"
+    ]
+  },
+  {
+    "product_id": "adafruit-4864",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "microcontroller",
+    "assembly_level": "module",
+    "function_summary": "RP2040 development board for embedded programs and peripheral control.",
+    "classification_reason": "Internal control board; its processor does not make the board a mechanical head.",
+    "classification_confidence": "high",
+    "assembly_notes": "Add firmware, power, wiring and suitable interfaces or drivers for external parts.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor distinguishes Pico as an embedded microcontroller rather than a general-purpose Raspberry Pi computer.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/4864"
+    ]
+  },
+  {
+    "product_id": "adafruit-5129",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "robot_controller",
+    "assembly_level": "module",
+    "function_summary": "RP2040 robot-control board with two DC motor channels, servo connections and Grove ports.",
+    "classification_reason": "Integrates control and power interfaces, not mechanical body parts.",
+    "classification_confidence": "high",
+    "assembly_notes": "Motors, servos, sensors, power source and mechanical structure must be supplied separately.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor lists two DC motor channels, four servo connections and onboard power/charging circuitry.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/5129"
+    ]
+  },
+  {
+    "product_id": "adafruit-3317",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "VL53L0X optical time-of-flight breakout measuring distance in front of the sensor.",
+    "classification_reason": "Perception component suitable for a head or eye position; a head shell and mounting are not included.",
+    "classification_confidence": "high",
+    "assembly_notes": "Requires host controller, power and mounting; QT cable is separate.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor describes forward ranging, I2C communication and a breakout with voltage regulation/level shifting.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/3317"
+    ]
+  },
+  {
+    "product_id": "adafruit-4007",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "Ultrasonic ranging module with HC-SR04-compatible control behavior.",
+    "classification_reason": "Suggested head perception module because it measures nearby obstacles; not a complete head.",
+    "classification_confidence": "high",
+    "assembly_notes": "Add controller, power, wiring and bracket; vendor notes different physical dimensions from HC-SR04.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor describes ultrasonic distance sensing and operation with 3 V or 5 V systems.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/4007"
+    ]
+  },
+  {
+    "product_id": "adafruit-4754",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "imu",
+    "assembly_level": "module",
+    "function_summary": "BNO085 breakout combining inertial and magnetic sensing with onboard orientation fusion.",
+    "classification_reason": "Measures its own motion and orientation rather than surrounding objects; classify as internal sensing support.",
+    "classification_confidence": "high",
+    "assembly_notes": "Requires host, power and a fixed mounting; QT cable is not included.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor identifies accelerometer, gyroscope, magnetometer and fused orientation output.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/4754"
+    ]
+  },
+  {
+    "product_id": "adafruit-2939",
+    "primary_role": "legs",
+    "secondary_roles": [
+      "torso"
+    ],
+    "part_type": "mobile_base",
+    "assembly_level": "kit",
+    "function_summary": "Two-wheel-drive rover kit providing a metal chassis, drive motors, wheels and support wheel.",
+    "classification_reason": "Locomotion base fits the legs category; its load-carrying metal body can also serve as a torso in a loose visual build.",
+    "classification_confidence": "high",
+    "assembly_notes": "Requires assembly, power, controller and dual H-bridge driver; batteries and Feather boards shown in demos are excluded.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor kit contents list two drive motors, two wheels, support wheel and chassis/top plate; electronics/power are excluded.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/2939"
+    ]
+  },
+  {
+    "product_id": "adafruit-3766",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "wheel",
+    "assembly_level": "component",
+    "function_summary": "Silicone-tread wheel that press-fits a TT gearbox motor output.",
+    "classification_reason": "Ground-contact rolling component for locomotion; it is not a powered leg or motor.",
+    "classification_confidence": "high",
+    "assembly_notes": "Sold individually; TT gearbox motor and chassis are separate.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor specifies one wheel per order and TT-motor-only fit.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/3766"
+    ]
+  },
+  {
+    "product_id": "adafruit-328",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "battery",
+    "assembly_level": "component",
+    "function_summary": "Rechargeable single-cell lithium-polymer battery with a 2-pin JST-PH lead.",
+    "classification_reason": "Electrical energy storage belongs to internal power support.",
+    "classification_confidence": "high",
+    "assembly_notes": "Battery only; compatible charger and application-specific power regulation are separate.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor identifies 3.7 V nominal, 2500 mAh battery with protection circuitry and preattached connector.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.adafruit.com/product/328"
+    ]
+  }
+]

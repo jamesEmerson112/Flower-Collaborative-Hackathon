@@ -1,0 +1,213 @@
+[
+  {
+    "product_id": "sparkfun-rob-13302",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "dc_gearmotor",
+    "assembly_level": "component",
+    "function_summary": "Pair of DAGU geared DC motors intended to drive small robot wheels.",
+    "classification_reason": "Locomotion actuators; each motor still needs a wheel or other drive mechanism.",
+    "classification_confidence": "high",
+    "assembly_notes": "One catalog unit contains two motors; wheels, chassis, driver, controller and power are separate.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor recommends these motors for Shadow Chassis and explicitly states packs of two.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-rob-09238",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "legs"
+    ],
+    "part_type": "stepper_motor",
+    "assembly_level": "component",
+    "function_summary": "Bipolar NEMA 17 motor providing discrete rotational positioning.",
+    "classification_reason": "Suggested joint actuator for an arm or small leg concept; vendor sells a general motion-control motor, not a robot limb.",
+    "classification_confidence": "medium",
+    "assembly_notes": "Requires stepper driver, supply, controller, coupling, mounting and load-appropriate transmission.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor describes 200 steps per revolution, NEMA 17 construction and use with external stepper drivers.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-rob-09065",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "head",
+      "legs"
+    ],
+    "part_type": "positional_servo",
+    "assembly_level": "component",
+    "function_summary": "Sub-micro hobby servo with limited-angle position control.",
+    "classification_reason": "Suggested arm joint, with neck or small leg-joint alternatives; requires linkages and suitable loading.",
+    "classification_confidence": "medium",
+    "assembly_notes": "Includes one servo, several horns and mounting screws; controller, supply and mechanism are separate.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor states actual travel near 160 degrees and lists one servo with horns and screws.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/servo-generic-sub-micro-size.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-rob-14450",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "Dual TB6612FNG board for independent speed and direction control of two DC motors.",
+    "classification_reason": "Motor-driving electronics are internal support rather than locomotion hardware themselves.",
+    "classification_confidence": "high",
+    "assembly_notes": "Headers are pre-soldered; motors, control signals and power supply are separate.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor describes two motor outputs and pre-soldered male headers.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-rob-15451",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "Two-channel DC motor driver controlled through I2C/Qwiic.",
+    "classification_reason": "Provides electrical motor control; no moving limb or wheel is included.",
+    "classification_confidence": "high",
+    "assembly_notes": "Add motors, host controller, Qwiic/wiring and power; logic interface is 3.3 V.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor describes two motor ports, I2C communication, screw terminals and 3.3 V logic.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-dev-15123",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "microcontroller",
+    "assembly_level": "module",
+    "function_summary": "Arduino-compatible development board with a Qwiic peripheral connection.",
+    "classification_reason": "Programmable internal controller, not a head or structural torso.",
+    "classification_confidence": "high",
+    "assembly_notes": "Add program, power and external sensors/actuators; motors need appropriate drivers.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor identifies an Arduino-compatible development board with integrated Qwiic connector.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/sparkfun-redboard-qwiic.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-sen-15335",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "imu",
+    "assembly_level": "module",
+    "function_summary": "ICM-20948 breakout providing nine-axis motion measurements over Qwiic/I2C.",
+    "classification_reason": "Orientation and motion sensing is internal support; this is not a camera or distance-sensing head.",
+    "classification_confidence": "high",
+    "assembly_notes": "Requires a host board, power, connection and fixed mounting.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor identifies ICM-20948 motion tracking and Digital Motion Processor on a breakout board.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-sen-14722",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "VL53L1X time-of-flight breakout for optical distance measurement over I2C/Qwiic.",
+    "classification_reason": "Forward perception can act as a robot eye; housing and head mechanism are separate.",
+    "classification_confidence": "high",
+    "assembly_notes": "Add host board, power, cable and mounting.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor describes laser time-of-flight ranging up to four metres and I2C/Qwiic connectivity.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-sen-15569",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "HC-SR04 ultrasonic module with transmitter, receiver and distance-measurement control circuit.",
+    "classification_reason": "Obstacle ranging makes this a suggested head/eye component; not an entire head assembly.",
+    "classification_confidence": "high",
+    "assembly_notes": "Requires 5 V power, host control/wiring and mounting.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor identifies HC-SR04, ultrasonic transmitter/receiver and non-contact ranging.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-rob-13301",
+    "primary_role": "torso",
+    "secondary_roles": [
+      "legs"
+    ],
+    "part_type": "chassis_frame",
+    "assembly_level": "kit",
+    "function_summary": "Snap-together ABS frame with mounts for robot electronics and drive hardware.",
+    "classification_reason": "Primarily the structural torso: drive wheels and motors are not in the listed kit. Secondary legs denotes use as the frame of a separately completed wheeled base.",
+    "classification_confidence": "high",
+    "assembly_notes": "Assembly required. Includes plates, mounts, struts, nub caster and 4xAA holder; add motors, drive wheels, batteries and controller.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor kit list includes frame pieces, passive nub caster and battery holder; it says to attach your own motors/controller.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/shadow-chassis.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-rob-13259",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "wheel",
+    "assembly_level": "component",
+    "function_summary": "Pair of 65 mm rubber-tired wheels for DAGU right-angle gearmotors.",
+    "classification_reason": "Rolling ground-contact components belong to locomotion; they are unpowered wheels.",
+    "classification_confidence": "high",
+    "assembly_notes": "One catalog unit contains two wheels; motors and frame are separate.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor states packs of two and fit for DAGU right-angle gearmotors.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html"
+    ]
+  },
+  {
+    "product_id": "sparkfun-prt-13855",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "battery",
+    "assembly_level": "component",
+    "function_summary": "Slim rechargeable lithium-ion cell with a JST-PH connection.",
+    "classification_reason": "Energy source for internal power support, without a standalone body role.",
+    "classification_confidence": "high",
+    "assembly_notes": "Battery only; needs compatible charging and any voltage regulation required by the robot.",
+    "evidence_status": "live_verified",
+    "evidence_note": "Vendor identifies 3.7 V nominal, 2000 mAh, JST-PH connector and onboard protection.",
+    "researched_at": "2026-09-29",
+    "evidence_urls": [
+      "https://www.sparkfun.com/lithium-ion-battery-2ah.html"
+    ]
+  }
+]

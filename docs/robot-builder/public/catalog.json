@@ -1,0 +1,408 @@
+[
+  {
+    "id": "sparkfun-rob-13301",
+    "name": "Shadow chassis",
+    "fullName": "Shadow Chassis",
+    "supplier": "SparkFun",
+    "storeId": "sparkfun",
+    "price": 14.95,
+    "currency": "USD",
+    "sku": "ROB-13301",
+    "productUrl": "https://www.sparkfun.com/shadow-chassis.html",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [
+      "legs"
+    ],
+    "partType": "chassis_frame",
+    "assemblyLevel": "kit",
+    "classificationReason": "Primarily the structural torso: drive wheels and motors are not in the listed kit. Secondary legs denotes use as the frame of a separately completed wheeled base.",
+    "modelKind": "approximate_preview",
+    "defaultSlots": [
+      "torso"
+    ],
+    "source": "",
+    "sourceUrl": "https://www.sparkfun.com/shadow-chassis.html",
+    "color": "#646b61",
+    "note": "Approximate frame preview based on the listed chassis envelope; no supplier CAD was found. Mounting details are illustrative.",
+    "model": "models/sparkfun-rob-13301.glb",
+    "thumbnail": "thumbnails/sparkfun-rob-13301.png"
+  },
+  {
+    "id": "pololu-3500",
+    "name": "Romi chassis",
+    "fullName": "Romi Chassis Kit - Black",
+    "supplier": "Pololu",
+    "storeId": "pololu",
+    "price": 39.95,
+    "currency": "USD",
+    "sku": "3500",
+    "productUrl": "https://www.pololu.com/product/3500",
+    "roles": [
+      "legs"
+    ],
+    "secondaryRoles": [
+      "torso"
+    ],
+    "partType": "mobile_base",
+    "assemblyLevel": "kit",
+    "classificationReason": "Locomotion assembly belongs to legs; its load-carrying chassis offers a secondary torso use for lenient visual combinations.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/pololu-3500/romi-chassis-kit.step",
+    "sourceUrl": "https://www.pololu.com/file/0J1298/romi-chassis-kit.step",
+    "color": "#dae0bc",
+    "note": "The vendor CAD includes a second caster; the listed chassis kit includes one caster.",
+    "model": "models/pololu-3500.glb",
+    "thumbnail": "thumbnails/pololu-3500.png"
+  },
+  {
+    "id": "waveshare-wave-rover",
+    "name": "WAVE ROVER",
+    "fullName": "WAVE ROVER Flexible And Expandable 4WD Mobile Robot Chassis, Full Metal Body, Multiple Hosts Support, With Onboard ESP32 Module",
+    "supplier": "Waveshare",
+    "storeId": "waveshare",
+    "price": 89.99,
+    "currency": "USD",
+    "sku": null,
+    "productUrl": "https://www.waveshare.com/wave-rover.htm",
+    "roles": [
+      "legs"
+    ],
+    "secondaryRoles": [
+      "torso"
+    ],
+    "partType": "mobile_base",
+    "assemblyLevel": "module",
+    "classificationReason": "This supplies robot locomotion, so it is the legs/base choice from the user example. Its mounting surface can also carry the torso.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [
+      "leftLeg",
+      "rightLeg"
+    ],
+    "source": "extracted/waveshare-wave-rover/WAVE_ROVER_MODEL_STL/WAVE ROVER_MODEL_STL.stl",
+    "sourceUrl": "https://files.waveshare.com/upload/e/ec/WAVE_ROVER_MODEL_STL.rar",
+    "color": "#a8bac5",
+    "note": "",
+    "model": "models/waveshare-wave-rover.glb",
+    "thumbnail": "thumbnails/waveshare-wave-rover.png",
+    "baseRotation": [
+      1.5707963267948966,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "robotis-903-0257-000",
+    "name": "OpenCR controller",
+    "fullName": "OpenCR1.0",
+    "supplier": "ROBOTIS",
+    "storeId": "robotis",
+    "price": 247.14,
+    "currency": "USD",
+    "sku": "903-0257-000",
+    "productUrl": "https://robotis.us/products/opencr1-0",
+    "roles": [
+      "support"
+    ],
+    "secondaryRoles": [],
+    "partType": "robot_controller",
+    "assemblyLevel": "module",
+    "classificationReason": "Internal control electronics belong to support even when physically mounted in a torso.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/robotis-903-0257-000/OpenCR_REVH.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCR-Hardware/4c56093c5aaedbcb98b374f94a8046187834022c/Layout/OpenCR_REVH.stl",
+    "color": "#587c65",
+    "note": "",
+    "model": "models/robotis-903-0257-000.glb",
+    "thumbnail": "thumbnails/robotis-903-0257-000.png"
+  },
+  {
+    "id": "adafruit-4754",
+    "name": "BNO085 IMU",
+    "fullName": "Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080)",
+    "supplier": "Adafruit",
+    "storeId": "adafruit",
+    "price": 29.5,
+    "currency": "USD",
+    "sku": "4754",
+    "productUrl": "https://www.adafruit.com/product/4754",
+    "roles": [
+      "support"
+    ],
+    "secondaryRoles": [],
+    "partType": "imu",
+    "assemblyLevel": "module",
+    "classificationReason": "Measures its own motion and orientation rather than surrounding objects; classify as internal sensing support.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/adafruit-4754/4754 BNO085 STEMMA QT.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/adafruit/Adafruit_CAD_Parts/6f52ee4d48df0e7118d2d82f485cb572051a24fe/4754%20BNO085%20STEMMA%20QT/4754%20BNO085%20STEMMA%20QT.stl",
+    "color": "#657e5b",
+    "note": "",
+    "model": "models/adafruit-4754.glb",
+    "thumbnail": "thumbnails/adafruit-4754.png"
+  },
+  {
+    "id": "pololu-3415",
+    "name": "Time-of-flight sensor",
+    "fullName": "VL53L1X Time-of-Flight Distance Sensor Carrier with Voltage Regulator, 400cm Max",
+    "supplier": "Pololu",
+    "storeId": "pololu",
+    "price": 22.95,
+    "currency": "USD",
+    "sku": "3415",
+    "productUrl": "https://www.pololu.com/product/3415",
+    "roles": [
+      "head"
+    ],
+    "secondaryRoles": [],
+    "partType": "distance_sensor",
+    "assemblyLevel": "module",
+    "classificationReason": "Suggested head perception component; it measures the scene in front and does not include a head shell.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [
+      "head"
+    ],
+    "source": "originals/pololu-3415/vl53l0x-vl53l1x-vl53l3cx-vl53l4cd-carrier-model.step",
+    "sourceUrl": "https://www.pololu.com/file/0J1195/vl53l0x-vl53l1x-vl53l3cx-vl53l4cd-carrier-model.step",
+    "color": "#576d9a",
+    "note": "",
+    "model": "models/pololu-3415.glb",
+    "thumbnail": "thumbnails/pololu-3415.png",
+    "slotRotations": {
+      "head": [
+        0,
+        3.141592653589793,
+        0
+      ]
+    }
+  },
+  {
+    "id": "robotis-902-0135-000",
+    "name": "DYNAMIXEL XL430",
+    "fullName": "DYNAMIXEL XL430-W250-T",
+    "supplier": "ROBOTIS",
+    "storeId": "robotis",
+    "price": 27.5,
+    "currency": "USD",
+    "sku": "902-0135-000",
+    "productUrl": "https://robotis.us/products/dynamixel-xl430-w250-t",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [
+      "legs",
+      "head"
+    ],
+    "partType": "smart_servo",
+    "assemblyLevel": "component",
+    "classificationReason": "Suggested as an arm joint; its other operating modes also suit wheel drives or pan-tilt heads. One actuator is not an assembled limb.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [
+      "leftArm"
+    ],
+    "source": "originals/robotis-902-0135-000/XL430_new(stp).stp",
+    "sourceUrl": "https://www.dropbox.com/s/wpy20ym8g1wvgbx/XL-430_new.stp?dl=1",
+    "color": "#647184",
+    "note": "",
+    "model": "models/robotis-902-0135-000.glb",
+    "thumbnail": "thumbnails/robotis-902-0135-000.png"
+  },
+  {
+    "id": "servocity-2002-0180-0002",
+    "name": "Proton servo",
+    "fullName": "Proton Servo (Steel Gears, 180\u00b0 Rotation, Torque Ratio)",
+    "supplier": "ServoCity",
+    "storeId": "servocity",
+    "price": 17.99,
+    "currency": "USD",
+    "sku": "2002-0180-0002",
+    "productUrl": "https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [
+      "head",
+      "legs"
+    ],
+    "partType": "positional_servo",
+    "assemblyLevel": "component",
+    "classificationReason": "Angular positioning suits a joint or gripper drive; head or leg use is an alternative only after load and mounting checks.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [
+      "rightArm"
+    ],
+    "source": "extracted/servocity-2002-0180-0002/2002-0180-0002/2002-0180-0002.step",
+    "sourceUrl": "https://www.servocity.com/content/step_files/2002-0180-0002.zip",
+    "color": "#cfab66",
+    "note": "",
+    "model": "models/servocity-2002-0180-0002.glb",
+    "thumbnail": "thumbnails/servocity-2002-0180-0002.png"
+  },
+  {
+    "id": "waveshare-21568",
+    "name": "SC15 bus servo",
+    "fullName": "SC15 17kg Large Torque Programmable Serial Bus Servo",
+    "supplier": "Waveshare",
+    "storeId": "waveshare",
+    "price": 17.99,
+    "currency": "USD",
+    "sku": "21568",
+    "productUrl": "https://www.waveshare.com/sc15-servo.htm",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [
+      "legs"
+    ],
+    "partType": "smart_servo",
+    "assemblyLevel": "component",
+    "classificationReason": "Suggested arm joint with leg-joint use in walkers; it does not include the links or frame of an entire limb.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "extracted/waveshare-21568/SC15-Servo/SC15-Servo/SC15_not-bracket.stp",
+    "sourceUrl": "https://files.waveshare.com/wiki/SC15_Servo/SC15-Servo.zip",
+    "color": "#647989",
+    "note": "",
+    "model": "models/waveshare-21568.glb",
+    "thumbnail": "thumbnails/waveshare-21568.png"
+  },
+  {
+    "id": "sparkfun-rob-09238",
+    "name": "NEMA 17 stepper",
+    "fullName": "Stepper Motor - 32 oz.in (200 steps/rev, 1200mm Wire)",
+    "supplier": "SparkFun",
+    "storeId": "sparkfun",
+    "price": 26.95,
+    "currency": "USD",
+    "sku": "ROB-09238",
+    "productUrl": "https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [
+      "legs"
+    ],
+    "partType": "stepper_motor",
+    "assemblyLevel": "component",
+    "classificationReason": "Suggested joint actuator for an arm or small leg concept; vendor sells a general motion-control motor, not a robot limb.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/sparkfun-rob-09238/9238.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/sparkfun/3D_Models/53d298c3b8202cf8fce9ab61885855720c84c012/products/9238/stl/9238.stl",
+    "color": "#8b9399",
+    "note": "",
+    "model": "models/sparkfun-rob-09238.glb",
+    "thumbnail": "thumbnails/sparkfun-rob-09238.png"
+  },
+  {
+    "id": "adafruit-3777",
+    "name": "TT gearbox motor",
+    "fullName": "DC Gearbox Motor - \"TT Motor\" - 200RPM - 3 to 6VDC",
+    "supplier": "Adafruit",
+    "storeId": "adafruit",
+    "price": 2.95,
+    "currency": "USD",
+    "sku": "3777",
+    "productUrl": "https://www.adafruit.com/product/3777",
+    "roles": [
+      "legs"
+    ],
+    "secondaryRoles": [],
+    "partType": "dc_gearmotor",
+    "assemblyLevel": "component",
+    "classificationReason": "Maps to locomotion as a drive actuator; it is a motor, not a complete leg or wheel.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/adafruit-3777/3777 TT Motor.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/adafruit/Adafruit_CAD_Parts/6f52ee4d48df0e7118d2d82f485cb572051a24fe/3777%20TT%20Motor/3777%20TT%20Motor.stl",
+    "color": "#d6af44",
+    "note": "",
+    "model": "models/adafruit-3777.glb",
+    "thumbnail": "thumbnails/adafruit-3777.png"
+  },
+  {
+    "id": "sparkfun-rob-09065",
+    "name": "Micro servo",
+    "fullName": "Servo - Generic (Sub-Micro Size)",
+    "supplier": "SparkFun",
+    "storeId": "sparkfun",
+    "price": 12.95,
+    "currency": "USD",
+    "sku": "ROB-09065",
+    "productUrl": "https://www.sparkfun.com/servo-generic-sub-micro-size.html",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [
+      "head",
+      "legs"
+    ],
+    "partType": "positional_servo",
+    "assemblyLevel": "component",
+    "classificationReason": "Suggested arm joint, with neck or small leg-joint alternatives; requires linkages and suitable loading.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/sparkfun-rob-09065/9065.STL",
+    "sourceUrl": "https://raw.githubusercontent.com/sparkfun/3D_Models/53d298c3b8202cf8fce9ab61885855720c84c012/products/9065/stl/9065.STL",
+    "color": "#739ba5",
+    "note": "",
+    "model": "models/sparkfun-rob-09065.glb",
+    "thumbnail": "thumbnails/sparkfun-rob-09065.png"
+  },
+  {
+    "id": "pololu-3036",
+    "name": "Micro gearmotor",
+    "fullName": "5:1 Micro Metal Gearmotor HPCB 12V",
+    "supplier": "Pololu",
+    "storeId": "pololu",
+    "price": 26.45,
+    "currency": "USD",
+    "sku": "3036",
+    "productUrl": "https://www.pololu.com/product/3036",
+    "roles": [
+      "legs"
+    ],
+    "secondaryRoles": [],
+    "partType": "dc_gearmotor",
+    "assemblyLevel": "component",
+    "classificationReason": "Suggested locomotion actuator only. Its high speed and low reduction do not imply suitability as a load-bearing leg or direct wheel drive.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/pololu-3036/No Encoder/mmgm-cb.step",
+    "sourceUrl": "https://www.pololu.com/file/0J2042/Pololu%20Micro%20Metal%20Gearmotor%203D%20(STEP)%20Models.zip",
+    "color": "#b19a6c",
+    "note": "",
+    "model": "models/pololu-3036.glb",
+    "thumbnail": "thumbnails/pololu-3036.png"
+  },
+  {
+    "id": "seeed-114993667",
+    "name": "SO-101 arm",
+    "fullName": "SO-ARM101 Pro Servo Motor Kit \u2013 LeRobot Compatible 6DOF Robotic Arm",
+    "supplier": "Seeed Studio",
+    "storeId": "seeed",
+    "price": 277.99,
+    "currency": "USD",
+    "sku": "114993667",
+    "productUrl": "https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [],
+    "partType": "robotic_arm_kit",
+    "assemblyLevel": "kit",
+    "classificationReason": "Purpose is manipulation, but the purchased kit is the actuator/electronics subset of an arm.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/seeed-114993667/SO101 Assembly.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/TheRobotStudio/SO-ARM100/5f6d2b876a53a4872e405b991dd925556c9e38a4/STL/SO101/Individual/SO101%20Assembly.stl",
+    "color": "#cfb080",
+    "note": "SO-101 assembly includes printed structure, which is not supplied in the listed servo kit.",
+    "model": "models/seeed-114993667.glb",
+    "thumbnail": "thumbnails/seeed-114993667.png"
+  }
+]

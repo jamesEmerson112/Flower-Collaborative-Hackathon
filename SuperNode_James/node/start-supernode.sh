@@ -1,21 +1,27 @@
 #!/usr/bin/env bash
-# Turn this machine into the SuperNode "james".
+# Turn this machine into the SuperNode "james" (or any other name, see the overrides below).
 # There's no app code here: the node only needs Flower, a key, and its local data (profile.json).
 #
 # Usage:
 #   ./start-supernode.sh supergrid   # join Flower's hosted SuperLink (needs a registered key, see README)
 #   ./start-supernode.sh local       # join a SuperLink on this machine (flower-superlink --insecure)
 #
-# Override the key location with SUPERNODE_KEY=/path/to/private-key.
+# Optional overrides, for starting another node with this same script:
+#   SUPERNODE_NAME=alice        node name (default: james); also picks the default key file
+#   SUPERNODE_KEY=/path/key     private key (default: ~/supernodes_keys/supernode-<name>)
+#   SUPERNODE_PROFILE=/path     local profile (default: profile.json next to this script)
+#   SUPERNODE_PORT=9095         local Runtime API port (default: 9094); each node on one machine needs its own
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROFILE="$HERE/profile.json"
-KEY="${SUPERNODE_KEY:-$HOME/supernodes_keys/supernode-james}"
+NAME="${SUPERNODE_NAME:-james}"
+PROFILE="${SUPERNODE_PROFILE:-$HERE/profile.json}"
+KEY="${SUPERNODE_KEY:-$HOME/supernodes_keys/supernode-$NAME}"
+PORT="${SUPERNODE_PORT:-9094}"
 MODE="${1:-supergrid}"
 
 # The app reads these through context.node_config on this node only.
-NODE_CONFIG="profile=\"$PROFILE\" node-name=\"james\""
+NODE_CONFIG="profile=\"$PROFILE\" node-name=\"$NAME\""
 
 # Load model credentials (FLWR_MODEL_API_KEY, optional FLWR_MODEL_API_ENDPOINT) from the first
 # .env found: node/.env, then the repo root. Values are never printed. Both files are git-ignored.
@@ -44,12 +50,14 @@ case "$MODE" in
     exec flower-supernode \
       --superlink fleet-supergrid.flower.ai:443 \
       --auth-supernode-private-key "$KEY" \
+      --port "$PORT" \
       --node-config "$NODE_CONFIG"
     ;;
   local)
     exec flower-supernode \
       --insecure \
       --superlink 127.0.0.1:9092 \
+      --port "$PORT" \
       --node-config "$NODE_CONFIG"
     ;;
   *)

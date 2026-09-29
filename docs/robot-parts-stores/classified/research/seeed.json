@@ -1,0 +1,217 @@
+[
+  {
+    "product_id": "seeed-108990003",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "head",
+      "legs"
+    ],
+    "part_type": "stepper_motor",
+    "assembly_level": "component",
+    "function_summary": "Compact geared stepper motor for controlled mechanical positioning.",
+    "classification_reason": "A generic positioning actuator can drive a small joint; anatomical assignment is a builder suggestion, not a vendor-designated limb.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One motor; driver, controller, mounting and link structure are additional.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html"
+    ],
+    "evidence_note": "Product identifies 24BYJ48 stepper and cites louvers, small fans and curtains as applications.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-316010005",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "head",
+      "legs"
+    ],
+    "part_type": "positional_servo",
+    "assembly_level": "component",
+    "function_summary": "Angular-position servo supplied with a Grove connector.",
+    "classification_reason": "Positional actuation suggests an arm joint; alternative light head or leg joints need structure and load checks.",
+    "classification_confidence": "medium",
+    "assembly_notes": "Servo with Grove connection; robot links and controller are not a completed limb in this product.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Grove-Servo.html"
+    ],
+    "evidence_note": "Description identifies rotary position control and the Grove-standard three-wire servo connector.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-108090003",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "legs",
+      "head"
+    ],
+    "part_type": "smart_servo",
+    "assembly_level": "component",
+    "function_summary": "Serial-bus smart servo with metal gearbox and magnetic angle sensing.",
+    "classification_reason": "Joint actuator is suitable for manipulation; alternate leg/head roles need mounts and engineering checks.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One ST3215-C047 servo; complete arm structure, power and adapter/control system are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html"
+    ],
+    "evidence_note": "Description identifies serial bus, angle encoder and use in SO-ARM101.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-108020103",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "Grove I2C driver board for DC or stepper motors.",
+    "classification_reason": "Control electronics support moving parts but are not a physical limb.",
+    "classification_confidence": "high",
+    "assembly_notes": "Motor-driver module; motors, power and host controller separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html"
+    ],
+    "evidence_note": "Product identifies the TB6612FNG motor-driver board and DC/stepper use.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-113991114",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "microcontroller",
+    "assembly_level": "module",
+    "function_summary": "Compact ESP32-S3 development board with wireless connectivity.",
+    "classification_reason": "Programmable control and communications are support functions, regardless of where the board is mounted.",
+    "classification_confidence": "high",
+    "assembly_notes": "XIAO ESP32-S3 board SKU; expansion boards, sensing modules and actuators separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html"
+    ],
+    "evidence_note": "Product description names the ESP32-S3 processor and Wi-Fi/BLE connectivity.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-102110919",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "single_board_computer",
+    "assembly_level": "module",
+    "function_summary": "Raspberry Pi 5 single-board computer with 8 GB memory.",
+    "classification_reason": "Computation belongs to internal support rather than a structural head or torso.",
+    "classification_confidence": "high",
+    "assembly_notes": "Computer board variant; enclosure, camera, power and storage are separate selections.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html"
+    ],
+    "evidence_note": "Product identifies the 8 GB Pi 5 board; page distinguishes board from starter-kit choices.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-101020010",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "Ultrasonic module measures distance to nearby objects.",
+    "classification_reason": "Environment perception suggests a head sensor; no mechanical head is included.",
+    "classification_confidence": "high",
+    "assembly_notes": "Sensor module; controller, wiring integration and mounting required.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html"
+    ],
+    "evidence_note": "Description identifies ultrasonic ranging and robot obstacle avoidance.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-101020585",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "imu",
+    "assembly_level": "module",
+    "function_summary": "IMU combines angular-motion, acceleration and magnetic-field sensing.",
+    "classification_reason": "Self-orientation and motion feedback support the body; it is not an outward-looking head sensor.",
+    "classification_confidence": "high",
+    "assembly_notes": "Grove sensor module; host processor and mounting required.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html",
+      "https://wiki.seeedstudio.com/Grove-IMU_9DOF-lcm20600%2BAK09918/"
+    ],
+    "evidence_note": "Official wiki explains gyro, accelerometer and compass functions after storefront fetch failed.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-101020532",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "VL53L0X time-of-flight module provides optical distance measurements.",
+    "classification_reason": "Environment ranging fits the head perception role, without constituting a complete head.",
+    "classification_confidence": "high",
+    "assembly_notes": "Sensor board; host controller and physical mount separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html"
+    ],
+    "evidence_note": "Product description identifies VL53L0X-based ToF ranging.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-110090325",
+    "primary_role": "legs",
+    "secondary_roles": [],
+    "part_type": "mobile_base",
+    "assembly_level": "kit",
+    "function_summary": "Six-wheel mobile chassis with six geared DC motors and an aluminum body.",
+    "classification_reason": "Ground locomotion makes the platform a legs/base selection rather than a torso-only frame.",
+    "classification_confidence": "high",
+    "assembly_notes": "Chassis and drivetrain kit; controller and motor drivers shown as separate add-ons, not a complete autonomous robot.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html"
+    ],
+    "evidence_note": "Description lists six DC motors, gearboxes and mounting holes for Arduino/Raspberry Pi.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-114993667",
+    "primary_role": "arms",
+    "secondary_roles": [],
+    "part_type": "robotic_arm_kit",
+    "assembly_level": "kit",
+    "function_summary": "Servo motor, adapter-board and cable kit for constructing an SO-ARM101 arm.",
+    "classification_reason": "Purpose is manipulation, but the purchased kit is the actuator/electronics subset of an arm.",
+    "classification_confidence": "high",
+    "assembly_notes": "Motor kit excludes 3D-printed structural parts and camera; the downloaded full-arm CAD includes structure that this SKU does not supply.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html"
+    ],
+    "evidence_note": "Official product description and explicit exclusion note distinguish motor kit from assembled/unassembled arm bundles.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-106990290",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "power_module",
+    "assembly_level": "module",
+    "function_summary": "LiPo charge-and-boost board supplies regulated outputs from a battery.",
+    "classification_reason": "Power management is internal support, not energy storage or a body structure.",
+    "classification_confidence": "high",
+    "assembly_notes": "Charger/booster board; LiPo cell and protected battery arrangement must be supplied separately.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html",
+      "https://wiki.seeedstudio.com/Lipo-Rider-Plus/"
+    ],
+    "evidence_note": "Official wiki describes charging, boosting and external battery connection after storefront fetch failed.",
+    "researched_at": "2026-09-29"
+  }
+]

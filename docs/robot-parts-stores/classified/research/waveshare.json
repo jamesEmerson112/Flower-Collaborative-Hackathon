@@ -1,0 +1,198 @@
+[
+  {
+    "product_id": "waveshare-23489",
+    "primary_role": "legs",
+    "secondary_roles": [
+      "arms"
+    ],
+    "part_type": "hub_motor",
+    "assembly_level": "component",
+    "function_summary": "Direct-drive hub servo integrates a brushless motor, encoder and driver with RS-485 control.",
+    "classification_reason": "Primarily a mobile-drive/locomotion actuator; position mode also permits joint concepts. It is not a complete wheelbase or limb.",
+    "classification_confidence": "high",
+    "assembly_notes": "One DDSM115 motor; pictured robot chassis explicitly excluded. Requires mechanical integration, control connection and power.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/ddsm115.htm"
+    ],
+    "evidence_note": "Page identifies a hub motor with integrated driver, position/velocity/current modes and a one-motor package. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-24440",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "legs",
+      "head"
+    ],
+    "part_type": "smart_servo",
+    "assembly_level": "component",
+    "function_summary": "SC09 serial-bus servo supports angular positioning, continuous rotation and feedback.",
+    "classification_reason": "Suggested joint for small arms; walkers and pan-tilt concepts are alternatives. Servo body alone is not a full arm or leg.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One SC09 servo; servo driver board is explicitly excluded. External links/mounts and suitable power are needed.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/sc09-servo.htm"
+    ],
+    "evidence_note": "Vendor names arms, quadrupeds and hexapods, with 300-degree positioning and continuous motor mode. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-21568",
+    "primary_role": "arms",
+    "secondary_roles": [
+      "legs"
+    ],
+    "part_type": "smart_servo",
+    "assembly_level": "component",
+    "function_summary": "SC15 metal-geared serial-bus servo provides position feedback and servo/motor operating modes.",
+    "classification_reason": "Suggested arm joint with leg-joint use in walkers; it does not include the links or frame of an entire limb.",
+    "classification_confidence": "medium",
+    "assembly_notes": "One SC15 servo; pictured JETANK and servo driver board are explicitly excluded.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/sc15-servo.htm"
+    ],
+    "evidence_note": "Product page names robotic arms and multi-legged robots and specifies 210-degree servo/continuous motor modes. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-15364",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "I2C Raspberry Pi HAT controls two DC motors through a dual H-bridge driver.",
+    "classification_reason": "Drive electronics support locomotion but are not moving legs or motors.",
+    "classification_confidence": "high",
+    "assembly_notes": "One HAT and mounting screw pack; Raspberry Pi is excluded and DC motors are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/motor-driver-hat.htm"
+    ],
+    "evidence_note": "Overview states two-motor control using PCA9685 and TB6612FNG; package excludes Raspberry Pi. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-15669",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "motor_driver",
+    "assembly_level": "module",
+    "function_summary": "Raspberry Pi HAT drives two stepper motors with configurable microstepping.",
+    "classification_reason": "Controls separate actuators for arms or other mechanisms; the board itself is support electronics.",
+    "classification_confidence": "high",
+    "assembly_notes": "One HAT and mounting screw pack; Raspberry Pi and stepper motors explicitly excluded.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/stepper-motor-hat.htm"
+    ],
+    "evidence_note": "Vendor lists two DRV8825 channels and six microstep settings plus the separate-motor requirement. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-23730",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "robot_controller",
+    "assembly_level": "module",
+    "function_summary": "ESP32 robot controller integrates DC-motor and serial-servo interfaces, wireless communication and inertial sensing.",
+    "classification_reason": "Shared control and power-interface board for multiple body systems, not a torso frame.",
+    "classification_confidence": "high",
+    "assembly_notes": "One General Driver board, antenna and screw pack; motors, host computer and battery source are separate.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/general-driver-for-robots.htm"
+    ],
+    "evidence_note": "Features list ESP32, DC-motor channels, serial-servo control, IMU and host header; package lists board/antenna/screws. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-25978",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "lidar",
+    "assembly_level": "kit",
+    "function_summary": "D500 spinning time-of-flight lidar scans surrounding distances through 360 degrees for mapping and obstacle detection.",
+    "classification_reason": "Perception assembly for a conceptual head; it is a lidar development kit rather than a complete articulated head.",
+    "classification_confidence": "high",
+    "assembly_notes": "Includes D500 lidar, adapter, USB cable and four-pin cable; Raspberry Pi excluded. Existing LD19 CAD is a related model, not an exact D500 asset.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/d500-lidar-kit.htm"
+    ],
+    "evidence_note": "Product specifies 360-degree scanning, 0.03–12 m ranging and four listed package items. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-18301",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "distance_sensor",
+    "assembly_level": "module",
+    "function_summary": "Time-of-flight laser ranging module reports distances over UART or CAN for obstacle sensing.",
+    "classification_reason": "Outward distance perception fits the head category; this module has no head structure or pan-tilt mechanism.",
+    "classification_confidence": "high",
+    "assembly_notes": "One sensor plus two four-pin cables; USB-to-TTL adapter is recommended separately for testing.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/tof-laser-range-sensor.htm"
+    ],
+    "evidence_note": "Overview identifies distance measurement and robot obstacle avoidance; package lists the sensor and cables. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-wave-rover",
+    "primary_role": "legs",
+    "secondary_roles": [
+      "torso"
+    ],
+    "part_type": "mobile_base",
+    "assembly_level": "module",
+    "function_summary": "Four-wheel-drive mobile base combines a metal chassis, four geared motors, tires, ESP32 driver and UPS module.",
+    "classification_reason": "This supplies robot locomotion, so it is the legs/base choice from the user example. Its mounting surface can also carry the torso.",
+    "classification_confidence": "high",
+    "assembly_notes": "Requires three 18650 cells, explicitly not included. Host computer, lidar and pan-tilt camera are optional additions, not implied by the chassis listing.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/wave-rover.htm"
+    ],
+    "evidence_note": "Vendor describes 4WD with four N20 motors, flexible tires, mounting plate and onboard driver/UPS; three batteries excluded. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-ups-hat",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "power_module",
+    "assembly_level": "module",
+    "function_summary": "Raspberry Pi UPS board maintains regulated 5 V output from external power or two 18650 cells.",
+    "classification_reason": "Power management supports computing and peripherals; it is not a robot body or battery cell.",
+    "classification_confidence": "high",
+    "assembly_notes": "18650 cells excluded. HAT supports two cells; page shows charger as an option, so verify the chosen bundle before assuming a charger is included.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/ups-hat.htm"
+    ],
+    "evidence_note": "Specifications identify 5 V output and battery support; package section excludes cells and labels the charger under options. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-dc-buck-adapter-7-2v",
+    "primary_role": "support",
+    "secondary_roles": [],
+    "part_type": "voltage_regulator",
+    "assembly_level": "module",
+    "function_summary": "Inline DC buck regulator converts a 9–36 V supply to the selected 7.2 V or 6 V servo rail.",
+    "classification_reason": "Servo power-conditioning accessory, not an actuator or limb.",
+    "classification_confidence": "high",
+    "assembly_notes": "One selected-voltage adapter plus a 30 cm servo cable; UPS, driver board and servo are explicitly excluded. The catalog URL names the 7.2 V variant.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/dc-buck-adapter-7.2v.htm"
+    ],
+    "evidence_note": "Product distinguishes 7.2 V and 6 V variants, specifies input range and lists the separate demo hardware. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  }
+]

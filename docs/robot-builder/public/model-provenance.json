@@ -1,0 +1,199 @@
+[
+  {
+    "id": "waveshare-wave-rover",
+    "pipeline_version": 2,
+    "source": "extracted/waveshare-wave-rover/WAVE_ROVER_MODEL_STL/WAVE ROVER_MODEL_STL.stl",
+    "source_sha256": "5209e68563dd90b7a2ab49c4cc961cfb6be2b171147d8334ecc2f2ecb8f75340",
+    "original_bounds": [
+      172.3988037109375,
+      194.03018188476562,
+      99.93919372558594
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 54573,
+    "glb_bytes": 2482928
+  },
+  {
+    "id": "robotis-903-0257-000",
+    "pipeline_version": 2,
+    "source": "originals/robotis-903-0257-000/OpenCR_REVH.stl",
+    "source_sha256": "87c13e6e00d93b385c5620cd185887b67bb27c3cb5e579bb34c9aee5b6a0a5ed",
+    "original_bounds": [
+      75.0,
+      109.0,
+      19.360000610351562
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 54996,
+    "glb_bytes": 1883300
+  },
+  {
+    "id": "adafruit-4754",
+    "pipeline_version": 2,
+    "source": "originals/adafruit-4754/4754 BNO085 STEMMA QT.stl",
+    "source_sha256": "cd0ebf05c413b908acb0a405aa2197ae9329f91d76f3cba7117a1b5d2cb4bc20",
+    "original_bounds": [
+      25.399999618530273,
+      22.860000610351562,
+      4.53000020980835
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 14406,
+    "glb_bytes": 451756
+  },
+  {
+    "id": "sparkfun-rob-09238",
+    "pipeline_version": 2,
+    "source": "originals/sparkfun-rob-09238/9238.stl",
+    "source_sha256": "b337dee3d693f6d1616846872b91ca55cd475a54e923d311a29cd78e565d141c",
+    "original_bounds": [
+      46.304622650146484,
+      57.25,
+      42.0
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 10490,
+    "glb_bytes": 226456
+  },
+  {
+    "id": "adafruit-3777",
+    "pipeline_version": 2,
+    "source": "originals/adafruit-3777/3777 TT Motor.stl",
+    "source_sha256": "c457c4533b41aff66b93870e2cd8662058e75253c84b16c1cc085d7cb690ad8c",
+    "original_bounds": [
+      22.399999618530273,
+      36.599998474121094,
+      70.5999984741211
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 3320,
+    "glb_bytes": 80520
+  },
+  {
+    "id": "sparkfun-rob-09065",
+    "pipeline_version": 2,
+    "source": "originals/sparkfun-rob-09065/9065.STL",
+    "source_sha256": "a110f1497124abf571ffe3a3f5112cbe12c149e41253d2c76cd4bdabfc6ebd6f",
+    "original_bounds": [
+      33.0,
+      29.309999465942383,
+      12.199999809265137
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 1442,
+    "glb_bytes": 45624
+  },
+  {
+    "id": "seeed-114993667",
+    "pipeline_version": 2,
+    "source": "originals/seeed-114993667/SO101 Assembly.stl",
+    "source_sha256": "efe5ed131286e0fa2b95c355886cd9009a34ad5d6a0c7f042a1ba5071f1520cb",
+    "original_bounds": [
+      110.92500305175781,
+      319.3457946777344,
+      253.43209838867188
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 54957,
+    "glb_bytes": 2389244
+  },
+  {
+    "id": "pololu-3500",
+    "pipeline_version": 2,
+    "source": "originals/pololu-3500/romi-chassis-kit.step",
+    "source_sha256": "38bb9571c9125f7f00ea12be1d8b85326b6557a96ddf9451932069ee58991be9",
+    "original_bounds": [
+      148.77999877929688,
+      69.93557739257812,
+      163.21763610839844
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 54997,
+    "glb_bytes": 1865144
+  },
+  {
+    "id": "pololu-3415",
+    "pipeline_version": 2,
+    "source": "originals/pololu-3415/vl53l0x-vl53l1x-vl53l3cx-vl53l4cd-carrier-model.step",
+    "source_sha256": "e7a0bf09f1fb4fb442448e7beae76aed2d67526c93b80a3f8a3320059b9e5c6f",
+    "original_bounds": [
+      12.699999809265137,
+      17.780000686645508,
+      2.2137999534606934
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 11152,
+    "glb_bytes": 358268
+  },
+  {
+    "id": "robotis-902-0135-000",
+    "pipeline_version": 2,
+    "source": "originals/robotis-902-0135-000/XL430_new(stp).stp",
+    "source_sha256": "5eeefe74bed670f70e993e103beab1d25e7bf2b9b297a7923066d96db550f2a1",
+    "original_bounds": [
+      28.5,
+      46.5,
+      40.900001525878906
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 39914,
+    "glb_bytes": 1143828
+  },
+  {
+    "id": "servocity-2002-0180-0002",
+    "pipeline_version": 2,
+    "source": "extracted/servocity-2002-0180-0002/2002-0180-0002/2002-0180-0002.step",
+    "source_sha256": "188639f5e0a9e777c70091de31713b07e268ac614d47c30f91cea64893f5ebc9",
+    "original_bounds": [
+      54.29999923706055,
+      20.150001525878906,
+      44.099998474121094
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 55253,
+    "glb_bytes": 1732492
+  },
+  {
+    "id": "waveshare-21568",
+    "pipeline_version": 2,
+    "source": "extracted/waveshare-21568/SC15-Servo/SC15-Servo/SC15_not-bracket.stp",
+    "source_sha256": "31fb050ab5af92f31cd7b47bb3047dfcc02040f37fe0ba32ee1b09ab175451c0",
+    "original_bounds": [
+      20.202150344848633,
+      40.2021484375,
+      51.40000915527344
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 55153,
+    "glb_bytes": 1553652
+  },
+  {
+    "id": "pololu-3036",
+    "pipeline_version": 2,
+    "source": "originals/pololu-3036/No Encoder/mmgm-cb.step",
+    "source_sha256": "203cec51bb3c7537266c230459960bd4a061e18f3619b9e0358805bf63a08652",
+    "original_bounds": [
+      12.0,
+      10.0,
+      36.20000076293945
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 38854,
+    "glb_bytes": 1217196
+  },
+  {
+    "id": "sparkfun-rob-13301",
+    "pipeline_version": 3,
+    "model_kind": "approximate_preview",
+    "source": "https://www.sparkfun.com/shadow-chassis.html",
+    "source_sha256": null,
+    "original_bounds": [
+      196.0,
+      126.0,
+      44.0
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 804,
+    "glb_bytes": 58216
+  }
+]

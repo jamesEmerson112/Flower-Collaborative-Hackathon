@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "encoding": "UTF-8",
+  "delimiter": ",",
+  "list_separator": "|",
+  "null_value": "",
+  "path_base": "repository root",
+  "columns": [
+    {
+      "name": "product_id",
+      "description": "Stable product ID, matching stores.json and CAD manifest",
+      "type": "string"
+    },
+    {
+      "name": "store_id",
+      "description": "Stable retailer ID",
+      "type": "string"
+    },
+    {
+      "name": "store_name",
+      "description": "Retailer name from the original catalog",
+      "type": "string"
+    },
+    {
+      "name": "product_name",
+      "description": "Original catalog product name",
+      "type": "string"
+    },
+    {
+      "name": "sku",
+      "description": "Retailer SKU, empty when not supplied",
+      "type": "string"
+    },
+    {
+      "name": "product_url",
+      "description": "Original official product page",
+      "type": "string"
+    },
+    {
+      "name": "store_category",
+      "description": "Original normalized technical category",
+      "type": "string"
+    },
+    {
+      "name": "primary_role",
+      "description": "Main builder role; enum in taxonomy.json",
+      "type": "string"
+    },
+    {
+      "name": "secondary_roles",
+      "description": "Optional alternative roles; pipe-separated, excludes primary",
+      "type": "pipe-separated list"
+    },
+    {
+      "name": "part_type",
+      "description": "Specific component type; enum in taxonomy.json",
+      "type": "string"
+    },
+    {
+      "name": "assembly_level",
+      "description": "complete_robot, module, component, kit, or accessory",
+      "type": "string"
+    },
+    {
+      "name": "function_summary",
+      "description": "Researched physical function, paraphrased from the source",
+      "type": "string"
+    },
+    {
+      "name": "classification_reason",
+      "description": "Reason for the inferred body role, not a vendor anatomical claim",
+      "type": "string"
+    },
+    {
+      "name": "classification_confidence",
+      "description": "high, medium, or low; confidence in the suggested classification, not compatibility",
+      "type": "string"
+    },
+    {
+      "name": "assembly_notes",
+      "description": "Purchased scope, exclusions, or extra parts needed",
+      "type": "string"
+    },
+    {
+      "name": "price",
+      "description": "Original single-unit catalog price; not refreshed by classification research",
+      "type": "decimal"
+    },
+    {
+      "name": "currency",
+      "description": "Original currency code; no conversion",
+      "type": "string"
+    },
+    {
+      "name": "price_captured_at",
+      "description": "Date of the original price snapshot, YYYY-MM-DD",
+      "type": "string"
+    },
+    {
+      "name": "spec_snapshot",
+      "description": "Technical specification summary retained from the original catalog",
+      "type": "string"
+    },
+    {
+      "name": "evidence_status",
+      "description": "live_verified, catalog_snapshot_only, or inaccessible",
+      "type": "string"
+    },
+    {
+      "name": "evidence_urls",
+      "description": "Pipe-separated official source URLs consulted; snapshot URLs are marked by evidence_status",
+      "type": "pipe-separated list"
+    },
+    {
+      "name": "evidence_note",
+      "description": "Brief source finding; body-role mapping remains an inference",
+      "type": "string"
+    },
+    {
+      "name": "researched_at",
+      "description": "Classification research date, YYYY-MM-DD",
+      "type": "string"
+    },
+    {
+      "name": "image_url",
+      "description": "Vendor product-image URL extracted from official page metadata/main image; not locally downloaded",
+      "type": "string"
+    },
+    {
+      "name": "image_source_url",
+      "description": "Product page from which the image URL was extracted",
+      "type": "string"
+    },
+    {
+      "name": "image_captured_at",
+      "description": "Date of the saved page used for the image URL",
+      "type": "string"
+    },
+    {
+      "name": "cad_status",
+      "description": "Original collection status; downloaded_3d, related_model_only, or not_found_in_checked_sources",
+      "type": "string"
+    },
+    {
+      "name": "cad_formats",
+      "description": "Pipe-separated formats from the collection manifest",
+      "type": "pipe-separated list"
+    },
+    {
+      "name": "cad_source_urls",
+      "description": "Pipe-separated original CAD download/source URLs",
+      "type": "pipe-separated list"
+    },
+    {
+      "name": "cad_local_paths",
+      "description": "Pipe-separated original/extracted asset paths relative to repository root",
+      "type": "pipe-separated list"
+    },
+    {
+      "name": "cad_notes",
+      "description": "Revision, product-family, or included-parts caveats from the CAD manifest",
+      "type": "string"
+    },
+    {
+      "name": "browser_model_path",
+      "description": "Prepared GLB path relative to repository root, empty if not yet prepared",
+      "type": "string"
+    },
+    {
+      "name": "browser_thumbnail_path",
+      "description": "Prepared PNG thumbnail path relative to repository root, empty if not yet prepared",
+      "type": "string"
+    },
+    {
+      "name": "review_flags",
+      "description": "Pipe-separated flags for uncertain classifications, non-live evidence, or related-only CAD",
+      "type": "pipe-separated list"
+    }
+  ]
+}

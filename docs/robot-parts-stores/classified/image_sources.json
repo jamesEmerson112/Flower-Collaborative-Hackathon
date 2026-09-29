@@ -1,0 +1,762 @@
+[
+  {
+    "product_id": "adafruit-3777",
+    "image_url": "https://www.adafruit.com/images/480x360/3777-00.jpg",
+    "image_source_url": "https://www.adafruit.com/product/3777",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "c7fdd7be1bbd2a4d058e1aa768cafebed6208e6a0f24ba9982f9782019015fa2"
+  },
+  {
+    "product_id": "adafruit-169",
+    "image_url": "https://www.adafruit.com/images/480x360/169-06.jpg",
+    "image_source_url": "https://www.adafruit.com/product/169",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "44ba7aa01452318902252aaedc54cf203d44b2c4f763cc336a8a0aab3aaacaaa"
+  },
+  {
+    "product_id": "adafruit-2927",
+    "image_url": "https://www.adafruit.com/images/480x360/2927-06",
+    "image_source_url": "https://www.adafruit.com/product/2927",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "89bc52781540b6849455493cb0434b043af8ddc1e336846db4966de0f7164ef5"
+  },
+  {
+    "product_id": "adafruit-1438",
+    "image_url": "https://www.adafruit.com/images/480x360/1438-00.jpg",
+    "image_source_url": "https://www.adafruit.com/product/1438",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "4b2e065bdd767ba41373e3d7a9005ad5f072fc678dcf2fa58c5418a7975c8f65"
+  },
+  {
+    "product_id": "adafruit-4864",
+    "image_url": "https://www.adafruit.com/images/480x360/4864-00.jpg",
+    "image_source_url": "https://www.adafruit.com/product/4864",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "d6dcb3f42718f9a3eb251b0bb380f44d9ff3d0be1396c4ca2c6b4a02938a8709"
+  },
+  {
+    "product_id": "adafruit-5129",
+    "image_url": "https://www.adafruit.com/images/480x360/5129-00.jpg",
+    "image_source_url": "https://www.adafruit.com/product/5129",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "34b9026a0edc2d7622b41ba1ab56152690e0b36b718247f4710946555a87110f"
+  },
+  {
+    "product_id": "adafruit-3317",
+    "image_url": "https://www.adafruit.com/images/480x360/3317-03",
+    "image_source_url": "https://www.adafruit.com/product/3317",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "f7c6567a0c535806f92ec8ea0cf04090cc9037dd9ee7cb81db6bc62da139bc1c"
+  },
+  {
+    "product_id": "adafruit-4007",
+    "image_url": "https://www.adafruit.com/images/480x360/4007-05.jpg",
+    "image_source_url": "https://www.adafruit.com/product/4007",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "4ee34e128235bf676dd870f91c873e5c695c7d607eb2470f93f04bc43212b934"
+  },
+  {
+    "product_id": "adafruit-4754",
+    "image_url": "https://www.adafruit.com/images/480x360/4754-00.jpg",
+    "image_source_url": "https://www.adafruit.com/product/4754",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "32e2c643d0e0c3df66c6d0588a9093afbe3266e9011818af841e8d83bfbcfe9d"
+  },
+  {
+    "product_id": "adafruit-2939",
+    "image_url": "https://www.adafruit.com/images/480x360/2939-08",
+    "image_source_url": "https://www.adafruit.com/product/2939",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "fe204c33d7a6a98ab9f7f666dd734956cd972c486df806dd18ccee0eaf234155"
+  },
+  {
+    "product_id": "adafruit-3766",
+    "image_url": "https://www.adafruit.com/images/480x360/3766-00.jpg",
+    "image_source_url": "https://www.adafruit.com/product/3766",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "851c4649e58d6a6cef1c86cb802245804ff8f4d57661b12584f8785deca89866"
+  },
+  {
+    "product_id": "adafruit-328",
+    "image_url": "https://www.adafruit.com/images/480x360/328-06.jpg",
+    "image_source_url": "https://www.adafruit.com/product/328",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "5ac219a52e1c7ad8e12ba034754ce02341c44832a615cab25c2cf9dbf8b68135"
+  },
+  {
+    "product_id": "sparkfun-rob-13302",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/3/13302-01b.jpg",
+    "image_source_url": "https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "b210ee5633f847de184a5e7abe5c71b6d59d1375adde8c3192477000a88b4602"
+  },
+  {
+    "product_id": "sparkfun-rob-09238",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/0/9/09238-01.jpg",
+    "image_source_url": "https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "8ce100c499131c7dcc01781da5bf33667678a41867e9e50da0ad7481fcb41323"
+  },
+  {
+    "product_id": "sparkfun-rob-09065",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/0/9/09065-01a.jpg",
+    "image_source_url": "https://www.sparkfun.com/servo-generic-sub-micro-size.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "f529d3f3e127be50e5ec6912247c4a94589bbb383a33cdd3b91b1580d6dee2ae"
+  },
+  {
+    "product_id": "sparkfun-rob-14450",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/4/14450a-01.jpg",
+    "image_source_url": "https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "8e5443decc19fc10c0e08d9f24ec9e645721aa71bed9eb854796755367c6f813"
+  },
+  {
+    "product_id": "sparkfun-rob-15451",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/5/15451-SparkFun_Qwiic_Motor_Driver-01.jpg",
+    "image_source_url": "https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "a466b76a414a0be2076a06e1e062e92721326c6a27459be03f1b3647548c13df"
+  },
+  {
+    "product_id": "sparkfun-dev-15123",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/5/15123-SparkFun_RedBoard_Qwiic-01a.jpg",
+    "image_source_url": "https://www.sparkfun.com/sparkfun-redboard-qwiic.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "785414152a29514dacaf35ce7cce1062a997b8cab648a040ddb931bbc9e667ae"
+  },
+  {
+    "product_id": "sparkfun-sen-15335",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/5/15335-SparkFun_9DoF_IMU_Breakout_-_ICM-20948__Qwiic_-01b.jpg",
+    "image_source_url": "https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "07b0a8e0d16d9fac0655e257a22a7002dc846a2e22d8d0fd1c60d03bca6d4684"
+  },
+  {
+    "product_id": "sparkfun-sen-14722",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/4/14722-SparkFun_Distance_Sensor_Breakout-_4_Meter__VL53L1X__Qwiic_-01.jpg",
+    "image_source_url": "https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "595795ed780cdb2162d1ee6f2c9a6d3507baffa693e4d4d1f3200c9b6eac8ada"
+  },
+  {
+    "product_id": "sparkfun-sen-15569",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/5/15569-Ultrasonic_Distance_Sensor_-_HC-SR04-01a.jpg",
+    "image_source_url": "https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "52583f31f8610055af002e1d71579a5c9b18f2bf7f4608f6a6cdc15f3821a7b6"
+  },
+  {
+    "product_id": "sparkfun-rob-13301",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/3/13301-Action01.jpg",
+    "image_source_url": "https://www.sparkfun.com/shadow-chassis.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "e8c2f5b3ce98b2f93c8d550aa08e38b80e6b2dec83ff367d1dd9ac2d5d3ae88a"
+  },
+  {
+    "product_id": "sparkfun-rob-13259",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/3/13259-Wheel_-_65mm__Rubber_Tire__Pair_-01.jpg",
+    "image_source_url": "https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "5d5c0156ec1edb0ace523d3cd7a01ed2ac197799a452e2660c205d5b8666c47a"
+  },
+  {
+    "product_id": "sparkfun-prt-13855",
+    "image_url": "https://www.sparkfun.com/media/catalog/product/cache/6b78ac9ed927a3c2db42a3c84dab4ce5/1/3/13855-01.jpg",
+    "image_source_url": "https://www.sparkfun.com/lithium-ion-battery-2ah.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "d86eda47a0dc1226238abcbd4d356a8834c0592794ef21d73f6b4007b646b6c4"
+  },
+  {
+    "product_id": "pololu-3036",
+    "image_url": "https://a.pololu-files.com/picture/0J6410.1200x627.jpg?7b215efad0f55f0963d9f951be03d3d1",
+    "image_source_url": "https://www.pololu.com/product/3036",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "a6a8bcdc9067938c97d4884cfd8d284d513a4f2043f17dc2ad8e22621d5ca4e8"
+  },
+  {
+    "product_id": "pololu-2818",
+    "image_url": "https://a.pololu-files.com/picture/0J7332.1200x627.jpg?18ddb319403c33927cf76ac0450a39d4",
+    "image_source_url": "https://www.pololu.com/product/2818",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "d18373da9dce8ddbe6f14add8e689ed8ff4f224bfb40347c1a2da8546763614b"
+  },
+  {
+    "product_id": "pololu-2130",
+    "image_url": "https://a.pololu-files.com/picture/0J3864.1200x627.jpg?bce5d1eb1a5072fe42924e18d6fb51f7",
+    "image_source_url": "https://www.pololu.com/product/2130",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "b147c1c40d3ca6da06a5727cfca3ccc02f59bd1e256a22145d5d55655b159b4f"
+  },
+  {
+    "product_id": "pololu-2133",
+    "image_url": "https://a.pololu-files.com/picture/0J4226.1200x627.jpg?a92e8e8b3227558d31d2fa4af96c7d83",
+    "image_source_url": "https://www.pololu.com/product/2133",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "f986ca7627dfc442b490fa4165b6e8a1de8a07830bcacc893f7ead36964e3d85"
+  },
+  {
+    "product_id": "pololu-3101",
+    "image_url": "https://a.pololu-files.com/picture/0J5274.1200x627.jpg?0f813f12c1654c9a2aaafec3b28b4ebe",
+    "image_source_url": "https://www.pololu.com/product/3101",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "55b3cf17a04b4a5f415c75ce20a92116e5407595fb0152bfe255e7140bcc6067"
+  },
+  {
+    "product_id": "pololu-3544",
+    "image_url": "https://a.pololu-files.com/picture/0J7510.1200x627.jpg?a8490645e462f32d88d3932fb0ac743b",
+    "image_source_url": "https://www.pololu.com/product/3544",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "e54653b49a3f7fb943b57b68310bf0df0ce1cc11f73828045624a3eebaa2b323"
+  },
+  {
+    "product_id": "pololu-3415",
+    "image_url": "https://a.pololu-files.com/picture/0J8677.1200x627.jpg?2ae2631a3cf1133a512eadb1d5501cea",
+    "image_source_url": "https://www.pololu.com/product/3415",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "2dbbdf9904627e9d6f51942025508c8ad6b7dea59db103d54e8e22884d305e02"
+  },
+  {
+    "product_id": "pololu-4148",
+    "image_url": "https://a.pololu-files.com/picture/0J9140.1200x627.jpg?5268fddaa79590fe5ed774f530ec69de",
+    "image_source_url": "https://www.pololu.com/product/4148",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "65407ff08379ffec391efe60c35f72afbc73b7c03e4f459dc87d9c246f4e045c"
+  },
+  {
+    "product_id": "pololu-3500",
+    "image_url": "https://a.pololu-files.com/picture/0J7260.1200x627.jpg?7a7be3ece5b2d0ae05a7c78b6c0770d6",
+    "image_source_url": "https://www.pololu.com/product/3500",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "caf307ccece93efe8b8bffb5414ef578d01489af012af1539568367571166ca0"
+  },
+  {
+    "product_id": "pololu-3690",
+    "image_url": "https://a.pololu-files.com/picture/0J8851.1200x627.jpg?6da0cb7285eb89474297a2e64cc8a102",
+    "image_source_url": "https://www.pololu.com/product/3690",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "04150833c5d5224786581d7179c9f1ed7dfeed681cf120fbe2ef5831cb6f1e9d"
+  },
+  {
+    "product_id": "pololu-954",
+    "image_url": "https://a.pololu-files.com/picture/0J9806.1200x627.jpg?c622b71808584ef310bec12450f2f8b3",
+    "image_source_url": "https://www.pololu.com/product/954",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "3a4dfa62659b236eb9ef725c09003eded4f6eb767e8e7ac1d08ae0a185658d3d"
+  },
+  {
+    "product_id": "pololu-2831",
+    "image_url": "https://a.pololu-files.com/picture/0J6002.1200x627.jpg?f14365599f7afb5d22a84d245c638ad3",
+    "image_source_url": "https://www.pololu.com/product/2831",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "fe04816d0a896d4023d648aef3a92ed711ae61c01bf7288f8363596ea1c8e5de"
+  },
+  {
+    "product_id": "servocity-5203-2402-0019",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/3916/images/24000/5203-2402-0019__86310.1746574725.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "01e4c6e83487aecb9bf949c47ee78e86b13d57fe928b7c6efaa07dfa30fed1d3"
+  },
+  {
+    "product_id": "servocity-638114",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/1889/images/20597/638114__72405.1710884240.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/130-rpm-micro-gear-motor/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "75e3031a24eaa1c88023e0cc67da31b5c59d2c6b88c58cd95c0f76690f338db4"
+  },
+  {
+    "product_id": "servocity-2002-0180-0002",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/4779/images/20339/2002-0180-0002-Ang1__05488__86804__24943.1707747445.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "c18d2f621e8b863b552c7f95d0b9b5e96e75bd933e42ed6bb8aaf850856746be"
+  },
+  {
+    "product_id": "servocity-2003-0180-0001",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/4776/images/20312/2003-0180-0001-Ang1__41551__90044.1706289046.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "c29a7650d5309e8378ea0ffc30c585023d95188940d3debc62aadbc17a57a5d1"
+  },
+  {
+    "product_id": "servocity-3105-0101-0020",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/5161/images/23972/Ang1__24267__01698.1746127275.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/1x20a-motor-controller/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "37e78b1840448067d28a703b95519aa0d4f70c2986b1e171f318a888e532df84"
+  },
+  {
+    "product_id": "servocity-imc404",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/1455/images/30084/jFUH05YwX0hs0O6L15rPlmuMWhtIEneyh3lmnu79FSF3fZNSlFEP4AV39VgW77wr__79548.1773181357.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/roboclaw-2x7a-motor-controller/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "9d6bc6980fb9cae0ccde293cb1da42cea9476b00f2c0c214cdd778f7172ff504"
+  },
+  {
+    "product_id": "servocity-3114-0001-0001",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/2811/images/10484/3114-0001-0001__17077__19152.1701976287.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/pololu-a-star-32u4-prime-sv/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "b10f39c188eb1dad10ae1a894275ac7ce2dea7c5377dd39175231918c5d7c5fa"
+  },
+  {
+    "product_id": "servocity-3124-0001-0001",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/5239/images/25377/Ang1_3__12971__25064.1761832290.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "3256e065f6fdba0f0172239a7d972c3ac3313450cfea908286af62a240ecfa37"
+  },
+  {
+    "product_id": "servocity-3209-0001-0007",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/4941/images/22513/Ang1__74321__33080.1725900609.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "e6a09d06350127726019851dee57e1afa27841667b95369edce55122c9095410"
+  },
+  {
+    "product_id": "servocity-3624-0014-0096",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/4973/images/22705/Ang1__70226.1728660554.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "b67be17affbb2d0ea59053ea5d5cb9a01e08e6c4aea5a3e5337ea8fbd3ffa49f"
+  },
+  {
+    "product_id": "servocity-3213-3606-0002",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/2796/images/30081/8pH5Ets5K0RKzVeZJru2bA4G0iQKOpyGbKSqCruxymhoDhM4nChyDaR46Kn2UVOs__71381.1773181354.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "5f311fcb76a7637063542f7158af6ea9adac2424de76d217e488d63fcc568f45"
+  },
+  {
+    "product_id": "servocity-3100-0012-0020",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/2853/images/30049/gELU2PCUguKHlHwDPblvr41GrnspwPLS9VLVTLPRSSS9DMHbBmez84eii2DBsLS8__05379.1773181315.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "f16e7d5d4ffb975752af51b34f3e12e8ff614d10ccc7e51b7a943e515466dcc2"
+  },
+  {
+    "product_id": "seeed-108990003",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/p/e/perspective_3_6.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "7b8f01fa9ca1981b552943f78725d386ffae6f12c699f127ab1ed7b377b8da7b"
+  },
+  {
+    "product_id": "seeed-316010005",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/h/t/httpsstatics3.seeedstudio.comseeedimg2016-06rjmxymiq9lqxkkxxwg6udxfm.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Grove-Servo.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "b79ec417aa357b0c4eba5fb7672cf75d40351667e96133f8cdf31b0eafa34eaf"
+  },
+  {
+    "product_id": "seeed-108090003",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/0/-/0-101090142-feetech-st-3215-c046-standard-torque-servo_2.jpg",
+    "image_source_url": "https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "2e09e74bfde0fbf59b4e66cc5751264b9f1dde4ed8bd6122b428ef03d7c35524"
+  },
+  {
+    "product_id": "seeed-108020103",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/h/t/httpsstatics3.seeedstudio.comseeedfile2018-11bazaar995164_perspective.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "3a2740f44b132dfeed1ebe92fdf1b0abb278c84b35d949eb6d771edab3382db2"
+  },
+  {
+    "product_id": "seeed-113991114",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/1/-/1-113991114-xiao-esp32s3-font_1.jpg",
+    "image_source_url": "https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "cb040bd029966b84a446d928936c0f8a99238b8740b8f716a3c503b513d288b5"
+  },
+  {
+    "product_id": "seeed-102110919",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/1/-/1-102110919-raspberry-pi-5-8gb-45font.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "1db3858cb93691aa7faa0824c67d6f6f85ebd83469af6edb44f5280b04beabb5"
+  },
+  {
+    "product_id": "seeed-101020010",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/g/r/grove---ultrasonic-distance-sensor-preview_1.png",
+    "image_source_url": "https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "1d925e05dc00ea0fdfcd8d0c8927730d834be7d36420e4f232abb46a1ab78c43"
+  },
+  {
+    "product_id": "seeed-101020585",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/h/t/httpsstatics3.seeedstudio.comseeedfile2018-09bazaar930646_das5892.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "bb617c00190d610b77790011757cec886c2a4c30131dbb0d2fb43c33a2698886"
+  },
+  {
+    "product_id": "seeed-101020532",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/h/t/httpsstatics3.seeedstudio.comseeedfile2018-07bazaar880301_1233.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "33cbb9a8109f9982227d9cec37bea9c32fe8702977508a85f008da1aa782ebc7"
+  },
+  {
+    "product_id": "seeed-110090325",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/6/w/6wd_robotcar.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "06e30b907cb5bf5b2f12caa14195e06f77fb95671228bc405d04b68930d8f73b"
+  },
+  {
+    "product_id": "seeed-114993667",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/_/b/_banner-2.jpg",
+    "image_source_url": "https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "1ea32d0e3751a18cc8cbdaa741810b8203bbc3da96054385b2e3bf0dbf1e4de1"
+  },
+  {
+    "product_id": "seeed-106990290",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/l/i/lipo-rider-plus-v1.0-preview.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "8cdebc5f8fcbd357f998943484fbd74f07920d27a5cf379e1a1d8500ba7946f0"
+  },
+  {
+    "product_id": "dfrobot-fit0186",
+    "image_url": "https://dfimg.dfrobot.com/enshop/FIT0186/FIT0186_Main_01.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-634.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "93a2d72cabe67382ff59df9bc4ebc095eb17ea415396b5e45c8b663620c742fa"
+  },
+  {
+    "product_id": "dfrobot-fit0450",
+    "image_url": "https://dfimg.dfrobot.com/enshop/FIT0450/FIT0450_Main_01.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-1457.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "be23f2b84151b25bf6f8da5198d12ed8f3666817a756c65aeb4136ea2d133bc1"
+  },
+  {
+    "product_id": "dfrobot-ser0020",
+    "image_url": "https://dfimg.dfrobot.com/enshop/image/data/SER0020/SER0020_Main_001.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-236.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "850ea8dcf327761d033206e866c435d83eaf488705c55bf2600253dea65a3496"
+  },
+  {
+    "product_id": "dfrobot-ser0006",
+    "image_url": "https://dfimg.dfrobot.com/enshop/SER0006/SER0006_Main_01.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-255.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "c3340c20d4a2749748cf2cbebd097735c9d6448adc61c090a22a0f9f36db33eb"
+  },
+  {
+    "product_id": "dfrobot-dri0044",
+    "image_url": "https://dfimg.dfrobot.com/enshop/image/data/DRI0044/DRI0044_ShipList_06.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-1704.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "ce1ac92d308671e1e077cb5fd8b643b7da73f3e3e2bbbdf68d7acacd7afdf070"
+  },
+  {
+    "product_id": "dfrobot-dri0002",
+    "image_url": "https://dfimg.dfrobot.com/enshop/DRI0002/DRI0002_Main_01.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-66.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "a7d945e6bdf68945df632b12f53399e83e44d27c562fabb8591995c6a5a66a08"
+  },
+  {
+    "product_id": "dfrobot-dfr0654",
+    "image_url": "https://dfimg.dfrobot.com/enshop/DFR0654/DFR0654_Main_01.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-2195.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "6f01f561b239b3cd6d1be67bf5497cf1999cb41457d2b9aeb95bc981f19b3175"
+  },
+  {
+    "product_id": "dfrobot-sen0340",
+    "image_url": "https://dfimg.dfrobot.com/enshop/SEN0340/SEN0340_Main_01.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-1995.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "60d35e2179fba2438af22eeb029c890e61b008f2d7c5d9957e25d1a6436ca33f"
+  },
+  {
+    "product_id": "dfrobot-sen0374",
+    "image_url": "https://dfimg.dfrobot.com/enshop/SEN0374/SEN0374_Main_01.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-2142.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "f02429fad00fcb3cb82969e5126e3559c6377965337a8e6f4013584dfa353e64"
+  },
+  {
+    "product_id": "dfrobot-rob0112",
+    "image_url": "https://dfimg.dfrobot.com/enshop/image/data/ROB0112/_DSC1430.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-1219.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "f383b1f0fa52b80a451c137421b9e40bb9e4300e8f97c23426b5eba240e61439"
+  },
+  {
+    "product_id": "dfrobot-fit0654-1",
+    "image_url": "https://dfimg.dfrobot.com/enshop/image/data/FIT0654/FIT0654.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-2042.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "c1fbff276dfd5befdd0d28a3227d538b02b348664c45b972333737e8a32c4f75"
+  },
+  {
+    "product_id": "dfrobot-dfr0969",
+    "image_url": "https://dfimg.dfrobot.com/enshop/image/data/DFR0969/DFR0305_Main_01.jpg",
+    "image_source_url": "https://www.dfrobot.com/product-2578.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "16a87832836d711b8ee5970cfbc6e902f2180b005ac0f2244696f357b6076a8e"
+  },
+  {
+    "product_id": "robotis-902-0135-000",
+    "image_url": "http://robotis.us/cdn/shop/files/8__39647.1743464677.1280.1280.png?v=1785997070",
+    "image_source_url": "https://robotis.us/products/dynamixel-xl430-w250-t",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "40a49acb7f44ab34b416e2d61c1876f344631f9fb35ddf663a84748db29c8ecf"
+  },
+  {
+    "product_id": "robotis-902-0163-000",
+    "image_url": "http://robotis.us/cdn/shop/files/1__31092.1741652455.1280.1280.png?v=1785998304",
+    "image_source_url": "https://robotis.us/products/dynamixel-xl330-m288-t",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "6588c886939b4cec65c562de67fb73915bb6a9915f041f04dfa8158578af8d96"
+  },
+  {
+    "product_id": "robotis-902-0132-000",
+    "image_url": "http://robotis.us/cdn/shop/files/U2D2__14759.1772665529.1280.1280.png?v=1785997056",
+    "image_source_url": "https://robotis.us/products/u2d2",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "7e8edf6899c38a8c2d10dc0e645b0498b591885dba3dfd5d1a8ec2d04506ae25"
+  },
+  {
+    "product_id": "robotis-903-0257-000",
+    "image_url": "http://robotis.us/cdn/shop/files/1__79132.1783746763.1280.1280.png?v=1785997054",
+    "image_source_url": "https://robotis.us/products/opencr1-0",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "51421f88021344a6a309d3600562e4581e8e7ad47e9b2ed2c1b9ed7c524b4e19"
+  },
+  {
+    "product_id": "robotis-902-0183-000",
+    "image_url": "http://robotis.us/cdn/shop/files/3__54503.1741649606.1280.1280.png?v=1785998674",
+    "image_source_url": "https://robotis.us/products/openrb-150",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "29365229bae3188cd07d3b7971faff2e3ca91b318ca86b9cb82c84be9ea7edcd"
+  },
+  {
+    "product_id": "robotis-902-0043-000",
+    "image_url": "http://robotis.us/cdn/shop/files/DMS_80_pic1__15072.1401814165.1280.1280.jpg?v=1785996146",
+    "image_source_url": "https://robotis.us/products/distance-measuring-sensor-dms-80",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "6ce3ac008c767bf846b5bb306b783f0e7ce517aa46e0b0db0b93fca904a32a58"
+  },
+  {
+    "product_id": "robotis-902-0042-000",
+    "image_url": "http://robotis.us/cdn/shop/files/Gyro_Sensor_GS_12_pic__02627.1401814497.1280.1280.jpg?v=1786003660",
+    "image_source_url": "https://robotis.us/products/gyro-sensor-gs-12",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "d758f534a4338dd054d0fae13fed773537ac163cc027bef729e27801e37b21cd"
+  },
+  {
+    "product_id": "robotis-901-0118-301",
+    "image_url": "http://robotis.us/cdn/shop/files/tb_burger_rp4_4gb_500__45301.1631229467.1280.1280.png?v=1785998322",
+    "image_source_url": "https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "e25b4591ecc6afb4991f6c2f3a9627a2fd0b800fd18e71a29df3ef7815a4f462"
+  },
+  {
+    "product_id": "robotis-903-0260-000",
+    "image_url": "http://robotis.us/cdn/shop/files/500_MG_9538__87077.1509112965.1280.1280.jpg?v=1785996884",
+    "image_source_url": "https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "4a9570d4efe30b4d304f839220af554dbffaf56a263bd2ca038a0f572219bb67"
+  },
+  {
+    "product_id": "robotis-903-0262-000",
+    "image_url": "http://robotis.us/cdn/shop/files/500_MG_9553__82157.1509066324.1280.1280.jpg?v=1785996893",
+    "image_source_url": "https://robotis.us/products/tb3-ball-caster-a01-1ea",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "11d76e9049aec4a9641bb3ae3f7edd7699c8f9e0aa06da40e6bd8aa4ccf5b783"
+  },
+  {
+    "product_id": "robotis-903-0210-000",
+    "image_url": "http://robotis.us/cdn/shop/files/LB_012__24176.1435715125.1280.1280.jpg?v=1785995555",
+    "image_source_url": "https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "ddd694dfabcfbbe4ff06768b428aca27b7f309c0539ade2a31d9e8e150665337"
+  },
+  {
+    "product_id": "robotis-903-0126-000",
+    "image_url": "http://robotis.us/cdn/shop/files/SMPS_12V_5A_PS_10_Pic1__52053.1400518303.1280.1280.jpg?v=1785995502",
+    "image_source_url": "https://robotis.us/products/smps-12v-5a-ps-10-us-110v",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_og_image",
+    "source_html_sha256": "bf37b2dc112a30ba61de4111f662fa2a4af6cbb7bc570e7dfe8e8ce1dc1375d7"
+  },
+  {
+    "product_id": "waveshare-23489",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/d/d/ddsm115-1.jpg",
+    "image_source_url": "https://www.waveshare.com/ddsm115.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "4c028e1f83abe0ca07f29ffd3a3c0ee9a785657f3f63c07141b011ed537616a6"
+  },
+  {
+    "product_id": "waveshare-24440",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/s/c/sc09-servo-1.jpg",
+    "image_source_url": "https://www.waveshare.com/sc09-servo.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "6415b2c7622a41627d57b0793762f3510456a3a3ac222653975ecaa2d2196387"
+  },
+  {
+    "product_id": "waveshare-21568",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/s/c/sc15-servo-2.jpg",
+    "image_source_url": "https://www.waveshare.com/sc15-servo.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "fb063dcaebe771e1e6efc39ce4cdcf9a4dfaa221ff78bee0f0e6d03de553720c"
+  },
+  {
+    "product_id": "waveshare-15364",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/m/o/motor-driver-hat-1.jpg",
+    "image_source_url": "https://www.waveshare.com/motor-driver-hat.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "3a709701806c99d2058cb63ae21b0575f77a192cf75dd49049c729612866e505"
+  },
+  {
+    "product_id": "waveshare-15669",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/s/t/stepper-motor-hat-1_4.jpg",
+    "image_source_url": "https://www.waveshare.com/stepper-motor-hat.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "194f8b9ef3fcba7c73653cc0ae8c0d37ed3b3faed60b2be5001f35b23dea8b4f"
+  },
+  {
+    "product_id": "waveshare-23730",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/g/e/general-driver-for-robots-1_1.jpg",
+    "image_source_url": "https://www.waveshare.com/general-driver-for-robots.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "177baff7039d58252eef4fe74f1f5ccc302ed721e1a7cda8d675e1d2e8a4ef25"
+  },
+  {
+    "product_id": "waveshare-25978",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/d/5/d500-lidar-kit-1.jpg",
+    "image_source_url": "https://www.waveshare.com/d500-lidar-kit.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "18309c3b88971d81e26b8000636a2ba1cf86664cd544181de49f8ab3cf6600b0"
+  },
+  {
+    "product_id": "waveshare-18301",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/t/o/tof-laser-range-sensor-1.jpg",
+    "image_source_url": "https://www.waveshare.com/tof-laser-range-sensor.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "df490471e18c27775def098fea65c5ba01cd98f3907ca680287f48425c24d442"
+  },
+  {
+    "product_id": "waveshare-wave-rover",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/w/a/wave-rover-1.jpg",
+    "image_source_url": "https://www.waveshare.com/wave-rover.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "25559a5e5767a958022f7c50bb1b4c529f32808eaeeb8ae1f43bfaf993225850"
+  },
+  {
+    "product_id": "waveshare-ups-hat",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/u/p/ups-hat-4_6.jpg",
+    "image_source_url": "https://www.waveshare.com/ups-hat.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "8eaedd7ac070a8ef68da82774735bd8e2fb162ce48d5b7ee1505f29600993c51"
+  },
+  {
+    "product_id": "waveshare-dc-buck-adapter-7-2v",
+    "image_url": "https://www.waveshare.com/media/catalog/product/cache/1/image/560x560/9df78eab33525d08d6e5fb8d27136e95/d/c/dc-buck-adapter-7.2v-1.jpg",
+    "image_source_url": "https://www.waveshare.com/dc-buck-adapter-7.2v.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "product_page_main_image",
+    "source_html_sha256": "b5308cd872caa4a1673561284d8bbad156f51a219226f4a198cbeb8b10592622"
+  }
+]

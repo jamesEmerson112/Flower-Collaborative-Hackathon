@@ -20,7 +20,7 @@ flwr chat → /load hello-app ──► SuperLink: hello-app as master
                      master prints:  - node <id>: Hello James
 ```
 
-**The point of the experiment:** `hello_app/agent_app.py` never mentions James. The name comes from `node/profile.json`, which only this node can read, and the operator selects it with `--node-config 'profile="…"'`. Give a teammate's node a different `profile.json` and the same app answers "Hello Alice". Supplier catalogues will work the same way.
+**The point of the experiment:** the app code (`hello-app/hello_app/`) never mentions James. The name comes from `node/profile.json`, which only this node can read, and the operator selects it with `--node-config 'profile="…"'`. Give a teammate's node a different `profile.json` and the same app answers "Hello Alice". Supplier catalogues will work the same way.
 
 ---
 
@@ -104,19 +104,54 @@ Every online node in the federation answers with its own profile. Nodes without 
 
 ---
 
+## Working as a team (SuperLink dev + SuperNode dev)
+
+Both roles live in **one app**, because every SuperNode downloads the app package of the run it's serving. So you split the work by file, not by project:
+
+| File | Owner | Runs on |
+|---|---|---|
+| `hello_app/protocol.py` | **Both. Agree on it first.** It defines the task format (`make_task` / `read_task`) and says replies are plain text | both |
+| `hello_app/master.py` | SuperLink dev | SuperLink (`node_id == 1`) |
+| `hello_app/worker.py` | SuperNode dev | every SuperNode |
+| `hello_app/common.py` | shared, rarely touched | both (`grid()` and `say()`) |
+| `hello_app/agent_app.py` | shared, rarely touched | both (role switch only) |
+| `node/` | SuperNode dev | the SuperNode machine only, **never packaged** |
+
+- The only coupling between `master.py` and `worker.py` is `protocol.py`. To add a task type, add a constant and builder there, send it from `master.py`, and handle it in `worker.py`'s `answer()`.
+- **Trap:** the worker code a node runs is whatever was in the folder loaded with `/load .`, **not** the code on the node's disk. Pull `main` before running `/load .`, or the nodes run your stale `worker.py`.
+
+## Adding more SuperNodes
+
+The app isn't tied to one SuperNode. Each run goes to **every online node in the federation you picked**, and `get_nodes` finds them all. To add a node, repeat Option B with a **new name and a new key**. The Flower docs say: "Do not reuse a key pair across multiple SuperNodes."
+
+| Where the new node runs | What changes |
+|---|---|
+| **Another machine** (a teammate's laptop, another pod) | Nothing in the code. Copy `node/`, change `profile.json` (e.g. `{"name": "Alice"}`), generate `~/supernodes_keys/supernode-alice` (B1), register it and add it to Spartan (B2), then start it with `SUPERNODE_NAME=alice ./start-supernode.sh supergrid` |
+| **The same machine** as another node | The same steps, plus a free local port. Each `flower-supernode` opens a Runtime HTTP API on `127.0.0.1:9094` by default, so the second one needs another port: `SUPERNODE_NAME=alice SUPERNODE_PROFILE=/abs/alice.json SUPERNODE_PORT=9095 ./start-supernode.sh supergrid` **[src]** `flwr/supernode/cli/flower_supernode.py` `--port`, `supercore/constant.py`. **Verified live:** 3 nodes on one pod, on ports 9094–9096 |
+
+`start-supernode.sh` overrides: `SUPERNODE_NAME` (default `james`; also picks the key `~/supernodes_keys/supernode-<name>`), `SUPERNODE_KEY`, `SUPERNODE_PROFILE`, and `SUPERNODE_PORT` (default `9094`).
+
+With two nodes online, `say hello` should answer `Asked 2 SuperNode(s):` with one line per node, each from its own `profile.json`.
+
+---
+
 ## Files
 
 | File | Purpose |
 |---|---|
 | `node/profile.json` | This node's local data: `{"name": "James", "greeting": "Hello"}` |
-| `node/start-supernode.sh` | Runs `flower-supernode` with the key and `--node-config 'profile="…" node-name="james"'` (`supergrid` or `local` mode). Override the key path with `SUPERNODE_KEY=…` |
+| `node/start-supernode.sh` | Runs `flower-supernode` with the key, `--port` and `--node-config 'profile="…" node-name="james"'` (`supergrid` or `local` mode). Override with `SUPERNODE_NAME` / `SUPERNODE_KEY` / `SUPERNODE_PROFILE` / `SUPERNODE_PORT` |
 | `node/.gitignore` | Keeps private keys and `.env` out of git |
 | `hello-app/pyproject.toml` | The FAB definition: one `agentapp` component, `flwr>=1.39.0`, `license = { file = "LICENSE" }` (required by FAB format 1). `publisher` = your Flower username |
-| `hello-app/hello_app/agent_app.py` | Master: `get_nodes` → `push_messages` → `pull_messages` (keeps each reply, since replies are returned once). Worker: read the profile → `push_reply_message` once |
+| `hello-app/hello_app/agent_app.py` | Entry point. Picks the role: `node_id == 1` runs `run_master`, anything else runs `run_worker` |
+| `hello-app/hello_app/master.py` | Master: `get_nodes` → `push_messages` → `pull_messages` (keeps each reply, since replies are returned once) → one summary line per node |
+| `hello-app/hello_app/worker.py` | Worker: `read_task` → `answer()` (read the profile, build the greeting) → `push_reply_message` exactly once, even on errors |
+| `hello-app/hello_app/protocol.py` | The master/worker contract: `TASK_GREET`, `make_task()`, `read_task()` (unwraps the Grid envelope) |
+| `hello-app/hello_app/common.py` | `grid()` (call a Grid tool from code) and `say()` (show text in `flwr chat` and end the response) |
 
 ## Notes
 
-- **Verified live on 2026-09-29** on a RunPod CPU pod (SuperNode `9674070929710601496` in `@efebahadirgur/Spartan`): `flwr chat` → `/load .` → `say hello` returned `Asked 1 SuperNode(s): • node 9674070929710601496: Hello James`. Option A (local SuperLink) is still untested.
+- **Verified live on 2026-09-29** on a RunPod CPU pod (SuperNode `9674070929710601496` in `@efebahadirgur/Spartan`): `flwr chat` → `/load .` → `say hello` returned `Asked 1 SuperNode(s): • node 9674070929710601496: Hello James`. Option A (local SuperLink) is still untested. The role-split version (`master.py` / `worker.py` / `protocol.py` / `common.py`) was then verified live with 3 SuperNodes on the same pod: `say hello` returned `Asked 7 SuperNode(s)`, with `Hello James`, `Hello James_2_Pod1` and `Hello James_3_Pod1` from ours, plus `PROFILE_ERROR` from 4 teammate nodes that have no `profile` node-config.
 - The master calls the Grid tools from code, not through a model, so the fan-out is deterministic and needs no API key.
 - The worker always replies once, even on a bad profile. A silent worker would leave the master waiting until its timeout.
 - Keep the SuperNode process running during a demo. The SuperLink treats a node as offline shortly after its heartbeat stops, and `get_nodes` only lists online nodes.

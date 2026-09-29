@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master Console</title>
+<style>
+  /* ---------- theme tokens (light, then dark) ---------- */
+  :root {
+    --bg: #f4f5f2; --panel: #ffffff; --ink: #1c211d; --muted: #66706a; --line: #dde1dc;
+    --accent: #2f6b4f; --accent-ink: #ffffff; --user: #e6efe9; --ok: #2f7d4f; --err: #b3372f;
+    --warn: #9a6a00; --code: #f0f2ee; --call: #3558a8;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121513; --panel: #1a1e1b; --ink: #e5e9e4; --muted: #929c95; --line: #2c322e;
+      --accent: #5fae86; --accent-ink: #0d1510; --user: #22302a; --ok: #6cc58f; --err: #f07b72;
+      --warn: #e0b64f; --code: #20251f; --call: #8fb0ff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121513; --panel: #1a1e1b; --ink: #e5e9e4; --muted: #929c95; --line: #2c322e;
+    --accent: #5fae86; --accent-ink: #0d1510; --user: #22302a; --ok: #6cc58f; --err: #f07b72;
+    --warn: #e0b64f; --code: #20251f; --call: #8fb0ff;
+  }
+
+  /* ---------- layout ---------- */
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 var(--sans); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 20px 16px 32px; }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; margin-bottom: 14px; }
+  h1 { font-size: 22px; margin: 0; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 13px; }
+  .chip { margin-left: auto; font: 12px var(--mono); padding: 3px 9px; border-radius: 99px;
+          border: 1px solid var(--line); background: var(--panel); color: var(--muted); }
+  .chip.ok { color: var(--ok); } .chip.err { color: var(--err); }
+
+  .bar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding: 10px 12px;
+         background: var(--panel); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 14px; }
+  .bar label { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .bar .val { font: 12px var(--mono); color: var(--ink); overflow-wrap: anywhere; }
+  select, button, textarea { font: inherit; color: inherit; }
+  select { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; max-width: 100%; }
+  button { cursor: pointer; border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 6px 12px; }
+  button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  button:disabled { opacity: .5; cursor: default; }
+  .push { margin-left: auto; }
+
+  .grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 14px; }
+  @media (max-width: 820px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; min-width: 0; }
+  .panel h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+              margin: 0; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+
+  /* ---------- transcript ---------- */
+  #transcript { padding: 12px; min-height: 320px; max-height: 60vh; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+  .empty { color: var(--muted); font-size: 14px; margin: auto; text-align: center; }
+  .msg { padding: 10px 12px; border-radius: 10px; max-width: 100%; overflow-wrap: anywhere; }
+  .msg.user { background: var(--user); align-self: flex-end; white-space: pre-wrap; }
+  .msg.agent { border: 1px solid var(--line); }
+  .meta { font: 11px var(--mono); color: var(--muted); margin-bottom: 6px; }
+  .answer { white-space: pre-wrap; }
+  .nodes { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; }
+  .nodes li { display: grid; grid-template-columns: 10px minmax(0, auto) minmax(0, 1fr); gap: 8px; align-items: baseline;
+              font-size: 14px; padding: 4px 6px; border-radius: 6px; background: var(--code); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); align-self: center; }
+  .nodes li.bad .dot { background: var(--err); }
+  .nodes .id { font: 12px var(--mono); color: var(--muted); }
+  .notice { font-size: 13px; margin-top: 6px; } .notice.err { color: var(--err); } .notice.warn { color: var(--warn); }
+
+  /* ---------- composer ---------- */
+  .composer { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--line); align-items: flex-end; }
+  textarea { flex: 1; min-width: 0; resize: vertical; min-height: 42px; max-height: 200px; padding: 8px 10px;
+             border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+
+  /* ---------- event log ---------- */
+  #log { font: 12px/1.45 var(--mono); padding: 8px 12px; max-height: calc(60vh + 60px); overflow-y: auto; margin: 0; }
+  #log div { padding: 2px 0; border-bottom: 1px dashed var(--line); overflow-wrap: anywhere; }
+  #log .t { color: var(--muted); } #log .call { color: var(--call); } #log .out { color: var(--muted); }
+  #log .end { color: var(--ok); } #log .bad { color: var(--err); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Master Console</h1>
+    <span class="sub">Each message starts one run on the SuperLink; the master fans out to every online SuperNode.</span>
+    <span id="status" class="chip">connecting…</span>
+  </header>
+
+  <div class="bar">
+    <label>Federation <select id="federation"></select></label>
+    <label>App <span id="app" class="val">…</span></label>
+    <label>Series <span id="series" class="val">new</span></label>
+    <button id="newChat" class="push" title="Start a new conversation (like /new)">New conversation</button>
+  </div>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>Conversation</h2>
+      <div id="transcript"><p class="empty">Try <b>say hello</b>. Every SuperNode in the federation will answer.</p></div>
+      <form class="composer" id="composer">
+        <textarea id="prompt" placeholder="Message the master… (Enter to send, Shift+Enter for a new line)"></textarea>
+        <button id="send" class="primary" type="submit">Send</button>
+        <button id="stop" type="button" hidden>Stop</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Run events (what flwr chat hides)</h2>
+      <pre id="log"></pre>
+    </section>
+  </div>
+</div>
+
+<script>
+// ---------------------------------------------------------------- state + helpers
+const $ = (id) => document.getElementById(id);
+const DEFAULT_FEDERATION = "@efebahadirgur/Spartan";
+const TOKEN = new URLSearchParams(location.search).get("token"); // only needed if the bridge has BRIDGE_TOKEN
+const state = { seriesId: null, runId: null, running: false };
+
+function headers() {
+  const h = { "Content-Type": "application/json" };
+  if (TOKEN) h["X-Bridge-Token"] = TOKEN;
+  return h;
+}
+
+function el(tag, cls, text) {
+  const node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function setStatus(text, kind) {
+  $("status").textContent = text;
+  $("status").className = "chip " + (kind || "");
+}
+
+// ---------------------------------------------------------------- startup: /api/info
+async function loadInfo() {
+  try {
+    const res = await fetch("/api/info", { headers: headers() });
+    const info = await res.json();
+    if (!res.ok) throw new Error(info.error || res.statusText);
+    $("app").textContent = info.app_id || info.app_dir;
+    $("app").title = info.app_dir;
+    const select = $("federation");
+    const names = info.federations.length ? info.federations : [DEFAULT_FEDERATION];
+    for (const name of names) select.append(new Option(name, name, false, name === DEFAULT_FEDERATION));
+    if (info.error) setStatus("SuperLink: " + info.error, "err");
+    else setStatus("SuperLink: " + info.superlink + " ✓", "ok");
+  } catch (err) {
+    setStatus("bridge unreachable: " + err.message, "err");
+  }
+}
+
+// ---------------------------------------------------------------- sending a message = one run
+async function send(prompt) {
+  if (!prompt.trim() || state.running) return;
+  $("transcript").querySelector(".empty")?.remove();
+  addUserMessage(prompt);
+  const card = addAgentCard();
+  setRunning(true);
+  const started = performance.now();
+
+  try {
+    const res = await fetch("/api/run", {
+      method: "POST",
+      headers: headers(),
+      body: JSON.stringify({ prompt, federation: $("federation").value, series_id: state.seriesId }),
+    });
+    if (!res.ok) throw new Error((await res.json()).error || res.statusText);
+
+    // The bridge streams NDJSON: read chunks, split on newlines, handle each JSON line.
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      let nl;
+      while ((nl = buffer.indexOf("\n")) >= 0) {
+        const line = buffer.slice(0, nl).trim();
+        buffer = buffer.slice(nl + 1);
+        if (line) handleLine(JSON.parse(line), card);
+      }
+    }
+  } catch (err) {
+    notice(card, "Bridge error: " + err.message, "err");
+  } finally {
+    card.meta.textContent += `  ·  ${((performance.now() - started) / 1000).toFixed(1)} s`;
+    setRunning(false);
+  }
+}
+
+// One line from the bridge: run started, a run event, done, or error.
+function handleLine(msg, card) {
+  if (msg.kind === "run") {
+    state.runId = msg.run_id;
+    if (msg.series_id != null) state.seriesId = msg.series_id;
+    $("series").textContent = state.seriesId ?? "new";
+    card.meta.textContent = `run ${msg.run_id} · ${msg.app_id}`;
+    logLine(`run ${msg.run_id} started (series ${msg.series_id})`, "end");
+  } else if (msg.kind === "event") {
+    logEvent(msg.type, msg.payload);
+    if (msg.type === "response.output_text.delta" && typeof msg.payload.delta === "string") {
+      card.text += msg.payload.delta;
+      renderAnswer(card);
+    }
+  } else if (msg.kind === "done") {
+    logLine("run finished", "end");
+    if (!msg.terminal_seen) notice(card, "Run ended before the agent sent response.completed.", "warn");
+  } else if (msg.kind === "error") {
+    logLine("error: " + msg.message, "bad");
+    notice(card, msg.message, "err");
+  }
+}
+
+// ---------------------------------------------------------------- rendering the answer
+// The hello master answers "Asked N SuperNode(s):" then one "- node <id>: <reply>" line per node.
+// Lines in that shape become a node list; anything else stays plain text. Extend this for new apps.
+const NODE_LINE = /^- node (\S+): (.*)$/;
+const ERROR_REPLY = /^(ERROR|PROFILE_ERROR|UNKNOWN_TASK|BAD_TASK)\b/;
+
+function renderAnswer(card) {
+  const plain = [], nodes = [];
+  for (const line of card.text.split("\n")) {
+    const m = line.match(NODE_LINE);
+    if (m) nodes.push({ id: m[1], reply: m[2] }); else plain.push(line);
+  }
+  card.answer.textContent = plain.join("\n").trim();
+  card.nodes.replaceChildren(...nodes.map(({ id, reply }) => {
+    const li = el("li", ERROR_REPLY.test(reply) ? "bad" : "");
+    li.append(el("span", "dot"), el("span", "id", id), el("span", "", reply));
+    return li;
+  }));
+}
+
+function addUserMessage(text) {
+  $("transcript").append(el("div", "msg user", text));
+}
+
+function addAgentCard() {
+  const box = el("div", "msg agent");
+  const card = { text: "", meta: el("div", "meta", "starting run…"), answer: el("div", "answer"), nodes: el("ul", "nodes") };
+  box.append(card.meta, card.answer, card.nodes);
+  card.box = box;
+  $("transcript").append(box);
+  box.scrollIntoView({ block: "end" });
+  return card;
+}
+
+function notice(card, text, kind) {
+  card.box.append(el("div", "notice " + kind, text));
+}
+
+// ---------------------------------------------------------------- event log
+function logEvent(type, p) {
+  const short = (s, n = 140) => (s.length > n ? s.slice(0, n) + "…" : s);
+  if (type === "function_call") logLine(`→ ${p.name} ${short(p.arguments || "")}`, "call");
+  else if (type === "function_call_output") logLine(`← ${short(p.output || "")}`, "out");
+  else if (type === "message") logLine(`${p.role}: ${short(String(p.content ?? ""))}`);
+  else if (type === "response.output_text.delta") logLine(`delta (${(p.delta || "").length} chars)`);
+  else logLine(type, type === "response.completed" ? "end" : type.includes("fail") || type === "error" ? "bad" : "");
+}
+
+function logLine(text, cls) {
+  const row = el("div");
+  row.append(el("span", "t", new Date().toLocaleTimeString() + "  "), el("span", cls || "", text));
+  $("log").append(row);
+  $("log").scrollTop = $("log").scrollHeight;
+}
+
+// ---------------------------------------------------------------- controls
+function setRunning(on) {
+  state.running = on;
+  $("send").disabled = on;
+  $("stop").hidden = !on;
+}
+
+async function stopRun() {
+  if (!state.runId) return;
+  const res = await fetch("/api/stop", { method: "POST", headers: headers(), body: JSON.stringify({ run_id: state.runId }) });
+  logLine(`stop run ${state.runId}: ${(await res.json()).stopped ? "ok" : "failed"}`, "bad");
+}
+
+$("composer").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const prompt = $("prompt").value;
+  $("prompt").value = "";
+  send(prompt);
+});
+$("prompt").addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("composer").requestSubmit(); }
+});
+$("stop").addEventListener("click", stopRun);
+$("newChat").addEventListener("click", () => {
+  state.seriesId = null;
+  $("series").textContent = "new";
+  $("transcript").replaceChildren(el("p", "empty", "New conversation. The master's memory (series) starts fresh."));
+  logLine("new conversation", "end");
+});
+
+loadInfo();
+</script>
+</body>
+</html>
