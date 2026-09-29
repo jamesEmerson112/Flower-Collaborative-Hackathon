@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hackathon-collab-agent-recipe"
+version = "0.2.0"
+description = "A collaborative research Flower AgentApp"
+license = { file = "LICENSE" }
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "flwr[agent]>=1.35.0,<2.0",
+    "openai>=2.16.0,<3.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["agent"]
+
+[tool.flwr.app]
+publisher = "flwrlabs"
+display-name = "Collaborative Research Agent"
+fab-format-version = 1
+flwr-version-target = "1.35.0"
+fab-include = ["agent/**/*.py", "LICENSE"]
+
+[tool.flwr.app.components]
+agentapp = "agent.agent_app:app"
+
+[tool.flwr.app.config.agent]
+model = "openai/gpt-5.6-sol"
+input = "Find two public sources that explain collaborative AI and compare them."
+max-tool-turns = 2
