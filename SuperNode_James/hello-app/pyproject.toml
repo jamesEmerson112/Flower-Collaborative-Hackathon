@@ -6,6 +6,7 @@ build-backend = "hatchling.build"
 name = "hello-nodes"
 version = "0.1.0"
 description = "The master greets every SuperNode; each node answers from its own local profile"
+license = { file = "LICENSE" }
 requires-python = ">=3.11,<4.0"
 dependencies = ["flwr>=1.39.0,<2.0"]
 
@@ -13,10 +14,10 @@ dependencies = ["flwr>=1.39.0,<2.0"]
 packages = ["hello_app"]
 
 [tool.flwr.app]
-publisher = "james"   # set to your Flower account username
+publisher = "zerocks2503"   # Flower account username (owner of SuperNode_James)
 fab-format-version = 1
 flwr-version-target = "1.39.0"
-fab-include = ["hello_app/**/*.py"]
+fab-include = ["hello_app/**/*.py", "LICENSE"]
 
 [tool.flwr.app.components]
 agentapp = "hello_app.agent_app:app"

@@ -61,7 +61,7 @@ export FLWR_MODEL_API_KEY="<NEBIUS-API-KEY>"
 - Organizers will share `<NEBIUS-API-KEY>` in the Slack channel during the hackathon.
 
 > **Key hygiene (our note, not from the brief):** keep real keys in a local `.env` (or your shell) and never commit them.
-> This repo has no `.gitignore` yet, so add one that covers `.env` before committing any config.
+> The root `.gitignore` covers `.env`, key files, `.venv/` and `*.fab`.
 
 ---
 

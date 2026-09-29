@@ -111,12 +111,12 @@ Every online node in the federation answers with its own profile. Nodes without 
 | `node/profile.json` | This node's local data: `{"name": "James", "greeting": "Hello"}` |
 | `node/start-supernode.sh` | Runs `flower-supernode` with the key and `--node-config 'profile="…" node-name="james"'` (`supergrid` or `local` mode). Override the key path with `SUPERNODE_KEY=…` |
 | `node/.gitignore` | Keeps private keys and `.env` out of git |
-| `hello-app/pyproject.toml` | The FAB definition: one `agentapp` component, `flwr>=1.39.0`. Set `publisher` to your Flower username |
+| `hello-app/pyproject.toml` | The FAB definition: one `agentapp` component, `flwr>=1.39.0`, `license = { file = "LICENSE" }` (required by FAB format 1). `publisher` = your Flower username |
 | `hello-app/hello_app/agent_app.py` | Master: `get_nodes` → `push_messages` → `pull_messages` (keeps each reply, since replies are returned once). Worker: read the profile → `push_reply_message` once |
 
 ## Notes
 
-- Written against the `flwr` 1.39.0 source; **not run yet**.
+- **Verified live on 2026-09-29** on a RunPod CPU pod (SuperNode `9674070929710601496` in `@efebahadirgur/Spartan`): `flwr chat` → `/load .` → `say hello` returned `Asked 1 SuperNode(s): • node 9674070929710601496: Hello James`. Option A (local SuperLink) is still untested.
 - The master calls the Grid tools from code, not through a model, so the fan-out is deterministic and needs no API key.
 - The worker always replies once, even on a bad profile. A silent worker would leave the master waiting until its timeout.
 - Keep the SuperNode process running during a demo. The SuperLink treats a node as offline shortly after its heartbeat stops, and `get_nodes` only lists online nodes.

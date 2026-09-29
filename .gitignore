@@ -5,6 +5,9 @@
 *.pem
 *.key
 
+# Private runbooks (account names, pod IDs, connection details)
+docs/private/
+
 # Python / uv
 .venv/
 __pycache__/
