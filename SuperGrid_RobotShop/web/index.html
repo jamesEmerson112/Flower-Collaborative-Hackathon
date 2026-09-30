@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f5ef" />
+    <title>SuperGrid Robot Shop</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="SuperGrid Robot Shop home"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 17C3-5 3 23 17 20C-5 37 23 37 20 23C37 45 37 17 23 20C45 3 17 3 20 17Z" fill="currentColor"/><circle cx="20" cy="20" r="3" fill="#e5f39d"/></svg><strong>flower<span> / supergrid robot shop</span></strong></a>
+      <div class="top-actions"><span class="demo-badge">ROBOT SHOP <span>01</span></span><button id="shuffle" class="button quiet">↝ Shuffle</button><button id="save" class="button">Save build <span>↓</span></button><button id="export" class="button primary" disabled>Export robot <span>↗</span></button></div>
+    </header>
+    <main class="workshop">
+      <aside class="build-panel" aria-label="Your robot">
+        <div class="panel-heading"><span class="eyebrow">YOUR CREATION</span><h1>A little of<br/>everything.</h1><p>One robot. Many makers.<br/>Make it your own.</p></div>
+        <div class="section-label"><h2>Build your robot</h2><span>6 SLOTS</span></div>
+        <div id="slots" class="slot-list" aria-label="Choose a body slot"></div>
+        <div class="section-label components-label"><h2>Components</h2><span id="picks-count">NONE</span></div>
+        <div id="component-picks" class="component-picks" aria-label="Your components"></div>
+        <div class="build-summary"><div class="supplier-count"><span id="supplier-count">—</span><span>suppliers,<br/>working together</span></div><div id="supplier-dots" class="supplier-dots"></div><details class="parts-details"><summary><span>Your parts list</span><span id="parts-count">6 parts</span></summary><div id="bill"></div></details><button id="reset" class="text-button">↺ Start over</button></div>
+        <section id="quote" class="quote-section" aria-label="Store quotes"></section>
+      </aside>
+      <section class="stage-panel" aria-label="Robot preview">
+        <div class="stage-top"><div><span class="eyebrow">THE POSSIBILITIES ARE MODULAR</span><p>Your next great combination.</p></div><span class="live-tag"><i></i> Live preview</span></div>
+        <div id="viewport"><div id="loading" class="loading"><span class="loading-spinner"></span><strong>Building your robot</strong><span>Bringing the makers together…</span></div></div>
+        <div class="stage-bottom"><div class="view-controls" aria-label="Preview controls"><button id="rotate-left" aria-label="Rotate robot left">↶</button><button id="front" aria-label="Show front view">Front</button><button id="rotate-right" aria-label="Rotate robot right">↷</button><span></span><button id="spread" aria-pressed="false">Spread parts</button></div><p class="orbit-hint">Drag to orbit <span>·</span> Scroll to zoom</p></div>
+        <div class="concept-note"><span>◎</span> Visual concept · parts are resized to fit the layout</div>
+        <div id="model-error" class="model-error" hidden><span>Some models could not load.</span><button id="retry">Retry</button></div>
+      </section>
+      <aside class="catalog-panel" aria-label="Parts catalog">
+        <div class="mode-toggle" role="group" aria-label="Catalog"><button id="mode-body" class="filter-button" aria-pressed="true">Body parts</button><button id="mode-components" class="filter-button" aria-pressed="false">Components</button></div>
+        <div id="body-mode">
+        <div class="catalog-heading"><span class="eyebrow">PICK YOUR PIECES</span><div><h2 id="catalog-title">Torso</h2><span id="result-count" class="count-pill">—</span></div><p id="catalog-description">Every great robot starts somewhere.</p></div>
+        <label class="search-field"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12 12 5 5"/></svg><input id="search" type="search" placeholder="Find a part or maker" aria-label="Search parts" /></label>
+        <div class="catalog-filters"><label class="supplier-filter"><span class="sr-only">Filter by supplier</span><select id="supplier"><option value="">All suppliers</option></select></label><button id="all-parts" class="filter-button" aria-pressed="false">All body parts</button></div>
+
+        <div id="catalog" class="part-grid"></div>
+        <div id="empty" class="empty-state" hidden><strong>No pieces found.</strong><p>Try another search or supplier.</p><button id="clear-filters" class="button">Clear filters</button></div>
+        <p class="catalog-footer">Body parts ready to assemble in 3D.</p>
+        </div>
+        <div id="components-mode" hidden>
+          <div class="catalog-heading"><span class="eyebrow">ADD THE ELECTRONICS</span><div><h2>Components</h2><span id="component-count" class="count-pill">—</span></div><p>Motors, drivers, sensors and power from the same stores. Listed only, not shown in 3D.</p></div>
+          <label class="search-field"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12 12 5 5"/></svg><input id="component-search" type="search" placeholder="Find a component, store or type" aria-label="Search components" /></label>
+          <div class="catalog-filters"><span id="components-picked" class="components-picked">None picked yet</span><button id="starter-electronics" class="filter-button" title="Adds one part from each store that has none in your build yet">Add starter electronics</button></div>
+          <div id="component-list" class="component-list"></div>
+          <div id="component-empty" class="empty-state" hidden><strong>No components found.</strong><p>Try another name, store or type.</p><button id="component-clear" class="button">Clear search</button></div>
+          <div id="component-unavailable" class="empty-state" hidden><strong>Components could not load.</strong><p>Body parts still work. Reload to try again.</p></div>
+          <p class="catalog-footer">Each store's SuperNode prices its own parts when you ask for a quote.</p>
+        </div>
+      </aside>
+    </main>
+    <div id="status" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

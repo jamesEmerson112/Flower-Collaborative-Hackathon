@@ -2,7 +2,7 @@
   "collected_at": "2026-09-29T22:04:54.067155+00:00",
   "scope": "Mechanical CAD and 3D models for the 95 catalog products; official supplier/manufacturer/original designer sources. No browser conversion or fit certification.",
   "size_notification_threshold_bytes": 10000000000,
-  "total_asset_bytes": 946473823,
+  "total_asset_bytes": 1322372686,
   "assets": [
     {
       "product_id": "adafruit-5129",
@@ -892,7 +892,7 @@
       "path": "originals/pololu-954/pololu-ball-caster-with-0-750in-plastic-ball.step",
       "source_url": "https://www.pololu.com/file/0J1643/pololu-ball-caster-with-0-750in-plastic-ball.step",
       "source_page": "https://www.pololu.com/product/954/resources",
-      "label": "3D model of the Pololu Ball Caster with 3/4″ Plastic Ball",
+      "label": "3D model of the Pololu Ball Caster with 3/4\u2033 Plastic Ball",
       "bytes": 2422158,
       "sha256": "0f19f259d767f3214e7403fadf9b0985623a443a9051c599a006e5b0dbef4085",
       "formats": [
@@ -2455,16 +2455,16 @@
       "validation": "archive_integrity_and_extracted_model_checks_passed",
       "extracted_files": [
         {
-          "path": "extracted/waveshare-15364/Motor-Driver-HAT_3D/Motor Driver HAT═Γ╨╬│▀┤τ═╝-20251112.dwg",
-          "archive_member": "Motor Driver HAT═Γ╨╬│▀┤τ═╝-20251112.dwg",
+          "path": "extracted/waveshare-15364/Motor-Driver-HAT_3D/Motor Driver HAT\u2550\u0393\u2568\u256c\u2502\u2580\u2524\u03c4\u2550\u255d-20251112.dwg",
+          "archive_member": "Motor Driver HAT\u2550\u0393\u2568\u256c\u2502\u2580\u2524\u03c4\u2550\u255d-20251112.dwg",
           "bytes": 120832,
           "sha256": "5025d05332ac62509f4285c8c5e7fd0c51cac4c6483c19e07dd81b0b93fc631f",
           "format": "dwg",
           "validation": "nonempty_file_checked"
         },
         {
-          "path": "extracted/waveshare-15364/Motor-Driver-HAT_3D/Motor Driver HAT═Γ╨╬│▀┤τ═╝-20251112.pdf",
-          "archive_member": "Motor Driver HAT═Γ╨╬│▀┤τ═╝-20251112.pdf",
+          "path": "extracted/waveshare-15364/Motor-Driver-HAT_3D/Motor Driver HAT\u2550\u0393\u2568\u256c\u2502\u2580\u2524\u03c4\u2550\u255d-20251112.pdf",
+          "archive_member": "Motor Driver HAT\u2550\u0393\u2568\u256c\u2502\u2580\u2524\u03c4\u2550\u255d-20251112.pdf",
           "bytes": 24584,
           "sha256": "ea151c0e83cce21873738d13cf58336d19edb4e57b3a7fe77cd925d0778a72ea",
           "format": "pdf",
@@ -3432,6 +3432,150 @@
       "role": "product_asset",
       "downloaded_at": "2026-09-29T21:45:33.834344+00:00",
       "has_3d": true
+    },
+    {
+      "product_id": "waveshare-roarm-m2-s",
+      "path": "originals/waveshare-roarm-m2-s/roarm-m2.zip",
+      "source_url": "https://files.waveshare.com/wiki/RoArm-M2-S/RoArm-M2-S_STEP.zip",
+      "source_page": "https://www.waveshare.com/roarm-m2-s.htm",
+      "label": "RoArm-M2-S arm official visualization source",
+      "bytes": 10555881,
+      "sha256": "ff6cee3cbe85c5f64ee7628e68c23ed9f31911620ba107d8ed420ef1b151e646",
+      "formats": [
+        "step",
+        "zip"
+      ],
+      "validation": "archive_integrity_and_extracted_model_checks_passed",
+      "extracted_files": [
+        {
+          "path": "extracted/waveshare-roarm-m2-s/RoArm-M2-S ASM-TYPE-0(SP) Gripper.step",
+          "archive_member": "RoArm-M2-S_STEP/RoArm-M2-S ASM-TYPE-0(SP) Gripper.step",
+          "bytes": 25378740,
+          "sha256": "a63b4f1543e0c40b7686e521e2bcc294564c7dc43f9501b96192da2a4633ecd6",
+          "format": "step",
+          "validation": "structural_check_passed"
+        },
+        {
+          "path": "extracted/waveshare-roarm-m2-s/RoArm-M2-S ASM-TYPE-1(SP) WRIST.step",
+          "archive_member": "RoArm-M2-S_STEP/RoArm-M2-S ASM-TYPE-1(SP) WRIST.step",
+          "bytes": 23932998,
+          "sha256": "ad15f71c0a28e397569f39bea0f57abdafd2b024c090b62025232567a854ca44",
+          "format": "step",
+          "validation": "structural_check_passed"
+        },
+        {
+          "path": "extracted/waveshare-roarm-m2-s/RoArm-M2-S_EP.step",
+          "archive_member": "RoArm-M2-S_STEP/RoArm-M2-S_EP.step",
+          "bytes": 1500519,
+          "sha256": "4e7582a5b910e132c53c6cb39d442ba06e0881bdfe7abf8a3bba3fa22bb1b9dd",
+          "format": "step",
+          "validation": "structural_check_passed"
+        }
+      ]
+    },
+    {
+      "product_id": "waveshare-roarm-m3-s",
+      "path": "originals/waveshare-roarm-m3-s/roarm-m3.zip",
+      "source_url": "https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_STEP_260310.zip",
+      "source_page": "https://www.waveshare.com/roarm-m3.htm",
+      "label": "RoArm-M3-S arm official visualization source",
+      "bytes": 5117961,
+      "sha256": "1e2111145276aac14e521f47990fc41de87e2e735623d115a39cc176c9762da2",
+      "formats": [
+        "step",
+        "zip"
+      ],
+      "validation": "archive_integrity_and_extracted_model_checks_passed",
+      "extracted_files": [
+        {
+          "path": "extracted/waveshare-roarm-m3-s/RoArm-M3.step",
+          "archive_member": "RoArm-M3_STEP/RoArm-M3.step",
+          "bytes": 26671289,
+          "sha256": "728eb52f0bdd32dc0b907c9bb983d3d0b8adf7a5ea945949785a6e496f5089ff",
+          "format": "step",
+          "validation": "structural_check_passed"
+        }
+      ]
+    },
+    {
+      "product_id": "seeed-100046482",
+      "path": "originals/seeed-100046482/SO101 Assembly.stl",
+      "source_url": "https://raw.githubusercontent.com/TheRobotStudio/SO-ARM100/5f6d2b876a53a4872e405b991dd925556c9e38a4/STL/SO101/Individual/Base_SO101.stl",
+      "source_page": "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+      "label": "SO-101 assembled arm official visualization source",
+      "bytes": 37635784,
+      "sha256": "efe5ed131286e0fa2b95c355886cd9009a34ad5d6a0c7f042a1ba5071f1520cb",
+      "formats": [
+        "stl"
+      ],
+      "validation": "structural_check_passed",
+      "extracted_files": []
+    },
+    {
+      "product_id": "servocity-3209-0008-0001",
+      "path": "originals/servocity-3209-0008-0001/bravo-frame.zip",
+      "source_url": "https://www.servocity.com/content/step_files/3209-0008-0001.zip",
+      "source_page": "https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/",
+      "label": "Bravo body frame official visualization source",
+      "bytes": 15770874,
+      "sha256": "06fc028ee59da1ea42b5743c4e8d904743f9206d6af7c881041a0e4107209e32",
+      "formats": [
+        "step",
+        "zip"
+      ],
+      "validation": "archive_integrity_and_extracted_model_checks_passed",
+      "extracted_files": [
+        {
+          "path": "extracted/servocity-3209-0008-0001/3209-0008-0001.step",
+          "archive_member": "3209-0008-0001.step",
+          "bytes": 123547099,
+          "sha256": "2874e809c91d3671b6d03e641764322ac712462e9e8c4f5ba4e9eb94f0db4824",
+          "format": "step",
+          "validation": "structural_check_passed"
+        }
+      ]
+    },
+    {
+      "product_id": "seeed-100053279",
+      "path": "originals/seeed-100053279/pp01068_top_body.stl",
+      "source_url": "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01068_top_body.stl",
+      "source_page": "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+      "label": "Reachy body top shell official visualization source",
+      "bytes": 314584,
+      "sha256": "701c4ee80d16aa5257e706fa9cc0b8bbae2dd26138a6fd7860b99c7455ae3af7",
+      "formats": [
+        "stl"
+      ],
+      "validation": "structural_check_passed",
+      "extracted_files": []
+    },
+    {
+      "product_id": "seeed-100072462",
+      "path": "originals/seeed-100072462/pp01067_bottom_body.stl",
+      "source_url": "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01067_bottom_body.stl",
+      "source_page": "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+      "label": "Reachy body bottom shell official visualization source",
+      "bytes": 314584,
+      "sha256": "ca83667a9ff45433ca41b5e20edaabd38cb99f97d19a99576dfece8edf92d78c",
+      "formats": [
+        "stl"
+      ],
+      "validation": "structural_check_passed",
+      "extracted_files": []
+    },
+    {
+      "product_id": "seeed-100054390",
+      "path": "originals/seeed-100054390/pp01069_head_shell_front.stl",
+      "source_url": "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01069_head_shell_front.stl",
+      "source_page": "https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html",
+      "label": "Reachy front head shell official visualization source",
+      "bytes": 314584,
+      "sha256": "19ceb0df3c6655315ea012d4cb2622245d28eb302cbb690c859170ebd4b07425",
+      "formats": [
+        "stl"
+      ],
+      "validation": "structural_check_passed",
+      "extracted_files": []
     }
   ],
   "products": [
@@ -4078,7 +4222,7 @@
     {
       "id": "pololu-3690",
       "store_id": "pololu",
-      "name": "Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80×10mm, Black, 2-Pack",
+      "name": "Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80\u00d710mm, Black, 2-Pack",
       "product_url": "https://www.pololu.com/product/3690",
       "status": "not_found_in_checked_sources",
       "assets": [],
@@ -4091,7 +4235,7 @@
     {
       "id": "pololu-954",
       "store_id": "pololu",
-      "name": "Pololu Ball Caster with 3/4″ Plastic Ball",
+      "name": "Pololu Ball Caster with 3/4\u2033 Plastic Ball",
       "product_url": "https://www.pololu.com/product/954",
       "status": "downloaded_3d",
       "assets": [
@@ -4104,7 +4248,7 @@
       "additional_resource_links": [
         {
           "url": "https://www.pololu.com/file/0J1643/pololu-ball-caster-with-0-750in-plastic-ball.step",
-          "text": "3D model of the Pololu Ball Caster with 3/4″ Plastic Ball"
+          "text": "3D model of the Pololu Ball Caster with 3/4\u2033 Plastic Ball"
         }
       ]
     },
@@ -4136,7 +4280,7 @@
     {
       "id": "servocity-5203-2402-0019",
       "store_id": "servocity",
-      "name": "5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)",
+      "name": "5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX\u00ae Shaft, 312 RPM, 3.3 - 5V Encoder)",
       "product_url": "https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/",
       "status": "downloaded_3d",
       "assets": [
@@ -4169,7 +4313,7 @@
     {
       "id": "servocity-2002-0180-0002",
       "store_id": "servocity",
-      "name": "Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)",
+      "name": "Proton Servo (Steel Gears, 180\u00b0 Rotation, Torque Ratio)",
       "product_url": "https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/",
       "status": "downloaded_3d",
       "assets": [
@@ -4189,7 +4333,7 @@
     {
       "id": "servocity-2003-0180-0001",
       "store_id": "servocity",
-      "name": "Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)",
+      "name": "Daryl (Nylon Gears, 180\u00b0 Rotation, 0.15s/60\u00b0, 53 oz-in)",
       "product_url": "https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/",
       "status": "downloaded_3d",
       "assets": [
@@ -4282,7 +4426,7 @@
     {
       "id": "servocity-3209-0001-0007",
       "store_id": "servocity",
-      "name": "Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels)",
+      "name": "Strafer\u00ae Chassis Kit (104mm GripForce\u2122 Mecanum Wheels)",
       "product_url": "https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/",
       "status": "downloaded_3d",
       "assets": [
@@ -4478,11 +4622,11 @@
         },
         {
           "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_Plus_Base_with_botton_pad_lead_out_V1.0.zip",
-          "text": "XIAO Plus Base （with bottom pad lead out） KiCad Project"
+          "text": "XIAO Plus Base \uff08with bottom pad lead out\uff09 KiCad Project"
         },
         {
           "url": "https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_Plus_Base_without_botton_pad_lead_out_V1.0.zip",
-          "text": "XIAO Plus Base （without bottom pad lead out） KiCad Project"
+          "text": "XIAO Plus Base \uff08without bottom pad lead out\uff09 KiCad Project"
         },
         {
           "url": "https://files.seeedstudio.com/wiki/XIAO-KiCad-Library/New_XIAO_Series_Footprints.zip",
@@ -4582,7 +4726,7 @@
     {
       "id": "seeed-114993667",
       "store_id": "seeed",
-      "name": "SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm",
+      "name": "SO-ARM101 Pro Servo Motor Kit \u2013 LeRobot Compatible 6DOF Robotic Arm",
       "product_url": "https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html",
       "status": "downloaded_3d",
       "assets": [
@@ -4733,7 +4877,7 @@
     {
       "id": "dfrobot-ser0006",
       "store_id": "dfrobot",
-      "name": "9g 180° Micro Servo for Arduino (1.3kg)",
+      "name": "9g 180\u00b0 Micro Servo for Arduino (1.3kg)",
       "product_url": "https://www.dfrobot.com/product-255.html",
       "status": "not_found_in_checked_sources",
       "assets": [],
@@ -5195,7 +5339,7 @@
     {
       "id": "waveshare-24440",
       "store_id": "waveshare",
-      "name": "2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle",
+      "name": "2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300\u00b0 Rotation Angle",
       "product_url": "https://www.waveshare.com/sc09-servo.htm",
       "status": "downloaded_3d",
       "assets": [
@@ -5332,7 +5476,7 @@
     {
       "id": "waveshare-25978",
       "store_id": "waveshare",
-      "name": "D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus",
+      "name": "D500 Developer Kit, DTOF Laser Ranging Sensor, 360\u00b0 Omni-Directional Lidar, UART Bus",
       "product_url": "https://www.waveshare.com/d500-lidar-kit.htm",
       "status": "related_model_only",
       "assets": [
@@ -5457,6 +5601,118 @@
           "text": "3D Model"
         }
       ]
+    },
+    {
+      "id": "waveshare-roarm-m2-s",
+      "store_id": "waveshare",
+      "name": "RoArm-M2-S arm",
+      "product_url": "https://www.waveshare.com/roarm-m2-s.htm",
+      "status": "downloaded_3d",
+      "assets": [
+        "originals/waveshare-roarm-m2-s/roarm-m2.zip"
+      ],
+      "notes": "Complete 4-DOF desktop arm with gripper and ESP32 controller. Base S configuration; optional camera excluded.",
+      "checked_sources": [
+        "https://www.waveshare.com/roarm-m2-s.htm",
+        "https://files.waveshare.com/wiki/RoArm-M2-S/RoArm-M2-S_STEP.zip"
+      ],
+      "additional_resource_links": []
+    },
+    {
+      "id": "waveshare-roarm-m3-s",
+      "store_id": "waveshare",
+      "name": "RoArm-M3-S arm",
+      "product_url": "https://www.waveshare.com/roarm-m3.htm",
+      "status": "downloaded_3d",
+      "assets": [
+        "originals/waveshare-roarm-m3-s/roarm-m3.zip"
+      ],
+      "notes": "Complete 5+1-DOF arm with gripper. Price is the base S configuration; optional accessories excluded.",
+      "checked_sources": [
+        "https://www.waveshare.com/roarm-m3.htm",
+        "https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_STEP_260310.zip"
+      ],
+      "additional_resource_links": []
+    },
+    {
+      "id": "seeed-100046482",
+      "store_id": "seeed",
+      "name": "SO-101 assembled arm",
+      "product_url": "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+      "status": "downloaded_3d",
+      "assets": [
+        "originals/seeed-100046482/SO101 Assembly.stl"
+      ],
+      "notes": "Assembled Pro kit with printed structure, six STS3215 servos and BusLinker V3. Designer CAD is a visualization reference; supplier revision may differ.",
+      "checked_sources": [
+        "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+        "https://raw.githubusercontent.com/TheRobotStudio/SO-ARM100/5f6d2b876a53a4872e405b991dd925556c9e38a4/STL/SO101/Individual/Base_SO101.stl"
+      ],
+      "additional_resource_links": []
+    },
+    {
+      "id": "servocity-3209-0008-0001",
+      "store_id": "servocity",
+      "name": "Bravo body frame",
+      "product_url": "https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/",
+      "status": "downloaded_3d",
+      "assets": [
+        "originals/servocity-3209-0008-0001/bravo-frame.zip"
+      ],
+      "notes": "Structural chassis kit only: no tracks, motors, controller or battery. Used as a body frame in this concept.",
+      "checked_sources": [
+        "https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/",
+        "https://www.servocity.com/content/step_files/3209-0008-0001.zip"
+      ],
+      "additional_resource_links": []
+    },
+    {
+      "id": "seeed-100053279",
+      "store_id": "seeed",
+      "name": "Reachy body top shell",
+      "product_url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+      "status": "downloaded_3d",
+      "assets": [
+        "originals/seeed-100053279/pp01068_top_body.stl"
+      ],
+      "notes": "Empty upper body cover only; mechanisms, electronics and lower cover are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+      "checked_sources": [
+        "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+        "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01068_top_body.stl"
+      ],
+      "additional_resource_links": []
+    },
+    {
+      "id": "seeed-100072462",
+      "store_id": "seeed",
+      "name": "Reachy body bottom shell",
+      "product_url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+      "status": "downloaded_3d",
+      "assets": [
+        "originals/seeed-100072462/pp01067_bottom_body.stl"
+      ],
+      "notes": "Empty lower body cover only; mechanisms, electronics and upper cover are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+      "checked_sources": [
+        "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+        "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01067_bottom_body.stl"
+      ],
+      "additional_resource_links": []
+    },
+    {
+      "id": "seeed-100054390",
+      "store_id": "seeed",
+      "name": "Reachy front head shell",
+      "product_url": "https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html",
+      "status": "downloaded_3d",
+      "assets": [
+        "originals/seeed-100054390/pp01069_head_shell_front.stl"
+      ],
+      "notes": "Front head cover only; rear cover, eyes, sensors and mechanisms are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+      "checked_sources": [
+        "https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html",
+        "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01069_head_shell_front.stl"
+      ],
+      "additional_resource_links": []
     }
   ],
   "validation_errors": [],
@@ -6195,6 +6451,118 @@
       "url": "https://wiki.dfrobot.com/sen0340/",
       "status": null,
       "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "demo_assets": [
+    {
+      "id": "niryo-ned2",
+      "path": "originals/niryo-ned2/NED2_STEP.step",
+      "source_url": "https://raw.githubusercontent.com/NiryoRobotics/ned2/master/NED2_STEP.step",
+      "bytes": 7250770,
+      "sha256": "94598f79781e8756c1e79cd9ed56f1f43ecb507263db3a2ed2e752e0c4c88752",
+      "notes": "Official full-arm CAD. End-effector and accessories depend on purchased configuration.",
+      "preview_filter": null
+    },
+    {
+      "id": "reachy2-torso",
+      "path": "originals/reachy2-torso/torso_visual.dae",
+      "source_url": "https://raw.githubusercontent.com/pollen-robotics/reachy2_core/b7000c1255f322826f4d0ad1f1e54d424e55c051/reachy_description/meshes/torso_visual.dae",
+      "bytes": 5408609,
+      "sha256": "64f0cbfaddd781a2c77c8593e6c5a4e309cf4fde1fc08741597e884428ff151f",
+      "notes": "Visual section extracted from the official Reachy 2 robot model; separate retail availability is not established.",
+      "preview_filter": null
+    },
+    {
+      "id": "reachy2-head",
+      "path": "originals/reachy2-head/head_visual.dae",
+      "source_url": "https://raw.githubusercontent.com/pollen-robotics/reachy2_core/b7000c1255f322826f4d0ad1f1e54d424e55c051/reachy_description/meshes/head_visual.dae",
+      "bytes": 206294,
+      "sha256": "6c133101381f4aefbf0dc1509bc1ef76562367f02de9ea988458aefddc59b278",
+      "notes": "Visual section extracted from the official Reachy 2 robot model; separate retail availability is not established.",
+      "preview_filter": null
+    },
+    {
+      "id": "reachy2-mobile_base",
+      "path": "originals/reachy2-mobile_base/mobile_base_visual.dae",
+      "source_url": "https://raw.githubusercontent.com/pollen-robotics/reachy2_core/b7000c1255f322826f4d0ad1f1e54d424e55c051/reachy_description/meshes/mobile_base_visual.dae",
+      "bytes": 998376,
+      "sha256": "a0cbe2cee9ad9b98f147032579e5d4fc942412a2be43142128ee364855c9c33c",
+      "notes": "Visual section extracted from the official Reachy 2 robot model; separate retail availability is not established.",
+      "preview_filter": null
+    },
+    {
+      "id": "elephant-mycobot-280-pi",
+      "path": "originals/elephant-mycobot-280-pi/myCobot_280_PI_230708.STEP",
+      "source_url": "https://download.elephantrobotics.com/Product_3d_files/myCobot_280_PI_230708.STEP",
+      "bytes": 73535779,
+      "sha256": "cbeea744eff7dee018b3c2d84b20b4d71a1f380d94d2de86f1dbf3561bb111cd",
+      "notes": "Official six-axis arm model. End-effector accessories are separate.",
+      "preview_filter": null
+    },
+    {
+      "id": "robotis-op3-torso",
+      "path": "originals/robotis-op3-torso/body.stl",
+      "source_url": "https://raw.githubusercontent.com/ROBOTIS-GIT/ROBOTIS-OP3-Common/0780e54c2064a42089b0cf970d716ae44fec9233/op3_description/meshes/body.stl",
+      "bytes": 9172284,
+      "sha256": "95e1b28cd076ef2f3a93b99e1a7b4303f33116106286122b880bc9126a8b3361",
+      "notes": "Official robot visualization torso section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+      "preview_filter": null
+    },
+    {
+      "id": "berkeley-lite-torso",
+      "path": "originals/berkeley-lite-torso/base_visual.stl",
+      "source_url": "https://raw.githubusercontent.com/HybridRobotics/berkeley-humanoid-lite-assets/fc90fedd008b1e56a22e3c5221548d6b24f49707/data/robots/berkeley_humanoid/berkeley_humanoid_lite/meshes/base_visual.stl",
+      "bytes": 2097184,
+      "sha256": "d9af91bf06e64d633fbe74f9700c9819952e7bb9d21b22101ef7c25e5e0a601c",
+      "notes": "Official robot visualization torso section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+      "preview_filter": null
+    },
+    {
+      "id": "unitree-g1-torso",
+      "path": "originals/unitree-g1-torso/torso.stl",
+      "source_url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/da52948f035165aae2709d30255f5cd3e62875a0/robots/g1_description/meshes/torso_link_with_2dof_head.STL",
+      "bytes": 1471134,
+      "sha256": "9fb08857bc2b97d274e4b068f89f660f30ae5d27c12b0ea7f305a8b12fc98f68",
+      "notes": "Official robot visualization torso section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+      "preview_filter": null
+    },
+    {
+      "id": "unitree-h1-torso",
+      "path": "originals/unitree-h1-torso/torso.stl",
+      "source_url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/da52948f035165aae2709d30255f5cd3e62875a0/robots/h1_description/meshes/torso_link.STL",
+      "bytes": 1673634,
+      "sha256": "f43fc0753a4898f2a0418ee80f4a3806d88cffdc587aa600e2e68a8207b0cd4d",
+      "notes": "Torso-only preview derived from the official H1 torso link: triangles above source Z=0.52 m are omitted to remove its integrated fixed head. Separate retail availability and fit are not established. Display color is illustrative.",
+      "preview_filter": {
+        "max_z": 0.52
+      }
+    },
+    {
+      "id": "unitree-h2-torso",
+      "path": "originals/unitree-h2-torso/torso.stl",
+      "source_url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/da52948f035165aae2709d30255f5cd3e62875a0/robots/h2_description/meshes/torso_link.stl",
+      "bytes": 526884,
+      "sha256": "0f0c12bddbe2e29df43f38fbaeb3a65c08d43123fbb62379a1cc58e9c6df47b5",
+      "notes": "Official robot visualization torso section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+      "preview_filter": null
+    },
+    {
+      "id": "robotis-op3-head",
+      "path": "originals/robotis-op3-head/head.stl",
+      "source_url": "https://raw.githubusercontent.com/ROBOTIS-GIT/ROBOTIS-OP3-Common/0780e54c2064a42089b0cf970d716ae44fec9233/op3_description/meshes/h2.stl",
+      "bytes": 1624784,
+      "sha256": "3846e6a393c52e8837c4dd0020025a72c830f93c9e4039f81bf9b216acfe8171",
+      "notes": "Official robot visualization head section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+      "preview_filter": null
+    },
+    {
+      "id": "unitree-g1-head",
+      "path": "originals/unitree-g1-head/head.stl",
+      "source_url": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/da52948f035165aae2709d30255f5cd3e62875a0/robots/g1_description/meshes/head_link_with_2dof_head.STL",
+      "bytes": 878234,
+      "sha256": "a6f898e5173f81c4b2d069317863baed7e7559f1e240dc2a0c391fd356291069",
+      "notes": "Official robot visualization head section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+      "preview_filter": null
     }
   ]
 }

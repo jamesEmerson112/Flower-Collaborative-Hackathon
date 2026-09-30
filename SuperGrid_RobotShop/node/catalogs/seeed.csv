@@ -1,0 +1,17 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+seeed-108990003,seeed,Seeed Studio,Small Size and High Torque Stepper Motor - 24BYJ48,108990003,https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html,4.90,USD,stepper_motor,actuators
+seeed-316010005,seeed,Seeed Studio,Grove - Servo,316010005,https://www.seeedstudio.com/Grove-Servo.html,6.99,USD,positional_servo,actuators
+seeed-108090003,seeed,Seeed Studio,Feetech ST3215-C047 12V 30Kg Servo,108090003,https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html,23.99,USD,smart_servo,actuators
+seeed-108020103,seeed,Seeed Studio,Grove - I2C Motor Driver (TB6612FNG),108020103,https://www.seeedstudio.com/Grove-I2C-Motor-Driver-TB6612FNG-p-3220.html,10.98,USD,motor_driver,support
+seeed-113991114,seeed,Seeed Studio,Seeed Studio XIAO ESP32-S3,113991114,https://www.seeedstudio.com/XIAO-ESP32S3-p-5627.html,7.49,USD,microcontroller,support
+seeed-102110919,seeed,Seeed Studio,Raspberry Pi 5 8GB,102110919,https://www.seeedstudio.com/Raspberry-Pi-5-8GB-p-5810.html,175.00,USD,single_board_computer,support
+seeed-101020010,seeed,Seeed Studio,Grove - Ultrasonic Distance Sensor,101020010,https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html,4.99,USD,distance_sensor,sensors
+seeed-101020585,seeed,Seeed Studio,Grove - IMU 9DOF (ICM20600+AK09918),101020585,https://www.seeedstudio.com/Grove-IMU-9DOF-ICM20600-AK09918.html,11.25,USD,imu,sensors
+seeed-101020532,seeed,Seeed Studio,"Grove - Time of Flight Distance Sensor(VL53L0X) - (ToF) laser-ranging module,Long Range Precision ranging",101020532,https://www.seeedstudio.com/Grove-Time-of-Flight-Distance-Sensor-VL53L0X.html,7.99,USD,distance_sensor,sensors
+seeed-110090325,seeed,Seeed Studio,Robot Car Kit-6WD Off-Road Chassis Kit,110090325,https://www.seeedstudio.com/Robot-Car-Kit-6WD-Off-Road-Chassis-p-4222.html,99.90,USD,mobile_base,legs
+seeed-114993667,seeed,Seeed Studio,SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm,114993667,https://www.seeedstudio.com/SO-101-Low-Cost-AI-Arm-Kit-Pro-p-6427.html,277.99,USD,actuator_kit,actuators
+seeed-106990290,seeed,Seeed Studio,Lipo Rider Plus (Charger/Booster) - 5V/2.4A USB Type C,106990290,https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html,4.99,USD,power_module,support
+seeed-100046482,seeed,Seeed Studio,SO-101 assembled arm,100046482,https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html,299.00,USD,robotic_arm_kit,arms
+seeed-100053279,seeed,Seeed Studio,Reachy body top shell,100053279,https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html,2.98,USD,body_shell,torso
+seeed-100072462,seeed,Seeed Studio,Reachy body bottom shell,100072462,https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html,2.27,USD,body_shell,torso
+seeed-100054390,seeed,Seeed Studio,Reachy front head shell,100054390,https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html,2.20,USD,head_shell,head

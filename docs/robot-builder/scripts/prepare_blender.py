@@ -1,7 +1,7 @@
 """Run with Blender --background --factory-startup --python scripts/prepare_blender.py.
 Normalizes real CAD meshes for a deliberately non-dimensional concept builder.
 """
-import bpy,json,math,hashlib,sys
+import bpy,bmesh,json,math,hashlib,sys
 from pathlib import Path
 from mathutils import Vector,Matrix
 ROOT=Path(__file__).resolve().parents[1]
@@ -38,7 +38,7 @@ records={r['id']:r for r in json.loads(report_path.read_text())} if report_path.
 report=[]
 for part in parts:
  output=ROOT/'public'/part['model'];thumb=ROOT/'public'/part['thumbnail']
- pipeline_version=3 if part.get('modelKind')=='approximate_preview' else 2
+ pipeline_version=5 if 'sourceMaxZ' in part else 4 if part.get('keepSourceAxes') else 3 if part.get('modelKind')=='approximate_preview' else 2
  if output.exists() and thumb.exists() and records.get(part['id'],{}).get('pipeline_version')==pipeline_version:
   print('Already prepared',part['id'],flush=True);continue
  source=CAD/part['source'];intermediate=ROOT/'blender/intermediate'/(part['id']+'.json')
@@ -73,13 +73,20 @@ for part in parts:
   world=obj.matrix_world.copy();obj.parent=None;obj.matrix_world=world
  for obj in objects:
   if obj.type!='MESH':bpy.data.objects.remove(obj,do_unlink=True)
+ if 'sourceMaxZ' in part:
+  for obj in meshes:
+   bm=bmesh.new();bm.from_mesh(obj.data)
+   above=[v for v in bm.verts if (obj.matrix_world@v.co).z>part['sourceMaxZ']]
+   if above:bmesh.ops.delete(bm,geom=above,context='VERTS')
+   bm.to_mesh(obj.data);bm.free();obj.data.update()
+  bpy.context.view_layer.update()
  low,high=bounds(meshes);original=list(high-low)
  # Largest axis becomes X, second-largest becomes Z (glTF Y), depth becomes Y.
  order=sorted(range(3),key=lambda i:original[i],reverse=True)
  rows=[]
  for axis in [order[0],order[2],order[1]]:
   row=[0,0,0];row[axis]=1;rows.append(row)
- orient=Matrix(rows)
+ orient=Matrix.Rotation(-math.pi/2,3,'Z') if part.get('keepSourceAxes') else Matrix(rows)
  if orient.determinant()<0:orient[1]*=-1
  for obj in meshes:obj.matrix_world=orient.to_4x4()@obj.matrix_world
  bpy.context.view_layer.update();low,high=bounds(meshes);center=(low+high)/2;factor=1/max(high-low)
@@ -112,7 +119,7 @@ for part in parts:
  bpy.ops.export_scene.gltf(filepath=str(output),export_format='GLB',use_selection=True,export_extras=True,export_yup=True)
  scene=scene_setup();scene.render.filepath=str(thumb);bpy.ops.render.render(write_still=True)
  count=sum(len(o.data.polygons) for o in meshes)
- report.append(dict(id=part['id'],pipeline_version=pipeline_version,model_kind=part.get('modelKind','supplier_cad'),source=part['source'] or part['sourceUrl'],source_sha256=hashlib.sha256(source.read_bytes()).hexdigest() if source.is_file() else None,original_bounds=original,normalization='longest side = 1; centered; concept units, not manufacturing scale',polygons=count,glb_bytes=output.stat().st_size))
+ report.append(dict(id=part['id'],pipeline_version=pipeline_version,model_kind=part.get('modelKind','supplier_cad'),source=part['source'] or part['sourceUrl'],source_sha256=hashlib.sha256(source.read_bytes()).hexdigest() if source.is_file() else None,original_bounds=original,source_filter={'max_z':part['sourceMaxZ']} if 'sourceMaxZ' in part else None,normalization='longest side = 1; centered; concept units, not manufacturing scale',polygons=count,glb_bytes=output.stat().st_size))
  records[part['id']]=report[-1]
  report_path.write_text(json.dumps(list(records.values()),indent=2)+'\n')
  print('PREPARED',part['id'],count,output.stat().st_size,flush=True)

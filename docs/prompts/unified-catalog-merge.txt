@@ -1,0 +1,44 @@
+Merge the robot-parts datasets into one unified catalog. Implement the changes.
+
+RUN THIS ONLY AFTER the SuperGrid_RobotShop demo has been verified end to end (decision 2026-09-29).
+
+Sources:
+- docs/robot-parts-stores/stores.json
+- docs/robot-parts-stores/classified/
+- docs/robot-parts-stores/expansion/
+- docs/robot-builder/public/catalog.json
+- docs/robot-builder/scripts/demo_parts.json
+
+Requirements:
+1. Make stores.json the single source of truth for all 25 researched stores/companies: the 8 original stores plus the 20 expansion companies, minus the 3 that appear in both (robotis, seeed, waveshare). Reconcile names and IDs, and verify the final count is 25.
+2. Use one consistent item schema. These field names are REQUIRED and must be spelled exactly like this, because the Flower store SuperNodes read them:
+   product_id, store_id, store_name, product_name, sku, product_url, price, currency
+   Add further fields for:
+   - body category: head / torso / arms / legs / whole_robot / component role (reuse the classified primary_role values);
+   - assembly type (component / module / kit / section / whole robot);
+   - purchase scope (purchasable product / extracted robot section / whole robot / reference only);
+   - price capture date, research notes, evidence URLs, CAD sources, and prepared GLB/thumbnail paths.
+   Document every field in a schema file.
+3. Deduplicate by stable product_id, checking URLs and SKUs for aliases. Preserve source provenance and any conflicting information; don't silently pick a winner.
+4. Keep unknown prices null (an empty cell in CSV), never 0. Preserve original currencies (for example EUR) and capture dates, and do not convert currencies.
+5. Distinguish purchasable products from extracted robot sections and whole robots, and do not invent separate torso/arm sales. Preserve all 19 prepared demo models, including research-project sources outside the 25-company list.
+6. Generate consistent per-store JSON and CSV files under docs/robot-parts-stores/data/by-store/, ONE PAIR FOR EACH OF THE 25 COMPANIES, even those without prices. Every CSV has the same header, starting with the required fields from item 2. Make the previous classified/ and expansion/ outputs either generated views or clearly documented archives.
+7. Update the builder's catalog-generation scripts (docs/robot-builder/scripts/) to use the unified source and to select the body parts that have prepared models. Preserve its current options, starter build, placement metadata, and save/export behavior.
+8. Keep CAD binaries in their existing locations. Do not delete or redownload assets.
+9. Add focused validation for:
+   - deduplication;
+   - required fields present on every item;
+   - model and thumbnail paths that exist;
+   - missing prices being null;
+   - preservation of the 19-model demo palette;
+   - exactly 25 per-store CSV/JSON pairs.
+   Run the relevant existing tests and builds (docs/robot-builder: npm test, npm run build; python3 docs/robot-parts-stores/build.py).
+10. Update the documentation with the canonical file, the regeneration commands, and the final store/product/model counts.
+
+Out of scope, do not touch:
+- SuperGrid_RobotShop/ (it keeps its own snapshot and gets re-synced separately);
+- SuperNode_James/;
+- the Flower Hub app copies under docs/ (agent/, collaborative-agent/, hackathon-collab-agent-recipe/);
+- docs/private/.
+
+Inspect existing scripts and repository instructions (CLAUDE.md) before editing. Preserve unrelated work, and do not read or modify .env files. Proceed without additional confirmation unless genuinely blocked. Finish with a concise summary of changes, counts and validation results.

@@ -1,0 +1,14 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+servocity-5203-2402-0019,servocity,ServoCity,"5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)",5203-2402-0019,https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/,54.99,USD,dc_gearmotor,actuators
+servocity-638114,servocity,ServoCity,"Premium N20 Gear Motor (210:1 Ratio, 130 RPM)",638114,https://www.servocity.com/130-rpm-micro-gear-motor/,12.99,USD,dc_gearmotor,actuators
+servocity-2002-0180-0002,servocity,ServoCity,"Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)",2002-0180-0002,https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/,17.99,USD,positional_servo,actuators
+servocity-2003-0180-0001,servocity,ServoCity,"Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)",2003-0180-0001,https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/,9.99,USD,positional_servo,actuators
+servocity-3105-0101-0020,servocity,ServoCity,1x20A Motor Controller (9-30V Input),3105-0101-0020,https://www.servocity.com/1x20a-motor-controller/,39.99,USD,motor_driver,support
+servocity-imc404,servocity,ServoCity,Roboclaw 2x7A Motor Controller,IMC404,https://www.servocity.com/roboclaw-2x7a-motor-controller/,79.99,USD,motor_driver,support
+servocity-3114-0001-0001,servocity,ServoCity,Pololu A-Star 32U4 Prime SV,3114-0001-0001,https://www.servocity.com/pololu-a-star-32u4-prime-sv/,39.99,USD,microcontroller,support
+servocity-3124-0001-0001,servocity,ServoCity,"Laser Distance Sensor (1m Range, 3.3-5V, Digital or Analog Output)",3124-0001-0001,https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/,29.99,USD,distance_sensor,sensors
+servocity-3209-0001-0007,servocity,ServoCity,Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels),3209-0001-0007,https://www.servocity.com/strafer-chassis-kit-104mm-gripforce-mecanum-wheels/,699.99,USD,mobile_base,legs
+servocity-3624-0014-0096,servocity,ServoCity,"96mm Omni Wheel (14mm Bore, 50A Durometer)",3624-0014-0096,https://www.servocity.com/96mm-omni-wheel-14mm-bore-50a-durometer/,21.99,USD,wheel,wheels
+servocity-3213-3606-0002,servocity,ServoCity,96mm Mecanum Wheel Set (70A Durometer Bearing Supported Rollers),3213-3606-0002,https://www.servocity.com/96mm-mecanum-wheel-set-70a-durometer-bearing-supported-rollers/,169.99,USD,wheel,wheels
+servocity-3100-0012-0020,servocity,ServoCity,"12V NiMH Nested Battery (3000mAh, MH-FC XT30 Connector)",3100-0012-0020,https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/,64.99,USD,battery,support
+servocity-3209-0008-0001,servocity,ServoCity,Bravo body frame,3209-0008-0001,https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/,399.99,USD,chassis_frame,torso

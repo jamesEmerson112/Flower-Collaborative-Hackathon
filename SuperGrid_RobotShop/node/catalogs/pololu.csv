@@ -1,0 +1,13 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+pololu-3036,pololu,Pololu Robotics & Electronics,5:1 Micro Metal Gearmotor HPCB 12V,3036,https://www.pololu.com/product/3036,26.45,USD,dc_gearmotor,actuators
+pololu-2818,pololu,Pololu Robotics & Electronics,FEETECH FS90 Micro Servo,2818,https://www.pololu.com/product/2818,8.40,USD,positional_servo,actuators
+pololu-2130,pololu,Pololu Robotics & Electronics,DRV8833 Dual Motor Driver Carrier,2130,https://www.pololu.com/product/2130,10.95,USD,motor_driver,support
+pololu-2133,pololu,Pololu Robotics & Electronics,"DRV8825 Stepper Motor Driver Carrier, High Current",2133,https://www.pololu.com/product/2133,15.95,USD,motor_driver,support
+pololu-3101,pololu,Pololu Robotics & Electronics,A-Star 32U4 Micro,3101,https://www.pololu.com/product/3101,19.95,USD,microcontroller,support
+pololu-3544,pololu,Pololu Robotics & Electronics,Romi 32U4 Control Board,3544,https://www.pololu.com/product/3544,74.95,USD,robot_controller,support
+pololu-3415,pololu,Pololu Robotics & Electronics,"VL53L1X Time-of-Flight Distance Sensor Carrier with Voltage Regulator, 400cm Max",3415,https://www.pololu.com/product/3415,22.95,USD,distance_sensor,sensors
+pololu-4148,pololu,Pololu Robotics & Electronics,"QTR-MD-08RC Reflectance Sensor Array: 8-Channel, 8mm Pitch, RC Output",4148,https://www.pololu.com/product/4148,9.90,USD,reflectance_sensor,sensors
+pololu-3500,pololu,Pololu Robotics & Electronics,Romi Chassis Kit - Black,3500,https://www.pololu.com/product/3500,39.95,USD,mobile_base,legs
+pololu-3690,pololu,Pololu Robotics & Electronics,"Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80×10mm, Black, 2-Pack",3690,https://www.pololu.com/product/3690,11.95,USD,wheel,wheels
+pololu-954,pololu,Pololu Robotics & Electronics,Pololu Ball Caster with 3/4″ Plastic Ball,954,https://www.pololu.com/product/954,5.49,USD,caster,wheels
+pololu-2831,pololu,Pololu Robotics & Electronics,"Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5",2831,https://www.pololu.com/product/2831,12.95,USD,voltage_regulator,support

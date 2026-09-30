@@ -1,0 +1,13 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+robotis-902-0135-000,robotis,ROBOTIS America,DYNAMIXEL XL430-W250-T,902-0135-000,https://robotis.us/products/dynamixel-xl430-w250-t,27.50,USD,smart_servo,actuators
+robotis-902-0163-000,robotis,ROBOTIS America,DYNAMIXEL XL330-M288-T,902-0163-000,https://robotis.us/products/dynamixel-xl330-m288-t,27.49,USD,smart_servo,actuators
+robotis-902-0132-000,robotis,ROBOTIS America,U2D2,902-0132-000,https://robotis.us/products/u2d2,36.92,USD,interface_adapter,support
+robotis-903-0257-000,robotis,ROBOTIS America,OpenCR1.0,903-0257-000,https://robotis.us/products/opencr1-0,247.14,USD,robot_controller,support
+robotis-902-0183-000,robotis,ROBOTIS America,OpenRB-150,902-0183-000,https://robotis.us/products/openrb-150,28.64,USD,robot_controller,support
+robotis-902-0043-000,robotis,ROBOTIS America,Distance Measuring Sensor DMS-80,902-0043-000,https://robotis.us/products/distance-measuring-sensor-dms-80,20.47,USD,distance_sensor,sensors
+robotis-902-0042-000,robotis,ROBOTIS America,Gyro Sensor GS-12,902-0042-000,https://robotis.us/products/gyro-sensor-gs-12,47.84,USD,imu,sensors
+robotis-901-0118-301,robotis,ROBOTIS America,TurtleBot 3 Burger RPi4 4GB [US],901-0118-301,https://robotis.us/products/turtlebot-3-burger-rpi4-4gb-us,783.50,USD,robot_kit,whole_robot
+robotis-903-0260-000,robotis,ROBOTIS America,TB3 Wheel Tire Set-ISW-01 (2ea),903-0260-000,https://robotis.us/products/tb3-wheel-tire-set-isw-01-2ea,10.81,USD,wheel,wheels
+robotis-903-0262-000,robotis,ROBOTIS America,TB3 Ball Caster-A01 (1ea),903-0262-000,https://robotis.us/products/tb3-ball-caster-a01-1ea,4.03,USD,caster,wheels
+robotis-903-0210-000,robotis,ROBOTIS America,LIPO Battery 11.1V 1800mAh LB-012,903-0210-000,https://robotis.us/products/lipo-battery-11-1v-1800mah-lb-012,68.54,USD,battery,support
+robotis-903-0126-000,robotis,ROBOTIS America,SMPS 12V 5A PS-10 [US-110V],903-0126-000,https://robotis.us/products/smps-12v-5a-ps-10-us-110v,24.61,USD,power_adapter,support

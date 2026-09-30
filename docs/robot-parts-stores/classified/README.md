@@ -1,6 +1,6 @@
 # Classified robot parts database
 
-**95 products from the existing eight-store catalog**, researched against official
+**102 products from the existing eight-store catalog**, researched against official
 product pages or manufacturer documentation on 2026-09-29. This is the current
 project catalog, not a complete scrape of each retailer's inventory.
 
@@ -11,11 +11,11 @@ Start with [all_parts.csv](all_parts.csv), or give each supplier agent its own C
 | Adafruit | [adafruit.csv](by-store/adafruit.csv) | 12 |
 | SparkFun | [sparkfun.csv](by-store/sparkfun.csv) | 12 |
 | Pololu | [pololu.csv](by-store/pololu.csv) | 12 |
-| ServoCity | [servocity.csv](by-store/servocity.csv) | 12 |
-| Seeed Studio | [seeed.csv](by-store/seeed.csv) | 12 |
+| ServoCity | [servocity.csv](by-store/servocity.csv) | 13 |
+| Seeed Studio | [seeed.csv](by-store/seeed.csv) | 16 |
 | DFRobot | [dfrobot.csv](by-store/dfrobot.csv) | 12 |
 | ROBOTIS | [robotis.csv](by-store/robotis.csv) | 12 |
-| Waveshare | [waveshare.csv](by-store/waveshare.csv) | 11 |
+| Waveshare | [waveshare.csv](by-store/waveshare.csv) | 13 |
 
 Every file has **the same 34 columns**. CSVs use UTF-8, comma delimiters, a header
 row, and empty cells for unavailable values. List-valued cells use `|` between
@@ -25,12 +25,17 @@ entries. Standard CSV readers handle names and notes containing commas.
 
 | `primary_role` | Meaning | Example |
 | --- | --- | --- |
-| `legs` | Locomotion, including wheeled/tracked bases, wheels, casters and drive motors | **WAVE ROVER**; Romi; Devastator |
-| `torso` | Structural body/frame | SparkFun Shadow Chassis |
-| `arms` | Manipulation assemblies or suggested arm-joint components | SO-ARM101 servo kit; DYNAMIXEL actuator |
-| `head` | Perception components | Distance sensor; lidar |
-| `support` | Electronics, power, orientation sensing and adapters | Controller; battery; IMU |
-| `whole_robot` | A complete robot kit covering multiple body roles | TurtleBot3 Burger kit |
+| `legs` | Complete locomotion bases | WAVE ROVER; Romi |
+| `torso` | Structural frame or empty body shell | Bravo frame; Reachy shell |
+| `arms` | Full manipulation assemblies | RoArm-M2-S; assembled SO-101 |
+| `head` | Physical head housing | Reachy front shell |
+| `actuators` | Bare motors, servos and motor-only kits | DYNAMIXEL; SO-101 servo kit |
+| `sensors` | Perception and orientation components | Distance sensor; IMU |
+| `wheels` | Individual wheels and casters | Romi wheel |
+| `support` | Electronics, power and adapters | Controller; battery |
+| `whole_robot` | Complete robot spanning multiple roles | TurtleBot3 |
+
+Also see the [20-company body assembly research](../expansion/README.md).
 
 `secondary_roles` records optional alternatives. For example, WAVE ROVER is
 primarily `legs` because it drives the robot, with `torso` as a secondary role
@@ -40,12 +45,11 @@ from the researched product function, not vendor claims about anatomical roles.
 `part_type` retains the actual component identity, and `assembly_level` separates
 components, modules, kits, accessories, and complete robots. A servo is still a
 joint component, not an entire arm. A distance-sensor board is a perception
-component, not a complete head. Generic servos/steppers receive medium confidence
-because their preferred body role depends on the design. High confidence means
+component, not a complete head. Generic servos/steppers are actuator components, regardless of their eventual placement. High confidence means
 the suggested main role is clear; it never means parts will physically fit.
 
-There is only one primary torso entry in this sample; several mobile bases have
-torso as a secondary use. Internal support parts remain available in the database
+There are four torso frame/shell choices; several mobile bases retain torso as
+a secondary use, but are recommended as driving bases. Internal support parts remain available in the database
 without being mislabeled as complete body sections. The browser demo's earlier
 visual palette now reads this dataset for its recommended body roles. Its
 Show all parts option still permits deliberate cross-role visual experiments.
@@ -58,11 +62,11 @@ Show all parts option still permits deliberate cross-role visual experiments.
 - Commercial snapshot: original price, currency, capture date and specifications.
   Prices were retained from `../stores.json`, not refreshed during classification.
 - Evidence: official URLs, a short source finding, verification status and research date.
-- Images: all 95 entries have a product-image URL extracted from saved official
+- Images: 100 of 102 entries have a product-image URL extracted from saved official
   product pages. Images were not downloaded or individually availability-tested;
   these URLs can expire. Source page/date and extraction hashes are retained.
 - Models: CAD availability, formats, download URLs, local file paths and known
-  caveats. Fourteen entries link to browser GLBs and thumbnails: thirteen derived
+  caveats. Twenty entries link to browser GLBs and thumbnails: nineteen derived
   from collected CAD and one explicitly approximate Shadow Chassis frame preview.
 
 See [schema.json](schema.json) for every column and [taxonomy.json](taxonomy.json)
@@ -71,7 +75,7 @@ models remain local and Git-ignored, as in the existing CAD collection.
 
 ## Evidence and caveats
 
-All 95 classifications have `live_verified` evidence: an official product page or
+All 102 classifications have `live_verified` evidence: an official product page or
 manufacturer document was fetched and inspected during this research. Some store
 fetches failed initially; manufacturer documentation or a successful retry was
 used instead. `evidence_urls` identifies the successful supporting sources.
@@ -80,7 +84,7 @@ The build also supports `catalog_snapshot_only` and `inaccessible` for future
 entries whose current product details cannot be verified. It never upgrades these
 to verified based on a product name alone.
 
-The CAD collection contains 50 products with downloaded 3D assets, 2 with related
+The CAD collection contains 57 products with downloaded 3D assets, 2 with related
 models only, and 43 with no model found in the sources checked. `downloaded_3d`
 does not guarantee a revision match or engineering compatibility. In particular:
 

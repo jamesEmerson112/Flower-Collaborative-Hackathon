@@ -1,14 +1,12 @@
 [
   {
     "product_id": "servocity-5203-2402-0019",
-    "primary_role": "legs",
-    "secondary_roles": [
-      "arms"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "dc_gearmotor",
     "assembly_level": "component",
     "function_summary": "Brushed planetary gearmotor with quadrature encoder for powered mechanisms.",
-    "classification_reason": "Drive torque makes it a locomotion actuator; optional arm use needs an engineered transmission and feedback control.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "high",
     "assembly_notes": "One gearmotor with encoder; wheel, motor driver, power and structure are separate.",
     "evidence_status": "live_verified",
@@ -20,14 +18,12 @@
   },
   {
     "product_id": "servocity-638114",
-    "primary_role": "legs",
-    "secondary_roles": [
-      "arms"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "dc_gearmotor",
     "assembly_level": "component",
     "function_summary": "N20 brushed gearmotor with metal spur reduction.",
-    "classification_reason": "Suggested as a compact wheel-drive component; an arm joint is an alternative mechanism, not supplied.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "high",
     "assembly_notes": "One gearmotor; wheels, mounts, driver and controller are additional.",
     "evidence_status": "live_verified",
@@ -39,15 +35,12 @@
   },
   {
     "product_id": "servocity-2002-0180-0002",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "head",
-      "legs"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "positional_servo",
     "assembly_level": "component",
     "function_summary": "Standard positional servo with steel gears and H25T output spline.",
-    "classification_reason": "Angular positioning suits a joint or gripper drive; head or leg use is an alternative only after load and mounting checks.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "One torque-ratio servo; arm links, gripper structure and control electronics are separate.",
     "evidence_status": "live_verified",
@@ -60,15 +53,12 @@
   },
   {
     "product_id": "servocity-2003-0180-0001",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "head",
-      "legs"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "positional_servo",
     "assembly_level": "component",
     "function_summary": "Standard hobby servo providing controlled angular movement with nylon gears.",
-    "classification_reason": "Suggested joint actuator for an arm; can move a light head or leg mechanism but is not an assembled limb.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "One servo; structural links, mount, power and signal source are separate.",
     "evidence_status": "live_verified",
@@ -131,12 +121,12 @@
   },
   {
     "product_id": "servocity-3124-0001-0001",
-    "primary_role": "head",
+    "primary_role": "sensors",
     "secondary_roles": [],
     "part_type": "distance_sensor",
     "assembly_level": "module",
     "function_summary": "Laser time-of-flight ranging module with analog distance or digital threshold output.",
-    "classification_reason": "Perception suggests a head sensor; it does not include a mechanical head.",
+    "classification_reason": "Perception or orientation component; not a physical head assembly.",
     "classification_confidence": "high",
     "assembly_notes": "Sensor, listed mounting hardware and adapter cable; host controller and head mount separate.",
     "evidence_status": "live_verified",
@@ -165,12 +155,12 @@
   },
   {
     "product_id": "servocity-3624-0014-0096",
-    "primary_role": "legs",
+    "primary_role": "wheels",
     "secondary_roles": [],
     "part_type": "wheel",
     "assembly_level": "component",
     "function_summary": "Omni wheel with lateral rollers for holonomic robot drivetrains.",
-    "classification_reason": "Ground-contact wheel is a locomotion component, not an articulated leg.",
+    "classification_reason": "Individual locomotion component; not a complete leg or driving base.",
     "classification_confidence": "high",
     "assembly_notes": "One 96 mm omni wheel; hub, drive motor, chassis and electronics are separate.",
     "evidence_status": "live_verified",
@@ -182,12 +172,12 @@
   },
   {
     "product_id": "servocity-3213-3606-0002",
-    "primary_role": "legs",
+    "primary_role": "wheels",
     "secondary_roles": [],
     "part_type": "wheel",
     "assembly_level": "kit",
     "function_summary": "Set of 96 mm mecanum wheels for omnidirectional ground movement.",
-    "classification_reason": "Wheel set is part of locomotion; it does not include a complete powered base.",
+    "classification_reason": "Individual locomotion component; not a complete leg or driving base.",
     "classification_confidence": "high",
     "assembly_notes": "Wheel set; motors, chassis, hubs and controller must be supplied separately.",
     "evidence_status": "live_verified",
@@ -212,6 +202,23 @@
       "https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/"
     ],
     "evidence_note": "Specs confirm NiMH chemistry and capacity; description explains placement inside channel structure.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "servocity-3209-0008-0001",
+    "primary_role": "torso",
+    "secondary_roles": [],
+    "part_type": "chassis_frame",
+    "assembly_level": "kit",
+    "function_summary": "Structural chassis kit only: no tracks, motors, controller or battery. Used as a body frame in this concept.",
+    "classification_reason": "Physical structural frame or exterior housing; not electronics.",
+    "classification_confidence": "high",
+    "assembly_notes": "Structural chassis kit only: no tracks, motors, controller or battery. Used as a body frame in this concept.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/"
+    ],
+    "evidence_note": "Official product page inspected; purchased scope distinguished from visualization mesh.",
     "researched_at": "2026-09-29"
   }
 ]

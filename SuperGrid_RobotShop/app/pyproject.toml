@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "robot-shop"
+version = "0.1.0"
+description = "The master asks every store SuperNode to price a robot's parts; each store quotes from its own private catalogue"
+license = { file = "LICENSE" }
+requires-python = ">=3.11,<4.0"
+# flwr only: SuperNodes don't install extra deps, and a failed install on the SuperLink
+# kills the run before main(). llm.py uses httpx, which flwr already depends on.
+dependencies = ["flwr>=1.39.0,<2.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["robot_shop"]
+
+[tool.flwr.app]
+publisher = "zerocks2503"   # Flower account username
+fab-format-version = 1
+flwr-version-target = "1.39.0"
+fab-include = ["robot_shop/**/*.py", "LICENSE"]
+
+[tool.flwr.app.components]
+agentapp = "robot_shop.agent_app:app"

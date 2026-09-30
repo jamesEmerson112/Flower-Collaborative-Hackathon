@@ -165,6 +165,16 @@
       "sku": "3100-0012-0020",
       "url": "https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/",
       "spec": "12 V NiMH, 3000 mAh, nested form factor, XT30 (MH-FC) connector"
+    },
+    {
+      "id": "servocity-3209-0008-0001",
+      "name": "Bravo body frame",
+      "sku": "3209-0008-0001",
+      "price": 399.99,
+      "currency": "USD",
+      "url": "https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/",
+      "category": "chassis-kits",
+      "spec": "Structural chassis kit only: no tracks, motors, controller or battery. Used as a body frame in this concept."
     }
   ]
 }

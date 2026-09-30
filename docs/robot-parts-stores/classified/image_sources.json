@@ -758,5 +758,61 @@
     "image_captured_at": "2026-09-29",
     "image_source_kind": "product_page_main_image",
     "source_html_sha256": "b5308cd872caa4a1673561284d8bbad156f51a219226f4a198cbeb8b10592622"
+  },
+  {
+    "product_id": "waveshare-roarm-m2-s",
+    "image_url": "",
+    "image_source_url": "https://www.waveshare.com/roarm-m2-s.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "not_found",
+    "source_html_sha256": "817da81935216135341af0f5f693f5c03fcc930eb287837cfe999c8b5f5ca46c"
+  },
+  {
+    "product_id": "waveshare-roarm-m3-s",
+    "image_url": "",
+    "image_source_url": "https://www.waveshare.com/roarm-m3.htm",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "not_found",
+    "source_html_sha256": "ea6208bcba2942c667545132cbf172e8f1736bb52369988b091599a1819b32f1"
+  },
+  {
+    "product_id": "seeed-100046482",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/1/-/1-100046482-so-arm-101-assembled-kit-pro.jpg",
+    "image_source_url": "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "og:image",
+    "source_html_sha256": "579a269d5c2c0ec538a76ce7c2e84db235c334a4dd362adf613961e1d1c67c27"
+  },
+  {
+    "product_id": "servocity-3209-0008-0001",
+    "image_url": "https://cdn11.bigcommerce.com/s-f6vfspkkjf/products/4568/images/19227/3209-0008-0001__00145__80533.1701979248.386.513.jpg?c=1",
+    "image_source_url": "https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "og:image",
+    "source_html_sha256": "3531571823cc1bad085e9f73a48347c3cebd2e6116130343f8bb52678c7ceb67"
+  },
+  {
+    "product_id": "seeed-100053279",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/i/m/image-photoroom_1_1.png",
+    "image_source_url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "og:image",
+    "source_html_sha256": "9cb1c7a9dc786da0620579bed6616957b49b63616f2462fcc14c594a2cfc4b7a"
+  },
+  {
+    "product_id": "seeed-100072462",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/2/0/20260608-101807-photoroom.png",
+    "image_source_url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "og:image",
+    "source_html_sha256": "09509de963a253837400635cbdee2d7197be648b3d6ecc0b7e4fbb684e671fa3"
+  },
+  {
+    "product_id": "seeed-100054390",
+    "image_url": "https://media-cdn.seeedstudio.com/media/catalog/product/cache/7f7f32ef807b8c2c2215b49801c56084/_/h/_hghv.jpg",
+    "image_source_url": "https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html",
+    "image_captured_at": "2026-09-29",
+    "image_source_kind": "og:image",
+    "source_html_sha256": "78cb5311988f8ddc6c6cc1ec693461a53a410db0b814e366c08a3422b26f0b99"
   }
 ]

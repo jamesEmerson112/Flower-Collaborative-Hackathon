@@ -161,6 +161,46 @@
       "sku": "106990290",
       "url": "https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html",
       "spec": "LiPo charger/booster, 3 A charging, 5 V / 2.4 A output, USB-C"
+    },
+    {
+      "id": "seeed-100046482",
+      "name": "SO-101 assembled arm",
+      "sku": "100046482",
+      "price": 299.0,
+      "currency": "USD",
+      "url": "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+      "category": "chassis-kits",
+      "spec": "Assembled Pro kit with printed structure, six STS3215 servos and BusLinker V3. Designer CAD is a visualization reference; supplier revision may differ."
+    },
+    {
+      "id": "seeed-100053279",
+      "name": "Reachy body top shell",
+      "sku": "100053279",
+      "price": 2.98,
+      "currency": "USD",
+      "url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+      "category": "chassis-kits",
+      "spec": "Empty upper body cover only; mechanisms, electronics and lower cover are separate. Designer mesh revision is not mechanically verified against the sold shell."
+    },
+    {
+      "id": "seeed-100072462",
+      "name": "Reachy body bottom shell",
+      "sku": "100072462",
+      "price": 2.27,
+      "currency": "USD",
+      "url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+      "category": "chassis-kits",
+      "spec": "Empty lower body cover only; mechanisms, electronics and upper cover are separate. Designer mesh revision is not mechanically verified against the sold shell."
+    },
+    {
+      "id": "seeed-100054390",
+      "name": "Reachy front head shell",
+      "sku": "100054390",
+      "price": 2.2,
+      "currency": "USD",
+      "url": "https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html",
+      "category": "chassis-kits",
+      "spec": "Front head cover only; rear cover, eyes, sensors and mechanisms are separate. Designer mesh revision is not mechanically verified against the sold shell."
     }
   ]
 }

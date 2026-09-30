@@ -151,6 +151,26 @@
       "sku": null,
       "url": "https://www.waveshare.com/dc-buck-adapter-7.2v.htm",
       "spec": "Buck adapter for serial bus servos, 9–36 V in, 7.2 V or 6 V out"
+    },
+    {
+      "id": "waveshare-roarm-m2-s",
+      "name": "RoArm-M2-S arm",
+      "sku": "25118",
+      "price": 179.99,
+      "currency": "USD",
+      "url": "https://www.waveshare.com/roarm-m2-s.htm",
+      "category": "chassis-kits",
+      "spec": "Complete 4-DOF desktop arm with gripper and ESP32 controller. Base S configuration; optional camera excluded."
+    },
+    {
+      "id": "waveshare-roarm-m3-s",
+      "name": "RoArm-M3-S arm",
+      "sku": "30256",
+      "price": 239.99,
+      "currency": "USD",
+      "url": "https://www.waveshare.com/roarm-m3.htm",
+      "category": "chassis-kits",
+      "spec": "Complete 5+1-DOF arm with gripper. Price is the base S configuration; optional accessories excluded."
     }
   ]
 }

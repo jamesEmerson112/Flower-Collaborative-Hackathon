@@ -1,0 +1,142 @@
+[
+  {
+    "company_id": "robotis",
+    "company_name": "ROBOTIS",
+    "country": "South Korea",
+    "china_based": false,
+    "company_url": "https://robotis.com/en/",
+    "activity_evidence": "Current Physical AI lineup includes AI Worker and OMY; official site carries 2026 news. This supports active relevance rather than a popularity ranking.",
+    "activity_url": "https://ai.robotis.com/",
+    "products": [
+      {
+        "product_id": "robotis-openmanipulator-x",
+        "name": "OpenMANIPULATOR-X RM-X52-TNM",
+        "product_url": "https://docs.robotis.com/docs/systems/openmanipulator_x/overview/",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_kit",
+        "assembly_level": "kit",
+        "purchased_scope": "Articulated arm mechanism with DYNAMIXEL joints and gripper; base plate excluded. Controller/interface, PC and power supply must be selected separately.",
+        "price": null,
+        "currency": "",
+        "availability": "Manufacturer documentation active; current retail stock and price not verified.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/ROBOTIS-GIT/open_manipulator",
+        "cad_formats": [
+          "stl",
+          "urdf"
+        ],
+        "notes": "An actual arm, not an individual DYNAMIXEL servo. Official printable component STL downloads are also linked from the manual. Assembly and URDF pose reconstruction required for a full preview.",
+        "evidence_urls": [
+          "https://docs.robotis.com/docs/systems/openmanipulator_x/overview/",
+          "https://github.com/ROBOTIS-GIT/open_manipulator",
+          "https://www.robotis.com/service/download.php?no=690"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "robotshop",
+    "company_name": "RobotShop / Lynxmotion",
+    "country": "Canada",
+    "china_based": false,
+    "company_url": "https://www.robotshop.com/",
+    "activity_evidence": "April 2026: RobotShop announced becoming AGIBOT\u2019s value-added distribution partner in North America, providing current industry expansion evidence alongside its Lynxmotion modular arm range.",
+    "activity_url": "https://www.robotshop.com/pages/press-room",
+    "products": [
+      {
+        "product_id": "robotshop-rb-lyn-1034",
+        "name": "Lynxmotion SES-V2 Robotic Arm (4 DoF) with Smart Servos Kit",
+        "product_url": "https://www.robotshop.com/products/lynxmotion-lss-4-dof-robotic-arm-kit",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_kit",
+        "assembly_level": "kit",
+        "purchased_scope": "Unassembled arm kit with five smart servos, structural brackets and hardware, gripper, LSS Adapter, 12V wall adapter, USB cable and tools.",
+        "price": 747.38,
+        "currency": "USD",
+        "availability": "Re-stocking soon; no confirmed ETA on page.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/Lynxmotion/LSS-ROS2-Arms",
+        "cad_formats": [
+          "urdf",
+          "sdf"
+        ],
+        "notes": "US store price includes tariffs. Cosmetic arm shells are explicitly no longer available. Use a shell-free mesh presentation; battery for mobile use sold separately. Official repository confirms mesh files but individual mesh extensions were not checked.",
+        "evidence_urls": [
+          "https://www.robotshop.com/products/lynxmotion-lss-4-dof-robotic-arm-kit",
+          "https://github.com/Lynxmotion/LSS-ROS2-Arms",
+          "https://www.lynxmotion.com/ses-v2-robot-arms/"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "neura",
+    "company_name": "NEURA Robotics",
+    "country": "Germany",
+    "china_based": false,
+    "company_url": "https://neura-robotics.com/",
+    "activity_evidence": "January 14, 2026: strategic humanoid robotics partnership with Bosch. September 7, 2026: partnership with SECO to scale Physical AI compute modules and robot production.",
+    "activity_url": "https://neura-robotics.com/neura-robotics-bosch-partnership/",
+    "products": [
+      {
+        "product_id": "neura-maira",
+        "name": "MAiRA cognitive robot arm",
+        "product_url": "https://neura-robotics.com/products/maira/",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete seven-axis industrial arm offered in S, M and L variants. Confirm controller, end-effector and accessory scope in a vendor quotation.",
+        "price": null,
+        "currency": "",
+        "availability": "Manufacturer describes commercially available; contact sales for configuration, price and lead time.",
+        "cad_status": "not_found",
+        "cad_url": "",
+        "cad_formats": [],
+        "notes": "Actual complete industrial arm, not a small servo. Product page provides a datasheet; no publicly downloadable official CAD model was verified during this bounded search. Third-party academic approximation was excluded.",
+        "evidence_urls": [
+          "https://neura-robotics.com/products/maira/",
+          "https://neura-robotics.com/neura-robotics-bosch-partnership/",
+          "https://neura-robotics.com/neura-robotics-seco-partnership-physical-ai-europe/"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "franka",
+    "company_name": "Franka Robotics",
+    "country": "Germany",
+    "china_based": false,
+    "company_url": "https://franka.de/",
+    "activity_evidence": "FR3 remains an actively developed physical-AI research platform; official February 2026 brochure and product page describe ongoing system-image and arm revisions.",
+    "activity_url": "https://franka.de/hubfs/Brochure_FrankaResearch3_February2026.pdf?hsLang=en",
+    "products": [
+      {
+        "product_id": "franka-fr3",
+        "name": "Franka Research 3",
+        "product_url": "https://franka.de/franka-research-3-arm",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Seven-axis research arm and control system; end-effector and options depend on ordered configuration.",
+        "price": null,
+        "currency": "",
+        "availability": "Manufacturer sales inquiry / buy-now route; public numeric price not verified.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/frankarobotics/franka_description",
+        "cad_formats": [
+          "urdf"
+        ],
+        "notes": "Official repository supplies robot meshes and URDF generation for FR3 revisions. Select the purchased revision before conversion. This is an industrial research arm, not a small hobby kit; do not assume a gripper is included.",
+        "evidence_urls": [
+          "https://franka.de/franka-research-3-arm",
+          "https://github.com/frankarobotics/franka_description",
+          "https://franka.de/documents"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  }
+]

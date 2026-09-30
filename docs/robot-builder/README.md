@@ -1,9 +1,8 @@
-# Robot Workshop
+# Robot Workshop — body-only demo
 
-A browser concept builder with **14 products across 7 suppliers**: 13 supplier-CAD
-previews and one explicitly approximate structural-frame preview. The starter
-uses a SparkFun frame, Pololu distance sensor, ROBOTIS and ServoCity arm actuators,
-and one Waveshare rover base shared by both leg slots.
+Twenty-one prepared 3D body sections: **five arms, nine bodies, four heads and three
+mobile bases**. The demo excludes small components, shopping prices and broad
+company research. Every visible option has a local GLB and thumbnail.
 
 ## Run
 
@@ -13,88 +12,56 @@ npm ci
 npm run dev
 ```
 
-Open **http://127.0.0.1:5174**. Select a body slot, then choose a part. Use
-**Show all parts** to put any product in any slot. Search and supplier filters
-apply to the current palette. Orbit by dragging, or use the rotation/front
-buttons; **Spread parts** separates the pieces for inspection.
+Open **http://127.0.0.1:5174/**. Choose a body slot and select a part. **All body
+parts** allows free composition; supplier/search filters narrow the palette.
+Drag to orbit, inspect with Spread parts, and use Start over for the starter.
+Save build downloads JSON; Export robot downloads GLB for Blender. Choices survive
+reload. The browser requires WebGL, with no Blender or backend dependency.
 
-Recommendations come from `../robot-parts-stores/classified/all_parts.csv`.
-Rovers and wheeled bases belong to **legs**, structural frames to **torso**, and
-distance sensors to **head**. Power, IMUs, and controller boards are support parts
-and appear only through **Show all parts**. That option retains intentional
-cross-role visual experimentation. Secondary research roles are retained in the
-catalog but do not override the main recommended category.
+The starter combines the Reachy 2 torso/head, a Niryo arm, a Seeed SO-101 arm and
+one Waveshare rover base shared by both leg slots. Body sections are positioned
+for a visual concept; mechanical fit, wiring and manufacturing dimensions are
+not validated. Reachy sections come from the official whole-robot visualization
+and do not imply separate retail availability. Empty shells are labeled.
 
-Selecting a mobile base in either leg slot links both slots, positions one
-horizontal base below the torso, and counts it once. Selecting an independent
-leg component again separates the legs; the other slot receives a TT motor.
-Version-1 saved builds migrate misplaced parts to the corrected defaults while
-preserving compatible choices. Version-2 builds retain deliberate custom choices.
+## Ready assets
 
-Choices persist in local browser storage. **Save build** downloads the versioned
-slot/product configuration as JSON. **Export robot** downloads an assembled GLB
-with product IDs, suppliers, and source URLs embedded in its nodes. The GLB can
-be imported into Blender. The export omits the studio floor and display plinth.
+- [body-parts.csv](public/body-parts.csv): exact selectable palette, categories,
+  model/thumbnail paths, source URLs and checksums.
+- [body-models.json](public/body-models.json): the same asset index as JSON.
+- [catalog.json](public/catalog.json): placement metadata and source notes.
+- `public/models/`: 21 active GLBs; older component models are preserved locally.
+- `public/thumbnails/`: prepared PNG previews.
+- `blender/mixed-supplier-robot-v4.blend`: editable starter, with a PNG preview.
 
-The corrected editable starter scene is `blender/mixed-supplier-robot-v2.blend`,
-with a rendered preview beside it. The previous scene is preserved. Generated
-models, images, Blender files, dependencies, and
-build output are kept locally and excluded from Git.
+Models, thumbnails and Blender binaries are local and Git-ignored. The broader
+store catalog and research remain under `../robot-parts-stores/`.
 
-## Asset pipeline
+## Rebuild models
 
-The original downloads remain untouched under `../robot-parts-stores/cad/`.
-`public/catalog.json` links the palette to the original store catalog and CAD
-manifest. `public/model-provenance.json` records source hashes, conversion bounds,
-mesh counts, and output sizes.
-
-To rebuild locally, first collect the source assets described in
-[`../robot-parts-stores/cad/README.md`](../robot-parts-stores/cad/README.md), then:
+Original source files must be present under `../robot-parts-stores/cad/`.
 
 ```sh
 python3 scripts/select_assets.py
 node scripts/convert_step.mjs
+python3 scripts/convert_dae.py
 /Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --threads 4 --python scripts/prepare_blender.py
+python3 scripts/export_body_catalog.py
 node scripts/write_scene_plan.mjs
 /Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --threads 4 --python scripts/assemble_blender.py
 ```
 
-Adjust the Blender executable path on other platforms. Asset preparation was
-tested with Blender 5.2.2 and occt-import-js 0.0.23. STEP assemblies first pass through
-[OpenCascade's WASM importer](https://github.com/kovacsv/occt-import-js); Blender normalizes the resulting meshes, reduces large
-meshes, exports GLB, and renders thumbnails. STL models go directly to Blender.
-Preparation skips existing completed outputs; remove the specific generated GLB
-and thumbnail to regenerate after changing source geometry or conversion rules.
+Adjust the Blender executable path as needed. STEP uses OpenCascade; COLLADA
+conversion preserves triangle meshes, node transforms and material colors while
+omitting source cameras and lights. Blender normalizes meshes, exports GLB, and
+renders previews. The original sources remain untouched. Source licenses still
+apply; model availability does not establish redistribution permission.
 
-## Scope and model caveats
+The palette combines classified retail products with `scripts/demo_parts.json`
+for additional official arm models and extracted robot sections. Unknown prices
+remain unknown in data; the demo does not display shopping totals.
 
-This is a visual composition tool. Each part is rotated and independently resized
-to fit a conceptual body slot. Body roles are creative suggestions; a sensor can
-act as a head and a motor as a leg. Displayed dimensions, mounting interfaces,
-mechanical fit, wiring, strength, and physical behavior are **not validated**.
-Use the original CAD for any subsequent engineering work.
-
-Shadow Chassis has no downloaded supplier CAD. `scripts/frame_preview.py` creates
-an illustrative plate-and-strut envelope using the vendor's published overall
-dimensions; its holes and mounting details are approximate. It is labeled in the
-catalog, parts list, provenance record and exported GLB metadata. See the
-[official product description](https://www.sparkfun.com/shadow-chassis.html).
-
-The SO-101 model includes printed structure absent from the listed servo kit.
-The Romi vendor assembly includes a second caster, while the listed kit contains
-one. These notes also appear in the parts list and exported metadata. Totals use
-the existing catalog's USD prices, count each independent part (a shared base once), and exclude extras,
-shipping, and tax. They are not live quotes or a complete manufacturing bill.
-
-Original vendor/repository terms still apply to source and converted assets;
-see the collection manifest and source links before redistribution. No blanket
-license is implied by downloading or converting a model.
-
-## Implementation and checks
-
-Vite + vanilla JavaScript + Three.js render the browser preview; no backend or
-Blender installation is required by the browser. Blender and OpenCascade prepare
-assets offline. This demo is independent of the Flower master/worker UI.
+## Validate and build
 
 ```sh
 npm test
@@ -102,12 +69,15 @@ npm run test:browser
 npm run build
 ```
 
-Browser checks use installed Chrome on macOS. Set `CHROME_PATH` to another local
-Chrome/Chromium executable when needed. They check all 14 previews, researched
-recommendations, shared-base placement/counting/export, legacy migration,
-unrestricted custom swapping, persistence, JSON/GLB downloads, filters, keyboard
-controls, and mobile overflow. Screenshots are written to `test-results/`.
+Browser tests use installed Chrome on macOS; set CHROME_PATH for another binary.
+They cover every active model, body-only filters, legacy recovery, persistence,
+JSON/GLB export, failed-load retry, and mobile layout. Serve `dist/` over HTTP to
+run the production build. This demo is independent of the Flower master/worker UI.
 
-The production output is `dist/`; serve that directory over HTTP. `base: './'`
-supports hosting under a subdirectory. Keep its generated model and thumbnail
-files alongside the HTML and JavaScript.
+Additional torso choices use official ROBOTIS OP3, Berkeley Humanoid Lite and
+Unitree G1/H1/H2 meshes. Source revisions are pinned in the catalog URLs. The H1
+preview omits triangles above source Z=0.52 m to remove the integrated head; the
+original STL is unchanged, and the filter is recorded in model provenance.
+
+Additional head choices use the official ROBOTIS OP3 and Unitree G1 head meshes.
+These are robot visualization sections; separate retail availability is not established.

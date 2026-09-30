@@ -1,0 +1,237 @@
+[
+  {
+    "company_id": "seeed",
+    "company_name": "Seeed Studio",
+    "country": "China",
+    "china_based": true,
+    "company_url": "https://www.seeedstudio.com/",
+    "activity_evidence": "Current official store offers the SO-ARM101 Pro assembled arm and Reachy Mini replacement shells with in-stock purchase listings, reflecting active open-source robotics supply.",
+    "activity_url": "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+    "products": [
+      {
+        "product_id": "seeed-100046482",
+        "name": "SO-ARM101 Pro Assembled Kit",
+        "product_url": "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Assembled articulated arm including structural printed parts, six STS3215 servos and BusLinker V3.0 controller. Optional camera is separate.",
+        "price": 299,
+        "currency": "USD",
+        "availability": "In stock on official store.",
+        "cad_status": "designer_repository",
+        "cad_url": "https://github.com/TheRobotStudio/SO-ARM100",
+        "cad_formats": [
+          "STEP",
+          "STL"
+        ],
+        "notes": "The existing SKU 114993667 is a motor kit, not this assembled product. Designer SO-101 geometry is available; verify exact vendor revision before claiming exact matching CAD.",
+        "evidence_urls": [
+          "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+          "https://github.com/TheRobotStudio/SO-ARM100"
+        ],
+        "researched_at": "2026-09-29"
+      },
+      {
+        "product_id": "seeed-100053279",
+        "name": "Body Top Shell for Reachy Mini",
+        "product_url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+        "primary_role": "torso",
+        "part_type": "body_shell",
+        "assembly_level": "accessory",
+        "purchased_scope": "Upper plastic body cover only; no motors, internal frame, controller or electronics.",
+        "price": 2.98,
+        "currency": "USD",
+        "availability": "In stock on official store.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/pollen-robotics/reachy_mini",
+        "cad_formats": [
+          "STL",
+          "URDF"
+        ],
+        "notes": "A real body-shaped shell suitable for the visual torso palette. Official designer repository includes pp01068_top_body.stl; a shell does not constitute a functioning torso.",
+        "evidence_urls": [
+          "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+          "https://github.com/pollen-robotics/reachy_mini"
+        ],
+        "researched_at": "2026-09-29"
+      },
+      {
+        "product_id": "seeed-100072462",
+        "name": "Body Down Shell for Reachy Mini",
+        "product_url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+        "primary_role": "torso",
+        "part_type": "body_shell",
+        "assembly_level": "accessory",
+        "purchased_scope": "Lower plastic body cover only; no electronics or locomotion hardware.",
+        "price": 2.27,
+        "currency": "USD",
+        "availability": "In stock on official store.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/pollen-robotics/reachy_mini",
+        "cad_formats": [
+          "STL",
+          "URDF"
+        ],
+        "notes": "Official designer repository includes pp01067_bottom_body.stl. Lower body cover should be labelled shell, rather than sold as a complete torso.",
+        "evidence_urls": [
+          "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+          "https://github.com/pollen-robotics/reachy_mini"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "waveshare",
+    "company_name": "Waveshare",
+    "country": "China",
+    "china_based": true,
+    "company_url": "https://www.waveshare.com/",
+    "activity_evidence": "Current store lists complete RoArm-M2-S and RoArm-M3-S arm families; the official M3 support wiki links a STEP archive updated with a 260310 revision filename.",
+    "activity_url": "https://www.waveshare.com/wiki/RoArm-M3",
+    "products": [
+      {
+        "product_id": "waveshare-roarm-m2-s",
+        "name": "RoArm-M2-S robotic arm",
+        "product_url": "https://www.waveshare.com/roarm-m2-s.htm",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete articulated desktop arm with gripper and controller; select S variant and the appropriate regional power supply.",
+        "price": 179.99,
+        "currency": "USD",
+        "availability": "Current official purchase listing; regional variant availability may differ.",
+        "cad_status": "official_download",
+        "cad_url": "https://files.waveshare.com/wiki/RoArm-M2-S/RoArm-M2-S_STEP.zip",
+        "cad_formats": [
+          "STEP",
+          "ZIP"
+        ],
+        "notes": "Price is the displayed starting price for S, not the higher-priced Pro. Official full assembly CAD archive was downloaded in this session.",
+        "evidence_urls": [
+          "https://www.waveshare.com/roarm-m2-s.htm",
+          "https://www.waveshare.com/wiki/RoArm-M2-S"
+        ],
+        "researched_at": "2026-09-29"
+      },
+      {
+        "product_id": "waveshare-roarm-m3-s",
+        "name": "RoArm-M3-S robotic arm",
+        "product_url": "https://www.waveshare.com/roarm-m3.htm",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete 5+1 degree-of-freedom arm assembly with gripper and control electronics; select S rather than Pro variant.",
+        "price": 239.99,
+        "currency": "USD",
+        "availability": "Current official purchase listing; regional variant availability may differ.",
+        "cad_status": "official_download",
+        "cad_url": "https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_STEP_260310.zip",
+        "cad_formats": [
+          "STEP",
+          "ZIP"
+        ],
+        "notes": "Starting price for S variant. Match the S CAD assembly inside the archive rather than an alternate revision or Pro configuration. Additional camera/AI modules are not assumed included.",
+        "evidence_urls": [
+          "https://www.waveshare.com/roarm-m3.htm",
+          "https://www.waveshare.com/wiki/RoArm-M3"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "elephant-robotics",
+    "company_name": "Elephant Robotics",
+    "country": "China",
+    "china_based": true,
+    "company_url": "https://www.elephantrobotics.com/en/",
+    "activity_evidence": "Official Americas store currently promotes IROS 2026 embodied-AI work and a tenth-anniversary myCobot 280 X Edition, while maintaining manufacturer CAD downloads.",
+    "activity_url": "https://americas.shop.elephantrobotics.com/",
+    "products": [
+      {
+        "product_id": "elephant-mycobot-280-pi",
+        "name": "myCobot 280 Pi",
+        "product_url": "https://www.elephantrobotics.com/en/mycobot-280-pi-2023-en",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete six-axis compact robotic arm with Raspberry Pi-based control. End-effectors and application kits are separate configuration choices.",
+        "price": null,
+        "currency": "",
+        "availability": "Current manufacturer product page; price and lead time not verified.",
+        "cad_status": "official_download",
+        "cad_url": "https://download.elephantrobotics.com/Product_3d_files/myCobot_280_PI_230708.STEP",
+        "cad_formats": [
+          "STEP"
+        ],
+        "notes": "Manufacturer documentation directly links this CAD file; binary download was not verified. A full articulated arm candidate rather than a servo component.",
+        "evidence_urls": [
+          "https://www.elephantrobotics.com/en/mycobot-280-pi-2023-en",
+          "https://docs.elephantrobotics.com/docs/AI_Portable_Kit_en/7-BasicFunctionApplication/7.2-files_download.html"
+        ],
+        "researched_at": "2026-09-29"
+      },
+      {
+        "product_id": "elephant-mycobot-280-m5",
+        "name": "myCobot 280 M5Stack",
+        "product_url": "https://www.elephantrobotics.com/en/mycobot-en/",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete six-axis compact robot arm with M5Stack controller. Grippers and other end-effectors are selected separately.",
+        "price": null,
+        "currency": "",
+        "availability": "Current manufacturer listing; exact purchase price and lead time unverified.",
+        "cad_status": "official_download",
+        "cad_url": "https://docs.elephantrobotics.com/docs/AI_Portable_Kit_en/7-BasicFunctionApplication/7.2-files_download.html",
+        "cad_formats": [
+          "3D model"
+        ],
+        "notes": "Official download table explicitly lists a myCobot 280 M5 model. Download endpoint and model revision need checking before importing. Pi and M5 are controller variants of the same arm family.",
+        "evidence_urls": [
+          "https://www.elephantrobotics.com/en/mycobot-en/",
+          "https://docs.elephantrobotics.com/docs/AI_Portable_Kit_en/7-BasicFunctionApplication/7.2-files_download.html"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "unitree",
+    "company_name": "Unitree Robotics",
+    "country": "China",
+    "china_based": true,
+    "company_url": "https://www.unitree.com/",
+    "activity_evidence": "Current official store sells articulated arms alongside R1, G1 and H2 humanoids and publishes a clarification about its 2025 shipments. It lists its business address in Hangzhou, China.",
+    "activity_url": "https://shop.unitree.com/",
+    "products": [
+      {
+        "product_id": "unitree-z1",
+        "name": "Unitree Z1",
+        "product_url": "https://shop.unitree.com/products/unitree-z1",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete articulated robotic arm; select variant and confirm included gripper, power supply and controller with seller.",
+        "price": 15999,
+        "currency": "USD",
+        "availability": "Official store listing; confirm final configuration and shipping with seller.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/unitreerobotics/unitree_ros/tree/master/robots/z1_description",
+        "cad_formats": [
+          "XACRO",
+          "meshes"
+        ],
+        "notes": "Official repository contains mesh and xacro directories for Z1. Price is store listing price and may depend on commercial configuration. G1/R1 humanoids are whole robots and should not be relabelled as separately sold torsos.",
+        "evidence_urls": [
+          "https://shop.unitree.com/products/unitree-z1",
+          "https://github.com/unitreerobotics/unitree_ros/tree/master/robots/z1_description",
+          "https://www.unitree.com/download/z1/"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  }
+]

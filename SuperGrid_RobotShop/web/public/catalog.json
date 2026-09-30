@@ -1,0 +1,621 @@
+[
+  {
+    "id": "pololu-3500",
+    "name": "Romi chassis",
+    "fullName": "Romi Chassis Kit - Black",
+    "supplier": "Pololu",
+    "storeId": "pololu",
+    "sku": "3500",
+    "productUrl": "https://www.pololu.com/product/3500",
+    "roles": [
+      "legs"
+    ],
+    "secondaryRoles": [
+      "torso"
+    ],
+    "partType": "mobile_base",
+    "assemblyLevel": "kit",
+    "classificationReason": "Locomotion assembly belongs to legs; its load-carrying chassis offers a secondary torso use for lenient visual combinations.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/pololu-3500/romi-chassis-kit.step",
+    "sourceUrl": "https://www.pololu.com/file/0J1298/romi-chassis-kit.step",
+    "color": "#dae0bc",
+    "note": "The vendor CAD includes a second caster; the listed chassis kit includes one caster.",
+    "model": "models/pololu-3500.glb",
+    "thumbnail": "thumbnails/pololu-3500.png",
+    "catalogGroup": "body"
+  },
+  {
+    "id": "waveshare-wave-rover",
+    "name": "WAVE ROVER",
+    "fullName": "WAVE ROVER Flexible And Expandable 4WD Mobile Robot Chassis, Full Metal Body, Multiple Hosts Support, With Onboard ESP32 Module",
+    "supplier": "Waveshare",
+    "storeId": "waveshare",
+    "sku": null,
+    "productUrl": "https://www.waveshare.com/wave-rover.htm",
+    "roles": [
+      "legs"
+    ],
+    "secondaryRoles": [
+      "torso"
+    ],
+    "partType": "mobile_base",
+    "assemblyLevel": "module",
+    "classificationReason": "This supplies robot locomotion, so it is the legs/base choice from the user example. Its mounting surface can also carry the torso.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [
+      "leftLeg",
+      "rightLeg"
+    ],
+    "source": "extracted/waveshare-wave-rover/WAVE_ROVER_MODEL_STL/WAVE ROVER_MODEL_STL.stl",
+    "sourceUrl": "https://files.waveshare.com/upload/e/ec/WAVE_ROVER_MODEL_STL.rar",
+    "color": "#a8bac5",
+    "note": "Requires three 18650 cells, explicitly not included. Host computer, lidar and pan-tilt camera are optional additions, not implied by the chassis listing.",
+    "model": "models/waveshare-wave-rover.glb",
+    "thumbnail": "thumbnails/waveshare-wave-rover.png",
+    "catalogGroup": "body",
+    "baseRotation": [
+      1.5707963267948966,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "seeed-100046482",
+    "name": "SO-101 assembled arm",
+    "fullName": "SO-101 assembled arm",
+    "supplier": "Seeed Studio",
+    "storeId": "seeed",
+    "sku": "100046482",
+    "productUrl": "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [],
+    "partType": "robotic_arm_kit",
+    "assemblyLevel": "module",
+    "classificationReason": "Complete manipulation assembly.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [
+      "rightArm"
+    ],
+    "source": "originals/seeed-100046482/SO101 Assembly.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/TheRobotStudio/SO-ARM100/5f6d2b876a53a4872e405b991dd925556c9e38a4/STL/SO101/Individual/Base_SO101.stl",
+    "color": "#cfb080",
+    "note": "Assembled Pro kit with printed structure, six STS3215 servos and BusLinker V3. Designer CAD is a visualization reference; supplier revision may differ.",
+    "model": "models/seeed-100046482.glb",
+    "thumbnail": "thumbnails/seeed-100046482.png",
+    "catalogGroup": "body",
+    "preserveAspect": true,
+    "slotSize": [
+      0.72,
+      1.1,
+      0.65
+    ]
+  },
+  {
+    "id": "waveshare-roarm-m2-s",
+    "name": "RoArm-M2-S arm",
+    "fullName": "RoArm-M2-S arm",
+    "supplier": "Waveshare",
+    "storeId": "waveshare",
+    "sku": "25118",
+    "productUrl": "https://www.waveshare.com/roarm-m2-s.htm",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [],
+    "partType": "robotic_arm_kit",
+    "assemblyLevel": "kit",
+    "classificationReason": "Complete manipulation assembly.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "extracted/waveshare-roarm-m2-s/RoArm-M2-S ASM-TYPE-0(SP) Gripper.step",
+    "sourceUrl": "https://files.waveshare.com/wiki/RoArm-M2-S/RoArm-M2-S_STEP.zip",
+    "color": "#697d8a",
+    "note": "Complete 4-DOF desktop arm with gripper and ESP32 controller. Base S configuration; optional camera excluded.",
+    "model": "models/waveshare-roarm-m2-s.glb",
+    "thumbnail": "thumbnails/waveshare-roarm-m2-s.png",
+    "catalogGroup": "body",
+    "preserveAspect": true,
+    "slotSize": [
+      0.72,
+      1.1,
+      0.65
+    ],
+    "slotRotations": {
+      "leftArm": [
+        0,
+        0,
+        -1.5707963267948966
+      ],
+      "rightArm": [
+        0,
+        0,
+        -1.5707963267948966
+      ]
+    }
+  },
+  {
+    "id": "waveshare-roarm-m3-s",
+    "name": "RoArm-M3-S arm",
+    "fullName": "RoArm-M3-S arm",
+    "supplier": "Waveshare",
+    "storeId": "waveshare",
+    "sku": "30256",
+    "productUrl": "https://www.waveshare.com/roarm-m3.htm",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [],
+    "partType": "robotic_arm_kit",
+    "assemblyLevel": "kit",
+    "classificationReason": "Complete manipulation assembly.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "extracted/waveshare-roarm-m3-s/RoArm-M3.step",
+    "sourceUrl": "https://files.waveshare.com/wiki/RoArm-M3/RoArm-M3_STEP_260310.zip",
+    "color": "#647989",
+    "note": "Complete 5+1-DOF arm with gripper. Price is the base S configuration; optional accessories excluded.",
+    "model": "models/waveshare-roarm-m3-s.glb",
+    "thumbnail": "thumbnails/waveshare-roarm-m3-s.png",
+    "catalogGroup": "body",
+    "preserveAspect": true,
+    "slotSize": [
+      0.72,
+      1.1,
+      0.65
+    ]
+  },
+  {
+    "id": "servocity-3209-0008-0001",
+    "name": "Bravo body frame",
+    "fullName": "Bravo body frame",
+    "supplier": "ServoCity",
+    "storeId": "servocity",
+    "sku": "3209-0008-0001",
+    "productUrl": "https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "chassis_frame",
+    "assemblyLevel": "kit",
+    "classificationReason": "Physical structural frame or exterior housing; not electronics.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "extracted/servocity-3209-0008-0001/3209-0008-0001.step",
+    "sourceUrl": "https://www.servocity.com/content/step_files/3209-0008-0001.zip",
+    "color": "#8b9399",
+    "note": "Structural chassis kit only: no tracks, motors, controller or battery. Used as a body frame in this concept.",
+    "model": "models/servocity-3209-0008-0001.glb",
+    "thumbnail": "thumbnails/servocity-3209-0008-0001.png",
+    "catalogGroup": "body"
+  },
+  {
+    "id": "seeed-100053279",
+    "name": "Reachy body top shell",
+    "fullName": "Reachy body top shell",
+    "supplier": "Seeed Studio",
+    "storeId": "seeed",
+    "sku": "100053279",
+    "productUrl": "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "body_shell",
+    "assemblyLevel": "component",
+    "classificationReason": "Physical structural frame or exterior housing; not electronics.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/seeed-100053279/pp01068_top_body.stl",
+    "sourceUrl": "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01068_top_body.stl",
+    "color": "#d7ded2",
+    "note": "Empty upper body cover only; mechanisms, electronics and lower cover are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "model": "models/seeed-100053279.glb",
+    "thumbnail": "thumbnails/seeed-100053279.png",
+    "catalogGroup": "body",
+    "preserveAspect": true
+  },
+  {
+    "id": "seeed-100072462",
+    "name": "Reachy body bottom shell",
+    "fullName": "Reachy body bottom shell",
+    "supplier": "Seeed Studio",
+    "storeId": "seeed",
+    "sku": "100072462",
+    "productUrl": "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "body_shell",
+    "assemblyLevel": "component",
+    "classificationReason": "Physical structural frame or exterior housing; not electronics.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/seeed-100072462/pp01067_bottom_body.stl",
+    "sourceUrl": "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01067_bottom_body.stl",
+    "color": "#d7ded2",
+    "note": "Empty lower body cover only; mechanisms, electronics and upper cover are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "model": "models/seeed-100072462.glb",
+    "thumbnail": "thumbnails/seeed-100072462.png",
+    "catalogGroup": "body",
+    "preserveAspect": true
+  },
+  {
+    "id": "seeed-100054390",
+    "name": "Reachy front head shell",
+    "fullName": "Reachy front head shell",
+    "supplier": "Seeed Studio",
+    "storeId": "seeed",
+    "sku": "100054390",
+    "productUrl": "https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html",
+    "roles": [
+      "head"
+    ],
+    "secondaryRoles": [],
+    "partType": "head_shell",
+    "assemblyLevel": "component",
+    "classificationReason": "Physical structural frame or exterior housing; not electronics.",
+    "modelKind": "supplier_cad",
+    "defaultSlots": [],
+    "source": "originals/seeed-100054390/pp01069_head_shell_front.stl",
+    "sourceUrl": "https://media.githubusercontent.com/media/pollen-robotics/reachy_mini/bae7844f36cd98358a35d965aa0e19e8419cb680/src/reachy_mini/descriptions/reachy_mini/urdf/assets/pp01069_head_shell_front.stl",
+    "color": "#d7ded2",
+    "note": "Front head cover only; rear cover, eyes, sensors and mechanisms are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "model": "models/seeed-100054390.glb",
+    "thumbnail": "thumbnails/seeed-100054390.png",
+    "catalogGroup": "body",
+    "preserveAspect": true
+  },
+  {
+    "id": "niryo-ned2",
+    "name": "Ned2 arm",
+    "fullName": "Niryo Ned2 complete arm",
+    "supplier": "Niryo",
+    "storeId": "niryo",
+    "sku": "",
+    "productUrl": "https://www.niryo.com/product/educational-desktop-robotic-arm/",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [],
+    "partType": "robotic_arm_kit",
+    "assemblyLevel": "module",
+    "classificationReason": "Full six-axis arm assembly.",
+    "modelKind": "supplier_cad",
+    "catalogGroup": "body",
+    "defaultSlots": [
+      "leftArm"
+    ],
+    "source": "originals/niryo-ned2/NED2_STEP.step",
+    "sourceUrl": "https://raw.githubusercontent.com/NiryoRobotics/ned2/master/NED2_STEP.step",
+    "color": "#668bca",
+    "note": "Official full-arm CAD. End-effector and accessories depend on purchased configuration.",
+    "model": "models/niryo-ned2.glb",
+    "thumbnail": "thumbnails/niryo-ned2.png",
+    "preserveAspect": true,
+    "slotSize": [
+      0.7,
+      1.1,
+      0.65
+    ],
+    "slotRotations": {
+      "leftArm": [
+        0,
+        0,
+        -1.5707963267948966
+      ],
+      "rightArm": [
+        0,
+        0,
+        -1.5707963267948966
+      ]
+    }
+  },
+  {
+    "id": "reachy2-torso",
+    "name": "Reachy 2 torso",
+    "fullName": "Reachy 2 torso",
+    "supplier": "Pollen Robotics",
+    "storeId": "pollen",
+    "sku": "",
+    "productUrl": "https://pollen-robotics.com/reachy-2/",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "torso_assembly",
+    "assemblyLevel": "module",
+    "classificationReason": "Official robot visualization body section.",
+    "modelKind": "robot_section",
+    "catalogGroup": "body",
+    "defaultSlots": [
+      "torso"
+    ],
+    "source": "originals/reachy2-torso/torso_visual.dae",
+    "sourceUrl": "https://raw.githubusercontent.com/pollen-robotics/reachy2_core/b7000c1255f322826f4d0ad1f1e54d424e55c051/reachy_description/meshes/torso_visual.dae",
+    "color": "#d4ded8",
+    "note": "Visual section extracted from the official Reachy 2 robot model; separate retail availability is not established.",
+    "model": "models/reachy2-torso.glb",
+    "thumbnail": "thumbnails/reachy2-torso.png",
+    "preserveAspect": true,
+    "keepSourceAxes": true,
+    "baseRotation": [
+      0,
+      0,
+      0
+    ],
+    "slotSize": [
+      0.98,
+      0.98,
+      0.6
+    ]
+  },
+  {
+    "id": "reachy2-head",
+    "name": "Reachy 2 head",
+    "fullName": "Reachy 2 head",
+    "supplier": "Pollen Robotics",
+    "storeId": "pollen",
+    "sku": "",
+    "productUrl": "https://pollen-robotics.com/reachy-2/",
+    "roles": [
+      "head"
+    ],
+    "secondaryRoles": [],
+    "partType": "head_assembly",
+    "assemblyLevel": "module",
+    "classificationReason": "Official robot visualization body section.",
+    "modelKind": "robot_section",
+    "catalogGroup": "body",
+    "defaultSlots": [
+      "head"
+    ],
+    "source": "originals/reachy2-head/head_visual.dae",
+    "sourceUrl": "https://raw.githubusercontent.com/pollen-robotics/reachy2_core/b7000c1255f322826f4d0ad1f1e54d424e55c051/reachy_description/meshes/head_visual.dae",
+    "color": "#d4ded8",
+    "note": "Visual section extracted from the official Reachy 2 robot model; separate retail availability is not established.",
+    "model": "models/reachy2-head.glb",
+    "thumbnail": "thumbnails/reachy2-head.png",
+    "preserveAspect": true,
+    "keepSourceAxes": true,
+    "baseRotation": [
+      0,
+      0,
+      0
+    ],
+    "positionOffset": [
+      0,
+      -0.13,
+      0
+    ]
+  },
+  {
+    "id": "reachy2-mobile_base",
+    "name": "Reachy 2 mobile base",
+    "fullName": "Reachy 2 mobile base",
+    "supplier": "Pollen Robotics",
+    "storeId": "pollen",
+    "sku": "",
+    "productUrl": "https://pollen-robotics.com/reachy-2/",
+    "roles": [
+      "legs"
+    ],
+    "secondaryRoles": [],
+    "partType": "mobile_base",
+    "assemblyLevel": "module",
+    "classificationReason": "Official robot visualization body section.",
+    "modelKind": "robot_section",
+    "catalogGroup": "body",
+    "defaultSlots": [],
+    "source": "originals/reachy2-mobile_base/mobile_base_visual.dae",
+    "sourceUrl": "https://raw.githubusercontent.com/pollen-robotics/reachy2_core/b7000c1255f322826f4d0ad1f1e54d424e55c051/reachy_description/meshes/mobile_base_visual.dae",
+    "color": "#d4ded8",
+    "note": "Visual section extracted from the official Reachy 2 robot model; separate retail availability is not established.",
+    "model": "models/reachy2-mobile_base.glb",
+    "thumbnail": "thumbnails/reachy2-mobile_base.png",
+    "preserveAspect": true,
+    "keepSourceAxes": true,
+    "baseRotation": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "elephant-mycobot-280-pi",
+    "name": "myCobot 280 Pi arm",
+    "fullName": "Elephant Robotics myCobot 280 Pi",
+    "supplier": "Elephant Robotics",
+    "storeId": "elephant-robotics",
+    "sku": "",
+    "productUrl": "https://www.elephantrobotics.com/en/mycobot-280-pi-2023-en",
+    "roles": [
+      "arms"
+    ],
+    "secondaryRoles": [],
+    "partType": "robotic_arm_kit",
+    "assemblyLevel": "module",
+    "classificationReason": "Full six-axis arm assembly.",
+    "modelKind": "supplier_cad",
+    "catalogGroup": "body",
+    "defaultSlots": [],
+    "source": "originals/elephant-mycobot-280-pi/myCobot_280_PI_230708.STEP",
+    "sourceUrl": "https://download.elephantrobotics.com/Product_3d_files/myCobot_280_PI_230708.STEP",
+    "color": "#e1b564",
+    "note": "Official six-axis arm model. End-effector accessories are separate.",
+    "model": "models/elephant-mycobot-280-pi.glb",
+    "thumbnail": "thumbnails/elephant-mycobot-280-pi.png",
+    "preserveAspect": true,
+    "slotSize": [
+      0.7,
+      1.1,
+      0.65
+    ]
+  },
+  {
+    "id": "robotis-op3-torso",
+    "name": "OP3 torso",
+    "fullName": "ROBOTIS OP3 torso",
+    "supplier": "ROBOTIS",
+    "storeId": "robotis",
+    "sku": "",
+    "productUrl": "https://emanual.robotis.com/docs/en/platform/op3/hardware/",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "torso_assembly",
+    "assemblyLevel": "module",
+    "classificationReason": "Humanoid torso/chest mesh from the official robot description.",
+    "modelKind": "robot_section",
+    "catalogGroup": "body",
+    "defaultSlots": [],
+    "source": "originals/robotis-op3-torso/body.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/ROBOTIS-GIT/ROBOTIS-OP3-Common/0780e54c2064a42089b0cf970d716ae44fec9233/op3_description/meshes/body.stl",
+    "color": "#a5b0c1",
+    "note": "Official robot visualization torso section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+    "model": "models/robotis-op3-torso.glb",
+    "thumbnail": "thumbnails/robotis-op3-torso.png",
+    "preserveAspect": true,
+    "keepSourceAxes": true,
+    "slotSize": [
+      0.98,
+      0.98,
+      0.6
+    ]
+  },
+  {
+    "id": "berkeley-lite-torso",
+    "name": "Berkeley Lite torso",
+    "fullName": "Berkeley Humanoid Lite Berkeley Lite torso",
+    "supplier": "Berkeley Humanoid Lite",
+    "storeId": "berkeley",
+    "sku": "",
+    "productUrl": "https://github.com/HybridRobotics/Berkeley-Humanoid-Lite",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "torso_assembly",
+    "assemblyLevel": "module",
+    "classificationReason": "Humanoid torso/chest mesh from the official robot description.",
+    "modelKind": "robot_section",
+    "catalogGroup": "body",
+    "defaultSlots": [],
+    "source": "originals/berkeley-lite-torso/base_visual.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/HybridRobotics/berkeley-humanoid-lite-assets/fc90fedd008b1e56a22e3c5221548d6b24f49707/data/robots/berkeley_humanoid/berkeley_humanoid_lite/meshes/base_visual.stl",
+    "color": "#aab2a7",
+    "note": "Official robot visualization torso section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+    "model": "models/berkeley-lite-torso.glb",
+    "thumbnail": "thumbnails/berkeley-lite-torso.png",
+    "preserveAspect": true,
+    "keepSourceAxes": true,
+    "slotSize": [
+      0.98,
+      0.98,
+      0.6
+    ]
+  },
+  {
+    "id": "unitree-g1-torso",
+    "name": "G1 torso",
+    "fullName": "Unitree Robotics G1 torso",
+    "supplier": "Unitree Robotics",
+    "storeId": "unitree",
+    "sku": "",
+    "productUrl": "https://www.unitree.com/g1/",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "torso_assembly",
+    "assemblyLevel": "module",
+    "classificationReason": "Humanoid torso/chest mesh from the official robot description.",
+    "modelKind": "robot_section",
+    "catalogGroup": "body",
+    "defaultSlots": [],
+    "source": "originals/unitree-g1-torso/torso.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/da52948f035165aae2709d30255f5cd3e62875a0/robots/g1_description/meshes/torso_link_with_2dof_head.STL",
+    "color": "#b7c3c9",
+    "note": "Official robot visualization torso section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+    "model": "models/unitree-g1-torso.glb",
+    "thumbnail": "thumbnails/unitree-g1-torso.png",
+    "preserveAspect": true,
+    "keepSourceAxes": true,
+    "slotSize": [
+      0.98,
+      0.98,
+      0.6
+    ]
+  },
+  {
+    "id": "unitree-h1-torso",
+    "name": "H1 torso",
+    "fullName": "Unitree Robotics H1 torso",
+    "supplier": "Unitree Robotics",
+    "storeId": "unitree",
+    "sku": "",
+    "productUrl": "https://www.unitree.com/h1/",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "torso_assembly",
+    "assemblyLevel": "module",
+    "classificationReason": "Humanoid torso/chest mesh from the official robot description.",
+    "modelKind": "robot_section",
+    "catalogGroup": "body",
+    "defaultSlots": [],
+    "source": "originals/unitree-h1-torso/torso.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/da52948f035165aae2709d30255f5cd3e62875a0/robots/h1_description/meshes/torso_link.STL",
+    "color": "#647487",
+    "note": "Torso-only preview derived from the official H1 torso link: triangles above source Z=0.52 m are omitted to remove its integrated fixed head. Separate retail availability and fit are not established. Display color is illustrative.",
+    "model": "models/unitree-h1-torso.glb",
+    "thumbnail": "thumbnails/unitree-h1-torso.png",
+    "preserveAspect": true,
+    "keepSourceAxes": true,
+    "slotSize": [
+      0.98,
+      0.98,
+      0.6
+    ],
+    "sourceMaxZ": 0.52
+  },
+  {
+    "id": "unitree-h2-torso",
+    "name": "H2 torso",
+    "fullName": "Unitree Robotics H2 torso",
+    "supplier": "Unitree Robotics",
+    "storeId": "unitree",
+    "sku": "",
+    "productUrl": "https://www.unitree.com/H2/",
+    "roles": [
+      "torso"
+    ],
+    "secondaryRoles": [],
+    "partType": "torso_assembly",
+    "assemblyLevel": "module",
+    "classificationReason": "Humanoid torso/chest mesh from the official robot description.",
+    "modelKind": "robot_section",
+    "catalogGroup": "body",
+    "defaultSlots": [],
+    "source": "originals/unitree-h2-torso/torso.stl",
+    "sourceUrl": "https://raw.githubusercontent.com/unitreerobotics/unitree_ros/da52948f035165aae2709d30255f5cd3e62875a0/robots/h2_description/meshes/torso_link.stl",
+    "color": "#d3d9d9",
+    "note": "Official robot visualization torso section; separate retail availability and mechanical fit are not established. Display color is illustrative.",
+    "model": "models/unitree-h2-torso.glb",
+    "thumbnail": "thumbnails/unitree-h2-torso.png",
+    "preserveAspect": true,
+    "keepSourceAxes": true,
+    "slotSize": [
+      0.98,
+      0.98,
+      0.6
+    ]
+  }
+]

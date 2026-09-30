@@ -1,0 +1,118 @@
+[
+  {
+    "company_id": "apptronik",
+    "company_name": "Apptronik",
+    "country": "United States",
+    "china_based": false,
+    "company_url": "https://apptronik.com/",
+    "activity_evidence": "Official June 30, 2026 announcement describes Apollo 2 fleets collecting training data with Google DeepMind; February 2026 funding announcement supports ongoing commercialization.",
+    "activity_url": "https://apptronik.com/company/press-releases",
+    "products": [
+      {
+        "product_id": "apptronik-apollo-2",
+        "name": "Apollo 2",
+        "product_url": "https://apptronik.com/apollo/apollo-2",
+        "primary_role": "whole_robot",
+        "part_type": "humanoid_robot",
+        "assembly_level": "complete_robot",
+        "purchased_scope": "Enterprise humanoid platform offered in bipedal or wheeled configurations. Separate arm or torso sales are not established.",
+        "price": null,
+        "currency": "",
+        "availability": "Enterprise inquiry through Get Started; no public checkout price or general delivery commitment verified.",
+        "cad_status": "not_found",
+        "cad_url": "",
+        "cad_formats": [],
+        "notes": "Useful whole-body reference, but do not present a modular configuration as proof that individual body sections can be purchased. Public downloadable CAD was not found in the checked official sources.",
+        "evidence_urls": ["https://apptronik.com/apollo/apollo-2", "https://apptronik.com/company/press-releases"],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "figure-ai",
+    "company_name": "Figure AI",
+    "country": "United States",
+    "china_based": false,
+    "company_url": "https://www.figure.ai/",
+    "activity_evidence": "Official June 30, 2026 update reports Figure 03 deployment at BMW, following its October 2025 introduction and April 2026 production update.",
+    "activity_url": "https://www.figure.ai/news/f-03-at-bmw",
+    "products": [
+      {
+        "product_id": "figure-03",
+        "name": "Figure 03",
+        "product_url": "https://www.figure.ai/figure",
+        "primary_role": "whole_robot",
+        "part_type": "humanoid_robot",
+        "assembly_level": "complete_robot",
+        "purchased_scope": "Complete general-purpose humanoid platform with integrated hands, arms, torso and legs; separate modules are not confirmed for sale.",
+        "price": null,
+        "currency": "",
+        "availability": "Commercial deployments and company inquiry; no public retail checkout or broadly available purchasing terms verified.",
+        "cad_status": "not_found",
+        "cad_url": "",
+        "cad_formats": [],
+        "notes": "Keep outside individual arm and torso choices. Public CAD for the current Figure 03 was not found during the timeboxed official-source check.",
+        "evidence_urls": ["https://www.figure.ai/", "https://www.figure.ai/figure", "https://www.figure.ai/news/introducing-figure-03", "https://www.figure.ai/news/f-03-at-bmw"],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "boston-dynamics",
+    "company_name": "Boston Dynamics",
+    "country": "United States",
+    "china_based": false,
+    "company_url": "https://bostondynamics.com/",
+    "activity_evidence": "Manufacturer announced production-ready Atlas in January 2026 and reports manufacturing plus scheduled initial deployments at Hyundai and Google DeepMind.",
+    "activity_url": "https://bostondynamics.com/blog/atlas-evolution-from-research-robot-to-industrial-humanoid/",
+    "products": [
+      {
+        "product_id": "boston-dynamics-atlas-electric",
+        "name": "Atlas (electric production version)",
+        "product_url": "https://bostondynamics.com/products/atlas/",
+        "primary_role": "whole_robot",
+        "part_type": "humanoid_robot",
+        "assembly_level": "complete_robot",
+        "purchased_scope": "Complete industrial humanoid platform for enterprise material handling. Individual arms and torso are not listed as purchasable products.",
+        "price": null,
+        "currency": "",
+        "availability": "Enterprise conversation and selected early-adopter deployments; price by inquiry, no retail checkout verified.",
+        "cad_status": "not_found",
+        "cad_url": "",
+        "cad_formats": [],
+        "notes": "Current electric production Atlas differs from older hydraulic research Atlas. Do not substitute legacy research meshes without explicitly labeling the different robot generation.",
+        "evidence_urls": ["https://bostondynamics.com/products/atlas/", "https://bostondynamics.com/blog/atlas-evolution-from-research-robot-to-industrial-humanoid/", "https://bostondynamics.com/wp-content/uploads/2026/01/atlas-spec-sheet.pdf"],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "pal-robotics",
+    "company_name": "PAL Robotics",
+    "country": "Spain",
+    "china_based": false,
+    "company_url": "https://pal-robotics.com/",
+    "activity_evidence": "May 15, 2026 announcement introduced a standalone manipulation platform for ICRA 2026, with sale availability at launch. The current product page identifies TIAGo Pro Arm.",
+    "activity_url": "https://pal-robotics.com/news/pal-robotics-releases-a-new-robot-for-advanced-manipulation/",
+    "products": [
+      {
+        "product_id": "pal-tiago-pro-arm",
+        "name": "TIAGo Pro Arm",
+        "product_url": "https://pal-robotics.com/robot/arm/",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Standalone complete seven-axis robotic arm with integrated base electronics and interchangeable tooling. Exact controller, gripper and accessories depend on quoted configuration.",
+        "price": null,
+        "currency": "",
+        "availability": "Request a quote / trial; current standalone arm product with sales call to action.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/pal-robotics/pal_sea_arm/tree/humble-devel/pal_sea_arm_description",
+        "cad_formats": ["URDF"],
+        "notes": "Strong true-arm candidate. Official product lists a URDF model and the manufacturer's public SEA-arm description repository is present. Validate exact standalone base and hardware revision before conversion. Published payload and reach figures differ between marketing sections and specifications; omitted here pending vendor clarification.",
+        "evidence_urls": ["https://pal-robotics.com/robot/arm/", "https://pal-robotics.com/news/pal-robotics-releases-a-new-robot-for-advanced-manipulation/", "https://github.com/pal-robotics/pal_sea_arm/tree/humble-devel"],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  }
+]

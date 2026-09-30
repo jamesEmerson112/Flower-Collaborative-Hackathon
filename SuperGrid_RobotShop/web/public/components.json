@@ -1,0 +1,839 @@
+[
+  {
+    "id": "adafruit-3777",
+    "name": "DC Gearbox Motor - \"TT Motor\" - 200RPM - 3 to 6VDC",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "dc_gearmotor",
+    "primary_role": "actuators",
+    "summary": "Small brushed DC motor with a plastic reduction gearbox for wheel-driven projects."
+  },
+  {
+    "id": "adafruit-169",
+    "name": "Micro servo [TowerPro SG92R]",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "positional_servo",
+    "primary_role": "actuators",
+    "summary": "Compact position-controlled hobby servo for small mechanisms."
+  },
+  {
+    "id": "adafruit-2927",
+    "name": "DC Motor + Stepper FeatherWing Add-on For All Feather Boards",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Feather add-on board that controls brushed DC motors or stepper motors over I2C."
+  },
+  {
+    "id": "adafruit-1438",
+    "name": "Adafruit Motor/Stepper/Servo Shield for Arduino v3 Kit",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Arduino shield providing DC/stepper motor outputs and hobby-servo connections."
+  },
+  {
+    "id": "adafruit-4864",
+    "name": "Raspberry Pi Pico RP2040",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "microcontroller",
+    "primary_role": "support",
+    "summary": "RP2040 development board for embedded programs and peripheral control."
+  },
+  {
+    "id": "adafruit-5129",
+    "name": "Maker Pi RP2040 - Motor and Robot Controller",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "robot_controller",
+    "primary_role": "support",
+    "summary": "RP2040 robot-control board with two DC motor channels, servo connections and Grove ports."
+  },
+  {
+    "id": "adafruit-3317",
+    "name": "Adafruit VL53L0X Time of Flight Distance Sensor - ~30 to 1000mm",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "VL53L0X optical time-of-flight breakout measuring distance in front of the sensor."
+  },
+  {
+    "id": "adafruit-4007",
+    "name": "Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "Ultrasonic ranging module with HC-SR04-compatible control behavior."
+  },
+  {
+    "id": "adafruit-4754",
+    "name": "Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080)",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "imu",
+    "primary_role": "sensors",
+    "summary": "BNO085 breakout combining inertial and magnetic sensing with onboard orientation fusion."
+  },
+  {
+    "id": "adafruit-2939",
+    "name": "Mini Robot Rover Chassis Kit - 2WD with DC Motors",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "mobile_base",
+    "primary_role": "legs",
+    "summary": "Two-wheel-drive rover kit providing a metal chassis, drive motors, wheels and support wheel."
+  },
+  {
+    "id": "adafruit-3766",
+    "name": "Orange and Clear TT Motor Wheel for TT DC Gearbox Motor",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "wheel",
+    "primary_role": "wheels",
+    "summary": "Silicone-tread wheel that press-fits a TT gearbox motor output."
+  },
+  {
+    "id": "adafruit-328",
+    "name": "Lithium Ion Polymer Battery - 3.7v 2500mAh",
+    "store_id": "adafruit",
+    "store_name": "Adafruit Industries",
+    "part_type": "battery",
+    "primary_role": "support",
+    "summary": "Rechargeable single-cell lithium-polymer battery with a 2-pin JST-PH lead."
+  },
+  {
+    "id": "sparkfun-rob-13302",
+    "name": "Hobby Gearmotor - 140 RPM (Pair)",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "dc_gearmotor",
+    "primary_role": "actuators",
+    "summary": "Pair of DAGU geared DC motors intended to drive small robot wheels."
+  },
+  {
+    "id": "sparkfun-rob-09238",
+    "name": "Stepper Motor - 32 oz.in (200 steps/rev, 1200mm Wire)",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "stepper_motor",
+    "primary_role": "actuators",
+    "summary": "Bipolar NEMA 17 motor providing discrete rotational positioning."
+  },
+  {
+    "id": "sparkfun-rob-09065",
+    "name": "Servo - Generic (Sub-Micro Size)",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "positional_servo",
+    "primary_role": "actuators",
+    "summary": "Sub-micro hobby servo with limited-angle position control."
+  },
+  {
+    "id": "sparkfun-rob-14450",
+    "name": "SparkFun Motor Driver - Dual TB6612FNG (with Headers)",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Dual TB6612FNG board for independent speed and direction control of two DC motors."
+  },
+  {
+    "id": "sparkfun-rob-15451",
+    "name": "SparkFun Qwiic Motor Driver",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Two-channel DC motor driver controlled through I2C/Qwiic."
+  },
+  {
+    "id": "sparkfun-dev-15123",
+    "name": "SparkFun RedBoard Qwiic",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "microcontroller",
+    "primary_role": "support",
+    "summary": "Arduino-compatible development board with a Qwiic peripheral connection."
+  },
+  {
+    "id": "sparkfun-sen-15335",
+    "name": "SparkFun 9DoF IMU Breakout - ICM-20948 (Qwiic)",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "imu",
+    "primary_role": "sensors",
+    "summary": "ICM-20948 breakout providing nine-axis motion measurements over Qwiic/I2C."
+  },
+  {
+    "id": "sparkfun-sen-14722",
+    "name": "SparkFun Distance Sensor Breakout - 4 Meter, VL53L1X (Qwiic)",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "VL53L1X time-of-flight breakout for optical distance measurement over I2C/Qwiic."
+  },
+  {
+    "id": "sparkfun-sen-15569",
+    "name": "Ultrasonic Distance Sensor - 5V (HC-SR04)",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "HC-SR04 ultrasonic module with transmitter, receiver and distance-measurement control circuit."
+  },
+  {
+    "id": "sparkfun-rob-13301",
+    "name": "Shadow Chassis",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "chassis_frame",
+    "primary_role": "torso",
+    "summary": "Snap-together ABS frame with mounts for robot electronics and drive hardware."
+  },
+  {
+    "id": "sparkfun-rob-13259",
+    "name": "Wheel - 65mm (Rubber Tire, Pair)",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "wheel",
+    "primary_role": "wheels",
+    "summary": "Pair of 65 mm rubber-tired wheels for DAGU right-angle gearmotors."
+  },
+  {
+    "id": "sparkfun-prt-13855",
+    "name": "Lithium Ion Battery - 2Ah",
+    "store_id": "sparkfun",
+    "store_name": "SparkFun Electronics",
+    "part_type": "battery",
+    "primary_role": "support",
+    "summary": "Slim rechargeable lithium-ion cell with a JST-PH connection."
+  },
+  {
+    "id": "pololu-3036",
+    "name": "5:1 Micro Metal Gearmotor HPCB 12V",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "dc_gearmotor",
+    "primary_role": "actuators",
+    "summary": "Miniature brushed DC motor with a 5:1 metal gearbox and 3 mm D-shaped output shaft."
+  },
+  {
+    "id": "pololu-2818",
+    "name": "FEETECH FS90 Micro Servo",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "positional_servo",
+    "primary_role": "actuators",
+    "summary": "FEETECH FS90 analog micro servo offering limited-range position control."
+  },
+  {
+    "id": "pololu-2130",
+    "name": "DRV8833 Dual Motor Driver Carrier",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "DRV8833 dual H-bridge carrier for low-voltage brushed DC motors or a bipolar stepper."
+  },
+  {
+    "id": "pololu-2133",
+    "name": "DRV8825 Stepper Motor Driver Carrier, High Current",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "DRV8825 carrier supplying current-controlled microstepping for a bipolar stepper motor."
+  },
+  {
+    "id": "pololu-3101",
+    "name": "A-Star 32U4 Micro",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "microcontroller",
+    "primary_role": "support",
+    "summary": "Compact ATmega32U4 programmable board with USB and general-purpose I/O."
+  },
+  {
+    "id": "pololu-3544",
+    "name": "Romi 32U4 Control Board",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "robot_controller",
+    "primary_role": "support",
+    "summary": "ATmega32U4 Romi control board integrating motor drivers, power circuitry and inertial sensors."
+  },
+  {
+    "id": "pololu-3415",
+    "name": "VL53L1X Time-of-Flight Distance Sensor Carrier with Voltage Regulator, 400cm Max",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "VL53L1X optical ranging carrier with regulation and I2C level shifting."
+  },
+  {
+    "id": "pololu-4148",
+    "name": "QTR-MD-08RC Reflectance Sensor Array: 8-Channel, 8mm Pitch, RC Output",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "reflectance_sensor",
+    "primary_role": "sensors",
+    "summary": "Eight-channel infrared reflectance array for detecting nearby surface contrast and lines."
+  },
+  {
+    "id": "pololu-3690",
+    "name": "Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80×10mm, Black, 2-Pack",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "wheel",
+    "primary_role": "wheels",
+    "summary": "Pair of 80 mm silicone-tired wheels with interchangeable shaft-gripping collets."
+  },
+  {
+    "id": "pololu-954",
+    "name": "Pololu Ball Caster with 3/4″ Plastic Ball",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "caster",
+    "primary_role": "wheels",
+    "summary": "Passive ball-caster kit providing a rolling support point for a small robot."
+  },
+  {
+    "id": "pololu-2831",
+    "name": "Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5",
+    "store_id": "pololu",
+    "store_name": "Pololu Robotics & Electronics",
+    "part_type": "voltage_regulator",
+    "primary_role": "support",
+    "summary": "Buck-regulator board converting a higher supply voltage to regulated 5 V."
+  },
+  {
+    "id": "servocity-5203-2402-0019",
+    "name": "5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "dc_gearmotor",
+    "primary_role": "actuators",
+    "summary": "Brushed planetary gearmotor with quadrature encoder for powered mechanisms."
+  },
+  {
+    "id": "servocity-638114",
+    "name": "Premium N20 Gear Motor (210:1 Ratio, 130 RPM)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "dc_gearmotor",
+    "primary_role": "actuators",
+    "summary": "N20 brushed gearmotor with metal spur reduction."
+  },
+  {
+    "id": "servocity-2002-0180-0002",
+    "name": "Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "positional_servo",
+    "primary_role": "actuators",
+    "summary": "Standard positional servo with steel gears and H25T output spline."
+  },
+  {
+    "id": "servocity-2003-0180-0001",
+    "name": "Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "positional_servo",
+    "primary_role": "actuators",
+    "summary": "Standard hobby servo providing controlled angular movement with nylon gears."
+  },
+  {
+    "id": "servocity-3105-0101-0020",
+    "name": "1x20A Motor Controller (9-30V Input)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Controls speed and direction of one brushed DC motor using a PWM input."
+  },
+  {
+    "id": "servocity-imc404",
+    "name": "Roboclaw 2x7A Motor Controller",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Dual brushed-motor controller supporting encoder feedback and multiple control interfaces."
+  },
+  {
+    "id": "servocity-3114-0001-0001",
+    "name": "Pololu A-Star 32U4 Prime SV",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "microcontroller",
+    "primary_role": "support",
+    "summary": "ATmega32U4 programmable board in an Arduino-style form factor."
+  },
+  {
+    "id": "servocity-3124-0001-0001",
+    "name": "Laser Distance Sensor (1m Range, 3.3-5V, Digital or Analog Output)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "Laser time-of-flight ranging module with analog distance or digital threshold output."
+  },
+  {
+    "id": "servocity-3209-0001-0007",
+    "name": "Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "mobile_base",
+    "primary_role": "legs",
+    "summary": "Mecanum locomotion chassis kit with four planetary gearmotors and four 104 mm wheels."
+  },
+  {
+    "id": "servocity-3624-0014-0096",
+    "name": "96mm Omni Wheel (14mm Bore, 50A Durometer)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "wheel",
+    "primary_role": "wheels",
+    "summary": "Omni wheel with lateral rollers for holonomic robot drivetrains."
+  },
+  {
+    "id": "servocity-3213-3606-0002",
+    "name": "96mm Mecanum Wheel Set (70A Durometer Bearing Supported Rollers)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "wheel",
+    "primary_role": "wheels",
+    "summary": "Set of 96 mm mecanum wheels for omnidirectional ground movement."
+  },
+  {
+    "id": "servocity-3100-0012-0020",
+    "name": "12V NiMH Nested Battery (3000mAh, MH-FC XT30 Connector)",
+    "store_id": "servocity",
+    "store_name": "ServoCity",
+    "part_type": "battery",
+    "primary_role": "support",
+    "summary": "Rechargeable 12 V NiMH battery pack with XT30 connection."
+  },
+  {
+    "id": "seeed-108990003",
+    "name": "Small Size and High Torque Stepper Motor - 24BYJ48",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "stepper_motor",
+    "primary_role": "actuators",
+    "summary": "Compact geared stepper motor for controlled mechanical positioning."
+  },
+  {
+    "id": "seeed-316010005",
+    "name": "Grove - Servo",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "positional_servo",
+    "primary_role": "actuators",
+    "summary": "Angular-position servo supplied with a Grove connector."
+  },
+  {
+    "id": "seeed-108090003",
+    "name": "Feetech ST3215-C047 12V 30Kg Servo",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "smart_servo",
+    "primary_role": "actuators",
+    "summary": "Serial-bus smart servo with metal gearbox and magnetic angle sensing."
+  },
+  {
+    "id": "seeed-108020103",
+    "name": "Grove - I2C Motor Driver (TB6612FNG)",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Grove I2C driver board for DC or stepper motors."
+  },
+  {
+    "id": "seeed-113991114",
+    "name": "Seeed Studio XIAO ESP32-S3",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "microcontroller",
+    "primary_role": "support",
+    "summary": "Compact ESP32-S3 development board with wireless connectivity."
+  },
+  {
+    "id": "seeed-102110919",
+    "name": "Raspberry Pi 5 8GB",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "single_board_computer",
+    "primary_role": "support",
+    "summary": "Raspberry Pi 5 single-board computer with 8 GB memory."
+  },
+  {
+    "id": "seeed-101020010",
+    "name": "Grove - Ultrasonic Distance Sensor",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "Ultrasonic module measures distance to nearby objects."
+  },
+  {
+    "id": "seeed-101020585",
+    "name": "Grove - IMU 9DOF (ICM20600+AK09918)",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "imu",
+    "primary_role": "sensors",
+    "summary": "IMU combines angular-motion, acceleration and magnetic-field sensing."
+  },
+  {
+    "id": "seeed-101020532",
+    "name": "Grove - Time of Flight Distance Sensor(VL53L0X) - (ToF) laser-ranging module,Long Range Precision ranging",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "VL53L0X time-of-flight module provides optical distance measurements."
+  },
+  {
+    "id": "seeed-110090325",
+    "name": "Robot Car Kit-6WD Off-Road Chassis Kit",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "mobile_base",
+    "primary_role": "legs",
+    "summary": "Six-wheel mobile chassis with six geared DC motors and an aluminum body."
+  },
+  {
+    "id": "seeed-114993667",
+    "name": "SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "actuator_kit",
+    "primary_role": "actuators",
+    "summary": "Servo motor, adapter-board and cable kit for constructing an SO-ARM101 arm."
+  },
+  {
+    "id": "seeed-106990290",
+    "name": "Lipo Rider Plus (Charger/Booster) - 5V/2.4A USB Type C",
+    "store_id": "seeed",
+    "store_name": "Seeed Studio",
+    "part_type": "power_module",
+    "primary_role": "support",
+    "summary": "LiPo charge-and-boost board supplies regulated outputs from a battery."
+  },
+  {
+    "id": "dfrobot-fit0186",
+    "name": "12V Metal DC Geared Motor with Encoder (43.8:1, 251RPM, 18Kg.cm)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "dc_gearmotor",
+    "primary_role": "actuators",
+    "summary": "Metal DC gearmotor with quadrature encoder for mobile robots."
+  },
+  {
+    "id": "dfrobot-fit0450",
+    "name": "TT Motor with Encoder (6V 160RPM 120:1)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "dc_gearmotor",
+    "primary_role": "actuators",
+    "summary": "TT geared DC motor with quadrature feedback for controlled robot motion."
+  },
+  {
+    "id": "dfrobot-ser0020",
+    "name": "DSS-P05 Standard Servo (5.1kg)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "positional_servo",
+    "primary_role": "actuators",
+    "summary": "Standard hobby servo for controlled angular movement."
+  },
+  {
+    "id": "dfrobot-ser0006",
+    "name": "9g 180° Micro Servo for Arduino (1.3kg)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "positional_servo",
+    "primary_role": "actuators",
+    "summary": "Lightweight micro servo for small mechanisms and angular positioning."
+  },
+  {
+    "id": "dfrobot-dri0044",
+    "name": "Fermion: TB6612FNG 2x1.2A DC Motor Driver (Breakout)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Dual-channel TB6612FNG breakout controls two small brushed DC motors."
+  },
+  {
+    "id": "dfrobot-dri0002",
+    "name": "MDV 2x2A DC Motor Controller (L298N)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "L298N dual H-bridge controller regulates direction and speed of two brushed motors."
+  },
+  {
+    "id": "dfrobot-dfr0654",
+    "name": "FireBeetle 2 ESP32-E IoT Microcontroller (32M / 512KB, Supports Wi-Fi & Bluetooth)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "microcontroller",
+    "primary_role": "support",
+    "summary": "ESP32-E programmable controller board with wireless communication and battery charging."
+  },
+  {
+    "id": "dfrobot-sen0340",
+    "name": "TF-Luna ToF Single-Point Ranging Solid State LiDAR Sensor (8m, UART / I2C)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "lidar",
+    "primary_role": "sensors",
+    "summary": "Compact TF-Luna single-point time-of-flight lidar measures object range."
+  },
+  {
+    "id": "dfrobot-sen0374",
+    "name": "Fermion: BNO055 Intelligent 9-axis Sensor (Breakout)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "imu",
+    "primary_role": "sensors",
+    "summary": "BNO055 orientation module fuses accelerometer, gyro and magnetic sensing."
+  },
+  {
+    "id": "dfrobot-rob0112",
+    "name": "Devastator Tank Mobile Robot Platform",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "mobile_base",
+    "primary_role": "legs",
+    "summary": "Tracked mobile chassis with motors and suspension for ground travel."
+  },
+  {
+    "id": "dfrobot-fit0654-1",
+    "name": "Mecanum Wheel Kit (80mm - 4 Wheels)",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "wheel",
+    "primary_role": "wheels",
+    "summary": "Four 80 mm mecanum wheels support omnidirectional mobile robots."
+  },
+  {
+    "id": "dfrobot-dfr0969",
+    "name": "2-Way 18650 Battery Holder",
+    "store_id": "dfrobot",
+    "store_name": "DFRobot",
+    "part_type": "battery_holder",
+    "primary_role": "support",
+    "summary": "Dual 18650 holder with charging and regulated power outputs."
+  },
+  {
+    "id": "robotis-902-0135-000",
+    "name": "DYNAMIXEL XL430-W250-T",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "smart_servo",
+    "primary_role": "actuators",
+    "summary": "TTL smart actuator with position and continuous-rotation control plus motion feedback."
+  },
+  {
+    "id": "robotis-902-0163-000",
+    "name": "DYNAMIXEL XL330-M288-T",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "smart_servo",
+    "primary_role": "actuators",
+    "summary": "Compact 5 V smart servo with position, velocity and current control."
+  },
+  {
+    "id": "robotis-902-0132-000",
+    "name": "U2D2",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "interface_adapter",
+    "primary_role": "support",
+    "summary": "USB interface that lets a computer communicate with TTL and RS-485 DYNAMIXEL actuators."
+  },
+  {
+    "id": "robotis-903-0257-000",
+    "name": "OpenCR1.0",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "robot_controller",
+    "primary_role": "support",
+    "summary": "Cortex-M7 robot control board with DYNAMIXEL interfaces and onboard inertial sensing."
+  },
+  {
+    "id": "robotis-902-0183-000",
+    "name": "OpenRB-150",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "robot_controller",
+    "primary_role": "support",
+    "summary": "Arduino-compatible controller for DYNAMIXEL actuators."
+  },
+  {
+    "id": "robotis-902-0043-000",
+    "name": "Distance Measuring Sensor DMS-80",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "Measures nearby wall or object distance over a 10–80 cm range."
+  },
+  {
+    "id": "robotis-902-0042-000",
+    "name": "Gyro Sensor GS-12",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "imu",
+    "primary_role": "sensors",
+    "summary": "Gyroscope measures angular velocity for robot tilt estimation and balance control."
+  },
+  {
+    "id": "robotis-901-0118-301",
+    "name": "TurtleBot 3 Burger RPi4 4GB [US]",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "robot_kit",
+    "primary_role": "whole_robot",
+    "summary": "TurtleBot3 Burger mobile ROS robot kit with Raspberry Pi 4 4 GB and LDS ranging sensor."
+  },
+  {
+    "id": "robotis-903-0260-000",
+    "name": "TB3 Wheel Tire Set-ISW-01 (2ea)",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "wheel",
+    "primary_role": "wheels",
+    "summary": "Pair of rubber-tired drive wheels that bolt to compatible DYNAMIXEL actuators."
+  },
+  {
+    "id": "robotis-903-0262-000",
+    "name": "TB3 Ball Caster-A01 (1ea)",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "caster",
+    "primary_role": "wheels",
+    "summary": "Passive ball caster supports a wheeled robot base while rolling freely."
+  },
+  {
+    "id": "robotis-903-0210-000",
+    "name": "LIPO Battery 11.1V 1800mAh LB-012",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "battery",
+    "primary_role": "support",
+    "summary": "Rechargeable 11.1 V 1800 mAh lithium-polymer battery with protection circuitry."
+  },
+  {
+    "id": "robotis-903-0126-000",
+    "name": "SMPS 12V 5A PS-10 [US-110V]",
+    "store_id": "robotis",
+    "store_name": "ROBOTIS America",
+    "part_type": "power_adapter",
+    "primary_role": "support",
+    "summary": "AC mains adapter supplying 12 V DC at up to 5 A to compatible robot electronics or a charger."
+  },
+  {
+    "id": "waveshare-23489",
+    "name": "DDSM115 Direct Drive Servo Motor, Low Speed & High Torque, Low Noise, All-In-One Design, Hub Motor",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "hub_motor",
+    "primary_role": "actuators",
+    "summary": "Direct-drive hub servo integrates a brushless motor, encoder and driver with RS-485 control."
+  },
+  {
+    "id": "waveshare-24440",
+    "name": "2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "smart_servo",
+    "primary_role": "actuators",
+    "summary": "SC09 serial-bus servo supports angular positioning, continuous rotation and feedback."
+  },
+  {
+    "id": "waveshare-21568",
+    "name": "SC15 17kg Large Torque Programmable Serial Bus Servo",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "smart_servo",
+    "primary_role": "actuators",
+    "summary": "SC15 metal-geared serial-bus servo provides position feedback and servo/motor operating modes."
+  },
+  {
+    "id": "waveshare-15364",
+    "name": "Motor Driver HAT for Raspberry Pi, I2C Interface",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "I2C Raspberry Pi HAT controls two DC motors through a dual H-bridge driver."
+  },
+  {
+    "id": "waveshare-15669",
+    "name": "Stepper Motor HAT for Raspberry Pi, Drives Two Stepper Motors",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "motor_driver",
+    "primary_role": "support",
+    "summary": "Raspberry Pi HAT drives two stepper motors with configurable microstepping."
+  },
+  {
+    "id": "waveshare-23730",
+    "name": "General Driver board for Robots, Based on ESP32, multi-functional, supports WIFI, Bluetooth and ESP-NOW communications, ESP32-WROOM-32UE, ESP32 Dev Board",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "robot_controller",
+    "primary_role": "support",
+    "summary": "ESP32 robot controller integrates DC-motor and serial-servo interfaces, wireless communication and inertial sensing."
+  },
+  {
+    "id": "waveshare-25978",
+    "name": "D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "lidar",
+    "primary_role": "sensors",
+    "summary": "D500 spinning time-of-flight lidar scans surrounding distances through 360 degrees for mapping and obstacle detection."
+  },
+  {
+    "id": "waveshare-18301",
+    "name": "TOF Laser Range Sensor, UART / CAN Bus, Cascading Support, Ranging up to 5m, with Software",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "distance_sensor",
+    "primary_role": "sensors",
+    "summary": "Time-of-flight laser ranging module reports distances over UART or CAN for obstacle sensing."
+  },
+  {
+    "id": "waveshare-ups-hat",
+    "name": "Uninterruptible Power Supply UPS HAT For Raspberry Pi, Stable 5V Power Output",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "power_module",
+    "primary_role": "support",
+    "summary": "Raspberry Pi UPS board maintains regulated 5 V output from external power or two 18650 cells."
+  },
+  {
+    "id": "waveshare-dc-buck-adapter-7-2v",
+    "name": "Serial Bus Servo DC Buck Adapter, Mini Module, Design for Serial Bus Servos, Easy to Use, 7.2V / 6V Buck Regulator",
+    "store_id": "waveshare",
+    "store_name": "Waveshare Electronics",
+    "part_type": "voltage_regulator",
+    "primary_role": "support",
+    "summary": "Inline DC buck regulator converts a 9–36 V supply to the selected 7.2 V or 6 V servo rail."
+  }
+]

@@ -86,6 +86,8 @@ Related links found since (not from the brief):
 - **AgentApp Trace Explorer** (animated walkthrough of the three apps): https://claude.ai/artifact/JdSfEoJszLETaSR14tuP8Y
 - **Head Office & Stores** (3D explainer for non-technical audiences): https://claude.ai/artifact/ECUTCW4bZEcUaYPMwCXRLa
 - **Robot Build Relay** (simulated supplier-quote run over the 8 real stores: plan → fan-out → combine, with who-saw-what and the model-call count): https://claude.ai/artifact/N6JoZqpwvv1iZ63vPJezNK · source `artifacts/robot-build-relay/` (`python3 docs/artifacts/robot-build-relay/build.py` rebuilds it from `stores.json`)
+- **SuperGrid_RobotShop** (the hackathon demo: Robot Workshop UI, bridge and one AgentApp; the master on the SuperLink asks the 8 `store-<id>` SuperNodes for quotes and combines them in integer cents): [../SuperGrid_RobotShop/README.md](../SuperGrid_RobotShop/README.md)
+- **Unified catalogue merge prompt** (merges the parts datasets into one 25-company catalogue; run it only after the demo is verified): [prompts/unified-catalog-merge.txt](prompts/unified-catalog-merge.txt)
 - All artifacts are private until shared from their page's Share menu.
 - Collaborative agent tutorial (linked from the recipe README; **404 as of 2026-09-29**): https://flower.ai/docs/agent/tutorials/build-a-collaborative-agent.html
 - AgentApp runtime explainer (live): https://flower.ai/docs/agent/explanations/agentapp-runtime.html

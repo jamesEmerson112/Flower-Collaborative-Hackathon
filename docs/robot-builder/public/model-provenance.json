@@ -195,5 +195,295 @@
     "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
     "polygons": 804,
     "glb_bytes": 58216
+  },
+  {
+    "id": "seeed-100046482",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "originals/seeed-100046482/SO101 Assembly.stl",
+    "source_sha256": "efe5ed131286e0fa2b95c355886cd9009a34ad5d6a0c7f042a1ba5071f1520cb",
+    "original_bounds": [
+      110.92500305175781,
+      319.3457946777344,
+      253.43209838867188
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 54957,
+    "glb_bytes": 2389660
+  },
+  {
+    "id": "waveshare-roarm-m2-s",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "extracted/waveshare-roarm-m2-s/RoArm-M2-S ASM-TYPE-0(SP) Gripper.step",
+    "source_sha256": "a63b4f1543e0c40b7686e521e2bcc294564c7dc43f9501b96192da2a4633ecd6",
+    "original_bounds": [
+      369.83856201171875,
+      85.22000122070312,
+      545.531982421875
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 92289,
+    "glb_bytes": 3929468
+  },
+  {
+    "id": "waveshare-roarm-m3-s",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "extracted/waveshare-roarm-m3-s/RoArm-M3.step",
+    "source_sha256": "728eb52f0bdd32dc0b907c9bb983d3d0b8adf7a5ea945949785a6e496f5089ff",
+    "original_bounds": [
+      405.8467712402344,
+      85.22000122070312,
+      389.3807678222656
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 93434,
+    "glb_bytes": 3972604
+  },
+  {
+    "id": "seeed-100053279",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "originals/seeed-100053279/pp01068_top_body.stl",
+    "source_sha256": "701c4ee80d16aa5257e706fa9cc0b8bbae2dd26138a6fd7860b99c7455ae3af7",
+    "original_bounds": [
+      0.15497873723506927,
+      0.1550000011920929,
+      0.117136649787426
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 6290,
+    "glb_bytes": 136432
+  },
+  {
+    "id": "seeed-100072462",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "originals/seeed-100072462/pp01067_bottom_body.stl",
+    "source_sha256": "ca83667a9ff45433ca41b5e20edaabd38cb99f97d19a99576dfece8edf92d78c",
+    "original_bounds": [
+      0.15497472882270813,
+      0.1550000011920929,
+      0.055334508419036865
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 6214,
+    "glb_bytes": 176868
+  },
+  {
+    "id": "seeed-100054390",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "originals/seeed-100054390/pp01069_head_shell_front.stl",
+    "source_sha256": "19ceb0df3c6655315ea012d4cb2622245d28eb302cbb690c859170ebd4b07425",
+    "original_bounds": [
+      0.14999957382678986,
+      0.0299980528652668,
+      0.09300003945827484
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 6290,
+    "glb_bytes": 140896
+  },
+  {
+    "id": "servocity-3209-0008-0001",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "extracted/servocity-3209-0008-0001/3209-0008-0001.step",
+    "source_sha256": "2874e809c91d3671b6d03e641764322ac712462e9e8c4f5ba4e9eb94f0db4824",
+    "original_bounds": [
+      552.0,
+      481.11236572265625,
+      97.11268615722656
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 94518,
+    "glb_bytes": 4809456
+  },
+  {
+    "id": "niryo-ned2",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "originals/niryo-ned2/NED2_STEP.step",
+    "source_sha256": "94598f79781e8756c1e79cd9ed56f1f43ecb507263db3a2ed2e752e0c4c88752",
+    "original_bounds": [
+      404.4000244140625,
+      181.60000610351562,
+      455.04998779296875
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 54996,
+    "glb_bytes": 1653132
+  },
+  {
+    "id": "reachy2-torso",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/reachy2-torso/torso_visual.dae",
+    "source_sha256": "64f0cbfaddd781a2c77c8593e6c5a4e309cf4fde1fc08741597e884428ff151f",
+    "original_bounds": [
+      0.20820966362953186,
+      0.3588254749774933,
+      0.3696783483028412
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 41996,
+    "glb_bytes": 928836
+  },
+  {
+    "id": "reachy2-head",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/reachy2-head/head_visual.dae",
+    "source_sha256": "6c133101381f4aefbf0dc1509bc1ef76562367f02de9ea988458aefddc59b278",
+    "original_bounds": [
+      0.12049008160829544,
+      0.17189109325408936,
+      0.12114567309617996
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 3095,
+    "glb_bytes": 80524
+  },
+  {
+    "id": "reachy2-mobile_base",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/reachy2-mobile_base/mobile_base_visual.dae",
+    "source_sha256": "a0cbe2cee9ad9b98f147032579e5d4fc942412a2be43142128ee364855c9c33c",
+    "original_bounds": [
+      0.4974999725818634,
+      0.4909988045692444,
+      0.2627488374710083
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 16319,
+    "glb_bytes": 328448
+  },
+  {
+    "id": "elephant-mycobot-280-pi",
+    "pipeline_version": 2,
+    "model_kind": "supplier_cad",
+    "source": "originals/elephant-mycobot-280-pi/myCobot_280_PI_230708.STEP",
+    "source_sha256": "cbeea744eff7dee018b3c2d84b20b4d71a1f380d94d2de86f1dbf3561bb111cd",
+    "original_bounds": [
+      136.08921813964844,
+      99.03207397460938,
+      439.95159912109375
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 61800,
+    "glb_bytes": 2522204
+  },
+  {
+    "id": "robotis-op3-torso",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/robotis-op3-torso/body.stl",
+    "source_sha256": "95e1b28cd076ef2f3a93b99e1a7b4303f33116106286122b880bc9126a8b3361",
+    "original_bounds": [
+      174.5,
+      128.8000030517578,
+      145.29998779296875
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 55000,
+    "glb_bytes": 1484124
+  },
+  {
+    "id": "berkeley-lite-torso",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/berkeley-lite-torso/base_visual.stl",
+    "source_sha256": "d9af91bf06e64d633fbe74f9700c9819952e7bb9d21b22101ef7c25e5e0a601c",
+    "original_bounds": [
+      0.14400002360343933,
+      0.26600000262260437,
+      0.3163287937641144
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 41078,
+    "glb_bytes": 1454692
+  },
+  {
+    "id": "unitree-g1-torso",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/unitree-g1-torso/torso.stl",
+    "source_sha256": "9fb08857bc2b97d274e4b068f89f660f30ae5d27c12b0ea7f305a8b12fc98f68",
+    "original_bounds": [
+      0.15918034315109253,
+      0.23203860223293304,
+      0.343168169260025
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 29421,
+    "glb_bytes": 707472
+  },
+  {
+    "id": "unitree-h1-torso",
+    "pipeline_version": 5,
+    "model_kind": "robot_section",
+    "source": "originals/unitree-h1-torso/torso.stl",
+    "source_sha256": "f43fc0753a4898f2a0418ee80f4a3806d88cffdc587aa600e2e68a8207b0cd4d",
+    "original_bounds": [
+      0.14599989354610443,
+      0.3428868055343628,
+      0.5196232795715332
+    ],
+    "source_filter": {
+      "max_z": 0.52
+    },
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 7431,
+    "glb_bytes": 196844
+  },
+  {
+    "id": "unitree-h2-torso",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/unitree-h2-torso/torso.stl",
+    "source_sha256": "0f0c12bddbe2e29df43f38fbaeb3a65c08d43123fbb62379a1cc58e9c6df47b5",
+    "original_bounds": [
+      0.19589275121688843,
+      0.2550467848777771,
+      0.467001348733902
+    ],
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 10262,
+    "glb_bytes": 256640
+  },
+  {
+    "id": "robotis-op3-head",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/robotis-op3-head/head.stl",
+    "source_sha256": "3846e6a393c52e8837c4dd0020025a72c830f93c9e4039f81bf9b216acfe8171",
+    "original_bounds": [
+      44.5,
+      94.0,
+      78.0
+    ],
+    "source_filter": null,
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 32494,
+    "glb_bytes": 977456
+  },
+  {
+    "id": "unitree-g1-head",
+    "pipeline_version": 4,
+    "model_kind": "robot_section",
+    "source": "originals/unitree-g1-head/head.stl",
+    "source_sha256": "a6f898e5173f81c4b2d069317863baed7e7559f1e240dc2a0c391fd356291069",
+    "original_bounds": [
+      0.1394069790840149,
+      0.11307628452777863,
+      0.15452484786510468
+    ],
+    "source_filter": null,
+    "normalization": "longest side = 1; centered; concept units, not manufacturing scale",
+    "polygons": 17563,
+    "glb_bytes": 417916
   }
 ]

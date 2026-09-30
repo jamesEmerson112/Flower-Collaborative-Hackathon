@@ -55,7 +55,7 @@
           "currency": "USD",
           "sku": "3777",
           "url": "https://www.adafruit.com/product/3777",
-          "spec": "3–6 V TT gearmotor, 1:48 gearbox, 200 RPM at 6 V, 0.8 kg·cm stall at 6 V"
+          "spec": "3\u20136 V TT gearmotor, 1:48 gearbox, 200 RPM at 6 V, 0.8 kg\u00b7cm stall at 6 V"
         },
         {
           "id": "adafruit-169",
@@ -65,7 +65,7 @@
           "currency": "USD",
           "sku": "169",
           "url": "https://www.adafruit.com/product/169",
-          "spec": "4.8 V nominal (3–6 V), 2.5 kg·cm, 0.1 s/60°, 9 g"
+          "spec": "4.8 V nominal (3\u20136 V), 2.5 kg\u00b7cm, 0.1 s/60\u00b0, 9 g"
         },
         {
           "id": "adafruit-2927",
@@ -75,7 +75,7 @@
           "currency": "USD",
           "sku": "2927",
           "url": "https://www.adafruit.com/product/2927",
-          "spec": "4 DC or 2 stepper motors, 1.2 A per bridge, motor supply 4.5–13.5 V, 12-bit speed control"
+          "spec": "4 DC or 2 stepper motors, 1.2 A per bridge, motor supply 4.5\u201313.5 V, 12-bit speed control"
         },
         {
           "id": "adafruit-1438",
@@ -85,7 +85,7 @@
           "currency": "USD",
           "sku": "1438",
           "url": "https://www.adafruit.com/product/1438",
-          "spec": "Arduino shield: 4 DC or 2 stepper motors, 1.2 A/channel (3 A peak ~20 ms), I2C 0x60–0x80"
+          "spec": "Arduino shield: 4 DC or 2 stepper motors, 1.2 A/channel (3 A peak ~20 ms), I2C 0x60\u20130x80"
         },
         {
           "id": "adafruit-4864",
@@ -95,7 +95,7 @@
           "currency": "USD",
           "sku": "4864",
           "url": "https://www.adafruit.com/product/4864",
-          "spec": "RP2040 dual Arm Cortex-M0+ @ 133 MHz, 264 kB SRAM, 51.3 × 21 mm"
+          "spec": "RP2040 dual Arm Cortex-M0+ @ 133 MHz, 264 kB SRAM, 51.3 \u00d7 21 mm"
         },
         {
           "id": "adafruit-5129",
@@ -115,7 +115,7 @@
           "currency": "USD",
           "sku": "3317",
           "url": "https://www.adafruit.com/product/3317",
-          "spec": "VL53L0X laser time-of-flight, ~30–1000 mm range, STEMMA QT breakout"
+          "spec": "VL53L0X laser time-of-flight, ~30\u20131000 mm range, STEMMA QT breakout"
         },
         {
           "id": "adafruit-4007",
@@ -125,7 +125,7 @@
           "currency": "USD",
           "sku": "4007",
           "url": "https://www.adafruit.com/product/4007",
-          "spec": "HC-SR04-compatible ultrasonic, 3–5.5 V, 2–450 cm, 40 kHz"
+          "spec": "HC-SR04-compatible ultrasonic, 3\u20135.5 V, 2\u2013450 cm, 40 kHz"
         },
         {
           "id": "adafruit-4754",
@@ -145,7 +145,7 @@
           "currency": "USD",
           "sku": "2939",
           "url": "https://www.adafruit.com/product/2939",
-          "spec": "2WD metal rover chassis with DC motors, 156 × 103 × 73.5 mm assembled"
+          "spec": "2WD metal rover chassis with DC motors, 156 \u00d7 103 \u00d7 73.5 mm assembled"
         },
         {
           "id": "adafruit-3766",
@@ -155,7 +155,7 @@
           "currency": "USD",
           "sku": "3766",
           "url": "https://www.adafruit.com/product/3766",
-          "spec": "Wheel for TT gearbox motors, 63 × 29 mm, 38 g"
+          "spec": "Wheel for TT gearbox motors, 63 \u00d7 29 mm, 38 g"
         },
         {
           "id": "adafruit-328",
@@ -165,7 +165,7 @@
           "currency": "USD",
           "sku": "328",
           "url": "https://www.adafruit.com/product/328",
-          "spec": "LiPo 3.7 V nominal, 2500 mAh (~10 Wh), 50 × 60 × 7.3 mm, 50 g"
+          "spec": "LiPo 3.7 V nominal, 2500 mAh (~10 Wh), 50 \u00d7 60 \u00d7 7.3 mm, 50 g"
         }
       ]
     },
@@ -197,7 +197,7 @@
           "currency": "USD",
           "sku": "ROB-09238",
           "url": "https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html",
-          "spec": "NEMA 17 bipolar stepper, 200 steps/rev, 32 oz·in holding, 0.33 A, 5 mm shaft"
+          "spec": "NEMA 17 bipolar stepper, 200 steps/rev, 32 oz\u00b7in holding, 0.33 A, 5 mm shaft"
         },
         {
           "id": "sparkfun-rob-09065",
@@ -207,7 +207,7 @@
           "currency": "USD",
           "sku": "ROB-09065",
           "url": "https://www.sparkfun.com/servo-generic-sub-micro-size.html",
-          "spec": "Sub-micro servo, 4.8–6 V, 20.8 oz·in and 0.10 s/60° at 6 V, ~160° travel"
+          "spec": "Sub-micro servo, 4.8\u20136 V, 20.8 oz\u00b7in and 0.10 s/60\u00b0 at 6 V, ~160\u00b0 travel"
         },
         {
           "id": "sparkfun-rob-14450",
@@ -237,7 +237,7 @@
           "currency": "USD",
           "sku": "DEV-15123",
           "url": "https://www.sparkfun.com/sparkfun-redboard-qwiic.html",
-          "spec": "ATmega328 Uno-compatible board, 7–15 V in, 20 I/O (6 PWM, 6 analog), Qwiic connector"
+          "spec": "ATmega328 Uno-compatible board, 7\u201315 V in, 20 I/O (6 PWM, 6 analog), Qwiic connector"
         },
         {
           "id": "sparkfun-sen-15335",
@@ -267,7 +267,7 @@
           "currency": "USD",
           "sku": "SEN-15569",
           "url": "https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html",
-          "spec": "HC-SR04 ultrasonic, 5 V, 2 cm–4 m, accuracy up to 3 mm"
+          "spec": "HC-SR04 ultrasonic, 5 V, 2 cm\u20134 m, accuracy up to 3 mm"
         },
         {
           "id": "sparkfun-rob-13301",
@@ -329,7 +329,7 @@
           "currency": "USD",
           "sku": "2818",
           "url": "https://www.pololu.com/product/2818",
-          "spec": "Analog micro servo; at 6 V: 0.10 s/60°, 1.5 kg·cm, 9.0 g; 3.3 V or 5 V signal"
+          "spec": "Analog micro servo; at 6 V: 0.10 s/60\u00b0, 1.5 kg\u00b7cm, 9.0 g; 3.3 V or 5 V signal"
         },
         {
           "id": "pololu-2130",
@@ -339,7 +339,7 @@
           "currency": "USD",
           "sku": "2130",
           "url": "https://www.pololu.com/product/2130",
-          "spec": "DRV8833 dual H-bridge, 2.7–10.8 V, 1.2 A/channel continuous (2 A peak)"
+          "spec": "DRV8833 dual H-bridge, 2.7\u201310.8 V, 1.2 A/channel continuous (2 A peak)"
         },
         {
           "id": "pololu-2133",
@@ -349,7 +349,7 @@
           "currency": "USD",
           "sku": "2133",
           "url": "https://www.pololu.com/product/2133",
-          "spec": "DRV8825 bipolar stepper driver, 8.2–45 V, ~1.5 A/phase (2.2 A with cooling), to 1/32 step"
+          "spec": "DRV8825 bipolar stepper driver, 8.2\u201345 V, ~1.5 A/phase (2.2 A with cooling), to 1/32 step"
         },
         {
           "id": "pololu-3101",
@@ -359,7 +359,7 @@
           "currency": "USD",
           "sku": "3101",
           "url": "https://www.pololu.com/product/3101",
-          "spec": "ATmega32U4, 18 I/O (6 PWM, 8 analog), Micro-USB, 1″ × 0.6″, Arduino bootloader"
+          "spec": "ATmega32U4, 18 I/O (6 PWM, 8 analog), Micro-USB, 1\u2033 \u00d7 0.6\u2033, Arduino bootloader"
         },
         {
           "id": "pololu-3544",
@@ -389,7 +389,7 @@
           "currency": "USD",
           "sku": "4148",
           "url": "https://www.pololu.com/product/4148",
-          "spec": "8-channel IR reflectance (line) sensor array, 8 mm pitch, RC output, 2.9–5.5 V"
+          "spec": "8-channel IR reflectance (line) sensor array, 8 mm pitch, RC output, 2.9\u20135.5 V"
         },
         {
           "id": "pololu-3500",
@@ -403,23 +403,23 @@
         },
         {
           "id": "pololu-3690",
-          "name": "Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80×10mm, Black, 2-Pack",
+          "name": "Pololu Multi-Hub Wheel w/Inserts for 3mm and 4mm Shafts - 80\u00d710mm, Black, 2-Pack",
           "category": "wheels-mechanical",
           "price": 11.95,
           "currency": "USD",
           "sku": "3690",
           "url": "https://www.pololu.com/product/3690",
-          "spec": "80 × 10 mm wheels, silicone tires, collets for 3/4 mm D and round shafts, 2-pack"
+          "spec": "80 \u00d7 10 mm wheels, silicone tires, collets for 3/4 mm D and round shafts, 2-pack"
         },
         {
           "id": "pololu-954",
-          "name": "Pololu Ball Caster with 3/4″ Plastic Ball",
+          "name": "Pololu Ball Caster with 3/4\u2033 Plastic Ball",
           "category": "wheels-mechanical",
           "price": 5.49,
           "currency": "USD",
           "sku": "954",
           "url": "https://www.pololu.com/product/954",
-          "spec": "Ball caster with 3/4″ plastic ball, 0.9″–1.2″ height via spacers"
+          "spec": "Ball caster with 3/4\u2033 plastic ball, 0.9\u2033\u20131.2\u2033 height via spacers"
         },
         {
           "id": "pololu-2831",
@@ -429,7 +429,7 @@
           "currency": "USD",
           "sku": "2831",
           "url": "https://www.pololu.com/product/2831",
-          "spec": "Step-down regulator, 5 V out, 1 A, 5.1–36 V in"
+          "spec": "Step-down regulator, 5 V out, 1 A, 5.1\u201336 V in"
         }
       ]
     },
@@ -441,17 +441,17 @@
       "specialty": "goBILDA metal build system: planetary gearmotors, servos, structure, wheels and robot chassis",
       "ships_international": null,
       "fetch_status": "ok",
-      "notes": "Site footer: '© 2026 Base 10 Assets, LLC'. HQ country from general knowledge; shipping policy not on the fetched pages.",
+      "notes": "Site footer: '\u00a9 2026 Base 10 Assets, LLC'. HQ country from general knowledge; shipping policy not on the fetched pages.",
       "items": [
         {
           "id": "servocity-5203-2402-0019",
-          "name": "5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX® Shaft, 312 RPM, 3.3 - 5V Encoder)",
+          "name": "5203 Series Yellow Jacket Planetary Gear Motor (19.2:1 Ratio, 24mm Length 8mm REX\u00ae Shaft, 312 RPM, 3.3 - 5V Encoder)",
           "category": "motors",
           "price": 54.99,
           "currency": "USD",
           "sku": "5203-2402-0019",
           "url": "https://www.servocity.com/5203-series-yellow-jacket-planetary-gear-motor-19-2-1-ratio-24mm-length-8mm-rex-shaft-312-rpm-3-3-5v-encoder/",
-          "spec": "12 VDC planetary gearmotor, 19.2:1, 312 RPM, 24.3 kg·cm (338 oz-in) stall, 8 mm REX shaft, encoder"
+          "spec": "12 VDC planetary gearmotor, 19.2:1, 312 RPM, 24.3 kg\u00b7cm (338 oz-in) stall, 8 mm REX shaft, encoder"
         },
         {
           "id": "servocity-638114",
@@ -465,23 +465,23 @@
         },
         {
           "id": "servocity-2002-0180-0002",
-          "name": "Proton Servo (Steel Gears, 180° Rotation, Torque Ratio)",
+          "name": "Proton Servo (Steel Gears, 180\u00b0 Rotation, Torque Ratio)",
           "category": "servos",
           "price": 17.99,
           "currency": "USD",
           "sku": "2002-0180-0002",
           "url": "https://www.servocity.com/proton-servo-steel-gears-180-rotation-torque-ratio/",
-          "spec": "Standard-size servo, steel gears, 180°, 75 oz-in (5.40 kg·cm) stall at 6 V"
+          "spec": "Standard-size servo, steel gears, 180\u00b0, 75 oz-in (5.40 kg\u00b7cm) stall at 6 V"
         },
         {
           "id": "servocity-2003-0180-0001",
-          "name": "Daryl (Nylon Gears, 180° Rotation, 0.15s/60°, 53 oz-in)",
+          "name": "Daryl (Nylon Gears, 180\u00b0 Rotation, 0.15s/60\u00b0, 53 oz-in)",
           "category": "servos",
           "price": 9.99,
           "currency": "USD",
           "sku": "2003-0180-0001",
           "url": "https://www.servocity.com/daryl-nylon-gears-180-rotation-0-15s-60-53-oz-in/",
-          "spec": "Budget servo, nylon gears, 180°, 0.15 s/60°, 53 oz-in"
+          "spec": "Budget servo, nylon gears, 180\u00b0, 0.15 s/60\u00b0, 53 oz-in"
         },
         {
           "id": "servocity-3105-0101-0020",
@@ -491,7 +491,7 @@
           "currency": "USD",
           "sku": "3105-0101-0020",
           "url": "https://www.servocity.com/1x20a-motor-controller/",
-          "spec": "Single brushed DC ESC, 9–30 V in, 20 A continuous (30 A burst), R/C input, 6 V BEC"
+          "spec": "Single brushed DC ESC, 9\u201330 V in, 20 A continuous (30 A burst), R/C input, 6 V BEC"
         },
         {
           "id": "servocity-imc404",
@@ -511,7 +511,7 @@
           "currency": "USD",
           "sku": "3114-0001-0001",
           "url": "https://www.servocity.com/pololu-a-star-32u4-prime-sv/",
-          "spec": "ATmega32U4 in Arduino form factor, 5–36 V input (no microSD)"
+          "spec": "ATmega32U4 in Arduino form factor, 5\u201336 V input (no microSD)"
         },
         {
           "id": "servocity-3124-0001-0001",
@@ -521,11 +521,11 @@
           "currency": "USD",
           "sku": "3124-0001-0001",
           "url": "https://www.servocity.com/laser-distance-sensor-1m-range-3-3-5v-digital-or-analog-output/",
-          "spec": "Laser time-of-flight distance sensor, up to 1 m, 3.3–5 V, digital or analog output"
+          "spec": "Laser time-of-flight distance sensor, up to 1 m, 3.3\u20135 V, digital or analog output"
         },
         {
           "id": "servocity-3209-0001-0007",
-          "name": "Strafer® Chassis Kit (104mm GripForce™ Mecanum Wheels)",
+          "name": "Strafer\u00ae Chassis Kit (104mm GripForce\u2122 Mecanum Wheels)",
           "category": "chassis-kits",
           "price": 699.99,
           "currency": "USD",
@@ -562,6 +562,16 @@
           "sku": "3100-0012-0020",
           "url": "https://www.servocity.com/12v-nimh-nested-battery-3000mah-mh-fc-xt30-connector/",
           "spec": "12 V NiMH, 3000 mAh, nested form factor, XT30 (MH-FC) connector"
+        },
+        {
+          "id": "servocity-3209-0008-0001",
+          "name": "Bravo body frame",
+          "sku": "3209-0008-0001",
+          "price": 399.99,
+          "currency": "USD",
+          "url": "https://www.servocity.com/bravo-bare-bones-chassis-kit-no-tread-no-motors-no-controller-no-battery/",
+          "category": "chassis-kits",
+          "spec": "Structural chassis kit only: no tracks, motors, controller or battery. Used as a body frame in this concept."
         }
       ]
     },
@@ -583,7 +593,7 @@
           "currency": "USD",
           "sku": "108990003",
           "url": "https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html",
-          "spec": "24BYJ48 stepper, 5 V DC, 2-phase, 1/32 gear ratio, 5.625°/32 step angle"
+          "spec": "24BYJ48 stepper, 5 V DC, 2-phase, 1/32 gear ratio, 5.625\u00b0/32 step angle"
         },
         {
           "id": "seeed-316010005",
@@ -593,7 +603,7 @@
           "currency": "USD",
           "sku": "316010005",
           "url": "https://www.seeedstudio.com/Grove-Servo.html",
-          "spec": "Hobby servo with Grove connector, 4.8–6.0 V (5 V typical)"
+          "spec": "Hobby servo with Grove connector, 4.8\u20136.0 V (5 V typical)"
         },
         {
           "id": "seeed-108090003",
@@ -603,7 +613,7 @@
           "currency": "USD",
           "sku": "108090003",
           "url": "https://www.seeedstudio.com/STS3215-30KG-Serial-Servo-p-6340.html",
-          "spec": "12 V serial bus servo, 1:345 metal gearbox, 12-bit magnetic encoder, 30 kg·cm stall"
+          "spec": "12 V serial bus servo, 1:345 metal gearbox, 12-bit magnetic encoder, 30 kg\u00b7cm stall"
         },
         {
           "id": "seeed-108020103",
@@ -643,7 +653,7 @@
           "currency": "USD",
           "sku": "101020010",
           "url": "https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html",
-          "spec": "Ultrasonic ranging 3–350 cm, trigger and echo on a single GPIO, Grove"
+          "spec": "Ultrasonic ranging 3\u2013350 cm, trigger and echo on a single GPIO, Grove"
         },
         {
           "id": "seeed-101020585",
@@ -677,7 +687,7 @@
         },
         {
           "id": "seeed-114993667",
-          "name": "SO-ARM101 Pro Servo Motor Kit – LeRobot Compatible 6DOF Robotic Arm",
+          "name": "SO-ARM101 Pro Servo Motor Kit \u2013 LeRobot Compatible 6DOF Robotic Arm",
           "category": "chassis-kits",
           "price": 277.99,
           "currency": "USD",
@@ -694,6 +704,46 @@
           "sku": "106990290",
           "url": "https://www.seeedstudio.com/Lipo-Rider-Plus-p-4204.html",
           "spec": "LiPo charger/booster, 3 A charging, 5 V / 2.4 A output, USB-C"
+        },
+        {
+          "id": "seeed-100046482",
+          "name": "SO-101 assembled arm",
+          "sku": "100046482",
+          "price": 299.0,
+          "currency": "USD",
+          "url": "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html",
+          "category": "chassis-kits",
+          "spec": "Assembled Pro kit with printed structure, six STS3215 servos and BusLinker V3. Designer CAD is a visualization reference; supplier revision may differ."
+        },
+        {
+          "id": "seeed-100053279",
+          "name": "Reachy body top shell",
+          "sku": "100053279",
+          "price": 2.98,
+          "currency": "USD",
+          "url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html",
+          "category": "chassis-kits",
+          "spec": "Empty upper body cover only; mechanisms, electronics and lower cover are separate. Designer mesh revision is not mechanically verified against the sold shell."
+        },
+        {
+          "id": "seeed-100072462",
+          "name": "Reachy body bottom shell",
+          "sku": "100072462",
+          "price": 2.27,
+          "currency": "USD",
+          "url": "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html",
+          "category": "chassis-kits",
+          "spec": "Empty lower body cover only; mechanisms, electronics and upper cover are separate. Designer mesh revision is not mechanically verified against the sold shell."
+        },
+        {
+          "id": "seeed-100054390",
+          "name": "Reachy front head shell",
+          "sku": "100054390",
+          "price": 2.2,
+          "currency": "USD",
+          "url": "https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html",
+          "category": "chassis-kits",
+          "spec": "Front head cover only; rear cover, eyes, sensors and mechanisms are separate. Designer mesh revision is not mechanically verified against the sold shell."
         }
       ]
     },
@@ -715,7 +765,7 @@
           "currency": "USD",
           "sku": "FIT0186",
           "url": "https://www.dfrobot.com/product-634.html",
-          "spec": "12 V metal gearmotor, 43.8:1, 251 RPM, 18 kg·cm, 700 counts/rev encoder"
+          "spec": "12 V metal gearmotor, 43.8:1, 251 RPM, 18 kg\u00b7cm, 700 counts/rev encoder"
         },
         {
           "id": "dfrobot-fit0450",
@@ -735,17 +785,17 @@
           "currency": "USD",
           "sku": "SER0020",
           "url": "https://www.dfrobot.com/product-236.html",
-          "spec": "Standard servo, 180°, 4.8–6 V, 38 g"
+          "spec": "Standard servo, 180\u00b0, 4.8\u20136 V, 38 g"
         },
         {
           "id": "dfrobot-ser0006",
-          "name": "9g 180° Micro Servo for Arduino (1.3kg)",
+          "name": "9g 180\u00b0 Micro Servo for Arduino (1.3kg)",
           "category": "servos",
           "price": 3.5,
           "currency": "USD",
           "sku": "SER0006",
           "url": "https://www.dfrobot.com/product-255.html",
-          "spec": "9 g micro servo, 180° ±5°, 4.8–6 V"
+          "spec": "9 g micro servo, 180\u00b0 \u00b15\u00b0, 4.8\u20136 V"
         },
         {
           "id": "dfrobot-dri0044",
@@ -755,7 +805,7 @@
           "currency": "USD",
           "sku": "DRI0044",
           "url": "https://www.dfrobot.com/product-1704.html",
-          "spec": "TB6612FNG dual DC motor driver breakout, 2 × 1.2 A"
+          "spec": "TB6612FNG dual DC motor driver breakout, 2 \u00d7 1.2 A"
         },
         {
           "id": "dfrobot-dri0002",
@@ -765,7 +815,7 @@
           "currency": "USD",
           "sku": "DRI0002",
           "url": "https://www.dfrobot.com/product-66.html",
-          "spec": "L298N dual DC motor controller, 4.8–46 V, 2 A per channel"
+          "spec": "L298N dual DC motor controller, 4.8\u201346 V, 2 A per channel"
         },
         {
           "id": "dfrobot-dfr0654",
@@ -785,7 +835,7 @@
           "currency": "USD",
           "sku": "SEN0340",
           "url": "https://www.dfrobot.com/product-1995.html",
-          "spec": "TF-Luna single-point ToF lidar, 0.2–8 m, 1 cm resolution, UART/I2C"
+          "spec": "TF-Luna single-point ToF lidar, 0.2\u20138 m, 1 cm resolution, UART/I2C"
         },
         {
           "id": "dfrobot-sen0374",
@@ -815,7 +865,7 @@
           "currency": "USD",
           "sku": "FIT0654-1",
           "url": "https://www.dfrobot.com/product-2042.html",
-          "spec": "4 × 80 mm mecanum wheels, 9 rollers each, up to 10 kg load"
+          "spec": "4 \u00d7 80 mm mecanum wheels, 9 rollers each, up to 10 kg load"
         },
         {
           "id": "dfrobot-dfr0969",
@@ -825,7 +875,7 @@
           "currency": "USD",
           "sku": "DFR0969",
           "url": "https://www.dfrobot.com/product-2578.html",
-          "spec": "Holder/charger for 2 × 18650 cells, micro-USB and USB-C in, USB out, 3 V/5 V, protected"
+          "spec": "Holder/charger for 2 \u00d7 18650 cells, micro-USB and USB-C in, USB out, 3 V/5 V, protected"
         }
       ]
     },
@@ -847,7 +897,7 @@
           "currency": "USD",
           "sku": "902-0135-000",
           "url": "https://robotis.us/products/dynamixel-xl430-w250-t",
-          "spec": "DYNAMIXEL smart servo, 11.1 V, TTL, 57 RPM no-load, ~0.28 N·m est. rated torque, 4096-step resolution"
+          "spec": "DYNAMIXEL smart servo, 11.1 V, TTL, 57 RPM no-load, ~0.28 N\u00b7m est. rated torque, 4096-step resolution"
         },
         {
           "id": "robotis-902-0163-000",
@@ -857,7 +907,7 @@
           "currency": "USD",
           "sku": "902-0163-000",
           "url": "https://robotis.us/products/dynamixel-xl330-m288-t",
-          "spec": "DYNAMIXEL smart servo, 5 V, TTL/SBUS/iBUS/RC PWM, 103 RPM no-load, ~0.10 N·m est. rated torque"
+          "spec": "DYNAMIXEL smart servo, 5 V, TTL/SBUS/iBUS/RC PWM, 103 RPM no-load, ~0.10 N\u00b7m est. rated torque"
         },
         {
           "id": "robotis-902-0132-000",
@@ -897,7 +947,7 @@
           "currency": "USD",
           "sku": "902-0043-000",
           "url": "https://robotis.us/products/distance-measuring-sensor-dms-80",
-          "spec": "Distance sensor, 10–80 cm, 4.5–5.5 V, 4.4 g"
+          "spec": "Distance sensor, 10\u201380 cm, 4.5\u20135.5 V, 4.4 g"
         },
         {
           "id": "robotis-902-0042-000",
@@ -907,7 +957,7 @@
           "currency": "USD",
           "sku": "902-0042-000",
           "url": "https://robotis.us/products/gyro-sensor-gs-12",
-          "spec": "Gyro sensor, ±300°/s, 4.5–5.5 V, 23 × 23 × 10 mm"
+          "spec": "Gyro sensor, \u00b1300\u00b0/s, 4.5\u20135.5 V, 23 \u00d7 23 \u00d7 10 mm"
         },
         {
           "id": "robotis-901-0118-301",
@@ -957,7 +1007,7 @@
           "currency": "USD",
           "sku": "903-0126-000",
           "url": "https://robotis.us/products/smps-12v-5a-ps-10-us-110v",
-          "spec": "12 V 5 A power supply, 100–260 V AC input"
+          "spec": "12 V 5 A power supply, 100\u2013260 V AC input"
         }
       ]
     },
@@ -979,17 +1029,17 @@
           "currency": "USD",
           "sku": "23489",
           "url": "https://www.waveshare.com/ddsm115.htm",
-          "spec": "Direct-drive hub servo motor, 115 RPM rated, 0.96 N·m rated / 2.0 N·m locked-rotor, 4096-count encoder, RS485, IP54"
+          "spec": "Direct-drive hub servo motor, 115 RPM rated, 0.96 N\u00b7m rated / 2.0 N\u00b7m locked-rotor, 4096-count encoder, RS485, IP54"
         },
         {
           "id": "waveshare-24440",
-          "name": "2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle",
+          "name": "2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300\u00b0 Rotation Angle",
           "category": "servos",
           "price": 8.99,
           "currency": "USD",
           "sku": "24440",
           "url": "https://www.waveshare.com/sc09-servo.htm",
-          "spec": "Serial bus servo, 2.3 kg·cm at 6 V, 300° rotation, 4–6 V, 0.1 s/60°"
+          "spec": "Serial bus servo, 2.3 kg\u00b7cm at 6 V, 300\u00b0 rotation, 4\u20136 V, 0.1 s/60\u00b0"
         },
         {
           "id": "waveshare-21568",
@@ -999,7 +1049,7 @@
           "currency": "USD",
           "sku": "21568",
           "url": "https://www.waveshare.com/sc15-servo.htm",
-          "spec": "Serial bus servo, 15 kg·cm at 6 V, metal gears, 4.8–8.4 V, 210° servo / 360° motor mode"
+          "spec": "Serial bus servo, 15 kg\u00b7cm at 6 V, metal gears, 4.8\u20138.4 V, 210\u00b0 servo / 360\u00b0 motor mode"
         },
         {
           "id": "waveshare-15364",
@@ -1009,7 +1059,7 @@
           "currency": "USD",
           "sku": "15364",
           "url": "https://www.waveshare.com/motor-driver-hat.htm",
-          "spec": "Raspberry Pi HAT, TB6612FNG + PCA9685, I2C, 6–12 V motor supply"
+          "spec": "Raspberry Pi HAT, TB6612FNG + PCA9685, I2C, 6\u201312 V motor supply"
         },
         {
           "id": "waveshare-15669",
@@ -1019,7 +1069,7 @@
           "currency": "USD",
           "sku": "15669",
           "url": "https://www.waveshare.com/stepper-motor-hat.htm",
-          "spec": "Raspberry Pi HAT, dual DRV8825, 8.2–28 V, 2.5 A, up to 1/32 microstepping"
+          "spec": "Raspberry Pi HAT, dual DRV8825, 8.2\u201328 V, 2.5 A, up to 1/32 microstepping"
         },
         {
           "id": "waveshare-23730",
@@ -1033,13 +1083,13 @@
         },
         {
           "id": "waveshare-25978",
-          "name": "D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus",
+          "name": "D500 Developer Kit, DTOF Laser Ranging Sensor, 360\u00b0 Omni-Directional Lidar, UART Bus",
           "category": "sensors",
           "price": 95.99,
           "currency": "USD",
           "sku": "25978",
           "url": "https://www.waveshare.com/d500-lidar-kit.htm",
-          "spec": "360° DTOF lidar, 0.03–12 m, 5000 Hz ranging, 6–13 Hz scan, UART 230400"
+          "spec": "360\u00b0 DTOF lidar, 0.03\u201312 m, 5000 Hz ranging, 6\u201313 Hz scan, UART 230400"
         },
         {
           "id": "waveshare-18301",
@@ -1059,7 +1109,7 @@
           "currency": "USD",
           "sku": null,
           "url": "https://www.waveshare.com/wave-rover.htm",
-          "spec": "Full-metal 4WD chassis with onboard ESP32, 4 × 1.5 W motors, 3 × 18650 (not included), 194 × 168 × 100 mm"
+          "spec": "Full-metal 4WD chassis with onboard ESP32, 4 \u00d7 1.5 W motors, 3 \u00d7 18650 (not included), 194 \u00d7 168 \u00d7 100 mm"
         },
         {
           "id": "waveshare-ups-hat",
@@ -1079,7 +1129,27 @@
           "currency": "USD",
           "sku": null,
           "url": "https://www.waveshare.com/dc-buck-adapter-7.2v.htm",
-          "spec": "Buck adapter for serial bus servos, 9–36 V in, 7.2 V or 6 V out"
+          "spec": "Buck adapter for serial bus servos, 9\u201336 V in, 7.2 V or 6 V out"
+        },
+        {
+          "id": "waveshare-roarm-m2-s",
+          "name": "RoArm-M2-S arm",
+          "sku": "25118",
+          "price": 179.99,
+          "currency": "USD",
+          "url": "https://www.waveshare.com/roarm-m2-s.htm",
+          "category": "chassis-kits",
+          "spec": "Complete 4-DOF desktop arm with gripper and ESP32 controller. Base S configuration; optional camera excluded."
+        },
+        {
+          "id": "waveshare-roarm-m3-s",
+          "name": "RoArm-M3-S arm",
+          "sku": "30256",
+          "price": 239.99,
+          "currency": "USD",
+          "url": "https://www.waveshare.com/roarm-m3.htm",
+          "category": "chassis-kits",
+          "spec": "Complete 5+1-DOF arm with gripper. Price is the base S configuration; optional accessories excluded."
         }
       ]
     }

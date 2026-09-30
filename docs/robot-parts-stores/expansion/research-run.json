@@ -1,0 +1,14 @@
+{
+  "started_at": "2026-09-29T22:59:17Z",
+  "research_completed_at": "2026-09-29T23:04:02Z",
+  "deadline": "2026-09-29T23:09:17Z",
+  "agents": 5,
+  "maximum_simultaneous_research_agents": 3,
+  "scope": "20 companies; official product and recent activity evidence; China-based companies last",
+  "implementation_validation": "Continued after research collection finished.",
+  "companies": 20,
+  "products": 29,
+  "china_based_companies": 4,
+  "prepared_builder_products": 20,
+  "cad_asset_bytes": 1217528720
+}

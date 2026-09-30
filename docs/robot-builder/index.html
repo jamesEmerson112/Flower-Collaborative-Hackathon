@@ -16,7 +16,7 @@
         <div class="panel-heading"><span class="eyebrow">YOUR CREATION</span><h1>A little of<br/>everything.</h1><p>One robot. Many makers.<br/>Make it your own.</p></div>
         <div class="section-label"><h2>Build your robot</h2><span>6 SLOTS</span></div>
         <div id="slots" class="slot-list" aria-label="Choose a body slot"></div>
-        <div class="build-summary"><div class="supplier-count"><span id="supplier-count">—</span><span>suppliers,<br/>working together</span></div><div id="supplier-dots" class="supplier-dots"></div><details class="parts-details"><summary><span>Your parts list</span><span id="parts-count">6 parts</span></summary><div id="bill"></div></details><div class="subtotal"><span>Catalog subtotal</span><strong id="total">—</strong></div><p class="price-note">Prices captured Sep 29, 2026</p><button id="reset" class="text-button">↺ Start over</button></div>
+        <div class="build-summary"><div class="supplier-count"><span id="supplier-count">—</span><span>suppliers,<br/>working together</span></div><div id="supplier-dots" class="supplier-dots"></div><details class="parts-details"><summary><span>Your parts list</span><span id="parts-count">6 parts</span></summary><div id="bill"></div></details><button id="reset" class="text-button">↺ Start over</button></div>
       </aside>
       <section class="stage-panel" aria-label="Robot preview">
         <div class="stage-top"><div><span class="eyebrow">THE POSSIBILITIES ARE MODULAR</span><p>Your next great combination.</p></div><span class="live-tag"><i></i> Live preview</span></div>
@@ -28,10 +28,11 @@
       <aside class="catalog-panel" aria-label="Parts catalog">
         <div class="catalog-heading"><span class="eyebrow">PICK YOUR PIECES</span><div><h2 id="catalog-title">Torso</h2><span id="result-count" class="count-pill">—</span></div><p id="catalog-description">Every great robot starts somewhere.</p></div>
         <label class="search-field"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8" cy="8" r="5.5"/><path d="m12 12 5 5"/></svg><input id="search" type="search" placeholder="Find a part or maker" aria-label="Search parts" /></label>
-        <div class="catalog-filters"><label class="supplier-filter"><span class="sr-only">Filter by supplier</span><select id="supplier"><option value="">All suppliers</option></select></label><button id="all-parts" class="filter-button" aria-pressed="false">Show all parts</button></div>
+        <div class="catalog-filters"><label class="supplier-filter"><span class="sr-only">Filter by supplier</span><select id="supplier"><option value="">All suppliers</option></select></label><button id="all-parts" class="filter-button" aria-pressed="false">All body parts</button></div>
+
         <div id="catalog" class="part-grid"></div>
         <div id="empty" class="empty-state" hidden><strong>No pieces found.</strong><p>Try another search or supplier.</p><button id="clear-filters" class="button">Clear filters</button></div>
-        <p class="catalog-footer"><span>✳</span> Real parts. Room to imagine.</p>
+        <p class="catalog-footer">Body parts ready to assemble in 3D.</p>
       </aside>
     </main>
     <div id="status" class="toast" role="status" aria-live="polite"></div>

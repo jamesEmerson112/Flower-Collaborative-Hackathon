@@ -2,8 +2,8 @@ id,name,url,country,specialty,ships_international,fetch_status,item_count
 adafruit,Adafruit Industries,https://www.adafruit.com,US,"Open-source maker electronics: Feather/STEMMA boards, sensors, robotics kits and learning guides",,ok,12
 sparkfun,SparkFun Electronics,https://www.sparkfun.com,US,"Qwiic-ecosystem breakouts, Arduino-compatible dev boards, robotics and GNSS parts",,ok,12
 pololu,Pololu Robotics & Electronics,https://www.pololu.com,US,"Gearmotors, motor drivers, voltage regulators, sensors and robot chassis",,ok,12
-servocity,ServoCity,https://www.servocity.com,US,"goBILDA metal build system: planetary gearmotors, servos, structure, wheels and robot chassis",,ok,12
-seeed,Seeed Studio,https://www.seeedstudio.com,CN,"Grove plug-in modules, XIAO boards, edge-AI hardware and LeRobot arm kits",true,ok,12
+servocity,ServoCity,https://www.servocity.com,US,"goBILDA metal build system: planetary gearmotors, servos, structure, wheels and robot chassis",,ok,13
+seeed,Seeed Studio,https://www.seeedstudio.com,CN,"Grove plug-in modules, XIAO boards, edge-AI hardware and LeRobot arm kits",true,ok,16
 dfrobot,DFRobot,https://www.dfrobot.com,CN,"Gravity sensor modules, geared motors, robot platforms and STEM kits",,ok,12
 robotis,ROBOTIS America,https://robotis.us,US,"ROBOTIS DYNAMIXEL smart actuators, OpenCR/OpenRB controllers and TurtleBot3 ROS platforms",true,ok,12
-waveshare,Waveshare Electronics,https://www.waveshare.com,CN,"Raspberry Pi / ESP32 HATs and boards, serial-bus servos, lidar and ROS mobile robots",true,ok,11
+waveshare,Waveshare Electronics,https://www.waveshare.com,CN,"Raspberry Pi / ESP32 HATs and boards, serial-bus servos, lidar and ROS mobile robots",true,ok,13

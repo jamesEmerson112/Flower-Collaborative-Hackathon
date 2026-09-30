@@ -1,22 +1,22 @@
 # Robot product CAD collection
 
-Collected 2026-09-29 for the 95 products in `../stores.json`.
+Collected 2026-09-29 for the 102 products in `../stores.json`.
 
-- **50 products have downloaded 3D assets** from supplier, manufacturer, or original designer sources.
+- **57 products have downloaded 3D assets** from supplier, manufacturer, or original designer sources.
 - **2 products have related models only**; these are not verified exact matches.
 - **0 products have only downloaded 2D drawings.**
 - **43 products have no downloaded model in the sources checked.** This is a research result, not proof that a model does not exist.
-- **0.946 GB** of original and extracted assets (358.4 MB original downloads). Below the requested **10 GB** notification threshold. GB means 1,000,000,000 bytes. The archive originals and extracted copies are both counted.
+- **1.322 GB** of original and extracted assets (including seven newly collected arm/frame/shell product sources). Below the requested **10 GB** notification threshold. GB means 1,000,000,000 bytes. The archive originals and extracted copies are both counted.
 
 ## Files
 
 - `originals/<product-id>/`: supplier downloads, including ZIP/RAR archives and native CAD files.
 - `extracted/<product-id>/`: extracted CAD, drawings, and associated documentation. No software installers or demo programs were collected.
 - [manifest.json](manifest.json): source/download URLs, repository commit IDs where applicable, file sizes, SHA-256 hashes, formats, validation results, and mappings to catalog products.
-- [coverage.csv](coverage.csv): all 95 products, including gaps and revision notes.
-- [SHA256SUMS](SHA256SUMS): checksums for the 250 original and extracted files.
+- [coverage.csv](coverage.csv): all 102 products, including gaps and revision notes.
+- [SHA256SUMS](SHA256SUMS): checksums for the 274 original and extracted files.
 
-`originals/` and `extracted/` are ignored by Git to keep vendor binaries out of ordinary source commits. They are present locally. The catalog and its generated files are unchanged.
+`originals/` and `extracted/` are ignored by Git to keep vendor binaries out of ordinary source commits. They are present locally. The catalog and generated CSVs include seven newly researched body-section products.
 
 ## Coverage
 
@@ -25,11 +25,11 @@ Collected 2026-09-29 for the 95 products in `../stores.json`.
 | adafruit | 6 | 1 | 0 | 5 |
 | sparkfun | 2 | 0 | 0 | 10 |
 | pololu | 10 | 0 | 0 | 2 |
-| servocity | 10 | 0 | 0 | 2 |
-| seeed | 3 | 0 | 0 | 9 |
+| servocity | 11 | 0 | 0 | 2 |
+| seeed | 7 | 0 | 0 | 9 |
 | dfrobot | 3 | 0 | 0 | 9 |
 | robotis | 8 | 0 | 0 | 4 |
-| waveshare | 8 | 1 | 0 | 2 |
+| waveshare | 10 | 1 | 0 | 2 |
 
 ## Useful starting models
 
@@ -65,3 +65,20 @@ shasum -a 256 -c SHA256SUMS
 ## Provenance and reuse
 
 These are third-party assets, not newly authored project models. Available source licenses and documentation are retained alongside the files (including Adafruit, SparkFun, TheRobotStudio, ROBOTIS ROS, and Raspberry Pi notices). A public download does not establish a common redistribution license; source-specific terms still apply. No account login or paid download was used.
+
+## Body-only demo additions
+
+Five additional official model sources are recorded under `demo_assets` in the
+manifest: Niryo Ned2, Elephant myCobot 280 Pi, and Reachy 2 torso/head/mobile-base
+meshes. Reachy entries are visual sections of a whole robot, not retail modules.
+These supplement the 102-product store snapshot. The exact prepared palette is
+[body-parts.csv](../../robot-builder/public/body-parts.csv).
+
+Five more torso sections were collected from pinned official ROBOTIS, Berkeley
+Humanoid Lite, and Unitree repositories. Their raw meshes are retained unchanged;
+the H1 preview omits its fixed head as recorded in `preview_filter`. The active
+builder now has nine torso options and twenty-one body models overall.
+
+Two additional head sections from the pinned official ROBOTIS OP3 and Unitree G1
+repositories are recorded in `demo_assets`. The builder now has four head choices.
+The original store catalogs and expansion datasets remain separate.

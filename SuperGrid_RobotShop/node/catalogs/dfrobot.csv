@@ -1,0 +1,13 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+dfrobot-fit0186,dfrobot,DFRobot,"12V Metal DC Geared Motor with Encoder (43.8:1, 251RPM, 18Kg.cm)",FIT0186,https://www.dfrobot.com/product-634.html,16.50,USD,dc_gearmotor,actuators
+dfrobot-fit0450,dfrobot,DFRobot,TT Motor with Encoder (6V 160RPM 120:1),FIT0450,https://www.dfrobot.com/product-1457.html,7.40,USD,dc_gearmotor,actuators
+dfrobot-ser0020,dfrobot,DFRobot,DSS-P05 Standard Servo (5.1kg),SER0020,https://www.dfrobot.com/product-236.html,5.80,USD,positional_servo,actuators
+dfrobot-ser0006,dfrobot,DFRobot,9g 180° Micro Servo for Arduino (1.3kg),SER0006,https://www.dfrobot.com/product-255.html,3.50,USD,positional_servo,actuators
+dfrobot-dri0044,dfrobot,DFRobot,Fermion: TB6612FNG 2x1.2A DC Motor Driver (Breakout),DRI0044,https://www.dfrobot.com/product-1704.html,4.50,USD,motor_driver,support
+dfrobot-dri0002,dfrobot,DFRobot,MDV 2x2A DC Motor Controller (L298N),DRI0002,https://www.dfrobot.com/product-66.html,12.90,USD,motor_driver,support
+dfrobot-dfr0654,dfrobot,DFRobot,"FireBeetle 2 ESP32-E IoT Microcontroller (32M / 512KB, Supports Wi-Fi & Bluetooth)",DFR0654,https://www.dfrobot.com/product-2195.html,8.90,USD,microcontroller,support
+dfrobot-sen0340,dfrobot,DFRobot,"TF-Luna ToF Single-Point Ranging Solid State LiDAR Sensor (8m, UART / I2C)",SEN0340,https://www.dfrobot.com/product-1995.html,24.90,USD,lidar,sensors
+dfrobot-sen0374,dfrobot,DFRobot,Fermion: BNO055 Intelligent 9-axis Sensor (Breakout),SEN0374,https://www.dfrobot.com/product-2142.html,17.90,USD,imu,sensors
+dfrobot-rob0112,dfrobot,DFRobot,Devastator Tank Mobile Robot Platform,ROB0112,https://www.dfrobot.com/product-1219.html,69.90,USD,mobile_base,legs
+dfrobot-fit0654-1,dfrobot,DFRobot,Mecanum Wheel Kit (80mm - 4 Wheels),FIT0654-1,https://www.dfrobot.com/product-2042.html,19.60,USD,wheel,wheels
+dfrobot-dfr0969,dfrobot,DFRobot,2-Way 18650 Battery Holder,DFR0969,https://www.dfrobot.com/product-2578.html,9.90,USD,battery_holder,support

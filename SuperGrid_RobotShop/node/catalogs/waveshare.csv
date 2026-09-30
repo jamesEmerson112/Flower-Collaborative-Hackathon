@@ -1,0 +1,14 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+waveshare-23489,waveshare,Waveshare Electronics,"DDSM115 Direct Drive Servo Motor, Low Speed & High Torque, Low Noise, All-In-One Design, Hub Motor",23489,https://www.waveshare.com/ddsm115.htm,64.99,USD,hub_motor,actuators
+waveshare-24440,waveshare,Waveshare Electronics,"2.3kg Serial Bus Servo, Two-way Feedback, Servo/Motor Mode Switchable, Compact Size, 300° Rotation Angle",24440,https://www.waveshare.com/sc09-servo.htm,8.99,USD,smart_servo,actuators
+waveshare-21568,waveshare,Waveshare Electronics,SC15 17kg Large Torque Programmable Serial Bus Servo,21568,https://www.waveshare.com/sc15-servo.htm,17.99,USD,smart_servo,actuators
+waveshare-15364,waveshare,Waveshare Electronics,"Motor Driver HAT for Raspberry Pi, I2C Interface",15364,https://www.waveshare.com/motor-driver-hat.htm,13.99,USD,motor_driver,support
+waveshare-15669,waveshare,Waveshare Electronics,"Stepper Motor HAT for Raspberry Pi, Drives Two Stepper Motors",15669,https://www.waveshare.com/stepper-motor-hat.htm,18.99,USD,motor_driver,support
+waveshare-23730,waveshare,Waveshare Electronics,"General Driver board for Robots, Based on ESP32, multi-functional, supports WIFI, Bluetooth and ESP-NOW communications, ESP32-WROOM-32UE, ESP32 Dev Board",23730,https://www.waveshare.com/general-driver-for-robots.htm,27.99,USD,robot_controller,support
+waveshare-25978,waveshare,Waveshare Electronics,"D500 Developer Kit, DTOF Laser Ranging Sensor, 360° Omni-Directional Lidar, UART Bus",25978,https://www.waveshare.com/d500-lidar-kit.htm,95.99,USD,lidar,sensors
+waveshare-18301,waveshare,Waveshare Electronics,"TOF Laser Range Sensor, UART / CAN Bus, Cascading Support, Ranging up to 5m, with Software",18301,https://www.waveshare.com/tof-laser-range-sensor.htm,17.99,USD,distance_sensor,sensors
+waveshare-wave-rover,waveshare,Waveshare Electronics,"WAVE ROVER Flexible And Expandable 4WD Mobile Robot Chassis, Full Metal Body, Multiple Hosts Support, With Onboard ESP32 Module",,https://www.waveshare.com/wave-rover.htm,89.99,USD,mobile_base,legs
+waveshare-ups-hat,waveshare,Waveshare Electronics,"Uninterruptible Power Supply UPS HAT For Raspberry Pi, Stable 5V Power Output",,https://www.waveshare.com/ups-hat.htm,19.99,USD,power_module,support
+waveshare-dc-buck-adapter-7-2v,waveshare,Waveshare Electronics,"Serial Bus Servo DC Buck Adapter, Mini Module, Design for Serial Bus Servos, Easy to Use, 7.2V / 6V Buck Regulator",,https://www.waveshare.com/dc-buck-adapter-7.2v.htm,3.49,USD,voltage_regulator,support
+waveshare-roarm-m2-s,waveshare,Waveshare Electronics,RoArm-M2-S arm,25118,https://www.waveshare.com/roarm-m2-s.htm,179.99,USD,robotic_arm_kit,arms
+waveshare-roarm-m3-s,waveshare,Waveshare Electronics,RoArm-M3-S arm,30256,https://www.waveshare.com/roarm-m3.htm,239.99,USD,robotic_arm_kit,arms

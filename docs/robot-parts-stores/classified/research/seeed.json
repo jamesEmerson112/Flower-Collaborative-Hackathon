@@ -1,15 +1,12 @@
 [
   {
     "product_id": "seeed-108990003",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "head",
-      "legs"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "stepper_motor",
     "assembly_level": "component",
     "function_summary": "Compact geared stepper motor for controlled mechanical positioning.",
-    "classification_reason": "A generic positioning actuator can drive a small joint; anatomical assignment is a builder suggestion, not a vendor-designated limb.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "One motor; driver, controller, mounting and link structure are additional.",
     "evidence_status": "live_verified",
@@ -21,15 +18,12 @@
   },
   {
     "product_id": "seeed-316010005",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "head",
-      "legs"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "positional_servo",
     "assembly_level": "component",
     "function_summary": "Angular-position servo supplied with a Grove connector.",
-    "classification_reason": "Positional actuation suggests an arm joint; alternative light head or leg joints need structure and load checks.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "Servo with Grove connection; robot links and controller are not a completed limb in this product.",
     "evidence_status": "live_verified",
@@ -41,15 +35,12 @@
   },
   {
     "product_id": "seeed-108090003",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "legs",
-      "head"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "smart_servo",
     "assembly_level": "component",
     "function_summary": "Serial-bus smart servo with metal gearbox and magnetic angle sensing.",
-    "classification_reason": "Joint actuator is suitable for manipulation; alternate leg/head roles need mounts and engineering checks.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "One ST3215-C047 servo; complete arm structure, power and adapter/control system are separate.",
     "evidence_status": "live_verified",
@@ -112,12 +103,12 @@
   },
   {
     "product_id": "seeed-101020010",
-    "primary_role": "head",
+    "primary_role": "sensors",
     "secondary_roles": [],
     "part_type": "distance_sensor",
     "assembly_level": "module",
     "function_summary": "Ultrasonic module measures distance to nearby objects.",
-    "classification_reason": "Environment perception suggests a head sensor; no mechanical head is included.",
+    "classification_reason": "Perception or orientation component; not a physical head assembly.",
     "classification_confidence": "high",
     "assembly_notes": "Sensor module; controller, wiring integration and mounting required.",
     "evidence_status": "live_verified",
@@ -129,12 +120,12 @@
   },
   {
     "product_id": "seeed-101020585",
-    "primary_role": "support",
+    "primary_role": "sensors",
     "secondary_roles": [],
     "part_type": "imu",
     "assembly_level": "module",
     "function_summary": "IMU combines angular-motion, acceleration and magnetic-field sensing.",
-    "classification_reason": "Self-orientation and motion feedback support the body; it is not an outward-looking head sensor.",
+    "classification_reason": "Perception or orientation component; not a physical head assembly.",
     "classification_confidence": "high",
     "assembly_notes": "Grove sensor module; host processor and mounting required.",
     "evidence_status": "live_verified",
@@ -147,12 +138,12 @@
   },
   {
     "product_id": "seeed-101020532",
-    "primary_role": "head",
+    "primary_role": "sensors",
     "secondary_roles": [],
     "part_type": "distance_sensor",
     "assembly_level": "module",
     "function_summary": "VL53L0X time-of-flight module provides optical distance measurements.",
-    "classification_reason": "Environment ranging fits the head perception role, without constituting a complete head.",
+    "classification_reason": "Perception or orientation component; not a physical head assembly.",
     "classification_confidence": "high",
     "assembly_notes": "Sensor board; host controller and physical mount separate.",
     "evidence_status": "live_verified",
@@ -181,12 +172,12 @@
   },
   {
     "product_id": "seeed-114993667",
-    "primary_role": "arms",
+    "primary_role": "actuators",
     "secondary_roles": [],
-    "part_type": "robotic_arm_kit",
+    "part_type": "actuator_kit",
     "assembly_level": "kit",
     "function_summary": "Servo motor, adapter-board and cable kit for constructing an SO-ARM101 arm.",
-    "classification_reason": "Purpose is manipulation, but the purchased kit is the actuator/electronics subset of an arm.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "high",
     "assembly_notes": "Motor kit excludes 3D-printed structural parts and camera; the downloaded full-arm CAD includes structure that this SKU does not supply.",
     "evidence_status": "live_verified",
@@ -212,6 +203,74 @@
       "https://wiki.seeedstudio.com/Lipo-Rider-Plus/"
     ],
     "evidence_note": "Official wiki describes charging, boosting and external battery connection after storefront fetch failed.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-100046482",
+    "primary_role": "arms",
+    "secondary_roles": [],
+    "part_type": "robotic_arm_kit",
+    "assembly_level": "module",
+    "function_summary": "Assembled Pro kit with printed structure, six STS3215 servos and BusLinker V3. Designer CAD is a visualization reference; supplier revision may differ.",
+    "classification_reason": "Complete manipulation assembly.",
+    "classification_confidence": "high",
+    "assembly_notes": "Assembled Pro kit with printed structure, six STS3215 servos and BusLinker V3. Designer CAD is a visualization reference; supplier revision may differ.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/SO-101-Assembled-Kit-Pro-p-6691.html"
+    ],
+    "evidence_note": "Official product page inspected; purchased scope distinguished from visualization mesh.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-100053279",
+    "primary_role": "torso",
+    "secondary_roles": [],
+    "part_type": "body_shell",
+    "assembly_level": "component",
+    "function_summary": "Empty upper body cover only; mechanisms, electronics and lower cover are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "classification_reason": "Physical structural frame or exterior housing; not electronics.",
+    "classification_confidence": "high",
+    "assembly_notes": "Empty upper body cover only; mechanisms, electronics and lower cover are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Reachy-Mini-body-p-6798.html"
+    ],
+    "evidence_note": "Official product page inspected; purchased scope distinguished from visualization mesh.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-100072462",
+    "primary_role": "torso",
+    "secondary_roles": [],
+    "part_type": "body_shell",
+    "assembly_level": "component",
+    "function_summary": "Empty lower body cover only; mechanisms, electronics and upper cover are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "classification_reason": "Physical structural frame or exterior housing; not electronics.",
+    "classification_confidence": "high",
+    "assembly_notes": "Empty lower body cover only; mechanisms, electronics and upper cover are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Reachy-Mini-body-p-6799.html"
+    ],
+    "evidence_note": "Official product page inspected; purchased scope distinguished from visualization mesh.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "seeed-100054390",
+    "primary_role": "head",
+    "secondary_roles": [],
+    "part_type": "head_shell",
+    "assembly_level": "component",
+    "function_summary": "Front head cover only; rear cover, eyes, sensors and mechanisms are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "classification_reason": "Physical structural frame or exterior housing; not electronics.",
+    "classification_confidence": "high",
+    "assembly_notes": "Front head cover only; rear cover, eyes, sensors and mechanisms are separate. Designer mesh revision is not mechanically verified against the sold shell.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.seeedstudio.com/Reachy-Mini-Head-p-6848.html"
+    ],
+    "evidence_note": "Official product page inspected; purchased scope distinguished from visualization mesh.",
     "researched_at": "2026-09-29"
   }
 ]

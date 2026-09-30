@@ -4,7 +4,6 @@ import { createWorkshop } from './scene.js';
 
 const $ = id => document.getElementById(id);
 const STORAGE_KEY = 'flower.robot-workshop.v1';
-const money = value => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
 const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
 let toastTimer;
 function notify(message) {
@@ -36,12 +35,13 @@ async function start() {
     $('retry').textContent = 'Reload';
     $('retry').onclick = () => location.reload();
   }
-  const suppliers = [...new Set(catalog.map(p => p.supplier))].sort();
+  const chinaSuppliers = new Set(['Seeed Studio', 'Waveshare', 'Elephant Robotics', 'Unitree Robotics']);
+  const suppliers = [...new Set(catalog.map(p => p.supplier))].sort((a,b) => Number(chinaSuppliers.has(a)) - Number(chinaSuppliers.has(b)) || a.localeCompare(b));
   for (const supplier of suppliers) {
     const option = document.createElement('option'); option.textContent = supplier; option.value = supplier; $('supplier').append(option);
   }
   const icons = { torso: '▣', head: '▤', leftArm: '╱', rightArm: '╲', leftLeg: '▥', rightLeg: '▥' };
-  const descriptions = { torso: 'Structural frames to carry your robot’s parts.', head: 'Distance sensors and perception components.', arms: 'Manipulators and actuators for your robot’s arms.', legs: 'Drive parts or one shared wheeled base for both legs.' };
+  const descriptions = { torso: 'Robot bodies, shells and structural frames.', head: 'Heads and face shells for your robot.', arms: 'Complete arm assemblies with structural links and joints.', legs: 'One shared driving base can fill both leg slots.' };
 
   function renderBuild() {
     const focus = document.activeElement?.dataset.slot;
@@ -55,8 +55,7 @@ async function start() {
     $('supplier-count').textContent = summary.suppliers.length;
     $('supplier-dots').innerHTML = summary.suppliers.map(supplier => `<span class="supplier-dot" title="${escape(supplier)}" style="background:${catalog.find(p => p.supplier === supplier).color}"></span>`).join('');
     $('parts-count').textContent = `${summary.count} parts`;
-    $('total').textContent = money(summary.total);
-    $('bill').innerHTML = summary.lines.map(line => `<div class="bill-line"><span><a href="${escape(line.productUrl)}" target="_blank" rel="noopener noreferrer">${line.quantity} × ${escape(line.name)}</a>${line.note ? `<small class="bill-note">${escape(line.note)}</small>` : ''}</span><span>${money(line.subtotal)}</span></div>`).join('');
+    $('bill').innerHTML = summary.lines.map(line => `<div class="bill-line"><span><a href="${escape(line.productUrl)}" target="_blank" rel="noopener noreferrer">${line.quantity} × ${escape(line.name)}</a>${line.note ? `<small class="bill-note">${escape(line.note)}</small>` : ''}</span></div>`).join('');
   }
 
   function renderCatalog() {
@@ -64,17 +63,18 @@ async function start() {
     const query = $('search').value.trim().toLowerCase();
     const supplier = $('supplier').value;
     const parts = catalog.filter(p => (showAll || p.roles.includes(slot.role)) && (!supplier || p.supplier === supplier) && `${p.name} ${p.fullName} ${p.supplier} ${p.sku}`.toLowerCase().includes(query));
+    parts.sort((a,b) => Number(chinaSuppliers.has(a.supplier)) - Number(chinaSuppliers.has(b.supplier)) || Number(b.modelKind === 'robot_section') - Number(a.modelKind === 'robot_section'));
     $('catalog-title').textContent = slot.label;
     $('catalog-description').textContent = showAll ? 'Try any part in this slot. There are no fit rules here.' : descriptions[slot.role];
     $('result-count').textContent = parts.length;
     $('all-parts').setAttribute('aria-pressed', String(showAll));
-    $('all-parts').textContent = showAll ? 'Suggested parts' : 'Show all parts';
+    $('all-parts').textContent = showAll ? 'Suggested parts' : 'All body parts';
     $('empty').hidden = parts.length > 0;
     const focusedPart = document.activeElement?.dataset.part;
     $('catalog').innerHTML = parts.map(part => {
       const selected = build.slots[selectedSlot] === part.id;
-      const hint = part.modelKind === 'approximate_preview' ? 'Approximate preview' : part.partType === 'mobile_base' ? 'Shared leg base' : part.roles.includes('support') ? 'Internal support' : '';
-      return `<button class="part-card ${selected ? 'selected' : ''}" data-part="${part.id}" aria-pressed="${selected}" aria-label="Use ${escape(part.name)} from ${escape(part.supplier)} for ${slot.label.toLowerCase()}, ${money(part.price)}"${part.note ? ` title="${escape(part.note)}"` : ''}><span class="part-image"><img src="${import.meta.env.BASE_URL + part.thumbnail}" alt="" loading="lazy" />${selected ? '<span class="part-check" aria-hidden="true">✓</span>' : ''}</span><span class="part-copy"><span class="part-supplier">${escape(part.supplier)}</span><strong class="part-name">${escape(part.name)}</strong>${hint ? `<span class="part-hint">${hint}</span>` : ''}<span class="part-bottom"><span>${money(part.price)}</span><span class="add-symbol" aria-hidden="true">${selected ? '✓' : '+'}</span></span></span></button>`;
+      const hint = part.modelKind === 'approximate_preview' ? 'Approximate preview' : part.partType === 'mobile_base' ? 'Shared leg base' : part.modelKind === 'robot_section' ? 'Robot body section' : ({ robotic_arm_kit: 'Complete arm assembly', body_shell: 'Empty body shell', head_shell: 'Empty head shell', chassis_frame: 'Structural frame' }[part.partType] || { actuators: 'Motor / joint component', sensors: 'Sensor component', support: 'Electronics / power', wheels: 'Wheel component' }[part.roles[0]] || '');
+      return `<button class="part-card ${selected ? 'selected' : ''}" data-part="${part.id}" aria-pressed="${selected}" aria-label="Use ${escape(part.name)} from ${escape(part.supplier)} for ${slot.label.toLowerCase()}"${part.note ? ` title="${escape(part.note)}"` : ''}><span class="part-image"><img src="${import.meta.env.BASE_URL + part.thumbnail}" alt="" loading="lazy" />${selected ? '<span class="part-check" aria-hidden="true">✓</span>' : ''}</span><span class="part-copy"><span class="part-supplier">${escape(part.supplier)}</span><strong class="part-name">${escape(part.name)}</strong>${hint ? `<span class="part-hint">${hint}</span>` : ''}<span class="part-bottom"><span>3D model</span><span class="add-symbol" aria-hidden="true">${selected ? '✓' : '+'}</span></span></span></button>`;
     }).join('');
     if (focusedPart) $('catalog').querySelector(`[data-part="${focusedPart}"]`)?.focus({ preventScroll: true });
   }

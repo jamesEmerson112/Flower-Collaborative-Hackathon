@@ -1,0 +1,239 @@
+[
+  {
+    "company_id": "pollen-robotics",
+    "company_name": "Pollen Robotics",
+    "country": "France",
+    "china_based": false,
+    "company_url": "https://pollen-robotics.com/",
+    "activity_evidence": "The current official site reports more than 10,000 Reachy Mini shipments and offers current Reachy Mini and Microduck products; its store terms were updated September 21, 2026. This establishes current activity rather than a numerical popularity ranking.",
+    "activity_url": "https://pollen-robotics.com/",
+    "products": [
+      {
+        "price": 499,
+        "currency": "USD",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/pollen-robotics/reachy_mini",
+        "cad_formats": [
+          "STL",
+          "URDF"
+        ],
+        "researched_at": "2026-09-29",
+        "product_id": "pollen-reachy-mini-wireless",
+        "name": "Reachy Mini Wireless",
+        "product_url": "https://pollen-robotics.com/reachy-mini/",
+        "primary_role": "whole_robot",
+        "part_type": "desktop_robot",
+        "assembly_level": "kit",
+        "purchased_scope": "Complete expressive desktop robot DIY kit, including onboard compute and sensors. Not a separately purchasable head or torso.",
+        "availability": "Orderable; official page says lead time up to 90 days.",
+        "notes": "Whole robot has a useful head/body appearance, but do not present its entire purchase as a stand-alone torso. Source mesh licensing and exact hardware revision need review before redistribution.",
+        "evidence_urls": [
+          "https://pollen-robotics.com/reachy-mini/",
+          "https://github.com/pollen-robotics/reachy_mini",
+          "https://store.pollen-robotics.com/policies/contact-information"
+        ]
+      },
+      {
+        "price": null,
+        "currency": "",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/pollen-robotics/reachy2_core",
+        "cad_formats": [
+          "URDF",
+          "XACRO",
+          "meshes"
+        ],
+        "researched_at": "2026-09-29",
+        "product_id": "pollen-reachy-2",
+        "name": "Reachy 2",
+        "product_url": "https://pollen-robotics.com/reachy-2/",
+        "primary_role": "whole_robot",
+        "part_type": "mobile_manipulator",
+        "assembly_level": "complete_robot",
+        "purchased_scope": "Configurable humanoid mobile manipulation platform with human-scale arms, head, torso and optional mobile base; quote required. Separate arm/torso sale not established.",
+        "availability": "Sales enquiry / quotation.",
+        "notes": "Official product describes 7-DoF human-proportioned arms. Excellent visual body-section reference, but keep classified as a whole robot unless Pollen confirms separate modules for sale.",
+        "evidence_urls": [
+          "https://pollen-robotics.com/reachy-2/",
+          "https://pollen-robotics.com/contact-us/",
+          "https://github.com/pollen-robotics/reachy2_core"
+        ]
+      }
+    ]
+  },
+  {
+    "company_id": "hello-robot",
+    "company_name": "Hello Robot",
+    "country": "United States",
+    "china_based": false,
+    "company_url": "https://hello-robot.com/",
+    "activity_evidence": "Official announcement launched Stretch 4 on May 12, 2026; current purchase page offers it with 2\u20134 week typical shipping.",
+    "activity_url": "https://forum.hello-robot.com/t/introducing-stretch-4/1505",
+    "products": [
+      {
+        "price": 29950,
+        "currency": "USD",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/hello-robot/stretch4_mujoco",
+        "cad_formats": [
+          "MJCF",
+          "URDF",
+          "meshes"
+        ],
+        "researched_at": "2026-09-29",
+        "product_id": "hello-stretch-4",
+        "name": "Stretch 4",
+        "product_url": "https://hello-robot.com/purchase/",
+        "primary_role": "whole_robot",
+        "part_type": "mobile_manipulator",
+        "assembly_level": "complete_robot",
+        "purchased_scope": "Complete mobile manipulator with telescoping arm, lift, sensor head and mobile base; includes compliant gripper, battery, power supply and teleoperation controllers.",
+        "availability": "Available by quote; typical shipment 2\u20134 weeks after payment or purchase order.",
+        "notes": "The arm, mast and head are subsystems of the purchased robot; they are not confirmed as separately sold body sections. Official simulation repository provides models and licensing information.",
+        "evidence_urls": [
+          "https://hello-robot.com/purchase/",
+          "https://forum.hello-robot.com/t/introducing-stretch-4/1505",
+          "https://github.com/hello-robot/stretch4_mujoco"
+        ]
+      }
+    ]
+  },
+  {
+    "company_id": "standard-bots",
+    "company_name": "Standard Bots",
+    "country": "United States",
+    "china_based": false,
+    "company_url": "https://standardbots.com/",
+    "activity_evidence": "Current official product lineup lists Spark, Core, Thor and Bolt; official blog includes June 8, 2026 congressional testimony by its CEO.",
+    "activity_url": "https://standardbots.com/blog",
+    "products": [
+      {
+        "price": null,
+        "currency": "",
+        "cad_status": "not_found",
+        "cad_url": "",
+        "cad_formats": [],
+        "researched_at": "2026-09-29",
+        "product_id": "standard-bots-spark",
+        "name": "Spark",
+        "product_url": "https://standardbots.com/spark",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete industrial articulated arm; 7 kg payload and 900 mm reach. Tooling and integration package determined by quote.",
+        "availability": "Sales consultation / quotation.",
+        "notes": "Suitable as an arm assembly, unlike a bare motor. Public CAD for this exact current product was not found during the timeboxed check.",
+        "evidence_urls": [
+          "https://standardbots.com/spark",
+          "https://standardbots.com/"
+        ]
+      },
+      {
+        "price": null,
+        "currency": "",
+        "cad_status": "not_found",
+        "cad_url": "",
+        "cad_formats": [],
+        "researched_at": "2026-09-29",
+        "product_id": "standard-bots-core",
+        "name": "Core",
+        "product_url": "https://standardbots.com/ro1",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete industrial articulated arm; 18 kg payload and 1,300 mm reach. End tooling and cell equipment depend on quote.",
+        "availability": "Sales consultation / quotation.",
+        "notes": "Current site uses Core name at its /ro1 URL. Older RO1 manual references a URDF download, but exact correspondence to current Core hardware has not been verified; do not assume interchangeable model versions.",
+        "evidence_urls": [
+          "https://standardbots.com/ro1",
+          "https://standardbots.com/",
+          "https://help.standardbots.com/src/ro1-manual.pdf"
+        ]
+      },
+      {
+        "price": null,
+        "currency": "",
+        "cad_status": "not_found",
+        "cad_url": "",
+        "cad_formats": [],
+        "researched_at": "2026-09-29",
+        "product_id": "standard-bots-bolt",
+        "name": "Bolt",
+        "product_url": "https://standardbots.com/bolt",
+        "primary_role": "whole_robot",
+        "part_type": "bimanual_robot",
+        "assembly_level": "complete_robot",
+        "purchased_scope": "Configurable bimanual robot with stationary, mobile and vertical-lift configurations; not an independently sold bare torso.",
+        "availability": "Sales consultation / quotation.",
+        "notes": "Visually relevant upper-body robot, but price, configuration and public model availability are unconfirmed. Keep outside individual torso choices.",
+        "evidence_urls": [
+          "https://standardbots.com/bolt",
+          "https://standardbots.com/"
+        ]
+      }
+    ]
+  },
+  {
+    "company_id": "kinova",
+    "company_name": "Kinova",
+    "country": "Canada",
+    "china_based": false,
+    "company_url": "https://www.kinovarobotics.com/",
+    "activity_evidence": "Official 2026 Gen3 datasheet and official ROS 2 repository updates in September 2026 establish current development and commercial activity.",
+    "activity_url": "https://www.kinovarobotics.com/uploads/Kinova_Onepager_Gen3_2026_EN.pdf",
+    "products": [
+      {
+        "price": null,
+        "currency": "",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/Kinovarobotics/ros2_kortex/tree/main/kortex_description",
+        "cad_formats": [
+          "URDF",
+          "XACRO",
+          "STL"
+        ],
+        "researched_at": "2026-09-29",
+        "product_id": "kinova-gen3",
+        "name": "Gen3 robotic arm",
+        "product_url": "https://www.kinovarobotics.com/product/gen3-robots",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete research robotic arm, offered in 6- and 7-DoF variants. Vision and end-effectors are configuration options; quote determines included equipment.",
+        "availability": "Request a demo / sales quote.",
+        "notes": "Strong full-arm candidate with manufacturer-provided robot descriptions and meshes. Official product page also lists separate CAD downloads for 6- and 7-DoF models; repository verified directly.",
+        "evidence_urls": [
+          "https://www.kinovarobotics.com/product/gen3-robots",
+          "https://github.com/Kinovarobotics/ros2_kortex/tree/main/kortex_description",
+          "https://www.kinovarobotics.com/uploads/Kinova_Onepager_Gen3_2026_EN.pdf",
+          "https://github.com/kinovarobotics"
+        ]
+      },
+      {
+        "product_id": "kinova-gen3-lite",
+        "name": "Gen3 lite robotic arm",
+        "product_url": "https://www.kinovarobotics.com/product/gen3-lite-robots",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete six-axis compact robotic arm with two-finger gripper; 760 mm reach and 0.5 kg continuous payload. Confirm included power and mounting accessories with seller.",
+        "price": null,
+        "currency": "",
+        "availability": "Current official product listing; contact sales for quote and lead time.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/Kinovarobotics/ros2_kortex/tree/main/kortex_description",
+        "cad_formats": [
+          "URDF",
+          "XACRO",
+          "STL"
+        ],
+        "notes": "Full articulated arm candidate with official model assets; price was not publicly verified.",
+        "evidence_urls": [
+          "https://www.kinovarobotics.com/product/gen3-lite-robots",
+          "https://github.com/Kinovarobotics/ros2_kortex/tree/main/kortex_description"
+        ],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  }
+]

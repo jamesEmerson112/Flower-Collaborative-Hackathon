@@ -1,14 +1,12 @@
 [
   {
     "product_id": "waveshare-23489",
-    "primary_role": "legs",
-    "secondary_roles": [
-      "arms"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "hub_motor",
     "assembly_level": "component",
     "function_summary": "Direct-drive hub servo integrates a brushless motor, encoder and driver with RS-485 control.",
-    "classification_reason": "Primarily a mobile-drive/locomotion actuator; position mode also permits joint concepts. It is not a complete wheelbase or limb.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "high",
     "assembly_notes": "One DDSM115 motor; pictured robot chassis explicitly excluded. Requires mechanical integration, control connection and power.",
     "evidence_status": "live_verified",
@@ -20,15 +18,12 @@
   },
   {
     "product_id": "waveshare-24440",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "legs",
-      "head"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "smart_servo",
     "assembly_level": "component",
     "function_summary": "SC09 serial-bus servo supports angular positioning, continuous rotation and feedback.",
-    "classification_reason": "Suggested joint for small arms; walkers and pan-tilt concepts are alternatives. Servo body alone is not a full arm or leg.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "One SC09 servo; servo driver board is explicitly excluded. External links/mounts and suitable power are needed.",
     "evidence_status": "live_verified",
@@ -40,14 +35,12 @@
   },
   {
     "product_id": "waveshare-21568",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "legs"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "smart_servo",
     "assembly_level": "component",
     "function_summary": "SC15 metal-geared serial-bus servo provides position feedback and servo/motor operating modes.",
-    "classification_reason": "Suggested arm joint with leg-joint use in walkers; it does not include the links or frame of an entire limb.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "One SC15 servo; pictured JETANK and servo driver board are explicitly excluded.",
     "evidence_status": "live_verified",
@@ -110,29 +103,29 @@
   },
   {
     "product_id": "waveshare-25978",
-    "primary_role": "head",
+    "primary_role": "sensors",
     "secondary_roles": [],
     "part_type": "lidar",
     "assembly_level": "kit",
     "function_summary": "D500 spinning time-of-flight lidar scans surrounding distances through 360 degrees for mapping and obstacle detection.",
-    "classification_reason": "Perception assembly for a conceptual head; it is a lidar development kit rather than a complete articulated head.",
+    "classification_reason": "Perception or orientation component; not a physical head assembly.",
     "classification_confidence": "high",
     "assembly_notes": "Includes D500 lidar, adapter, USB cable and four-pin cable; Raspberry Pi excluded. Existing LD19 CAD is a related model, not an exact D500 asset.",
     "evidence_status": "live_verified",
     "evidence_urls": [
       "https://www.waveshare.com/d500-lidar-kit.htm"
     ],
-    "evidence_note": "Product specifies 360-degree scanning, 0.03–12 m ranging and four listed package items. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "evidence_note": "Product specifies 360-degree scanning, 0.03\u201312 m ranging and four listed package items. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
     "researched_at": "2026-09-29"
   },
   {
     "product_id": "waveshare-18301",
-    "primary_role": "head",
+    "primary_role": "sensors",
     "secondary_roles": [],
     "part_type": "distance_sensor",
     "assembly_level": "module",
     "function_summary": "Time-of-flight laser ranging module reports distances over UART or CAN for obstacle sensing.",
-    "classification_reason": "Outward distance perception fits the head category; this module has no head structure or pan-tilt mechanism.",
+    "classification_reason": "Perception or orientation component; not a physical head assembly.",
     "classification_confidence": "high",
     "assembly_notes": "One sensor plus two four-pin cables; USB-to-TTL adapter is recommended separately for testing.",
     "evidence_status": "live_verified",
@@ -184,7 +177,7 @@
     "secondary_roles": [],
     "part_type": "voltage_regulator",
     "assembly_level": "module",
-    "function_summary": "Inline DC buck regulator converts a 9–36 V supply to the selected 7.2 V or 6 V servo rail.",
+    "function_summary": "Inline DC buck regulator converts a 9\u201336 V supply to the selected 7.2 V or 6 V servo rail.",
     "classification_reason": "Servo power-conditioning accessory, not an actuator or limb.",
     "classification_confidence": "high",
     "assembly_notes": "One selected-voltage adapter plus a 30 cm servo cable; UPS, driver board and servo are explicitly excluded. The catalog URL names the 7.2 V variant.",
@@ -193,6 +186,40 @@
       "https://www.waveshare.com/dc-buck-adapter-7.2v.htm"
     ],
     "evidence_note": "Product distinguishes 7.2 V and 6 V variants, specifies input range and lists the separate demo hardware. Official product page fetched directly over HTTPS with HTTP 200 and inspected on the research date.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-roarm-m2-s",
+    "primary_role": "arms",
+    "secondary_roles": [],
+    "part_type": "robotic_arm_kit",
+    "assembly_level": "kit",
+    "function_summary": "Complete 4-DOF desktop arm with gripper and ESP32 controller. Base S configuration; optional camera excluded.",
+    "classification_reason": "Complete manipulation assembly.",
+    "classification_confidence": "high",
+    "assembly_notes": "Complete 4-DOF desktop arm with gripper and ESP32 controller. Base S configuration; optional camera excluded.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/roarm-m2-s.htm"
+    ],
+    "evidence_note": "Official product page inspected; purchased scope distinguished from visualization mesh.",
+    "researched_at": "2026-09-29"
+  },
+  {
+    "product_id": "waveshare-roarm-m3-s",
+    "primary_role": "arms",
+    "secondary_roles": [],
+    "part_type": "robotic_arm_kit",
+    "assembly_level": "kit",
+    "function_summary": "Complete 5+1-DOF arm with gripper. Price is the base S configuration; optional accessories excluded.",
+    "classification_reason": "Complete manipulation assembly.",
+    "classification_confidence": "high",
+    "assembly_notes": "Complete 5+1-DOF arm with gripper. Price is the base S configuration; optional accessories excluded.",
+    "evidence_status": "live_verified",
+    "evidence_urls": [
+      "https://www.waveshare.com/roarm-m3.htm"
+    ],
+    "evidence_note": "Official product page inspected; purchased scope distinguished from visualization mesh.",
     "researched_at": "2026-09-29"
   }
 ]

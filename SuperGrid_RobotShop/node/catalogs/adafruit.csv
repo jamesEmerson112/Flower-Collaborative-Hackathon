@@ -1,0 +1,13 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+adafruit-3777,adafruit,Adafruit Industries,"DC Gearbox Motor - ""TT Motor"" - 200RPM - 3 to 6VDC",3777,https://www.adafruit.com/product/3777,2.95,USD,dc_gearmotor,actuators
+adafruit-169,adafruit,Adafruit Industries,Micro servo [TowerPro SG92R],169,https://www.adafruit.com/product/169,5.95,USD,positional_servo,actuators
+adafruit-2927,adafruit,Adafruit Industries,DC Motor + Stepper FeatherWing Add-on For All Feather Boards,2927,https://www.adafruit.com/product/2927,19.95,USD,motor_driver,support
+adafruit-1438,adafruit,Adafruit Industries,Adafruit Motor/Stepper/Servo Shield for Arduino v3 Kit,1438,https://www.adafruit.com/product/1438,19.95,USD,motor_driver,support
+adafruit-4864,adafruit,Adafruit Industries,Raspberry Pi Pico RP2040,4864,https://www.adafruit.com/product/4864,4.00,USD,microcontroller,support
+adafruit-5129,adafruit,Adafruit Industries,Maker Pi RP2040 - Motor and Robot Controller,5129,https://www.adafruit.com/product/5129,14.95,USD,robot_controller,support
+adafruit-3317,adafruit,Adafruit Industries,Adafruit VL53L0X Time of Flight Distance Sensor - ~30 to 1000mm,3317,https://www.adafruit.com/product/3317,14.95,USD,distance_sensor,sensors
+adafruit-4007,adafruit,Adafruit Industries,Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible,4007,https://www.adafruit.com/product/4007,3.95,USD,distance_sensor,sensors
+adafruit-4754,adafruit,Adafruit Industries,Adafruit 9-DOF Orientation IMU Fusion Breakout - BNO085 (BNO080),4754,https://www.adafruit.com/product/4754,29.50,USD,imu,sensors
+adafruit-2939,adafruit,Adafruit Industries,Mini Robot Rover Chassis Kit - 2WD with DC Motors,2939,https://www.adafruit.com/product/2939,24.95,USD,mobile_base,legs
+adafruit-3766,adafruit,Adafruit Industries,Orange and Clear TT Motor Wheel for TT DC Gearbox Motor,3766,https://www.adafruit.com/product/3766,1.50,USD,wheel,wheels
+adafruit-328,adafruit,Adafruit Industries,Lithium Ion Polymer Battery - 3.7v 2500mAh,328,https://www.adafruit.com/product/328,14.95,USD,battery,support

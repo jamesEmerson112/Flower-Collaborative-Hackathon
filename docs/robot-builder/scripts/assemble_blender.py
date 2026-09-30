@@ -34,7 +34,8 @@ for pose in plan:
     group.location = -center
     group.parent = wrapper
     size = pose['size']
-    wrapper.scale = (size[0]/dimensions.x, size[2]/dimensions.y, size[1]/dimensions.z)
+    factors = (size[0]/dimensions.x, size[2]/dimensions.y, size[1]/dimensions.z)
+    wrapper.scale = (min(factors),)*3 if part.get('preserveAspect') else factors
     x,y,z = pose['position']; wrapper.location = (x,-z,y)
     wrapper.parent = robot
     for key,value in {'slot':slot,'slots':pose['slots'],'product_id':part['id'],'supplier':part['supplier'],'source_url':part['sourceUrl'],'product_url':part['productUrl'],'note':part['note'],'model_kind':part['modelKind']}.items(): wrapper[key]=value
@@ -68,7 +69,7 @@ for screen in bpy.data.screens:
             area.spaces.active.shading.type='MATERIAL'
             area.spaces.active.overlay.show_floor=False
 output=ROOT/'blender';output.mkdir(exist_ok=True)
-scene.render.filepath=str(output/'mixed-supplier-robot-v2.png')
-bpy.ops.wm.save_as_mainfile(filepath=str(output/'mixed-supplier-robot-v2.blend'))
+scene.render.filepath=str(output/'mixed-supplier-robot-v4.png')
+bpy.ops.wm.save_as_mainfile(filepath=str(output/'mixed-supplier-robot-v4.blend'))
 bpy.ops.render.render(write_still=True)
 print('Saved corrected starter robot with one shared mobile base.',flush=True)

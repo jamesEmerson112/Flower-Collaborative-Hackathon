@@ -1,0 +1,136 @@
+[
+  {
+    "company_id": "trossen",
+    "company_name": "Trossen Robotics",
+    "country": "United States",
+    "china_based": false,
+    "company_url": "https://www.trossenrobotics.com/",
+    "activity_evidence": "Current Physical AI lineup and WidowX AI integration tutorials for LeRobot and OpenPI; current product page provides purchasing links. Activity evidence, not a popularity ranking.",
+    "activity_url": "https://www.trossenrobotics.com/widowx-ai",
+    "products": [
+      {
+        "product_id": "trossen-widowx-ai-base",
+        "name": "WidowX AI Base",
+        "product_url": "https://www.trossenrobotics.com/widowx-ai",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete six-axis arm with precision gripper, 24V power supply, iNerve controller/interface and accessory bag. Base variant excludes follower depth camera.",
+        "price": 4545.95,
+        "currency": "USD",
+        "availability": "Orderable; manufacturer states average production time of 2–3 weeks.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/TrossenRobotics/trossen_arm_description",
+        "cad_formats": ["STL", "URDF", "XACRO"],
+        "notes": "Full articulated arm, not a servo. Official description package supports base, leader and follower variants. Meshes need joint transforms for an assembled browser preview. Company registered in Illinois per official terms page.",
+        "evidence_urls": ["https://www.trossenrobotics.com/widowx-ai", "https://docs.trossenrobotics.com/trossen_arm/main/tutorials/ros2/description.html", "https://github.com/TrossenRobotics/trossen_arm_description", "https://www.trossenrobotics.com/terms-conditions"],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "niryo",
+    "company_name": "Niryo",
+    "country": "France",
+    "china_based": false,
+    "company_url": "https://niryo.com/",
+    "activity_evidence": "Official 2026 company timeline describes new industrial and medical robotics expansion; current site lists Ned2 and Ned3Pro alongside the new NR2 family.",
+    "activity_url": "https://niryo.com/about-us/",
+    "products": [
+      {
+        "product_id": "niryo-ned2",
+        "name": "Ned2 Educational Desktop Robotic Arm",
+        "product_url": "https://www.niryo.com/product/educational-desktop-robotic-arm/",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete six-axis desktop arm; optional accessories and educational bundles are separate configurations.",
+        "price": 3990,
+        "currency": "EUR",
+        "availability": "Quote/order configuration; starting price from official product listing, excluding duties and local taxes.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/NiryoRobotics/ned2",
+        "cad_formats": ["STEP", "STL"],
+        "notes": "Official download center links directly to the full NED2_STEP.step and STL directory. Educational arm with 490 mm reach and 300 g payload; mount and gripper compatibility with other suppliers is unverified.",
+        "evidence_urls": ["https://www.niryo.com/product/educational-desktop-robotic-arm/", "https://niryo.com/platform/ned/", "https://niryo.com/de/ressourcen/download-center/", "https://github.com/NiryoRobotics/ned2/blob/master/NED2_STEP.step", "https://github.com/NiryoRobotics/ned2/tree/master/STL"],
+        "researched_at": "2026-09-29"
+      },
+      {
+        "product_id": "niryo-ned3pro",
+        "name": "Ned3Pro Professional Collaborative Robotic Arm",
+        "product_url": "https://niryo.com/product/ned3-pro-professional-collaborative-robotic-arm/",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete six-axis arm; tool and warranty configurations must be selected when requesting a quote.",
+        "price": 6900,
+        "currency": "EUR",
+        "availability": "Quote/order configuration; starting price from official product listing.",
+        "cad_status": "public_download",
+        "cad_url": "https://niryo.com/resources/download-center/",
+        "cad_formats": ["STEP", "STL"],
+        "notes": "Official download center advertises STEP and STL under the Ned3Pro section. Direct file fetch was not confirmed during timebox; do not mark as locally downloaded. Arm has 500 mm reach and 500 g payload.",
+        "evidence_urls": ["https://niryo.com/product/ned3-pro-professional-collaborative-robotic-arm/", "https://niryo.com/platform/ned/", "https://niryo.com/resources/download-center/", "https://niryo.com/de/ressourcen/download-center/"],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "igus",
+    "company_name": "igus",
+    "country": "Germany",
+    "china_based": false,
+    "company_url": "https://www.igus.com/",
+    "activity_evidence": "Official 2026 robotics news includes ReBeL cobot updates, mobile robots, humanoid development and the RBTX marketplace.",
+    "activity_url": "https://www.igus.com/automation/news",
+    "products": [
+      {
+        "product_id": "igus-rebel-6dof",
+        "name": "ReBeL 6-Axis Cobot",
+        "product_url": "https://www.igus.com/robotics/cobots",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Six-axis articulated arm with control integrated in the base; end-effector, accessories and final configuration require selection.",
+        "price": null,
+        "currency": "USD",
+        "availability": "Configure/request quote. Indexed official listing showed $7,499, but live category rendering omitted products, so price remains unconfirmed.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/CommonplaceRobotics/iRC_ROS/tree/humble/irc_ros_description",
+        "cad_formats": ["URDF", "XACRO", "STL", "DAE"],
+        "notes": "Supplier control partner publishes ReBeL robot descriptions and geometry. Repository is deprecated for control software; geometry is a candidate for visualization and needs revision matching before import. Germany location supported by official site's Cologne company identity. Listed formats reflect documented mesh pipeline and need per-file verification before download.",
+        "evidence_urls": ["https://www.igus.com/robotics/cobots", "https://www.igus.com/automation/news", "https://igusrebel.com/", "https://github.com/CommonplaceRobotics/iRC_ROS/blob/humble/README.md", "https://github.com/CommonplaceRobotics/iRC_ROS/tree/humble/irc_ros_description"],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  },
+  {
+    "company_id": "universal-robots",
+    "company_name": "Universal Robots",
+    "country": "Denmark",
+    "china_based": false,
+    "company_url": "https://www.universal-robots.com/",
+    "activity_evidence": "Official September 14, 2026 announcement introduced Gen 7 industrial automation and physical AI platform.",
+    "activity_url": "https://www.universal-robots.com/news-and-media/news-center/universal-robots-unveils-gen-7-new-platform-industrial-automation-physical-ai/",
+    "products": [
+      {
+        "product_id": "universal-robots-ur7e",
+        "name": "UR7e Collaborative Robot Arm",
+        "product_url": "https://www.universal-robots.com/products/ur7e/",
+        "primary_role": "arms",
+        "part_type": "robotic_arm_assembly",
+        "assembly_level": "module",
+        "purchased_scope": "Complete articulated arm system; controller configuration and application-specific end-effector selected separately in quote.",
+        "price": null,
+        "currency": "",
+        "availability": "Request pricing from manufacturer.",
+        "cad_status": "official_repository",
+        "cad_url": "https://github.com/UniversalRobots/Universal_Robots_ROS2_Description",
+        "cad_formats": ["URDF", "XACRO"],
+        "notes": "Official STEP download page exists but requires login and graphical-documentation terms; no file downloaded. Manufacturer states UR5e and UR7e share mechanical design. Official ROS2 description repository is an alternative source requiring exact model/revision verification. Denmark address appears on official download page.",
+        "evidence_urls": ["https://www.universal-robots.com/products/ur7e/", "https://www.universal-robots.com/download/mechanical-e-series/ur5eur7e/robot-step-file-ur5eur7e-e-series/", "https://github.com/UniversalRobots/Universal_Robots_ROS2_Description"],
+        "researched_at": "2026-09-29"
+      }
+    ]
+  }
+]

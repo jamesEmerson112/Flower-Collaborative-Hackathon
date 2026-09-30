@@ -1,17 +1,63 @@
 {
-  "version": 1,
-  "scope": "The 95 products in the existing eight-store catalog; not each retailer's entire inventory.",
+  "version": 2,
+  "scope": "Reviewed products in stores.json; complete body sections are separate from small components.",
   "roles": {
-    "head": "Perception-facing components such as ranging sensors or lidar. A component is not a complete mechanical head.",
+    "head": "Physical head housings or head assemblies.",
     "torso": "Structural body or frame intended to carry other parts. Wheeled driving bases belong primarily to legs.",
-    "arms": "Manipulation assemblies and joint actuators suggested for arms. Bare actuators still require links and mounts.",
-    "legs": "Locomotion: wheeled/tracked bases, wheels, casters, drive motors, or leg joints. Includes WAVE ROVER per the user's example.",
+    "arms": "Complete manipulation arm assemblies or kits including structural links.",
+    "legs": "Complete locomotion bases or leg assemblies.",
     "support": "Internal electronics, power, orientation sensing, or adapters without a standalone anatomical role.",
-    "whole_robot": "A complete robot or complete robot kit spanning several body roles. Do not imply it is a single limb."
+    "whole_robot": "A complete robot or complete robot kit spanning several body roles. Do not imply it is a single limb.",
+    "actuators": "Bare motors, servos and motor-only kits; not complete limbs.",
+    "sensors": "Sensing components, separate from physical head assemblies.",
+    "wheels": "Individual wheels and casters, separate from complete mobile bases."
   },
-  "part_types": ["dc_gearmotor", "stepper_motor", "positional_servo", "smart_servo", "hub_motor", "motor_driver", "robot_controller", "microcontroller", "single_board_computer", "distance_sensor", "lidar", "imu", "reflectance_sensor", "mobile_base", "chassis_frame", "wheel", "caster", "robotic_arm_kit", "robot_kit", "battery", "battery_holder", "voltage_regulator", "power_module", "power_adapter", "interface_adapter"],
-  "assembly_levels": ["complete_robot", "module", "component", "kit", "accessory"],
-  "confidence_levels": ["high", "medium", "low"],
-  "evidence_statuses": ["live_verified", "catalog_snapshot_only", "inaccessible"],
+  "part_types": [
+    "dc_gearmotor",
+    "stepper_motor",
+    "positional_servo",
+    "smart_servo",
+    "hub_motor",
+    "motor_driver",
+    "robot_controller",
+    "microcontroller",
+    "single_board_computer",
+    "distance_sensor",
+    "lidar",
+    "imu",
+    "reflectance_sensor",
+    "mobile_base",
+    "chassis_frame",
+    "wheel",
+    "caster",
+    "robotic_arm_kit",
+    "robot_kit",
+    "battery",
+    "battery_holder",
+    "voltage_regulator",
+    "power_module",
+    "power_adapter",
+    "interface_adapter",
+    "body_shell",
+    "head_shell",
+    "actuator_kit"
+  ],
+  "assembly_levels": [
+    "complete_robot",
+    "module",
+    "component",
+    "kit",
+    "accessory"
+  ],
+  "confidence_levels": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "evidence_statuses": [
+    "live_verified",
+    "catalog_snapshot_only",
+    "inaccessible"
+  ],
   "policy": "Roles are researched builder suggestions, not vendor anatomical labels or proof of physical compatibility. Secondary roles are optional alternative uses; they do not represent extra products. Preserve purchased scope: kits, sets, bare components, and excluded parts. Prices retain their original capture date."
 }

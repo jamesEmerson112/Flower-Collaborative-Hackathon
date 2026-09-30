@@ -1,0 +1,13 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+sparkfun-rob-13302,sparkfun,SparkFun Electronics,Hobby Gearmotor - 140 RPM (Pair),ROB-13302,https://www.sparkfun.com/hobby-gearmotor-140-rpm-pair.html,7.50,USD,dc_gearmotor,actuators
+sparkfun-rob-09238,sparkfun,SparkFun Electronics,"Stepper Motor - 32 oz.in (200 steps/rev, 1200mm Wire)",ROB-09238,https://www.sparkfun.com/stepper-motor-32-oz-in-200-steps-rev-1200mm-wire.html,26.95,USD,stepper_motor,actuators
+sparkfun-rob-09065,sparkfun,SparkFun Electronics,Servo - Generic (Sub-Micro Size),ROB-09065,https://www.sparkfun.com/servo-generic-sub-micro-size.html,12.95,USD,positional_servo,actuators
+sparkfun-rob-14450,sparkfun,SparkFun Electronics,SparkFun Motor Driver - Dual TB6612FNG (with Headers),ROB-14450,https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-with-headers.html,14.50,USD,motor_driver,support
+sparkfun-rob-15451,sparkfun,SparkFun Electronics,SparkFun Qwiic Motor Driver,ROB-15451,https://www.sparkfun.com/sparkfun-qwiic-motor-driver.html,23.78,USD,motor_driver,support
+sparkfun-dev-15123,sparkfun,SparkFun Electronics,SparkFun RedBoard Qwiic,DEV-15123,https://www.sparkfun.com/sparkfun-redboard-qwiic.html,21.95,USD,microcontroller,support
+sparkfun-sen-15335,sparkfun,SparkFun Electronics,SparkFun 9DoF IMU Breakout - ICM-20948 (Qwiic),SEN-15335,https://www.sparkfun.com/sparkfun-9dof-imu-breakout-icm-20948-qwiic.html,21.95,USD,imu,sensors
+sparkfun-sen-14722,sparkfun,SparkFun Electronics,"SparkFun Distance Sensor Breakout - 4 Meter, VL53L1X (Qwiic)",SEN-14722,https://www.sparkfun.com/sparkfun-distance-sensor-breakout-4-meter-vl53l1x-qwiic.html,29.95,USD,distance_sensor,sensors
+sparkfun-sen-15569,sparkfun,SparkFun Electronics,Ultrasonic Distance Sensor - 5V (HC-SR04),SEN-15569,https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html,5.25,USD,distance_sensor,sensors
+sparkfun-rob-13301,sparkfun,SparkFun Electronics,Shadow Chassis,ROB-13301,https://www.sparkfun.com/shadow-chassis.html,14.95,USD,chassis_frame,torso
+sparkfun-rob-13259,sparkfun,SparkFun Electronics,"Wheel - 65mm (Rubber Tire, Pair)",ROB-13259,https://www.sparkfun.com/wheel-65mm-rubber-tire-pair.html,4.50,USD,wheel,wheels
+sparkfun-prt-13855,sparkfun,SparkFun Electronics,Lithium Ion Battery - 2Ah,PRT-13855,https://www.sparkfun.com/lithium-ion-battery-2ah.html,19.41,USD,battery,support

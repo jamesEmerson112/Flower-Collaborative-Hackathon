@@ -1,14 +1,12 @@
 [
   {
     "product_id": "dfrobot-fit0186",
-    "primary_role": "legs",
-    "secondary_roles": [
-      "arms"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "dc_gearmotor",
     "assembly_level": "component",
     "function_summary": "Metal DC gearmotor with quadrature encoder for mobile robots.",
-    "classification_reason": "Vendor explicitly describes mobile-robot drive use; other joint mechanisms require separate structure and control.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "high",
     "assembly_notes": "One gearmotor with encoder; wheel, mount, driver and power separate.",
     "evidence_status": "live_verified",
@@ -20,14 +18,12 @@
   },
   {
     "product_id": "dfrobot-fit0450",
-    "primary_role": "legs",
-    "secondary_roles": [
-      "arms"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "dc_gearmotor",
     "assembly_level": "component",
     "function_summary": "TT geared DC motor with quadrature feedback for controlled robot motion.",
-    "classification_reason": "Vendor mobile-robot application supports locomotion; alternative joint use is only a component-level suggestion.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "high",
     "assembly_notes": "One motor plus motor/encoder cables; wheel, controller, motor driver and frame separate.",
     "evidence_status": "live_verified",
@@ -39,15 +35,12 @@
   },
   {
     "product_id": "dfrobot-ser0020",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "head",
-      "legs"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "positional_servo",
     "assembly_level": "component",
     "function_summary": "Standard hobby servo for controlled angular movement.",
-    "classification_reason": "Vendor cites head, arm and biped use, so primary arms with optional head/legs is supported at joint level.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "One servo; links, bearings, mounts and command/power system are separate.",
     "evidence_status": "live_verified",
@@ -59,14 +52,12 @@
   },
   {
     "product_id": "dfrobot-ser0006",
-    "primary_role": "arms",
-    "secondary_roles": [
-      "head"
-    ],
+    "primary_role": "actuators",
+    "secondary_roles": [],
     "part_type": "positional_servo",
     "assembly_level": "component",
     "function_summary": "Lightweight micro servo for small mechanisms and angular positioning.",
-    "classification_reason": "Small arm or pan-tilt head joints fit the vendor examples; it is not a full arm or load-bearing leg.",
+    "classification_reason": "Motor or actuator component; requires structural links and mounts to become an arm or leg.",
     "classification_confidence": "medium",
     "assembly_notes": "One micro servo; external structure, power and control needed.",
     "evidence_status": "live_verified",
@@ -129,12 +120,12 @@
   },
   {
     "product_id": "dfrobot-sen0340",
-    "primary_role": "head",
+    "primary_role": "sensors",
     "secondary_roles": [],
     "part_type": "lidar",
     "assembly_level": "module",
     "function_summary": "Compact TF-Luna single-point time-of-flight lidar measures object range.",
-    "classification_reason": "Range perception suggests a head component; single-point sensing is not a full scanning head.",
+    "classification_reason": "Perception or orientation component; not a physical head assembly.",
     "classification_confidence": "high",
     "assembly_notes": "Sensor module; host, suitable wiring and physical mounting required.",
     "evidence_status": "live_verified",
@@ -146,12 +137,12 @@
   },
   {
     "product_id": "dfrobot-sen0374",
-    "primary_role": "support",
+    "primary_role": "sensors",
     "secondary_roles": [],
     "part_type": "imu",
     "assembly_level": "module",
     "function_summary": "BNO055 orientation module fuses accelerometer, gyro and magnetic sensing.",
-    "classification_reason": "Body orientation feedback is internal support rather than outward perception.",
+    "classification_reason": "Perception or orientation component; not a physical head assembly.",
     "classification_confidence": "high",
     "assembly_notes": "One sensor board with headers; not a mechanical head or torso.",
     "evidence_status": "live_verified",
@@ -180,12 +171,12 @@
   },
   {
     "product_id": "dfrobot-fit0654-1",
-    "primary_role": "legs",
+    "primary_role": "wheels",
     "secondary_roles": [],
     "part_type": "wheel",
     "assembly_level": "kit",
     "function_summary": "Four 80 mm mecanum wheels support omnidirectional mobile robots.",
-    "classification_reason": "Ground-contact wheels are locomotion parts, not a complete powered base.",
+    "classification_reason": "Individual locomotion component; not a complete leg or driving base.",
     "classification_confidence": "high",
     "assembly_notes": "Two left and two right wheels; motors, hubs, chassis, power and controller separate.",
     "evidence_status": "live_verified",

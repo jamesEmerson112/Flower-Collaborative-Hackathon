@@ -44,3 +44,10 @@ Edit `stores.json`, then run the build. It uses only the Python standard library
 - **Included:** Adafruit, SparkFun, Pololu, ServoCity, Seeed Studio, DFRobot, ROBOTIS America (robotis.us) and Waveshare.
 - **Skipped:** RobotShop and DigiKey returned HTTP 403 to automated fetching. Mouser returned a bot-check page. Pimoroni and The Pi Hut were reachable but were left out to keep the scope at 8 stores.
 - **Excluded:** general marketplaces (Amazon, eBay, AliExpress).
+
+## Complete arms and body sections
+
+The [20-company research database](expansion/README.md) has uniform per-company CSVs,
+official product/CAD sources and recent activity evidence. China-based companies
+appear last. The [classified catalog](classified/README.md) now separates complete
+body sections from actuator, sensor, wheel and electronics components.

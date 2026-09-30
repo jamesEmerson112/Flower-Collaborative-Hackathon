@@ -1,0 +1,10 @@
+node_modules/
+__pycache__/
+dist/
+public/models/
+public/thumbnails/
+blender/*.blend*
+blender/*.png
+test-results/
+
+blender/intermediate/
