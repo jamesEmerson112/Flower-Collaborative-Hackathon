@@ -28,7 +28,7 @@ STORE="${1:-}"
 MODE="${2:-supergrid}"
 
 usage() {
-  echo "Usage: $0 <adafruit|sparkfun|pololu|servocity|seeed|dfrobot|robotis|waveshare> [supergrid|local]" >&2
+  echo "Usage: $0 <adafruit|sparkfun|pololu|servocity|seeed|dfrobot|robotis|waveshare|hello-robot|niryo|pollen|robotshop|trossen|unitree> [supergrid|local]" >&2
 }
 
 # Fixed port map (bash 3.2 compatible, no associative arrays).
@@ -41,6 +41,13 @@ case "$STORE" in
   dfrobot)   DEFAULT_PORT=9106 ;;
   robotis)   DEFAULT_PORT=9107 ;;
   waveshare) DEFAULT_PORT=9108 ;;
+  # Extra companies (priced ones from docs/robot-parts-stores/expansion), meant for a second machine.
+  hello-robot) DEFAULT_PORT=9109 ;;
+  niryo)       DEFAULT_PORT=9110 ;;
+  pollen)      DEFAULT_PORT=9111 ;;
+  robotshop)   DEFAULT_PORT=9112 ;;
+  trossen)     DEFAULT_PORT=9113 ;;
+  unitree)     DEFAULT_PORT=9114 ;;
   "")
     usage
     exit 2

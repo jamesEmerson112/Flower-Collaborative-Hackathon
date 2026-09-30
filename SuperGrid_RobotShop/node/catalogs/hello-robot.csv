@@ -1,0 +1,2 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+hello-stretch-4,hello-robot,Hello Robot,Stretch 4,,https://hello-robot.com/purchase/,29950,USD,mobile_manipulator,whole_robot

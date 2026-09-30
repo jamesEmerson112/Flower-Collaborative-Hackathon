@@ -1,0 +1,2 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+trossen-widowx-ai-base,trossen,Trossen Robotics,WidowX AI Base,,https://www.trossenrobotics.com/widowx-ai,4545.95,USD,robotic_arm_assembly,arms

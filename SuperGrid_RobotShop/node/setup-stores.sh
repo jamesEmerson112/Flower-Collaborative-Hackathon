@@ -35,6 +35,7 @@ set -uo pipefail   # no -e: one store's failure must not stop the others
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ALL_STORES="adafruit sparkfun pololu servocity seeed dfrobot robotis waveshare"
+EXTRA_STORES="hello-robot niryo pollen robotshop trossen unitree"  # pass by name, e.g. ./setup-stores.sh niryo pollen
 FEDERATION="${ROBOTSHOP_FEDERATION:-@efebahadirgur/Spartan}"
 SUPERLINK="${ROBOTSHOP_SUPERLINK:-supergrid}"
 KEY_DIR="$HOME/supernodes_keys"
@@ -63,7 +64,7 @@ for arg in "$@"; do
       exit 2
       ;;
     *)
-      case " $ALL_STORES " in
+      case " $ALL_STORES $EXTRA_STORES " in
         *" $arg "*) STORES="$STORES $arg" ;;
         *)
           echo "Unknown store '$arg'. Stores: $ALL_STORES" >&2

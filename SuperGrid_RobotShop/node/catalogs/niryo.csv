@@ -1,0 +1,3 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+niryo-ned2,niryo,Niryo,Ned2 Educational Desktop Robotic Arm,,https://www.niryo.com/product/educational-desktop-robotic-arm/,3990,EUR,robotic_arm_assembly,arms
+niryo-ned3pro,niryo,Niryo,Ned3Pro Professional Collaborative Robotic Arm,,https://niryo.com/product/ned3-pro-professional-collaborative-robotic-arm/,6900,EUR,robotic_arm_assembly,arms

@@ -1,0 +1,2 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+unitree-z1,unitree,Unitree Robotics,Unitree Z1,,https://shop.unitree.com/products/unitree-z1,15999,USD,robotic_arm_assembly,arms

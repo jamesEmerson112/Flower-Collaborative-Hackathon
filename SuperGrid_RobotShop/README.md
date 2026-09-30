@@ -25,7 +25,7 @@ bridge.py (Mac, 127.0.0.1:8765) ── start-run / StreamRunEvents (flwr login t
                    one model call writes the answer (else format_quote) → response.completed
                           │ C2                                 ▲ C3 (exactly once per node)
                           ▼                                    │
-        store-adafruit … store-waveshare (8 SuperNodes on the RunPod pod)
+        store-adafruit … store-waveshare (8 nodes, pod 1) + store-hello-robot … store-unitree (6 nodes, pod 2)
           worker.py (arrives in the run's FAB) + node/catalogs/<store>.csv (--node-config)
 ```
 
@@ -42,9 +42,9 @@ If no online node has a `store-*` name, the master asks every node. Nodes withou
   - `common.py` has `grid()`, `emit()` and `say()`.
   - `tests/` has stdlib `unittest` tests. The pure modules import no flwr, so any `python3` runs them.
 - `node/`: node-local only, never in the FAB.
-  - `catalogs/<store>.csv`: 8 stores, 102 items. `make_catalogs.py` generates them from `docs/robot-parts-stores/classified/by-store/`.
+  - `catalogs/<store>.csv`: 14 stores, all with the same 10 columns. The original 8 (102 items) come from `make_catalogs.py` (source `docs/robot-parts-stores/classified/by-store/`). The 6 extra ones (`hello-robot`, `niryo`, `pollen`, `robotshop`, `trossen`, `unitree`) were built from `docs/robot-parts-stores/expansion/all_parts.csv`. The company id `pollen-robotics` became the store id `pollen` to match the builder's `storeId`. Only priced rows can be quoted, because the worker skips empty prices.
   - `start-store.sh <store> [supergrid|local]` starts one store node.
-  - `setup-stores.sh` does keygen, register, add to Spartan and start in tmux for all 8.
+  - `setup-stores.sh` does keygen, register, add to Spartan and start in tmux for all 8. It also accepts the 6 extra stores by name (`EXTRA_STORES`, e.g. `./setup-stores.sh niryo pollen`).
 - `web/`: a copy of `docs/robot-builder` (the user's Robot Workshop; the original is left alone), plus:
   - the components tray (`src/components.js`, `src/components-data.js`);
   - the quote panel (`src/quote.js`, `src/quote.css`);
@@ -106,7 +106,7 @@ For a non-loopback `--host`, the bridge requires `BRIDGE_TOKEN`.
 - Ned2 arm (`niryo-ned2`)
 - WAVE ROVER (`waveshare-wave-rover`)
 
-Only Seeed and Waveshare have store nodes today, so the other 3 show as "no store sells it".
+With all 14 store nodes online: Niryo sells `niryo-ned2` at 3990 EUR, so the totals come back per currency (USD + EUR). The G1 torso and the Reachy 2 head are robot sections nobody sells separately, so they come back as `not_stocked` ("Pollen Robotics doesn't stock it", "Unitree … doesn't stock it") instead of `no_store`.
 
 ### Cache mode (the demo safety net; built 2026-09-30)
 
@@ -129,11 +129,21 @@ Ship only `node/` to the pod (the app code arrives with each run's FAB). The SSH
 #   --register-only | --start-only; optional store names (default: all 8)
 ```
 
-- Ports are 9101–9108, in the order adafruit, sparkfun, pololu, servocity, seeed, dfrobot, robotis, waveshare.
+- Ports are 9101–9108, in the order adafruit, sparkfun, pololu, servocity, seeed, dfrobot, robotis, waveshare. The extra stores use 9109–9114: hello-robot, niryo, pollen, robotshop, trossen, unitree.
 - Keys are in `~/supernodes_keys/supernode-store-<id>`, and node IDs are recorded in `~/supernodes_keys/store-node-ids.txt`.
 - Each node runs in tmux window `store-<id>` of session `flower`, with its log at `/tmp/store-<id>.log`.
 - Each node process gets its own `FLWR_HOME` (`~/.flwr-store-<id>`). Nodes that share `~/.flwr` can race while installing the same FAB. `flwr login` tokens stay in `~/.flwr`.
 - The script parses the CLI's JSON output, because `flwr ... --format json` exits 0 even on errors.
+- **If every node shows offline while its process is still running** (SuperGrid returned `StatusCode.INTERNAL "Internal server error."` to the nodes), restart them: kill each `store-<id>` tmux window, then run `./setup-stores.sh --start-only`. [verified live 2026-09-30]
+
+### Extra stores on a second machine
+
+The 6 extra stores run on pod 2 (`/root/venv` has flwr 1.39.0; same tmux session, window names and log paths as above). To add a store on any machine:
+
+1. Generate the key on that machine (`~/supernodes_keys/supernode-store-<id>`). Only the `.pub` leaves it.
+2. From any logged-in machine: `flwr supernode register <pub> supergrid --name store-<id>`.
+3. `flwr federation add-supernode <node-id> @efebahadirgur/Spartan supergrid`.
+4. On the machine, with a Flower venv active and `node/` copied over: `./start-store.sh <id> supergrid`.
 
 ### Tests
 
@@ -142,7 +152,7 @@ python3 -m unittest discover -s SuperGrid_RobotShop/app/tests -t SuperGrid_Robot
 cd SuperGrid_RobotShop/web && npm test && npm run build
 ```
 
-## Status (2026-09-29)
+## Status (2026-09-30)
 
 These were verified live, through the Mac bridge against the pod's store nodes:
 - **The custom events `robotshop.progress` and `robotshop.quote` reach the bridge** through SuperGrid's `StreamRunEvents`. `flwr chat` ignores unknown event types (`flwr/cli/chat/chat_app.py:857–895`).
@@ -156,6 +166,7 @@ These were verified live, through the Mac bridge against the pod's store nodes:
 
 Changed since, but not yet verified live: `app/robot_shop/llm.py` now streams (`httpx.stream` with `"stream": true`, SSE). `TIMEOUT_S` is a read timeout between chunks, set short for the demo so the fallback comes quickly.
 
+- **14 store nodes online [verified live 2026-09-30]:** the 8 on pod 1 plus 6 on pod 2. With Niryo, Pollen and Unitree present, quotes come back with per-currency totals (USD + EUR), and unsold robot sections come back as `not_stocked` instead of `no_store` (see "Demo build").
 - **All 8 stores in one run [verified live 2026-09-30]:** run `3078610203486196846`, 8 of 8 `store-*` nodes answered (no errors, no timeouts), total **$205.78** for one part from each store; `niryo-ned2` listed as `no_store`. About 4.5 min in Flower's queue, then seconds for the stores.
 
 Not verified yet:
@@ -169,9 +180,10 @@ Not verified yet:
 - **Model call:** see Status. The plain-code answer covers every failure, so the quote is always correct.
 - **App dependencies are `flwr` only.** SuperNodes don't install app dependencies (`RUNTIME_DEPENDENCY_INSTALL = False`, `flwr/common/constant.py:128`), and the SuperLink runs `uv sync` per run. `llm.py` uses `httpx`, which comes with flwr, instead of `openai`.
 - **3D models are git-ignored.** `web/scripts/sync_data.py` copies them from `docs/robot-builder`.
-- **Catalogue snapshot:** 8 stores and 102 items, as of `make_catalogs.py`'s last run.
-- **Some body parts have no store.** 9 of the 19 body parts in the current `web/public/catalog.json` come from companies without a store node: Niryo, Pollen Robotics ×3, Elephant Robotics, Berkeley Humanoid Lite and Unitree ×3. The master lists them as "no store sells it" and leaves them out of the total. The count follows `docs/robot-builder`, whose catalogue `sync_data.py` copies.
-- **Pending:**
-  - the unified catalogue merge (`docs/prompts/unified-catalog-merge.txt`, run after the demo);
-  - store nodes for 17 more companies on a second pod.
+- **Catalogue snapshot:** 14 stores: the original 8 (102 items, as of `make_catalogs.py`'s last run) plus the 6 extra stores' priced rows.
+- **Totals are per currency.** Niryo quotes in EUR, so a build that includes it gets a USD total and an EUR total; nothing is converted.
+- **Some body parts still have no seller.** Niryo, Pollen Robotics and Unitree now have store nodes, but Reachy 2 and G1 sections aren't sold separately, so they come back as `not_stocked`. Parts from companies without a node (e.g. Elephant Robotics, Berkeley Humanoid Lite) stay "no store sells it". Both are left out of the total.
+- **Pending (after the demo):**
+  - the remaining 11 researched companies have no prices, so they have no store nodes;
+  - the full 25-company merge (`docs/prompts/unified-catalog-merge.txt`).
   After both, rerun `node/make_catalogs.py` and `web/scripts/sync_data.py`.

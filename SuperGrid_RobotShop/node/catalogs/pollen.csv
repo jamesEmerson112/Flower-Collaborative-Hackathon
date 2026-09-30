@@ -1,0 +1,3 @@
+product_id,store_id,store_name,product_name,sku,product_url,price,currency,part_type,primary_role
+pollen-reachy-mini-wireless,pollen,Pollen Robotics,Reachy Mini Wireless,,https://pollen-robotics.com/reachy-mini/,499,USD,desktop_robot,whole_robot
+pollen-reachy-2,pollen,Pollen Robotics,Reachy 2,,https://pollen-robotics.com/reachy-2/,,,mobile_manipulator,whole_robot
