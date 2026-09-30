@@ -152,6 +152,10 @@ python3 -m unittest discover -s SuperGrid_RobotShop/app/tests -t SuperGrid_Robot
 cd SuperGrid_RobotShop/web && npm test && npm run build
 ```
 
+## Archived (2026-09-30)
+
+The hackathon is over. The bridge, all 14 store SuperNodes and both pods are stopped, and the SuperNodes are still registered in Spartan, showing offline. To bring it back, see "To bring it back" in the repo's `CLAUDE.md`. In short: start the pods, restart the store nodes with `setup-stores.sh --start-only` or `start-store.sh <id>`, then start `bridge.py` on the Mac. Cache mode works without any of that; it only needs the bridge running.
+
 ## Status (2026-09-30)
 
 These were verified live, through the Mac bridge against the pod's store nodes:

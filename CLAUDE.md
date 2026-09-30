@@ -129,82 +129,73 @@ Monitor runs with `flwr list supergrid`, `flwr log <run-id> supergrid --show` an
 - **The venue network is slow.** `uvx --from flwr` stalled downloading wheels there. To fetch a Hub app without the `flwr` CLI, `POST https://api.flower.ai/v1/hub/fetch-zip` with `{"app_id":"@pub/app","app_version":null,"flwr_version":"1.39.0"}` and download the returned `zip_url`. See api-ref §8 and collab-agent-recipe "Provenance".
 - Set `publisher` in an app's `pyproject.toml` to your Flower username (the user's is **`zerocks2503`**). FABs are capped at 10 MB.
 
-## Current state (2026-09-30, snapshot for /compact)
+## Hackathon result (2026-09-30)
 
-**Live infrastructure: 14 store SuperNodes, 8 on RunPod pod 1 and 6 on pod 2 (14/14 online at the last check).** The full details (SSH commands, keys, the repeatable procedure) are in `docs/private/runpod-supernode.md` (git-ignored). **Stop the pods when you're done.** The user's other pods are not ours to touch.
-- **Pod 1 `fibicm4cy4pj0c`** ("complicated_indigo_gecko"): CPU, 2 vCPU / 4 GB, **$0.07/hr**, created by the user.
-  - It has `/root/SuperNode_James` (with `flwr` 1.39.0 in `hello-app/.venv`, logged in as `zerocks2503`) and `/root/SuperGrid_RobotShop/node`.
-  - It runs **the 8 store SuperNodes**, `store-adafruit` … `store-waveshare`. All are in `@efebahadirgur/Spartan`, owned by `zerocks2503`, on ports 9101–9108. IDs:
-    - adafruit `9218589532074956174`
-    - sparkfun `1488711584180952523`
-    - pololu `18118764492044682673`
-    - servocity `13756845717059552733`
-    - seeed `8154894932540289281`
-    - dfrobot `2948423303319067329`
-    - robotis `16073326398896412165`
-    - waveshare `18238716053767830266`
-  - Each node runs in tmux window `store-<id>` of session `flower`, with its log at `/tmp/store-<id>.log`.
-  - **The 3 hello nodes** (`james` `9674070929710601496`, `James_2_Pod1` `3446080994785355467`, `James_3_Pod1` `8936488704647726645`) **and the pod-side `master-ui` bridge are stopped**; the nodes are still registered.
-- **Pod 2 `j4c8ksd68ykygs`** ("eligible_turquoise_warbler"): created by the user, 2 vCPU / 8 GB / 20 GB, **$0.08/hr**. It has `flwr` 1.39.0 in `/root/venv` and `/root/SuperGrid_RobotShop/node`.
-  - It runs **the 6 extra store SuperNodes**, started from `/root/venv`, in tmux session `flower` (windows `store-<id>`, logs `/tmp/store-<id>.log`). Keys were generated on pod 2 (only the `.pub` left it); registration and add-to-Spartan ran from the Mac. Name, ID, port:
-    - `store-hello-robot` `9801082392364761173` (9109)
-    - `store-niryo` `18394969287714527068` (9110)
-    - `store-pollen` `14616609307484587852` (9111)
-    - `store-robotshop` `7777637153266000561` (9112)
-    - `store-trossen` `107545347103705936` (9113)
-    - `store-unitree` `18143218857839472111` (9114)
-  - What they change in a quote: Niryo sells `niryo-ned2` at 3990 EUR, so totals come back per currency (USD + EUR). The Reachy 2 torso/head and the G1 torso are robot sections nobody sells separately, so they now come back as `not_stocked` ("Pollen Robotics doesn't stock it", "Unitree … doesn't stock it") instead of `no_store`.
-- **Pod access gotchas:**
-  - Use the RunPod SSH proxy; the venue network blocked pod 1's direct TCP address.
-  - The Bash sandbox blocks SSH, so those calls need `dangerouslyDisableSandbox`.
-  - The proxy needs `-tt` with commands fed on stdin, and has **no SCP**, so files go over as a base64 heredoc. For RobotShop, ship only `node/`.
-- **Spartan also has 4 teammate SuperNodes:** `motor-a`, `motor-b`, `camera-a` and `battery-a` (IDs `6111386887060621717`, `13119347499498202955`, `14444646481831250541`, `3342843433609131587`).
-  - Their names don't start with `store-` (unnamed nodes show `name: null` in `get_nodes`), so RobotShop's master doesn't ask them.
-  - If they are asked, they answer `NO_CATALOG`.
-- **Latest verified RobotShop run (2026-09-29, through the Mac bridge):**
-  - `get_nodes` → `push_messages` → `pull_messages` with 2 store replies in 5.6 s;
-  - `robotshop.progress` and `robotshop.quote` reached the bridge;
-  - the answer came from `format_quote` (the non-streamed model call timed out).
-  - The run waited about 2 min 43 s in Flower's queue first.
-  - Earlier, `hello-app` got 7/7 replies from our 3 nodes plus the 4 teammate nodes.
+The hackathon is over. We didn't win, but the demo worked. `SuperGrid_RobotShop` quoted robot builds live on SuperGrid from **14 store SuperNodes on two machines**.
+- The master sent the quote task only to the nodes named `store-*`. **14/14 answered**, with per-currency totals: the favourite build came to **$388.99 + €3,990**.
+- Cache mode replayed recorded live runs whenever Flower's queue (2–4 min) or its errors got in the way.
+- Everything is committed. The architecture diagram is https://claude.ai/artifact/QgPoQycHv5NHPZNbzMSPNH (Flower + Nebius wording; the machines were RunPod pods).
 
-**Local Mac:**
-- `flwr` 1.39.0 is in `SuperNode_James/hello-app/.venv` (Python 3.13), and `flwr login supergrid` is done (2026-09-29).
-- The RobotShop bridge runs on the Mac (`127.0.0.1:8765`), and the UI runs via `npm run dev` (5175) or `web/dist`.
-- **Cache mode is built** (2026-09-30; bridge restarted with it; 2 live runs cached: the 8-store build and Romi + 2× TT motor + Ned2; see `SuperGrid_RobotShop/README.md`): the bridge records successful live runs to `SuperGrid_RobotShop/cache/`, and the quote panel can replay them, always labeled as cached.
+## Current state (archived, 2026-09-30)
 
-**Tooling:** the Runpod Claude Code plugin (`runpod@runpod`) is installed and signed in, so the Runpod MCP tools (`list-pods`, `get-pod`, `pod-action`…) are available. Creating pods costs money: state the price and confirm first.
+**Nothing is running.**
+- The Mac bridge is stopped.
+- All 14 store SuperNodes were shut down cleanly.
+- **Both RunPod pods are stopped** by the user: pod 1 `fibicm4cy4pj0c` ($0.07/hr) and pod 2 `j4c8ksd68ykygs` ($0.08/hr).
+- Every SuperNode is **still registered** and in `@efebahadirgur/Spartan`, and shows offline.
+- The private details (SSH, keys, procedures) are in `docs/private/runpod-supernode.md` (git-ignored). The user's other pods are not ours to touch.
 
-**Artifacts** (private until shared from each page's Share menu; all links are in `docs/hackathon-brief.md`)
-- Trace Explorer, API Reference, 3D "Head Office & Stores", the Flower Concept Map, and **Robot Build Relay** (https://claude.ai/artifact/N6JoZqpwvv1iZ63vPJezNK).
-- **Architecture diagram** (https://claude.ai/artifact/QgPoQycHv5NHPZNbzMSPNH). It uses Flower + Nebius terminology at the user's request; the machines actually run on RunPod today.
-- Only Robot Build Relay has its source in the repo. The others' sources were in a past session's scratchpad and are gone; republishing them means rebuilding from the docs.
+**Registered SuperNodes (all offline):**
+- **Pod 1, ports 9101–9108:**
+  - adafruit `9218589532074956174`
+  - sparkfun `1488711584180952523`
+  - pololu `18118764492044682673`
+  - servocity `13756845717059552733`
+  - seeed `8154894932540289281`
+  - dfrobot `2948423303319067329`
+  - robotis `16073326398896412165`
+  - waveshare `18238716053767830266`
+- **Pod 2, ports 9109–9114:**
+  - hello-robot `9801082392364761173`
+  - niryo `18394969287714527068`
+  - pollen `14616609307484587852`
+  - robotshop `7777637153266000561`
+  - trossen `107545347103705936`
+  - unitree `18143218857839472111`
+- **Hello nodes:** `james` `9674070929710601496`, `James_2_Pod1` `3446080994785355467`, `James_3_Pod1` `8936488704647726645`.
+- **Teammates' nodes:** `motor-a`, `motor-b`, `camera-a` and `battery-a` (not ours). Their names don't start with `store-`, so the master doesn't ask them.
 
-**Git**
-- **`a136f14` "new stuff"** (by the user, pushed to `origin/main`; 72 files, +14,921 / −129). The message says nothing useful, but it's pushed, so **the user decided (2026-09-29) not to amend or force-push.** The next commit's message should describe it instead. What it contains:
-  - **`SuperNode_James/hello-app`:**
-    - `agent_app.py` became only the role switch.
-    - New `master.py` (fan-out and collect), `worker.py` (answers from the node's `profile`), `protocol.py` (the task/reply contract) and `common.py` (`grid()` / `say()`).
-  - **`SuperNode_James/node`:**
-    - `start-supernode.sh` takes `SUPERNODE_NAME` / `SUPERNODE_PROFILE` / `SUPERNODE_KEY` / `SUPERNODE_PORT` overrides.
-    - New `James_2_Pod1/` and `James_3_Pod1/` profiles, for 3 nodes on one pod.
-  - **`SuperNode_James/master-ui/`:** the browser front end for the master (`bridge.py`, `index.html`, `README.md`).
-  - **`docs/artifacts/robot-build-relay/`:** the Robot Build Relay artifact (template, `build.py` and the built page).
-  - **`docs/robot-parts-stores/`** (not Claude's work):
-    - `classified/`: the parts database, with per-store CSVs, research JSON, `schema.json`, `taxonomy.json` and `build_database.py`.
-    - `cad/`: the manifest, `SHA256SUMS`, `coverage.csv` and a README; the downloads are git-ignored.
-  - **`docs/robot-builder/`:** the user's side project (ignore it).
-  - **Docs:** `CLAUDE.md`, `SuperNode_James/README.md`, `hackathon-brief.md` and the `robot-parts-stores/README.md` additions.
-- **`f715532` "Add SuperGrid_RobotShop: Robot Workshop quotes from 8 store SuperNodes"** (pushed to `origin/main`) committed `SuperGrid_RobotShop/`, `docs/prompts/` and the doc edits of that time; its message covers `a136f14` too. `b6114c8` then updated `hackathon-brief.md`. Git ignores `web/node_modules/`, `web/dist/`, `web/public/models/` and `web/public/thumbnails/`.
-- **Uncommitted since `f715532`:** the extra-store node changes (`node/start-store.sh`, `node/setup-stores.sh` and the 6 new `node/catalogs/*.csv`), new `cache/` recordings, and doc edits (`CLAUDE.md`, `SuperGrid_RobotShop/README.md`). Re-run `python3 docs/artifacts/robot-build-relay/build.py` before republishing that artifact so it picks up the 102 items. Commit only when the user asks.
+**To bring it back:**
+1. Start the pods, with the RunPod console or the Runpod MCP `pod-action`; the user created them, so ask first.
+2. **If `/root` survived the stop** (the keys in `~/supernodes_keys/` and `/root/SuperGrid_RobotShop/node`):
+   - pod 1: `. /root/SuperNode_James/hello-app/.venv/bin/activate && cd /root/SuperGrid_RobotShop/node && ./setup-stores.sh --start-only`;
+   - pod 2: activate `/root/venv`, then run `./start-store.sh <id> supergrid` for each of the 6 extra stores in tmux.
+3. **If it didn't survive:** copy `SuperGrid_RobotShop/node` over again, create new keys, register them (`--name store-<id>`), add them to Spartan, start them, and unregister the old IDs.
+4. On the Mac: `SuperNode_James/hello-app/.venv/bin/python SuperGrid_RobotShop/bridge.py`, then open http://127.0.0.1:8765.
+5. Check with `flwr supernode list supergrid --format json`.
 
-**Next**
-1. ~~Verify all 8 stores answering in one run.~~ Done: run `3078610203486196846`, 8/8 stores, total $205.78 [verified live 2026-09-30].
-2. Verify the UI end to end in a browser, including cache mode.
-3. Verify the model streaming fix live (`llm.py` now streams; model `openai/gpt-5.6-sol`). Endeavor's ID is unverified (maybe `flower-endeavor-v1.0`).
-4. ~~Extra store nodes on pod 2.~~ Done for the 6 companies with prices (14 stores in total) [verified live 2026-09-30].
-5. After the demo: the remaining 11 researched companies have no prices. Run the full 25-company merge (`docs/prompts/unified-catalog-merge.txt`), then add their store nodes, and rerun `node/make_catalogs.py` and `web/scripts/sync_data.py`.
-6. Commit only when the user asks.
+**Local Mac:** `flwr` 1.39.0 is in `SuperNode_James/hello-app/.venv`, with `flwr login supergrid` done. `SuperGrid_RobotShop/cache/` holds 4 recorded live runs:
+- both favourite builds, 14 stores each;
+- the 8-store build, $205.78;
+- Romi + 2× TT motor + Ned2, $45.85.
+
+**Tooling:** the Runpod Claude Code plugin is installed. Creating pods costs money: state the price and confirm first.
+
+**Artifacts** (private until shared; all links are in `docs/hackathon-brief.md`): Trace Explorer, API Reference, 3D "Head Office & Stores", the Flower Concept Map, Robot Build Relay (source in `docs/artifacts/robot-build-relay/`) and the RobotShop architecture diagram. Only Robot Build Relay has its source in the repo.
+
+**Git:**
+- `a136f14` "new stuff" has an uninformative message. It covered the hello-app split, `master-ui`, the Robot Build Relay source, the classified and CAD data, and robot-builder; `f715532`'s message describes it. It was left unamended by the user's choice.
+- `f715532` added `SuperGrid_RobotShop` (8 stores).
+- `b6114c8` was the brief link.
+- `590b30f` added 14 stores.
+- Then the wrap-up commit.
+- Git ignores `web/node_modules/`, `web/dist/`, `web/public/models/` and `web/public/thumbnails/`.
+
+**If work resumes (none is in progress):**
+1. Run the full 25-company catalogue merge (`docs/prompts/unified-catalog-merge.txt`), then add nodes for the 11 unpriced companies, rerun `node/make_catalogs.py` and `web/scripts/sync_data.py`.
+2. Get a model-written answer. The master's streamed call on the SuperLink timed out at 30 s live, so ask Flower whether SuperLink-side model calls need setup, and confirm the Endeavor model ID.
+3. Remove the stale hello nodes from SuperGrid (`flwr supernode unregister <id> supergrid`) if they're no longer wanted.
+4. Re-run `python3 docs/artifacts/robot-build-relay/build.py` before republishing that artifact (102 items now).
 
 Open mentor questions are in `hackathon-brief.md` and `supernode-scope/README.md`.
 
