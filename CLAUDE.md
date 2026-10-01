@@ -20,6 +20,7 @@ Team repo for the **Flower Collaborative Hackathon**. The challenge: show severa
     - `cad/` (also not ours): CAD assets for 50 of the 95 products. The downloads (`originals/`, `extracted/`, about 930 MB) are git-ignored; only the manifest and CSVs are tracked.
   - `robot-builder/`: **the user's side project ("Robot Workshop", a Vite browser builder). Ignore it:** don't read, edit or build it unless the user asks. Its `node_modules/` and `dist/` are git-ignored. The demo's copy lives in `SuperGrid_RobotShop/web/`.
   - `prompts/`: prompts to run later. `unified-catalog-merge.txt` merges the parts datasets into one 25-company catalogue; **run it only after the demo is verified.**
+  - `artifacts/robot-shop-architecture/`: source of the **Robot Shop Architecture** artifact (a single animated HTML page). Republish it to https://claude.ai/artifact/QgPoQycHv5NHPZNbzMSPNH to update the page.
   - `artifacts/robot-build-relay/`: source of the **Robot Build Relay** artifact, a simulated supplier-quote run over the 8 stores. `page.template.html` plus `build.py`, which injects `stores.json` and runs `node --check`. Rebuild, then republish `robot-build-relay.html`.
   - `agent/`, `collaborative-agent/`, `hackathon-collab-agent-recipe/`: **unmodified copies of Flower Hub apps**, kept for diffing against upstream. **Never edit them.**
   - `private/`: **git-ignored.** `runpod-supernode.md` is the private runbook with our identifiers (Flower account, node ID, pod ID and cost, SSH commands), a from-scratch RunPod SuperNode procedure, teardown and gotchas. It contains no secrets. Read it before touching the pod.
@@ -181,7 +182,7 @@ The hackathon is over. We didn't win, but the demo worked. `SuperGrid_RobotShop`
 
 **Tooling:** the Runpod Claude Code plugin is installed. Creating pods costs money: state the price and confirm first.
 
-**Artifacts** (private until shared; all links are in `docs/hackathon-brief.md`): Trace Explorer, API Reference, 3D "Head Office & Stores", the Flower Concept Map, Robot Build Relay (source in `docs/artifacts/robot-build-relay/`) and the RobotShop architecture diagram. Only Robot Build Relay has its source in the repo.
+**Artifacts** (private until shared; all links are in `docs/hackathon-brief.md`): Trace Explorer, API Reference, 3D "Head Office & Stores", the Flower Concept Map, Robot Build Relay (source in `docs/artifacts/robot-build-relay/`) and the RobotShop architecture diagram. Robot Build Relay and the architecture diagram have their sources in the repo (`docs/artifacts/robot-build-relay/`, `docs/artifacts/robot-shop-architecture/`); the others don't.
 
 **Git:**
 - `a136f14` "new stuff" has an uninformative message. It covered the hello-app split, `master-ui`, the Robot Build Relay source, the classified and CAD data, and robot-builder; `f715532`'s message describes it. It was left unamended by the user's choice.

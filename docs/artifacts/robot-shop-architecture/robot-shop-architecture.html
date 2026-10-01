@@ -1,0 +1,392 @@
+<title>Robot Shop Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one wide system map (scrolls sideways on phones), then a step strip and four facts. */
+:root {
+  --bg: #f4f5ef; --surface: #ffffff; --ink: #1d231c; --muted: #687062; --line: #c3cab9;
+  --lime: #d4ea6a; --lime-ink: #4f6716; --on-lime: #1d231c; --on-lime-muted: #3f4a2a; --region: #e8eed9;
+  --store: #2f6688; --store-bg: #e4edf2; --ghost: #eceee8;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141711; --surface: #1d2219; --ink: #e7ebde; --muted: #9aa292; --line: #3b4335;
+    --lime: #c5df57; --lime-ink: #c5df57; --region: #20271a;
+    --store: #8dc0df; --store-bg: #1c2a33; --ghost: #1a1d17; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141711; --surface: #1d2219; --ink: #e7ebde; --muted: #9aa292; --line: #3b4335;
+  --lime: #c5df57; --lime-ink: #c5df57; --region: #20271a;
+  --store: #8dc0df; --store-bg: #1c2a33; --ghost: #1a1d17; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--display); }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 40px; display: grid; gap: 22px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
+h1 { margin: 0; font-size: clamp(24px, 3.2vw, 34px); font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+.tag { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.map { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+.map svg { display: block; width: 100%; min-width: 880px; height: auto; }
+.notes { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.notes li { font-family: var(--mono); font-size: 11.5px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px; background: var(--surface); }
+
+/* SVG parts */
+.box { fill: var(--surface); stroke: var(--ink); stroke-width: 1.4; }
+.box.lime { fill: var(--lime); stroke: var(--lime-ink); }
+.box.store { fill: var(--store-bg); stroke: var(--store); stroke-width: 1.1; }
+.box.ghost { fill: var(--ghost); stroke: var(--line); stroke-dasharray: 4 4; }
+.region { fill: var(--region); stroke: var(--line); stroke-width: 1.2; }
+.region.pod { fill: none; stroke: var(--store); stroke-dasharray: 6 5; }
+.edge { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.edge.dash { stroke-dasharray: 5 5; stroke: var(--muted); }
+.edge.fan { stroke: var(--store); }
+.head { fill: var(--ink); }
+.head.fan { fill: var(--store); }
+.head.muted { fill: var(--muted); }
+.t { fill: var(--ink); font-family: var(--display); font-size: 15px; font-weight: 600; }
+.s { fill: var(--muted); font-family: var(--display); font-size: 12px; }
+.m { fill: var(--ink); font-family: var(--mono); font-size: 12px; }
+.m.store { fill: var(--store); }
+.m.chip { font-size: 11px; }
+.lbl.fanlbl { fill: var(--store); font-weight: 500; }
+.lbl { fill: var(--muted); font-family: var(--mono); font-size: 11px; }
+.pill { fill: var(--lime); stroke: var(--lime-ink); stroke-width: 1; }
+.pill-t { fill: var(--on-lime); font-family: var(--mono); font-size: 11px; font-weight: 500; }
+
+/* Step strip */
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; }
+.steps li { display: flex; align-items: center; gap: 8px; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; display: grid; gap: 2px; min-width: 0; }
+.step b { font-size: 14px; font-weight: 600; }
+.step span { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.step.wait { background: var(--lime); border-color: var(--lime-ink); }
+.step.wait, .step.wait b { color: var(--on-lime); }
+.step.wait span { color: var(--on-lime-muted); }
+.onlime { fill: var(--on-lime); }
+.onlime-s { fill: var(--on-lime-muted); }
+.arrow { color: var(--muted); font-size: 16px; }
+.steps li:last-child .arrow { display: none; }
+
+/* Facts */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.fact { border-top: 2px solid var(--ink); padding-top: 8px; display: grid; gap: 2px; }
+.fact b { font-size: clamp(22px, 3vw, 30px); font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.fact span { font-family: var(--mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+@media (max-width: 640px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Flow animation */
+.flowbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.flowbar button { font: 600 13px var(--display); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.flowbar button:hover { border-color: var(--ink); }
+.flowbar button:focus-visible { outline: 2px solid var(--store); outline-offset: 2px; }
+.flowcap { margin: 0; font-family: var(--mono); font-size: 12px; color: var(--muted); min-width: 0; }
+.flowcap b { color: var(--ink); font-weight: 500; }
+.pkt { fill: var(--lime); stroke: var(--lime-ink); stroke-width: 1.5; }
+.pkt.fan { fill: var(--store); stroke: var(--surface); }
+.pkt.back { fill: var(--surface); stroke: var(--store); stroke-width: 2; }
+.pkt.model { fill: var(--muted); stroke: var(--surface); }
+.ring { fill: none; stroke: var(--store); stroke-width: 2; }
+.box.store.hit { fill: var(--store); }
+.m.store.chip.hit { fill: var(--surface); }
+.total-fx { fill: var(--ink); font-family: var(--display); font-size: 15px; font-weight: 700; }
+.step.on { border-color: var(--store); box-shadow: 0 0 0 2px var(--store); }
+.step.wait.on { box-shadow: 0 0 0 2px var(--lime-ink); }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>SuperGrid Robot Shop</h1>
+    <span class="tag">parts → SuperLink → 14 SuperNodes → one total</span>
+  </header>
+
+  <div class="flowbar">
+    <button id="flow-play" type="button">Pause</button>
+    <button id="flow-replay" type="button">Replay</button>
+    <p class="flowcap" id="flow-cap" aria-live="polite"><b>One request</b>, from parts to total</p>
+  </div>
+
+  <figure class="map" style="margin:0">
+    <svg viewBox="0 0 1140 548" role="img" aria-label="The browser sends the chosen parts to bridge.py, a Flower Control API client, which starts a run on the SuperGrid SuperLink, where runs wait 2 to 4 minutes. The AgentApp master sends the quote task with push_messages to 8 store SuperNodes on Nebius VM 1 and 6 on Nebius VM 2, collects offers with pull_messages, optionally asks the model endpoint for the answer text, and streams the quote back as run events. The bridge records runs to cache for replay. Teammate SuperNodes are not asked.">
+      <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker>
+        <marker id="af" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head fan" d="M0 0L10 5L0 10z"/></marker>
+        <marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head muted" d="M0 0L10 5L0 10z"/></marker>
+      </defs>
+
+      <!-- Browser -->
+      <rect class="box lime" x="20" y="258" width="170" height="96" rx="12"/>
+      <text class="t onlime" x="105" y="293" text-anchor="middle">Robot Workshop</text>
+      <text class="s onlime-s" x="105" y="314" text-anchor="middle">browser</text>
+      <text class="m onlime" x="105" y="335" text-anchor="middle">web/</text>
+
+      <line class="edge" x1="190" y1="292" x2="268" y2="292" marker-end="url(#a)"/>
+      <line class="edge" x1="270" y1="320" x2="192" y2="320" marker-end="url(#a)"/>
+      <text class="lbl" x="230" y="283" text-anchor="middle">parts</text>
+      <text class="lbl" x="230" y="338" text-anchor="middle">stream</text>
+
+      <!-- Bridge -->
+      <rect class="box" x="270" y="258" width="150" height="96" rx="12"/>
+      <text class="t" x="345" y="293" text-anchor="middle">bridge.py</text>
+      <text class="s" x="345" y="314" text-anchor="middle">Control API client</text>
+      <text class="m" x="345" y="335" text-anchor="middle">:8765</text>
+
+      <line class="edge" x1="345" y1="356" x2="345" y2="422" marker-start="url(#a)" marker-end="url(#a)"/>
+      <text class="lbl" x="356" y="393">record · replay</text>
+      <rect class="box" x="270" y="424" width="150" height="62" rx="12"/>
+      <text class="t" x="345" y="451" text-anchor="middle">cache/</text>
+      <text class="s" x="345" y="471" text-anchor="middle">4 live runs</text>
+
+      <!-- Bridge ⇄ SuperLink -->
+      <line class="edge" x1="420" y1="292" x2="513" y2="292" marker-end="url(#a)"/>
+      <line class="edge" x1="515" y1="320" x2="422" y2="320" marker-end="url(#a)"/>
+      <text class="lbl" x="426" y="283">start-run</text>
+      <text class="lbl" x="426" y="338">run events</text>
+
+      <!-- SuperGrid SuperLink -->
+      <rect class="region" x="497" y="150" width="218" height="250" rx="16"/>
+      <text class="t" x="515" y="178">SuperGrid</text>
+      <text class="s" x="515" y="196">Flower SuperLink</text>
+      <rect class="pill" x="515" y="210" width="170" height="26" rx="13"/>
+      <text class="pill-t" x="600" y="227" text-anchor="middle">runs wait · 2–4 min</text>
+      <rect class="box" x="515" y="258" width="170" height="96" rx="12"/>
+      <text class="t" x="600" y="293" text-anchor="middle">AgentApp · master</text>
+      <text class="m" x="600" y="314" text-anchor="middle">robot_shop FAB</text>
+      <text class="s" x="600" y="335" text-anchor="middle">sums in cents</text>
+
+      <!-- Model (below) -->
+      <line class="edge dash" x1="600" y1="356" x2="600" y2="450" marker-end="url(#am)"/>
+      <text class="lbl" x="611" y="421">answer text</text>
+      <text class="lbl" x="611" y="436">30 s, else code</text>
+      <rect class="box ghost" x="485" y="452" width="230" height="76" rx="12"/>
+      <text class="t" x="600" y="477" text-anchor="middle">model endpoint</text>
+      <text class="m" x="600" y="497" text-anchor="middle">openai/gpt-5.6-sol</text>
+      <text class="s" x="600" y="516" text-anchor="middle">Flower AI · Nebius Token Factory</text>
+
+      <!-- Fan-out -->
+      <line class="edge fan" x1="685" y1="306" x2="790" y2="306"/>
+      <text class="lbl" x="738" y="298" text-anchor="middle">push_messages</text>
+      <text class="lbl" x="738" y="323" text-anchor="middle">pull_messages</text>
+      <line class="edge fan" x1="790" y1="145" x2="790" y2="356"/>
+      <line class="edge fan" x1="790" y1="145" x2="818" y2="145" marker-end="url(#af)"/>
+      <line class="edge fan" x1="790" y1="356" x2="818" y2="356" marker-end="url(#af)"/>
+      <text class="lbl fanlbl" x="804" y="137" text-anchor="middle">×8</text>
+      <text class="lbl fanlbl" x="804" y="348" text-anchor="middle">×6</text>
+
+      <!-- Nebius VM 1 -->
+      <rect class="region pod" x="820" y="40" width="300" height="210" rx="16"/>
+      <text class="t" x="840" y="68">Nebius VM 1</text>
+      <text class="s" x="1100" y="68" text-anchor="end">8 SuperNodes · 4 GB</text>
+        <rect class="box store" x="840" y="84" width="134" height="30" rx="8"/><text class="m store chip" x="907" y="103.5" text-anchor="middle">store-adafruit</text>
+        <rect class="box store" x="982" y="84" width="134" height="30" rx="8"/><text class="m store chip" x="1049" y="103.5" text-anchor="middle">store-sparkfun</text>
+        <rect class="box store" x="840" y="122" width="134" height="30" rx="8"/><text class="m store chip" x="907" y="141.5" text-anchor="middle">store-pololu</text>
+        <rect class="box store" x="982" y="122" width="134" height="30" rx="8"/><text class="m store chip" x="1049" y="141.5" text-anchor="middle">store-servocity</text>
+        <rect class="box store" x="840" y="160" width="134" height="30" rx="8"/><text class="m store chip" x="907" y="179.5" text-anchor="middle">store-seeed</text>
+        <rect class="box store" x="982" y="160" width="134" height="30" rx="8"/><text class="m store chip" x="1049" y="179.5" text-anchor="middle">store-dfrobot</text>
+        <rect class="box store" x="840" y="198" width="134" height="30" rx="8"/><text class="m store chip" x="907" y="217.5" text-anchor="middle">store-robotis</text>
+        <rect class="box store" x="982" y="198" width="134" height="30" rx="8"/><text class="m store chip" x="1049" y="217.5" text-anchor="middle">store-waveshare</text>
+
+      <!-- Nebius VM 2 -->
+      <rect class="region pod" x="820" y="270" width="300" height="172" rx="16"/>
+      <text class="t" x="840" y="298">Nebius VM 2</text>
+      <text class="s" x="1100" y="298" text-anchor="end">6 SuperNodes · 8 GB</text>
+        <rect class="box store" x="840" y="314" width="134" height="30" rx="8"/><text class="m store chip" x="907" y="333.5" text-anchor="middle">store-niryo</text>
+        <rect class="box store" x="982" y="314" width="134" height="30" rx="8"/><text class="m store chip" x="1049" y="333.5" text-anchor="middle">store-pollen</text>
+        <rect class="box store" x="840" y="352" width="134" height="30" rx="8"/><text class="m store chip" x="907" y="371.5" text-anchor="middle">store-unitree</text>
+        <rect class="box store" x="982" y="352" width="134" height="30" rx="8"/><text class="m store chip" x="1049" y="371.5" text-anchor="middle">store-hello-robot</text>
+        <rect class="box store" x="840" y="390" width="134" height="30" rx="8"/><text class="m store chip" x="907" y="409.5" text-anchor="middle">store-robotshop</text>
+        <rect class="box store" x="982" y="390" width="134" height="30" rx="8"/><text class="m store chip" x="1049" y="409.5" text-anchor="middle">store-trossen</text>
+
+      <!-- Not asked -->
+      <rect class="box ghost" x="820" y="456" width="300" height="38" rx="10"/>
+      <text class="s" x="840" y="480">4 teammate SuperNodes</text>
+      <text class="lbl" x="1100" y="480" text-anchor="end">not asked</text>
+    </svg>
+  </figure>
+
+  <ul class="notes" aria-label="Notes">
+    <li>federation @efebahadirgur/Spartan</li>
+    <li>one catalogue per SuperNode (node-config)</li>
+    <li>SuperNodes see only part IDs + qty</li>
+    <li>totals per currency</li>
+  </ul>
+
+  <ol class="steps" aria-label="One request, in order">
+    <li><div class="step"><b>start-run</b><span>parts + prompt</span></div><span class="arrow" aria-hidden="true">→</span></li>
+    <li><div class="step wait"><b>pending</b><span>2–4 min</span></div><span class="arrow" aria-hidden="true">→</span></li>
+    <li><div class="step"><b>get_nodes</b><span>store-* SuperNodes</span></div><span class="arrow" aria-hidden="true">→</span></li>
+    <li><div class="step"><b>push_messages</b><span>×14</span></div><span class="arrow" aria-hidden="true">→</span></li>
+    <li><div class="step"><b>pull_messages</b><span>≈13 s</span></div><span class="arrow" aria-hidden="true">→</span></li>
+    <li><div class="step"><b>combine</b><span>¢ totals</span></div><span class="arrow" aria-hidden="true">→</span></li>
+    <li><div class="step"><b>robotshop.quote</b><span>run event → UI</span></div><span class="arrow" aria-hidden="true">→</span></li>
+  </ol>
+
+  <section class="facts" aria-label="Verified live on SuperGrid">
+    <div class="fact"><b>14</b><span>store SuperNodes</span></div>
+    <div class="fact"><b>14/14</b><span>answered</span></div>
+    <div class="fact"><b>$388.99 + €3,990</b><span>favourite build</span></div>
+    <div class="fact"><b>4</b><span>cached runs</span></div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const svg = document.querySelector('.map svg');
+  const steps = [...document.querySelectorAll('.steps .step')];
+  const cap = document.getElementById('flow-cap');
+  const playBtn = document.getElementById('flow-play');
+  const replayBtn = document.getElementById('flow-replay');
+  if (!svg) return;
+  const NS = 'http://www.w3.org/2000/svg';
+  const fx = document.createElementNS(NS, 'g');
+  svg.appendChild(fx);
+  const chipRects = [...svg.querySelectorAll('rect.box.store')];
+  const chipTexts = [...svg.querySelectorAll('text.chip')];
+  const pill = svg.querySelector('.pill-t');
+  const pillText = pill ? pill.textContent : '';
+  const chips = chipRects.map(r => ({ x: +r.getAttribute('x'), y: +r.getAttribute('y') + 15 }));
+
+  // Clock: advances only while playing, so Pause freezes every tween.
+  let playing = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let clock = 0, last = null, token = 0;
+  const tweens = new Set();
+  function frame(ts) {
+    if (last === null) last = ts;
+    const dt = Math.min(ts - last, 100); last = ts;
+    if (playing) clock += dt;
+    for (const t of [...tweens]) t(clock);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  class Stop extends Error {}
+  function tween(ms, onUpdate, my) {
+    return new Promise((resolve, reject) => {
+      const start = clock;
+      const t = (c) => {
+        if (my !== token) { tweens.delete(t); reject(new Stop()); return; }
+        const k = Math.min((c - start) / ms, 1);
+        onUpdate(k);
+        if (k >= 1) { tweens.delete(t); resolve(); }
+      };
+      tweens.add(t);
+    });
+  }
+  const wait = (ms, my) => tween(ms, () => {}, my);
+  const ease = k => k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+
+  function dot(cls, r = 5) {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('r', r); c.setAttribute('class', 'pkt ' + cls);
+    fx.appendChild(c); return c;
+  }
+  function along(pts, k) {
+    const seg = []; let total = 0;
+    for (let i = 1; i < pts.length; i++) { const d = Math.hypot(pts[i][0] - pts[i-1][0], pts[i][1] - pts[i-1][1]); seg.push(d); total += d; }
+    let dist = total * k;
+    for (let i = 0; i < seg.length; i++) {
+      if (dist <= seg[i] || i === seg.length - 1) {
+        const f = seg[i] ? Math.min(dist / seg[i], 1) : 1;
+        return [pts[i][0] + (pts[i+1][0] - pts[i][0]) * f, pts[i][1] + (pts[i+1][1] - pts[i][1]) * f];
+      }
+      dist -= seg[i];
+    }
+    return pts[pts.length - 1];
+  }
+  async function travel(cls, pts, ms, my, keep = false) {
+    const c = dot(cls);
+    try {
+      await tween(ms, k => { const [x, y] = along(pts, ease(k)); c.setAttribute('cx', x); c.setAttribute('cy', y); }, my);
+    } finally { if (!keep) c.remove(); }
+    return c;
+  }
+  async function ring(x, y, my, r0 = 10, r1 = 46, ms = 700) {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('class', 'ring'); c.setAttribute('cx', x); c.setAttribute('cy', y); fx.appendChild(c);
+    try { await tween(ms, k => { c.setAttribute('r', r0 + (r1 - r0) * k); c.setAttribute('opacity', 1 - k); }, my); }
+    finally { c.remove(); }
+  }
+  function stage(i, text) {
+    steps.forEach((el, j) => el.classList.toggle('on', j === i));
+    cap.innerHTML = text;
+  }
+  function reset() {
+    fx.replaceChildren();
+    chipRects.forEach(r => r.classList.remove('hit'));
+    chipTexts.forEach(t => t.classList.remove('hit'));
+    if (pill) pill.textContent = pillText;
+    steps.forEach(el => el.classList.remove('on'));
+  }
+
+  const MASTER = [600, 306];
+  const vmY = i => (i < 8 ? 145 : 356);
+  const toChip = i => [[685, 306], [790, 306], [790, vmY(i)], [818, vmY(i)], [830, vmY(i)], [830, chips[i].y], [chips[i].x + 8, chips[i].y]];
+
+  async function once(my) {
+    reset();
+    stage(0, '<b>start-run</b> · parts + prompt go to the bridge, then Flower');
+    await travel('', [[190, 292], [268, 292]], 700, my);
+    await travel('', [[420, 292], [513, 292]], 700, my);
+
+    stage(1, '<b>pending</b> · the run waits in Flower’s queue');
+    const q = dot('', 6); q.setAttribute('cx', 600); q.setAttribute('cy', 223);
+    await tween(1600, k => {
+      const secs = Math.round(k * 160);
+      if (pill) pill.textContent = `runs wait · ${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
+      q.setAttribute('r', 5 + 2 * Math.sin(k * Math.PI * 6));
+    }, my);
+    await travel('', [[600, 223], MASTER], 400, my);
+    q.remove();
+    if (pill) pill.textContent = pillText;
+
+    stage(2, '<b>get_nodes</b> · the master finds the store-* SuperNodes');
+    await ring(MASTER[0], MASTER[1], my);
+
+    stage(3, '<b>push_messages</b> · one quote task to each of 14 SuperNodes');
+    await Promise.all(chips.map((c, i) => wait(i * 70, my).then(() => travel('fan', toChip(i), 1100, my)).then(() => {
+      chipRects[i].classList.add('hit'); chipTexts[i].classList.add('hit');
+    })));
+    await wait(350, my);
+
+    stage(4, '<b>pull_messages</b> · each store prices only what it sells');
+    await Promise.all(chips.map((c, i) => wait(((i * 5) % 14) * 60, my).then(() => {
+      chipRects[i].classList.remove('hit'); chipTexts[i].classList.remove('hit');
+      return travel('back', toChip(i).slice().reverse(), 1000, my);
+    })));
+
+    stage(5, '<b>combine</b> · totals per currency, in cents');
+    const tot = document.createElementNS(NS, 'text');
+    tot.setAttribute('class', 'total-fx'); tot.setAttribute('x', 600); tot.setAttribute('y', 384); tot.setAttribute('text-anchor', 'middle');
+    tot.textContent = '$388.99 + €3,990'; fx.appendChild(tot);
+    await tween(500, k => tot.setAttribute('opacity', k), my);
+    await travel('model', [[600, 356], [600, 450]], 600, my);
+    await travel('model', [[600, 450], [600, 356]], 600, my);
+
+    stage(6, '<b>robotshop.quote</b> · streams to the page and into cache/');
+    await Promise.all([
+      travel('', [[515, 320], [422, 320], [270, 320], [192, 320]], 1300, my),
+      wait(550, my).then(() => travel('', [[345, 356], [345, 422]], 600, my)),
+    ]);
+    await ring(105, 306, my, 12, 70, 800);
+    await wait(1600, my);
+  }
+
+  async function loop() {
+    const my = ++token;
+    try { for (;;) await once(my); }
+    catch (e) { if (!(e instanceof Stop)) throw e; }
+  }
+  playBtn.textContent = playing ? 'Pause' : 'Play';
+  playBtn.addEventListener('click', () => {
+    playing = !playing;
+    playBtn.textContent = playing ? 'Pause' : 'Play';
+  });
+  replayBtn.addEventListener('click', () => {
+    playing = true; playBtn.textContent = 'Pause';
+    loop();
+  });
+  loop();
+})();
+</script>
